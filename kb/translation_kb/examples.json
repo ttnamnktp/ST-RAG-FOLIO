@@ -1,0 +1,17 @@
+[
+  {
+    "nl": "All cats are animals.",
+    "logic": "∀x(Cat(x) → Animal(x))",
+    "text": "All cats are animals."
+  },
+  {
+    "nl": "Some dogs are pets.",
+    "logic": "∃x(Dog(x) ∧ Pet(x))",
+    "text": "Some dogs are pets."
+  },
+  {
+    "nl": "If it rains, the ground is wet.",
+    "logic": "∀x(Rain(x) → Wet(Ground))",
+    "text": "If it rains, the ground is wet."
+  }
+]

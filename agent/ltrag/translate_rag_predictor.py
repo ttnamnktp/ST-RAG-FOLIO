@@ -1,0 +1,51 @@
+# agent/ltrag/translate_rag_predictor.py
+from typing import Dict, List
+from agent.base_predictor import BasePredictor
+from agent.ltrag.retrieval.retriever_translate import TranslationRetriever
+from agent.ltrag.translation.translator_rag import TranslatorRagLLM
+from z3_module.reasoner import check_entailment
+
+
+class TranslateRagPredictor(BasePredictor):
+    def __init__(self, llm, kb_path: str = "data/translation-kb.json", top_k: int = 8):
+        super().__init__(llm)
+        self.retriever = TranslationRetriever(kb_path)
+        self.translator = TranslatorRagLLM()
+        self.top_k = top_k
+
+    def build_query(self, sample: Dict) -> str:
+        return " ".join(sample["premises"]) + " Therefore " + sample["conclusion"]
+
+    def translate_to_fol(
+        self, sample: Dict, retrieved_examples: List[Dict]
+    ) -> Dict:
+        """
+        TRANSLATE ONCE — WHOLE FOLIO SAMPLE
+        """
+        fol_sample = self.translator.formalize(sample, retrieved_examples)
+
+        assert "premises-FOL" in fol_sample
+        assert "conclusion-FOL" in fol_sample
+
+        return fol_sample
+
+    def predict(self, sample: Dict) -> str:
+        try:
+            query = self.build_query(sample)
+            # print(query)
+            retrieved_examples = self.retriever.retrieve(query, top_k=self.top_k)
+
+            fol_sample = self.translate_to_fol(sample, retrieved_examples)
+    
+            result = check_entailment(
+                fol_sample["premises-FOL"],
+                fol_sample["conclusion-FOL"]
+            )
+        except Exception as e:
+            result = "Uncertain"
+            print(f"Error: {e}")
+        print("=========== FOL ===========")
+        print(fol_sample)
+        print("=========== FOL ===========")
+
+        return result

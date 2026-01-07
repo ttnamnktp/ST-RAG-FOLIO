@@ -1,0 +1,9 @@
+[
+{
+  "nl": "All commercial aircraft are produced by either Boeing or Airbus.",
+  "faulty": "∀x(CommercialAircraft(x) → (ProducedByBoeing(x) ∨ ProducedByAirbus(x)))",
+  "error": "Use of '∨' incorrect, should be exclusive or (⊕)",
+  "fixed": "∀x(CommercialAircraft(x) → (ProducedByBoeing(x) ⊕ ProducedByAirbus(x)))",
+  "text": "Error: ∨ should be ⊕"
+}
+]

@@ -1,0 +1,153 @@
+ [ 
+  {
+    "error_type": "nested_predicate",
+    "description": "A predicate is incorrectly nested inside another predicate.",
+    "parser_error_signature": {
+      "expected": ["ID"],
+      "got": ["NOT", "RPAREN"],
+      "keywords": ["Expected ID", "got NOT", "got RPAREN"],
+      "column_patterns": ["> 20"]
+    },
+    "detection_patterns": [
+      "Predicate(¬Predicate(",
+      "Predicate(Predicate("
+    ],
+    "fix_rules": [
+      "Pull inner predicate out as a separate conjunct",
+      "Move negation outside predicate",
+      "Rewrite using implication"
+    ],
+    "rewrite_examples": [
+      {
+        "before": "Death(¬Treat(stonefish))",
+        "after": "¬Treat(stonefish) ∧ Death(stonefish)"
+      }
+    ]
+  },
+  {
+    "error_type": "numeric_constant",
+    "description": "Numeric literals are used directly as predicate arguments.",
+    "parser_error_signature": {
+      "expected": ["ID"],
+      "got": ["NUMBER", "RPAREN"],
+      "keywords": ["number", "Expected ID"],
+      "column_patterns": []
+    },
+    "detection_patterns": [
+      "Predicate(.*, [0-9]+",
+      ", [0-9]+\\)"
+    ],
+    "fix_rules": [
+      "Replace numbers with symbolic constants",
+      "Prefix numbers with semantic labels"
+    ],
+    "rewrite_examples": [
+      {
+        "before": "ZipCode(x, 98199)",
+        "after": "ZipCode(x, zip98199)"
+      },
+      {
+        "before": "Points(team, 86)",
+        "after": "Points(team, points86)"
+      }
+    ]
+  },
+  {
+    "error_type": "predicate_missing_parentheses",
+    "description": "Predicate is used without parentheses or with incorrect arity.",
+    "parser_error_signature": {
+      "expected": ["LPAREN"],
+      "got": ["ID"],
+      "keywords": ["Expected LPAREN", "Wrong number of arguments"],
+      "column_patterns": []
+    },
+    "detection_patterns": [
+      "^[A-Za-z][A-Za-z0-9_]*$",
+      "Predicate\\([^)]+\\)"
+    ],
+    "fix_rules": [
+      "Infer correct arity from context",
+      "Rewrite as unary predicate if unsure",
+      "Introduce existential variable"
+    ],
+    "rewrite_examples": [
+      {
+        "before": "WorksAtJohnEmmetBuilding",
+        "after": "WorksAt(john, emmetBuilding)"
+      }
+    ]
+  },
+  {
+    "error_type": "standalone_constant",
+    "description": "A constant appears without any predicate.",
+    "parser_error_signature": {
+      "expected": ["LPAREN"],
+      "got": ["EOF"],
+      "keywords": ["Unexpected end of input"],
+      "column_patterns": []
+    },
+    "detection_patterns": [
+      "^¬?[a-z][a-zA-Z0-9_]*$"
+    ],
+    "fix_rules": [
+      "Attach constant to most relevant predicate",
+      "Negate predicate instead of constant"
+    ],
+    "rewrite_examples": [
+      {
+        "before": "¬tiktok",
+        "after": "¬Good(tiktok)"
+      }
+    ]
+  },
+  {
+    "error_type": "unsupported_operator",
+    "description": "Unsupported logical or arithmetic operators are used.",
+    "parser_error_signature": {
+      "expected": ["LPAREN"],
+      "got": ["ID", "XOR", "OPERATOR"],
+      "keywords": ["=", ">", "<", "∈"],
+      "column_patterns": []
+    },
+    "detection_patterns": [
+      "=",
+      ">",
+      "<",
+      "∈"
+    ],
+    "fix_rules": [
+      "Replace '=' with SameAs(x,y)",
+      "Replace '>' '<' with semantic predicates"
+    ],
+    "rewrite_examples": [
+      {
+        "before": "A = B",
+        "after": "SameAs(A, B)"
+      }
+    ]
+  },
+  {
+    "error_type": "missing_parentheses",
+    "description": "Logical expressions lack proper parentheses.",
+    "parser_error_signature": {
+      "expected": ["LPAREN", "RPAREN"],
+      "got": ["ID", "IMPLIES"],
+      "keywords": ["Expected RPAREN", "Expected LPAREN"],
+      "column_patterns": []
+    },
+    "detection_patterns": [
+      "∀x [^(]",
+      "∧ .* →"
+    ],
+    "fix_rules": [
+      "Wrap quantifier scope in parentheses",
+      "Wrap antecedent of implication"
+    ],
+    "rewrite_examples": [
+      {
+        "before": "∀x (Citizen(x) → ZipCode(x, zip98199)",
+        "after": "∀x (Citizen(x) → ZipCode(x, zip98199))"
+      }
+    ]
+  }
+ ]

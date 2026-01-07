@@ -1,0 +1,489 @@
+(folio) Nam@macbook-air FOLIO % python run_fix_predictor.py
+Loaded embedding model: BAAI/bge-small-en-v1.5
+Loading KB from: data/folio-train.jsonl
+KB loaded: 1004 examples
+=== parsing successfully ===
+[0] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[1] Pred: True       | Gold: True
+=== parsing successfully ===
+[2] Pred: False      | Gold: False
+=== parsing successfully ===
+[3] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[4] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[5] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[6] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['∀x (Monkeypox(x) → InfectiousDisease(x))', '∀x (MonkeypoxVirus(x) → (Animal(x) ∨ Human(x)))', '∀x (Human(x) → Mammal(x))', '∀x (Mammal(x) → Animal(x))', '∀x (Symptoms(Monkeypox(x)) → (Fever(x) ∧ Headache(x) ∧ MusclePain(x) ∧ Tiredness(x)))', '∀x (Glu(x) → Tiredness(x))'], 'conclusion-FOL': '¬∃x Glu(x)'}
+{'premises-FOL': ['∀x (Monkeypox(x) → InfectiousDisease(x))', '∀x (MonkeypoxVirus(x) → (Animal(x) ∨ Human(x)))', '∀x (Human(x) → Mammal(x))', '∀x (Mammal(x) → Animal(x))', '∀x (Symptoms(Monkeypox(x)) → (Fever(x) ∧ Headache(x) ∧ MusclePain(x) ∧ Tiredness(x)))', '∀x (Glu(x) → Tiredness(x))'], 'conclusion-FOL': '¬∃x Glu(x)'}
+{'premises-FOL': ['∀x (Monkeypox(x) → InfectiousDisease(x))', '∀x (MonkeypoxVirus(x) → (Animal(x) ∨ Human(x)))', '∀x (Human(x) → Mammal(x))', '∀x (Mammal(x) → Animal(x))', '∀x (Symptoms(Monkeypox(x)) → (Fever(x) ∧ Headache(x) ∧ MusclePain(x) ∧ Tiredness(x)))', '∀x (Glu(x) → Tiredness(x))'], 'conclusion-FOL': '¬∃x Glu(x)'}
+[7] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[8] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[9] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[10] Pred: False      | Gold: False
+=== parsing successfully ===
+[11] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['JapaneseCompany(Game(TheLegendOfZelda)) → JapaneseCompany(u) ∧ Game(TheLegendOfZelda, u)', '∀x (Top10(x) → JapaneseCompany(Maker(x)))', '∀x (SellsMoreThanOneMillionCopies(x) → Top10(x))', 'SellsMoreThanOneMillionCopies(Game(TheLegendOfZelda))'], 'conclusion-FOL': 'Top10(Game(TheLegendOfZelda))'}
+{'premises-FOL': ['JapaneseCompany(Game(TheLegendOfZelda, u)) → JapaneseCompany(u) ∧ Game(TheLegendOfZelda, u)', '∀x (Top10(x) → JapaneseCompany(Maker(x)))', '∀x (SellsMoreThanOneMillionCopies(x) → Top10(x))', 'SellsMoreThanOneMillionCopies(Game(TheLegendOfZelda))'], 'conclusion-FOL': 'Top10(Game(TheLegendOfZelda))'}
+{'premises-FOL': ['JapaneseCompany(Game(TheLegendOfZelda, u)) → JapaneseCompany(u) ∧ Game(TheLegendOfZelda, u)', '∀x (Top10(x) → JapaneseCompany(Maker(x)))', '∀x (SellsMoreThanOneMillionCopies(x) → Top10(x))', 'SellsMoreThanOneMillionCopies(Game(TheLegendOfZelda))'], 'conclusion-FOL': 'Top10(Game(TheLegendOfZelda))'}
+[12] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['∃x (JapaneseGameCompany(x) ∧ CreatedBy(x, theLegendOfZelda))', '∀y (InTop10(y) → JapaneseGameCompany(MadeBy(y)))', '(SellsMoreThanOneMillionCopies(game) → InTop10(game))', 'SellsMoreThanOneMillionCopies(theLegendOfZelda)'], 'conclusion-FOL': 'JapaneseGameCompany(MadeBy(fifa22))'}
+{'premises-FOL': ['∃x (JapaneseGameCompany(x) ∧ CreatedBy(x, theLegendOfZelda))', '∀y (InTop10(y) → JapaneseGameCompany(MadeBy(y)))', '(SellsMoreThanOneMillionCopies(game) → InTop10(game))', 'SellsMoreThanOneMillionCopies(theLegendOfZelda)'], 'conclusion-FOL': 'JapaneseGameCompany(MadeBy(fifa22))'}
+{'premises-FOL': ['∃x (JapaneseGameCompany(x) ∧ CreatedBy(x, theLegendOfZelda))', '∀y (InTop10(y) → JapaneseGameCompany(MadeBy(y)))', '(SellsMoreThanOneMillionCopies(game) → InTop10(game))', 'SellsMoreThanOneMillionCopies(theLegendOfZelda)'], 'conclusion-FOL': 'JapaneseGameCompany(MadeBy(fifa22))'}
+[13] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∃x (JapaneseGameCompany(x) ∧ CreatedBy(x, theLegendOfZelda))', '∀y (InTop10(y) → JapaneseGameCompany(MadeBy(y)))', '∀z (SoldMoreThanOneMillion(z) → InTop10(z))', 'SoldMoreThanOneMillion(theLegendOfZelda)'], 'conclusion-FOL': '¬InTop10(theLegendOfZelda)'}
+{'premises-FOL': ['∃x (JapaneseGameCompany(x) ∧ CreatedBy(x, theLegendOfZelda))', '∀y (InTop10(y) → JapaneseGameCompany(MadeBy(y)))', '∀z (SoldMoreThanOneMillion(z) → InTop10(z))', 'SoldMoreThanOneMillion(theLegendOfZelda)'], 'conclusion-FOL': '¬InTop10(theLegendOfZelda)'}
+{'premises-FOL': ['∃x (JapaneseGameCompany(x) ∧ CreatedBy(x, theLegendOfZelda))', '∀y (InTop10(y) → JapaneseGameCompany(MadeBy(y)))', '∀z (SoldMoreThanOneMillion(z) → InTop10(z))', 'SoldMoreThanOneMillion(theLegendOfZelda)'], 'conclusion-FOL': '¬InTop10(theLegendOfZelda)'}
+[14] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[15] Pred: True       | Gold: True
+=== parsing successfully ===
+[16] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[17] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[18] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[19] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[20] Pred: Uncertain  | Gold: False
+{'premises-FOL': ["Popular(NetflixShow('Stranger Things'))", 'Popular(x) → BingeWatch(Karen, x)', 'BingeWatch(Karen, x) ↔ Download(Karen, x)', "¬Download(Karen, NetflixShow('Black Mirror'))", "NetflixShow('Black Mirror')", 'BingeWatch(Karen, x) → ShareToLisa(Karen, x)'], 'conclusion-FOL': "ShareToLisa(Karen, NetflixShow('Stranger Things'))"}
+{'premises-FOL': ["Popular(NetflixShow('Stranger Things'))", 'Popular(x) → BingeWatch(Karen, x)', 'BingeWatch(Karen, x) ↔ Download(Karen, x)', "¬Download(Karen, NetflixShow('Black Mirror'))", "NetflixShow('Black Mirror')", 'BingeWatch(Karen, x) → ShareToLisa(Karen, x)'], 'conclusion-FOL': "ShareToLisa(Karen, NetflixShow('Stranger Things'))"}
+{'premises-FOL': ["Popular(NetflixShow('Stranger Things'))", 'Popular(x) → BingeWatch(Karen, x)', 'BingeWatch(Karen, x) ↔ Download(Karen, x)', "¬Download(Karen, NetflixShow('Black Mirror'))", "NetflixShow('Black Mirror')", 'BingeWatch(Karen, x) → ShareToLisa(Karen, x)'], 'conclusion-FOL': "ShareToLisa(Karen, NetflixShow('Stranger Things'))"}
+[21] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[22] Pred: Uncertain  | Gold: False
+{'premises-FOL': ["Popular(NetflixShow('Stranger Things'))", 'Popular(x) ∧ NetflixShow(x) → BingeWatch(Karen, x)', 'BingeWatch(Karen, x) ↔ Download(Karen, x)', '¬Download(Karen, BlackMirror)', 'NetflixShow(BlackMirror)'], 'conclusion-FOL': 'Share(Karen, Lisa, BlackMirror)'}
+{'premises-FOL': ["Popular(NetflixShow('Stranger Things'))", 'Popular(x) ∧ NetflixShow(x) → BingeWatch(Karen, x)', 'BingeWatch(Karen, x) ↔ Download(Karen, x)', '¬Download(Karen, BlackMirror)', 'NetflixShow(BlackMirror)'], 'conclusion-FOL': 'Share(Karen, Lisa, BlackMirror)'}
+{'premises-FOL': ["Popular(NetflixShow('Stranger Things'))", 'Popular(x) ∧ NetflixShow(x) → BingeWatch(Karen, x)', 'BingeWatch(Karen, x) ↔ Download(Karen, x)', '¬Download(Karen, BlackMirror)', 'NetflixShow(BlackMirror)'], 'conclusion-FOL': 'Share(Karen, Lisa, BlackMirror)'}
+[23] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[24] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[25] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[26] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[27] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[28] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[29] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[30] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[31] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[32] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[33] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[34] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[35] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[36] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[37] Pred: True       | Gold: True
+=== parsing successfully ===
+[38] Pred: False      | Gold: False
+=== parsing successfully ===
+[39] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[40] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[41] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[42] Pred: True       | Gold: True
+=== parsing successfully ===
+[43] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[44] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[45] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[46] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[47] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[48] Pred: True       | Gold: Uncertain
+{'premises-FOL': ['∀x (Digital(x) → ¬Analog(x))', '∀x (PrintedText(x) → Analog(x))', '∀x (StreamingService(x) → Digital(x))', '∀x (HardcoverBook(x) → PrintedText(x))', '(StreamingService(1984) → HardcoverBook(1984))\n\n// Corrected to:\nStreamingService(u) → HardcoverBook(u)'], 'conclusion-FOL': 'PrintedText(1984)'}
+{'premises-FOL': ['∀x (Digital(x) → ¬Analog(x))', '∀x (PrintedText(x) → Analog(x))', '∀x (StreamingService(x) → Digital(x))', '∀x (HardcoverBook(x) → PrintedText(x))', 'StreamingService(u) → HardcoverBook(u)'], 'conclusion-FOL': 'PrintedText(1984)'}
+[49] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∀x (Digital(x) → ¬Analog(x))', '∀x (PrintedText(x) → Analog(x))', '∀x (StreamingService(x) → Digital(x))', '∀x (HardcoverBook(x) → PrintedText(x))', '(StreamingService(1984) → HardcoverBook(1984))'], 'conclusion-FOL': '1984(StreamingService)'}
+{'premises-FOL': ['∀x (Digital(x) → ¬Analog(x))', '∀x (PrintedText(x) → Analog(x))', '∀x (StreamingService(x) → Digital(x))', '∀x (HardcoverBook(x) → PrintedText(x))', '(StreamingService(1984) → HardcoverBook(1984))\n\n// Corrected to:\nStreamingService(u) → HardcoverBook(u)'], 'conclusion-FOL': '1984(StreamingService)'}
+{'premises-FOL': ['∀x (Digital(x) → ¬Analog(x))', '∀x (PrintedText(x) → Analog(x))', '∀x (StreamingService(x) → Digital(x))', '∀x (HardcoverBook(x) → PrintedText(x))', 'StreamingService(u) → HardcoverBook(u)'], 'conclusion-FOL': '1984(StreamingService)'}
+[50] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['∀x (DigitalMedia(x) → ¬Analog(x))', '∀x (PrintedText(x) → Analog(x))', '∀x (StreamingService(x) → Digital(x))', '∀x (HardcoverBook(x) → PrintedText(x))', '(StreamingService(1984) → HardcoverBook(1984))'], 'conclusion-FOL': '¬1984(StreamingService)'}
+{'premises-FOL': ['∀x (DigitalMedia(x) → ¬Analog(x))', '∀x (PrintedText(x) → Analog(x))', '∀x (StreamingService(x) → Digital(x))', '∀x (HardcoverBook(x) → PrintedText(x))', '(StreamingService(1984) → HardcoverBook(1984))\n\n// Corrected to:\nStreamingService(u) → HardcoverBook(u)'], 'conclusion-FOL': '¬1984(StreamingService)'}
+{'premises-FOL': ['∀x (DigitalMedia(x) → ¬Analog(x))', '∀x (PrintedText(x) → Analog(x))', '∀x (StreamingService(x) → Digital(x))', '∀x (HardcoverBook(x) → PrintedText(x))', 'StreamingService(u) → HardcoverBook(u)'], 'conclusion-FOL': '¬1984(StreamingService)'}
+[51] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['∀x (RomanceLanguage(x) → IndoEuropeanLanguage(x))', '∃f Family(f) ∧ ∀l (RomanceLanguage(l) ↔ MemberOfFamily(l, f))', '∀f ∀l1 ∀l2 ((MemberOfFamily(l1, f) ∧ MemberOfFamily(l2, f)) → RelatedTo(l1, l2))', 'RomanceLanguage(french) ∧ RomanceLanguage(spanish)', 'RelatedTo(german, spanish)', '¬∃l (∃t (Basque(t) ∧ l ≠ t) ∧ RelatedTo(basque, l))'], 'conclusion-FOL': '¬RomanceLanguage(basque)'}
+{'premises-FOL': ['∀x (RomanceLanguage(x) → IndoEuropeanLanguage(x))', '∃f Family(f) ∧ ∀l (RomanceLanguage(l) ↔ MemberOfFamily(l, f))', '∀f ∀l1 ∀l2 ((MemberOfFamily(l1, f) ∧ MemberOfFamily(l2, f)) → RelatedTo(l1, l2))', 'RomanceLanguage(french) ∧ RomanceLanguage(spanish)', 'RelatedTo(german, spanish)', '¬∃l (∃t (Basque(t) ∧ l ≠ t) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))\n\n¬∃l (∃t (Basque(t)'], 'conclusion-FOL': '¬RomanceLanguage(basque)'}
+{'premises-FOL': ['∀x (RomanceLanguage(x) → IndoEuropeanLanguage(x))', '∃f Family(f) ∧ ∀l (RomanceLanguage(l) ↔ MemberOfFamily(l, f))', '∀f ∀l1 ∀l2 ((MemberOfFamily(l1, f) ∧ MemberOfFamily(l2, f)) → RelatedTo(l1, l2))', 'RomanceLanguage(french) ∧ RomanceLanguage(spanish)', 'RelatedTo(german, spanish)', '¬∃l (∃t (Basque(t) ∧ ¬SameLanguage(l, t)) ∧ RelatedTo(basque, l))'], 'conclusion-FOL': '¬RomanceLanguage(basque)'}
+[52] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[53] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[54] Pred: True       | Gold: True
+=== parsing successfully ===
+[55] Pred: True       | Gold: True
+=== parsing successfully ===
+[56] Pred: True       | Gold: False
+=== parsing successfully ===
+[57] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[58] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[59] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[60] Pred: True       | Gold: True
+{'premises-FOL': ['∀x (InternationalStudent(x) → (F1Visa(x) ⊕ J1Visa(x)))', '∀x ((InternationalStudent(x) ∧ F1Visa(x)) → (CPT(x) ∨ OPT(x)))', 'Mike(isInternationalStudent(Mike))', 'WantsToWork(Mike) → CPT(Mike)'], 'conclusion-FOL': 'F1Visa(Mike)'}
+{'premises-FOL': ['∀x (InternationalStudent(x) → (F1Visa(x) ⊕ J1Visa(x)))', '∀x ((InternationalStudent(x) ∧ F1Visa(x)) → (CPT(x) ∨ OPT(x)))', 'isInternationalStudent(Mike)', 'WantsToWork(Mike) → CPT(Mike)'], 'conclusion-FOL': 'F1Visa(Mike)'}
+=== parsing successfully ===
+[61] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∀x (InternationalStudent(x) → (F1Visa(x) ⊕ J1Visa(x)))', '∀x ((InternationalStudent(x) ∧ F1Visa(x)) → (CPT(x) ∨ OPT(x)))', 'Mike(isInternationalStudent(Mike))', 'WantsToWork(Mike) → CPT(Mike)'], 'conclusion-FOL': 'J1Visa(Mike)'}
+{'premises-FOL': ['∀x (InternationalStudent(x) → (F1Visa(x) ⊕ J1Visa(x)))', '∀x ((InternationalStudent(x) ∧ F1Visa(x)) → (CPT(x) ∨ OPT(x)))', 'isInternationalStudent(Mike)', 'WantsToWork(Mike) → CPT(Mike)'], 'conclusion-FOL': 'J1Visa(Mike)'}
+=== parsing successfully ===
+[62] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[63] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[64] Pred: False      | Gold: False
+=== parsing successfully ===
+[65] Pred: True       | Gold: True
+=== parsing successfully ===
+[66] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['University(yale) ∧ Private(yale) ∧ IvyLeague(yale) ∧ Research(yale)', 'MovedToNewHavenIn1716(yale)', 'Endowment(yale, 42.3 billion)', 'BROKEN_FOL:OrganizedIntoConstituentCollegesAndSchools(yale, z27)\n\nREPAIRED_FOL:OrganizedIntoConstituentCollegesAndSchools(yale, z27) ∧ NumberOfCollegesAndSchools(z27, 27)', 'ListResidentialCollegesAtYale(benjaminfranklincollege) ∧ ListResidentialCollegesAtYale(berkeleycollege) ∧ ListResidentialCollegesAtYale(branfordcollege) ∧ ListResidentialCollegesAtYale(davenportcollege) ∧ ListResidentialCollegesAtYale(ezrastilescollege) ∧ ListResidentialCollegesAtYale(gracehoppercollege) ∧ ListResidentialCollegesAtYale(jonathandedwardscollege) ∧ ListResidentialCollegesAtYale(morsecollege) ∧ ListResidentialCollegesAtYale(paullimurraycollege) ∧ ListResidentialCollegesAtYale(piersoncollege) ∧ ListResidentialCollegesAtYale(saybrookcollege) ∧ ListResidentialCollegesAtYale(sillimancollege) ∧ ListResidentialCollegesAtYale(timdwaltdwightcollege) ∧ ListResidentialCollegesAtYale(trumbullcollege)'], 'conclusion-FOL': 'LargestUniversityEndowment(yale)'}
+{'premises-FOL': ['University(yale) ∧ Private(yale) ∧ IvyLeague(yale) ∧ Research(yale)', 'MovedToNewHavenIn1716(yale)', 'Endowment(yale, 42.3 billion)', 'OrganizedIntoConstituentCollegesAndSchools(yale, z27) ∧ NumberOfCollegesAndSchools(z27, 27)', 'ListResidentialCollegesAtYale(benjaminfranklincollege) ∧ ListResidentialCollegesAtYale(berkeleycollege) ∧ ListResidentialCollegesAtYale(branfordcollege) ∧ ListResidentialCollegesAtYale(davenportcollege) ∧ ListResidentialCollegesAtYale(ezrastilescollege) ∧ ListResidentialCollegesAtYale(gracehoppercollege) ∧ ListResidentialCollegesAtYale(jonathandedwardscollege) ∧ ListResidentialCollegesAtYale(morsecollege) ∧ ListResidentialCollegesAtYale(paullimurraycollege) ∧ ListResidentialCollegesAtYale(piersoncollege) ∧ ListResidentialCollegesAtYale(saybrookcollege) ∧ ListResidentialCollegesAtYale(sillimancollege) ∧ ListResidentialCollegesAtYale(timdwaltdwightcollege) ∧ ListResidentialCollegesAtYale(trumbullcollege)'], 'conclusion-FOL': 'LargestUniversityEndowment(yale)'}
+{'premises-FOL': ['University(yale) ∧ Private(yale) ∧ IvyLeague(yale) ∧ Research(yale)', 'MovedToNewHavenIn1716(yale)', 'Endowment(yale, 42.3 billion)', 'BROKEN_FOL:OrganizedIntoConstituentCollegesAndSchools(yale, z27) ∧ NumberOfCollegesAndSchools(z27, 27)\n\nFIXED_FOL:OrganizedIntoConstituentCollegesAndSchools(yale, z27) ∧ NumberOfCollegesAndSchools(z27, z27_27)', 'ListResidentialCollegesAtYale(benjaminfranklincollege) ∧ ListResidentialCollegesAtYale(berkeleycollege) ∧ ListResidentialCollegesAtYale(branfordcollege) ∧ ListResidentialCollegesAtYale(davenportcollege) ∧ ListResidentialCollegesAtYale(ezrastilescollege) ∧ ListResidentialCollegesAtYale(gracehoppercollege) ∧ ListResidentialCollegesAtYale(jonathandedwardscollege) ∧ ListResidentialCollegesAtYale(morsecollege) ∧ ListResidentialCollegesAtYale(paullimurraycollege) ∧ ListResidentialCollegesAtYale(piersoncollege) ∧ ListResidentialCollegesAtYale(saybrookcollege) ∧ ListResidentialCollegesAtYale(sillimancollege) ∧ ListResidentialCollegesAtYale(timdwaltdwightcollege) ∧ ListResidentialCollegesAtYale(trumbullcollege)'], 'conclusion-FOL': 'LargestUniversityEndowment(yale)'}
+[67] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['University(yale_university)', 'MovedToNewHavenIn1716(yale_university)', 'EndowmentValue(yale_university, 42.3_billion_usd)', 'BROKEN_FOL:OrganizedIntoConstituentCollegesAndSchools(yale_university, c27)\n\nERROR_MESSAGE indicates a syntax error related to missing or extra parentheses. The correct format should be:\n\nORGANIZED_INTO_CONSTITUENT_COLLEGES_AND_SCHOOLS(yale_university, c27)', 'ResidentialCollegeAtYale(pierson_college)'], 'conclusion-FOL': 'ResidentialCollegeAtYale(pierson_college)'}
+{'premises-FOL': ['University(yale_university)', 'MovedToNewHavenIn1716(yale_university)', 'EndowmentValue(yale_university, 42.3_billion_usd)', 'ORGANIZED_INTO_CONSTITUENT_COLLEGES_AND_SCHOOLS(yale_university, c27)', 'ResidentialCollegeAtYale(pierson_college)'], 'conclusion-FOL': 'ResidentialCollegeAtYale(pierson_college)'}
+=== parsing successfully ===
+[68] Pred: True       | Gold: True
+=== parsing successfully ===
+[69] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['Badults(starring(pappy))', 'piloted(Badults, july2013, bbcThree)', 'workingTitle(TheSecretDudeSociety, Badults)', 'scriptEditor(AndrewCollins, Badults)'], 'conclusion-FOL': "∀x (starring(x, pappy's) → ¬(piloted(x, BBCTwo) ∨ piloted(x, bbcThree))"}
+{'premises-FOL': ['Badults(starring(pappy)) → Badults(starring(pappy)) ∧ starring(pappy)', 'piloted(Badults, july2013, bbcThree)', 'workingTitle(TheSecretDudeSociety, Badults)', 'scriptEditor(AndrewCollins, Badults)'], 'conclusion-FOL': "∀x (starring(x, pappy's) → ¬(piloted(x, BBCTwo) ∨ piloted(x, bbcThree))"}
+{'premises-FOL': ['Badults(starring(pappy)) → Badults(starring(pappy)) ∧ starring(pappy)', 'piloted(Badults, july2013, bbcThree)', 'workingTitle(TheSecretDudeSociety, Badults)', 'scriptEditor(AndrewCollins, Badults)'], 'conclusion-FOL': "∀x (starring(x, pappy's) → ¬(piloted(x, BBCTwo) ∨ piloted(x, bbcThree))"}
+[70] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[71] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[72] Pred: False      | Gold: False
+=== parsing successfully ===
+[73] Pred: True       | Gold: True
+=== parsing successfully ===
+[74] Pred: True       | Gold: True
+=== parsing successfully ===
+[75] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[76] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[77] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[78] Pred: True       | Gold: False
+=== parsing successfully ===
+[79] Pred: False      | Gold: False
+=== parsing successfully ===
+[80] Pred: True       | Gold: True
+=== parsing successfully ===
+[81] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[82] Pred: True       | Gold: True
+=== parsing successfully ===
+[83] Pred: False      | Gold: False
+{'premises-FOL': ['∀x (ListedInYelpRecommendations(x) → ¬ManyNegativeReviews(x))', '∀x (RatingGreaterThanNine(x) → ListedInYelpRecommendations(x))', '∃x (¬ProvidesTakeOutService(x) ∧ ManyNegativeReviews(x))', '∀x (PopularAmongResidents(x) → RatingGreaterThanNine(x))', '∀x (SubwayRating(x) ∨ Popular(x))'], 'conclusion-FOL': '(ProvidesTakeOutService(Subway) ∧ ManyNegativeReviews(Subway)) → (RatingGreaterThanNine(Subway) ∧ ¬ProvidesTakeOutService(Subway))'}
+=== parsing successfully ===
+[84] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∀x (ListedInYelpRecommendations(x) → ¬ManyNegativeReviews(x))', '∀x (RatingGreaterThan9(x) → ListedInYelpRecommendations(x))', '∃x (¬ProvidesTakeOutService(x) ∧ ManyNegativeReviews(x))', '∀x (PopularAmongResidents(x) → RatingGreaterThan9(x))', 'SubwayRatingGreaterThan9(subway) ∨ PopularAmongResidents(subway)'], 'conclusion-FOL': 'ProvidesTakeOutService(subway) ∧ ¬ManyNegativeReviews(subway)'}
+=== parsing successfully ===
+[85] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['∀x (ListedInYelpRecommendations(x) → ¬ManyNegativeReviews(x))', '∀x (RatingGreaterThan9(x) → ListedInYelpRecommendations(x))', '∃x (¬ProvidesTakeOutService(x) ∧ ManyNegativeReviews(x))', '∀x (PopularAmongLocalResidents(x) → RatingGreaterThan9(x))', '(RatingGreaterThan9(Subway) ⊕ PopularAmongLocalResidents(Subway))'], 'conclusion-FOL': '¬ProvidesTakeOutService(Subway)'}
+=== parsing successfully ===
+[86] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['∀x (SuperheroMovie(x) → GoodGuysWin(x))', 'SuperheroMovie(TheSurprisingAdventuresOfSirDigbyChickenCaesar)', '∀x ∀y (GoodGuy(x) ∧ BadGuy(y) → Fight(x, y))', 'Fight(SirDigby, Nemesis(SirDigby)) → Fight(SirDigby, y) ∧ Nemesis(y, SirDigby)', '∀x ∀y (NamedAfterCharacter(x, y) → GoodGuy(y))', 'NamedAfterCharacter(TheSurprisingAdventuresOfSirDigbyChickenCaesar, SirDigby)', '∀x ∀y (NamedAfterCharacter(x, y) → AppearsInMovie(y, x))', '∀x ∀y (WinsFight(x, y) → LosesFight(y))'], 'conclusion-FOL': 'LosesFight(Nemesis(SirDigby))'}
+{'premises-FOL': ['∀x (SuperheroMovie(x) → GoodGuysWin(x))', 'SuperheroMovie(TheSurprisingAdventuresOfSirDigbyChickenCaesar)', '∀x ∀y (GoodGuy(x) ∧ BadGuy(y) → Fight(x, y))', 'Fight(SirDigby, Nemesis(SirDigby)) → Fight(SirDigby, y) ∧ Nemesis(y, SirDigby)', '∀x ∀y (NamedAfterCharacter(x, y) → GoodGuy(y))', 'NamedAfterCharacter(TheSurprisingAdventuresOfSirDigbyChickenCaesar, SirDigby)', '∀x ∀y (NamedAfterCharacter(x, y) → AppearsInMovie(y, x))', '∀x ∀y (WinsFight(x, y) → LosesFight(y))'], 'conclusion-FOL': 'LosesFight(Nemesis(SirDigby))'}
+{'premises-FOL': ['∀x (SuperheroMovie(x) → GoodGuysWin(x))', 'SuperheroMovie(TheSurprisingAdventuresOfSirDigbyChickenCaesar)', '∀x ∀y (GoodGuy(x) ∧ BadGuy(y) → Fight(x, y))', 'Fight(SirDigby, Nemesis(SirDigby)) → Fight(SirDigby, y) ∧ Nemesis(y, SirDigby)', '∀x ∀y (NamedAfterCharacter(x, y) → GoodGuy(y))', 'NamedAfterCharacter(TheSurprisingAdventuresOfSirDigbyChickenCaesar, SirDigby)', '∀x ∀y (NamedAfterCharacter(x, y) → AppearsInMovie(y, x))', '∀x ∀y (WinsFight(x, y) → LosesFight(y))'], 'conclusion-FOL': 'LosesFight(Nemesis(SirDigby))'}
+[87] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[88] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[89] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[90] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∀x (NaturalLanguageProcessingTask(x) → (LanguageGenerationTask(x) ⊕ LanguageUnderstandingTask(x)))', '∀x ((NaturalLanguageProcessingTask(x) ∧ TextSequence(output(x))) → LanguageGenerationTask(x))', 'MachineTranslation ∈ NaturalLanguageProcessingTask', 'TextSequence(output(MachineTranslation))'], 'conclusion-FOL': 'MachineTranslation ∈ LanguageGenerationTask'}
+{'premises-FOL': ['∀x (NaturalLanguageProcessingTask(x) → (LanguageGenerationTask(x) ⊕ LanguageUnderstandingTask(x)))', '∀x ((NaturalLanguageProcessingTask(x) ∧ TextSequence(output(x))) → LanguageGenerationTask(x))', 'MachineTranslation ∈ NaturalLanguageProcessingTask', 'TextSequence(output(MachineTranslation))'], 'conclusion-FOL': 'MachineTranslation ∈ LanguageGenerationTask'}
+{'premises-FOL': ['∀x (NaturalLanguageProcessingTask(x) → (LanguageGenerationTask(x) ⊕ LanguageUnderstandingTask(x)))', '∀x ((NaturalLanguageProcessingTask(x) ∧ TextSequence(output(x))) → LanguageGenerationTask(x))', 'MachineTranslation ∈ NaturalLanguageProcessingTask', 'TextSequence(output(MachineTranslation))'], 'conclusion-FOL': 'MachineTranslation ∈ LanguageGenerationTask'}
+[91] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['∀x (NaturalLanguageProcessingTask(x) → (LanguageGenerationTask(x) ⊕ LanguageUnderstandingTask(x)))', '∀x ((NaturalLanguageProcessingTask(x) ∧ TextSequence(output(x))) → LanguageGenerationTask(x))', 'MachineTranslation ∈ NaturalLanguageProcessingTask', 'TextSequence(output(MachineTranslation))'], 'conclusion-FOL': 'MachineTranslation ∈ LanguageUnderstandingTask'}
+{'premises-FOL': ['∀x (NaturalLanguageProcessingTask(x) → (LanguageGenerationTask(x) ⊕ LanguageUnderstandingTask(x)))', '∀x ((NaturalLanguageProcessingTask(x) ∧ TextSequence(output(x))) → LanguageGenerationTask(x))', 'MachineTranslation ∈ NaturalLanguageProcessingTask', 'TextSequence(output(MachineTranslation))'], 'conclusion-FOL': 'MachineTranslation ∈ LanguageUnderstandingTask'}
+{'premises-FOL': ['∀x (NaturalLanguageProcessingTask(x) → (LanguageGenerationTask(x) ⊕ LanguageUnderstandingTask(x)))', '∀x ((NaturalLanguageProcessingTask(x) ∧ TextSequence(output(x))) → LanguageGenerationTask(x))', 'MachineTranslation ∈ NaturalLanguageProcessingTask', 'TextSequence(output(MachineTranslation))'], 'conclusion-FOL': 'MachineTranslation ∈ LanguageUnderstandingTask'}
+[92] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowedPets(x))', '∀x (RentApartmentInManagedBuilding(x) → DepositRequired(x))', '∀x (DepositRequired(x) → (SecurityDeposit(x) ∧ OneMonthsRent(x)) ∨ SecurityDeposit(x) ∧ GreaterThan(SecurityDeposit(x), OneMonthsRent(x)))', 'Fluffy(cat(tom))', '∀x (Cat(x) → Pet(x))', 'ManagedBuilding(oliveGarden)', 'OneMonthsRent(oliveGarden) = 2000', '(RentApartmentInManagedBuilding(tom) ↔ AllowedPetsWithFluffy(tom) ∧ SecurityDepositNoMoreThan1500(tom))', '2000 > 1500'], 'conclusion-FOL': 'RentApartmentInManagedBuilding(tom)'}
+{'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowedPets(x))', '∀x (RentApartmentInManagedBuilding(x) → DepositRequired(x))', '∀x (DepositRequired(x) → ((SecurityDeposit(x) ∧ OneMonthsRent(x)) ∨ (SecurityDeposit(x) ∧ GreaterThan(SecurityDeposit(x), OneMonthsRent(x)))))', 'Fluffy(cat(tom))', '∀x (Cat(x) → Pet(x))', 'ManagedBuilding(oliveGarden)', 'OneMonthsRent(oliveGarden) = 2000', '(RentApartmentInManagedBuilding(tom) ↔ AllowedPetsWithFluffy(tom) ∧ SecurityDepositNoMoreThan1500(tom))', '2000 > 1500'], 'conclusion-FOL': 'RentApartmentInManagedBuilding(tom)'}
+{'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowedPets(x))', '∀x (RentApartmentInManagedBuilding(x) → DepositRequired(x))', '∀x (DepositRequired(x) → ((SecurityDeposit(x) ∧ OneMonthsRent(x)) ∨ (SecurityDeposit(x) ∧ GreaterThan(SecurityDeposit(x), OneMonthsRent(x)))))', 'Fluffy(cat(tom))', '∀x (Cat(x) → Pet(x))', 'ManagedBuilding(oliveGarden)', 'OneMonthsRent(oliveGarden) = 2000', '(RentApartmentInManagedBuilding(tom) ↔ AllowedPetsWithFluffy(tom) ∧ SecurityDepositNoMoreThan1500(tom))', '2000 > 1500'], 'conclusion-FOL': 'RentApartmentInManagedBuilding(tom)'}
+[93] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowsPets(x))', '∀x (RentApartmentInManagedBuilding(x) → RequiresDeposit(x))', '∀x (SecurityDeposit(x) ⊕ RentMonth(x))', 'Fluffy(cat(tom))', '∀x (Cat(x) → Pet(x))', 'ManagedBuilding(oliveGarden)', 'RentMonth(oliveGarden, 2000)', '(RentApartmentInManagedBuilding(tom) ↔ AllowsMoveWithPet(tom, fluffy) ∧ SecurityDepositNoMoreThan(tom, 1500))', '2000 > 1500'], 'conclusion-FOL': 'AllowsMoveWithPet(tom, fluffy)'}
+{'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowsPets(x))', '∀x (RentApartmentInManagedBuilding(x) → RequiresDeposit(x))', '∀x (SecurityDeposit(x) ⊕ RentMonth(x))', 'Fluffy(cat(tom)) → cat(tom) ∧ Fluffy(tom)', '∀x (Cat(x) → Pet(x))', 'ManagedBuilding(oliveGarden)', 'RentMonth(oliveGarden, 2000)', '(RentApartmentInManagedBuilding(tom) ↔ AllowsMoveWithPet(tom, fluffy) ∧ SecurityDepositNoMoreThan(tom, 1500))', '2000 > 1500'], 'conclusion-FOL': 'AllowsMoveWithPet(tom, fluffy)'}
+{'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowsPets(x))', '∀x (RentApartmentInManagedBuilding(x) → RequiresDeposit(x))', '∀x (SecurityDeposit(x) ⊕ RentMonth(x))', 'Fluffy(tom) → cat(tom) ∧ Fluffy(tom)', '∀x (Cat(x) → Pet(x))', 'ManagedBuilding(oliveGarden)', 'RentMonth(oliveGarden, 2000)', '(RentApartmentInManagedBuilding(tom) ↔ AllowsMoveWithPet(tom, fluffy) ∧ SecurityDepositNoMoreThan(tom, 1500))', '2000 > 1500'], 'conclusion-FOL': 'AllowsMoveWithPet(tom, fluffy)'}
+[94] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowedPets(x))', '∀x (RentApartmentInManagedBuilding(x) → DepositRequired(x))', '∀x (DepositRequired(x) → (SecurityDeposit(x) ∧ OneMonthsRent(x)) ∨ SecurityDeposit(x) ∧ GreaterThan(SecurityDeposit(x), OneMonthsRent(x)))', 'Fluffy(cat(tom))', '∀x (Cat(x) → Pet(x))', 'ManagedBuilding(oliveGarden)', 'MonthlyRentAt(oliveGarden, 2000)', '(RentApartmentInManagedBuilding(tom) ↔ AllowedToMoveWithPet(tom, fluffy) ∧ SecurityDeposit(tom) ≤ 1500)', '2000 > 1500'], 'conclusion-FOL': 'SecurityDeposit(oliveGarden) = 2000 ∨ SecurityDeposit(oliveGarden) > 2000'}
+{'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowedPets(x))', '∀x (RentApartmentInManagedBuilding(x) → DepositRequired(x))', '∀x (DepositRequired(x) → ((SecurityDeposit(x) ∧ OneMonthsRent(x)) ∨ (SecurityDeposit(x) ∧ GreaterThan(SecurityDeposit(x), OneMonthsRent(x)))))', 'Fluffy(cat(tom))', '∀x (Cat(x) → Pet(x))', 'ManagedBuilding(oliveGarden)', 'MonthlyRentAt(oliveGarden, 2000)', '(RentApartmentInManagedBuilding(tom) ↔ AllowedToMoveWithPet(tom, fluffy) ∧ SecurityDeposit(tom) ≤ 1500)', '2000 > 1500'], 'conclusion-FOL': 'SecurityDeposit(oliveGarden) = 2000 ∨ SecurityDeposit(oliveGarden) > 2000'}
+{'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowedPets(x))', '∀x (RentApartmentInManagedBuilding(x) → DepositRequired(x))', '∀x (DepositRequired(x) → ((SecurityDeposit(x) ∧ OneMonthsRent(x)) ∨ (SecurityDeposit(x) ∧ GreaterThan(SecurityDeposit(x), OneMonthsRent(x)))))', 'Fluffy(cat(tom))', '∀x (Cat(x) → Pet(x))', 'ManagedBuilding(oliveGarden)', 'MonthlyRentAt(oliveGarden, 2000)', '(RentApartmentInManagedBuilding(tom) ↔ AllowedToMoveWithPet(tom, fluffy) ∧ SecurityDeposit(tom) ≤ 1500)', '2000 > 1500'], 'conclusion-FOL': 'SecurityDeposit(oliveGarden) = 2000 ∨ SecurityDeposit(oliveGarden) > 2000'}
+[95] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[96] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[97] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[98] Pred: True       | Gold: True
+=== parsing successfully ===
+[99] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[100] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[101] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[102] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[103] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[104] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['costs(gre, usd205)', '∀x (proves(x, economicHardship) → providesFinancialAid(ets, x))', 'economicHardship(x) ↔ difficultyCausedByLackOfMoneyOrResources(x)', 'livesInSingleParentFamily(tom)', 'unemployedForMoreThanAYear(dad(tom))'], 'conclusion-FOL': 'proves(tom, economicHardship) → providesFinancialAid(ets, tom)'}
+{'premises-FOL': ['costs(gre, usd205)', '∀x (proves(x, economicHardship) → providesFinancialAid(ets, x))', 'economicHardship(x) ↔ difficultyCausedByLackOfMoneyOrResources(x)', 'livesInSingleParentFamily(tom)', 'unemployedForMoreThanAYear(dad(tom))'], 'conclusion-FOL': 'proves(tom, economicHardship) → providesFinancialAid(ets, tom)'}
+{'premises-FOL': ['costs(gre, usd205)', '∀x (proves(x, economicHardship) → providesFinancialAid(ets, x))', 'economicHardship(x) ↔ difficultyCausedByLackOfMoneyOrResources(x)', 'livesInSingleParentFamily(tom)', 'unemployedForMoreThanAYear(dad(tom))'], 'conclusion-FOL': 'proves(tom, economicHardship) → providesFinancialAid(ets, tom)'}
+[105] Pred: Uncertain  | Gold: True
+Parser error is not in JSON format: 'NoneType' object is not subscriptable
+[106] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['cost(gre_test, us_dollars(205))', '∀x (gre_applicant(x) ∧ proves_economic_hardship(x) → financial_aid_available_for_gre(x))', 'economic_hardship(x) ↔ difficulty_caused_by_lack_of_money_or_resources(x)', 'lives_in_single_parent_family(tom)', 'unemployed(dad_tom) ∧ duration_unemployment(dad_tom, more_than_a_year)'], 'conclusion-FOL': '¬financial_aid_available_for_gre(gre_test)'}
+{'premises-FOL': ['cost(gre_test, us_dollars(205))', '∀x (gre_applicant(x) ∧ proves_economic_hardship(x) → financial_aid_available_for_gre(x))', 'economic_hardship(x) ↔ difficulty_caused_by_lack_of_money_or_resources(x)', 'lives_in_single_parent_family(tom)', 'unemployed(dad_tom) ∧ duration_unemployment(dad_tom, more_than_a_year)'], 'conclusion-FOL': '¬financial_aid_available_for_gre(gre_test)'}
+{'premises-FOL': ['cost(gre_test, us_dollars(205))', '∀x (gre_applicant(x) ∧ proves_economic_hardship(x) → financial_aid_available_for_gre(x))', 'economic_hardship(x) ↔ difficulty_caused_by_lack_of_money_or_resources(x)', 'lives_in_single_parent_family(tom)', 'unemployed(dad_tom) ∧ duration_unemployment(dad_tom, more_than_a_year)'], 'conclusion-FOL': '¬financial_aid_available_for_gre(gre_test)'}
+[107] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[108] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[109] Pred: False      | Gold: False
+=== parsing successfully ===
+[110] Pred: False      | Gold: True
+=== parsing successfully ===
+[111] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[112] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[113] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[114] Pred: False      | Gold: False
+{'premises-FOL': ['∀x ∀y (Man(x) ∧ Man(y) ∧ TallerThan(x, y) → CanBlock(x, y))', 'Man(michael) ∧ ∀z (TallerThan(michael, z) ∨ michael = z)\n\nFixing the syntax error by removing the invalid equality symbol:\n\nMan(michael) ∧ ∀z (TallerThan(michael, z))', '∀x ∀y ∀z ((TallerThan(x, y) ∧ TallerThan(y, z)) → TallerThan(x, z))', 'Man(peter) ∧ TallerThan(peter, michael)', '∀x (CanBlock(michael, x) ↔ (¬JumpsWhenShooting(x)))', '¬CanBlock(michael, windy)', '∀x ((Shooter(x) ∧ JumpsWhenShooting(x)) → GreatShooter(x))'], 'conclusion-FOL': "∃y (Man(y) ∧ TallerThan(y, peter) ∧ y ∈ michael's class)"}
+{'premises-FOL': ['∀x ∀y (Man(x) ∧ Man(y) ∧ TallerThan(x, y) → CanBlock(x, y))', 'Man(michael) ∧ ∀z TallerThan(michael, z)', '∀x ∀y ∀z ((TallerThan(x, y) ∧ TallerThan(y, z)) → TallerThan(x, z))', 'Man(peter) ∧ TallerThan(peter, michael)', '∀x (CanBlock(michael, x) ↔ (¬JumpsWhenShooting(x)))', '¬CanBlock(michael, windy)', '∀x ((Shooter(x) ∧ JumpsWhenShooting(x)) → GreatShooter(x))'], 'conclusion-FOL': "∃y (Man(y) ∧ TallerThan(y, peter) ∧ y ∈ michael's class)"}
+[115] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['∀u ∀v (Man(u) ∧ Man(v) ∧ TallerThan(u, v) → CanBlock(u, v))', '∃x (Man(x) ∧ ∀y (Man(y) → (TallerThan(x, y) ∨ x = y)) ∧ Name(x, michael))  \n\nCorrected to:\n\n∃x (Man(x) ∧ ∀y (Man(y) → (TallerThan(x, y) ∨ x=y)) ∧ Name(x, michael))', '∀u ∀v ∀w ((TallerThan(u, v) ∧ TallerThan(v, w)) → TallerThan(u, w))', '∃x (Man(x) ∧ Name(x, peter) ∧ TallerThan(x, michael))', '∀u ∀v (Man(u) ∧ CanBlock(u, v) ∧ ¬JumpsWhenShooting(v) → CanBlock(u, v))', '¬CanBlock(michael, windy)', '∀x (Shooter(x) ∧ JumpsWhenShooting(x) → GreatShooter(x))'], 'conclusion-FOL': 'GreatShooter(windy)'}
+{'premises-FOL': ['∀u ∀v (Man(u) ∧ Man(v) ∧ TallerThan(u, v) → CanBlock(u, v))', '∃x (Man(x) ∧ ∀y (Man(y) → (TallerThan(x, y) ∨ x=y)) ∧ Name(x, michael))', '∀u ∀v ∀w ((TallerThan(u, v) ∧ TallerThan(v, w)) → TallerThan(u, w))', '∃x (Man(x) ∧ Name(x, peter) ∧ TallerThan(x, michael))', '∀u ∀v (Man(u) ∧ CanBlock(u, v) ∧ ¬JumpsWhenShooting(v) → CanBlock(u, v))', '¬CanBlock(michael, windy)', '∀x (Shooter(x) ∧ JumpsWhenShooting(x) → GreatShooter(x))'], 'conclusion-FOL': 'GreatShooter(windy)'}
+{'premises-FOL': ['∀u ∀v (Man(u) ∧ Man(v) ∧ TallerThan(u, v) → CanBlock(u, v))', '∃x (Man(x) ∧ ∀y (Man(y) → (TallerThan(x, y) ∨ x=y)) ∧ Name(x, michael))  \n\nCorrected to:\n\n∃x (Man(x) ∧ ∀y (Man(y) → (TallerThan(x, y) ∨ x=y)) ∧ Name(michael, x))', '∀u ∀v ∀w ((TallerThan(u, v) ∧ TallerThan(v, w)) → TallerThan(u, w))', '∃x (Man(x) ∧ Name(x, peter) ∧ TallerThan(x, michael))', '∀u ∀v (Man(u) ∧ CanBlock(u, v) ∧ ¬JumpsWhenShooting(v) → CanBlock(u, v))', '¬CanBlock(michael, windy)', '∀x (Shooter(x) ∧ JumpsWhenShooting(x) → GreatShooter(x))'], 'conclusion-FOL': 'GreatShooter(windy)'}
+[116] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[117] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[118] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[119] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[120] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[121] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[122] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[123] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[124] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[125] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[126] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[127] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[128] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[129] Pred: True       | Gold: True
+=== parsing successfully ===
+[130] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[131] Pred: True       | Gold: True
+=== parsing successfully ===
+[132] Pred: True       | Gold: True
+=== parsing successfully ===
+[133] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[134] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[135] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[136] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[137] Pred: False      | Gold: False
+{'premises-FOL': ['∀x (MachineLearning(x) → (SupervisedLearning(x) ∨ UnsupervisedLearning(x) ∨ ReinforcementLearning(x)))', '∀x (UnsupervisedLearning(x) → ¬LabelledDataRequired(x))', '∃y (TextSummarizationModel(y) ∧ TrainedWithML(y))', '¬ReinforcementLearning(TrainedWithML(z))', '∀w (TrainedWithML(w) → LabelledDataRequired(w))'], 'conclusion-FOL': 'SupervisedLearning(TrainedWithML(TextSummarizationModel(u)))'}
+{'premises-FOL': ['∀x (MachineLearning(x) → (SupervisedLearning(x) ∨ UnsupervisedLearning(x) ∨ ReinforcementLearning(x)))', '∀x (UnsupervisedLearning(x) → ¬LabelledDataRequired(x))', '∃y (TextSummarizationModel(y) ∧ TrainedWithML(y))', '¬TrainedWithML(z) ∧ ¬ReinforcementLearning(z)', '∀w (TrainedWithML(w) → LabelledDataRequired(w))'], 'conclusion-FOL': 'SupervisedLearning(TrainedWithML(TextSummarizationModel(u)))'}
+[138] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[139] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[140] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[141] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[142] Pred: True       | Gold: True
+=== parsing successfully ===
+[143] Pred: True       | Gold: True
+{'premises-FOL': ['∀x (BreedingBack(x) → ArtificialSelection(x))', 'HeckCattleWereBredBackIn1920s ∧ ResembleAurochs(HeckCattle)', 'Animal(HeckCattle)', 'Animal(Aurochs)', '∃y ∃z (ToBeBreedingBack(y) ∧ Extinct(z) ∧ Resemble(y, z))'], 'conclusion-FOL': 'Extinct(Aurochs)'}
+{'premises-FOL': ['∀x (BreedingBack(x) → ArtificialSelection(x))', 'HeckCattleWereBredBackIn1920s ∧ ResembleAurochs(HeckCattle)', 'Animal(HeckCattle)', 'Animal(Aurochs)', '∃y ∃z (ToBeBreedingBack(y) ∧ Extinct(z) ∧ Resemble(y, z))'], 'conclusion-FOL': 'Extinct(Aurochs)'}
+{'premises-FOL': ['∀x (BreedingBack(x) → ArtificialSelection(x))', 'HeckCattleWereBredBackIn1920s ∧ ResembleAurochs(HeckCattle)', 'Animal(HeckCattle)', 'Animal(Aurochs)', '∃y ∃z (ToBeBreedingBack(y) ∧ Extinct(z) ∧ Resemble(y, z))'], 'conclusion-FOL': 'Extinct(Aurochs)'}
+[144] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∀x (Student(x) → Human(x))', '∀x (Studies(x) → Student(x))', '∀x (Studies(x) ⊕ Teaches(x))', '∀x (Young(x) → ¬Teaches(x))', '¬(Teaches(jerry) ∨ Manager(jerry))', '∀r (Young(r) ∨ Student(r))'], 'conclusion-FOL': 'Young(jerry)'}
+=== parsing successfully ===
+[145] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∀x (Student(x) → Human(x))', '∀x (Studies(x) → Student(x))', '∀x (Studies(x) ⊕ Teaches(x))', '∀x (Young(x) → ¬Teaches(x))', '¬(Teaches(jerry) ∨ Manager(jerry))', '∀y (young(y) ∨ Student(y))'], 'conclusion-FOL': '¬Young(jerry)'}
+=== parsing successfully ===
+[146] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[147] Pred: True       | Gold: True
+=== parsing successfully ===
+[148] Pred: True       | Gold: True
+=== parsing successfully ===
+[149] Pred: False      | Gold: False
+=== parsing successfully ===
+[150] Pred: True       | Gold: True
+=== parsing successfully ===
+[151] Pred: True       | Gold: Uncertain
+=== parsing successfully ===
+[152] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[153] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[154] Pred: False      | Gold: False
+=== parsing successfully ===
+[155] Pred: True       | Gold: True
+=== parsing successfully ===
+[156] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[157] Pred: False      | Gold: False
+=== parsing successfully ===
+[158] Pred: True       | Gold: True
+=== parsing successfully ===
+[159] Pred: True       | Gold: True
+=== parsing successfully ===
+[160] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[161] Pred: True       | Gold: True
+=== parsing successfully ===
+[162] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[163] Pred: False      | Gold: False
+[164] Pred: Uncertain  | Gold: Uncertain
+[165] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[166] Pred: True       | Gold: True
+=== parsing successfully ===
+[167] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[168] Pred: True       | Gold: True
+=== parsing successfully ===
+[169] Pred: False      | Gold: False
+=== parsing successfully ===
+[170] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileductcancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) → ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalcancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(ColorectalCancerIsBileDuctCancer ∨ Cholangiocarcinoma(colorectalcancer)) → (ColorectalCancerIsBileDuctCancer ∧ MildFlu(colorectalcancer))'}
+{'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileductcancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) → ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalcancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(ColorectalCancerIsBileDuctCancer ∨ Cholangiocarcinoma(colorectalcancer)) → (ColorectalCancerIsBileDuctCancer ∧ MildFlu(colorectalcancer))'}
+{'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileductcancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) → ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalcancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(ColorectalCancerIsBileDuctCancer ∨ Cholangiocarcinoma(colorectalcancer)) → (ColorectalCancerIsBileDuctCancer ∧ MildFlu(colorectalcancer))'}
+[171] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[172] Pred: True       | Gold: False
+=== parsing successfully ===
+[173] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[174] Pred: False      | Gold: False
+=== parsing successfully ===
+[175] Pred: True       | Gold: True
+=== parsing successfully ===
+[176] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[177] Pred: False      | Gold: False
+=== parsing successfully ===
+[178] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[179] Pred: False      | Gold: False
+{'premises-FOL': ['FliesTo(susan, lga)', '¬Departure(x) ∧ ¬Arrival(x)', 'FliesFrom(john, lga)'], 'conclusion-FOL': 'FliesFrom(susan, lga)'}
+=== parsing successfully ===
+[180] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['Flies(susan, lga)', '∀x ∀y ∀z (Departs(x, y) ∧ Arrives(x, z) → ¬(z = y))', 'Flies(john, lga)'], 'conclusion-FOL': '(Arrives(john, lga))'}
+{'premises-FOL': ['Flies(susan, lga)', '∀x ∀y ∀z (Departs(x, y) ∧ Arrives(x, z) → ¬Equal(z, y))', 'Flies(john, lga)'], 'conclusion-FOL': '(Arrives(john, lga))'}
+=== parsing successfully ===
+[181] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[182] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[183] Pred: Uncertain  | Gold: True
+=== parsing successfully ===
+[184] Pred: True       | Gold: False
+{'premises-FOL': ['¬Podcast(x) ∨ ¬Novel(x)', 'BornInAmericanCity(x) → American(x)', '(Book(x) ∧ Novel(x) ∧ WrittenBy(x, y)) → NovelWriter(y)', 'American(dani_shapiro) ∧ Writer(dani_shapiro)', 'WrittenBy(family_history, dani_shapiro)', 'Novel(family_history) ∧ YearWritten(family_history, y2003)', 'Podcast(family_secrets) ∧ CreatedBy(family_secrets, dani_shapiro)', 'AmericanCity(boston)'], 'conclusion-FOL': '(Book(family_history) ∧ Novel(family_history)) → NovelWriter(dani_shapiro)'}
+=== parsing successfully ===
+[185] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['¬Podcast(x) ∨ ¬Novel(x)', 'BornInAmericanCity(x) → American(x)', '(Book(x) ∧ Novel(x) ∧ WrittenBy(x, y)) → NovelWriter(y)', 'American(dani_shapiro) ∧ Writer(dani_shapiro)', 'WrittenBy(family_history, dani_shapiro)', 'Novel(family_history) ∧ YearWritten(family_history, y2003)', 'Podcast(family_secrets) ∧ CreatedBy(family_secrets, dani_shapiro)', 'AmericanCity(boston)'], 'conclusion-FOL': 'Novel(family_secrets)'}
+=== parsing successfully ===
+[186] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['¬Podcast(x) → ¬Novel(x)', 'BornInAmericanCity(x) → American(x)', '(Book(x) ∧ Novel(x) ∧ WrittenBy(x, y)) → Novelist(y)', 'Writer(dani_shapiro) ∧ American(dani_shapiro)', 'WrittenBy(family_history, dani_shapiro)', 'Novel(family_history) ∧ YearWritten(family_history, y2003)', 'Podcast(family_secrets) ∧ CreatedBy(family_secrets, dani_shapiro)', 'AmericanCity(boston)'], 'conclusion-FOL': 'BornInAmericanCity(dani_shapiro) ↔ American(dani_shapiro) ∧ BornIn(boston, dani_shapiro)'}
+=== parsing successfully ===
+[187] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[188] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[189] Pred: True       | Gold: True
+=== parsing successfully ===
+[190] Pred: False      | Gold: False
+=== parsing successfully ===
+[191] Pred: False      | Gold: False
+=== parsing successfully ===
+[192] Pred: False      | Gold: False
+=== parsing successfully ===
+[193] Pred: False      | Gold: False
+=== parsing successfully ===
+[194] Pred: False      | Gold: False
+Parser error is not in JSON format: b'index out of bounds'
+[195] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[196] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[197] Pred: False      | Gold: False
+=== parsing successfully ===
+[198] Pred: True       | Gold: True
+{'premises-FOL': ['Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)', 'FootballPlayer(ailton_silva) ∧ LoanedTo(ailton_silva, braga)', 'BrazillianFootballer(ailton_silva) ∧ PlaysFor(ailton_silva, nautico)', 'FootballClub(braga) ∧ FootballClub(nautico)', 'FootballClub(fluminense)'], 'conclusion-FOL': '∀x (PlaysFor(x, nautico) → ¬Brazillian(x))'}
+{'premises-FOL': ['Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)', 'FootballPlayer(ailton_silva) ∧ LoanedTo(ailton_silva, braga)', 'BrazillianFootballer(ailton_silva) ∧ PlaysFor(ailton_silva, nautico)', 'FootballClub(braga) ∧ FootballClub(nautico)', 'FootballClub(fluminense)'], 'conclusion-FOL': '∀x (PlaysFor(x, nautico) → ¬Brazillian(x))'}
+{'premises-FOL': ['Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)', 'FootballPlayer(ailton_silva) ∧ LoanedTo(ailton_silva, braga)', 'BrazillianFootballer(ailton_silva) ∧ PlaysFor(ailton_silva, nautico)', 'FootballClub(braga) ∧ FootballClub(nautico)', 'FootballClub(fluminense)'], 'conclusion-FOL': '∀x (PlaysFor(x, nautico) → ¬Brazillian(x))'}
+[199] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)', 'FootballPlayer(ailton_silva) ∧ LoanedTo(ailton_silva, braga)', 'Brazillian(ailton_silva) ∧ Footballer(ailton_silva) ∧ PlaysFor(ailton_silva, nautico)', 'FootballClub(braga) ∧ FootballClub(nautico) ∧ FootballClub(fluminense)'], 'conclusion-FOL': '¬PlaysFor(ailton_silva, x)'}
+{'premises-FOL': ['Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)', 'FootballPlayer(ailton_silva) ∧ LoanedTo(ailton_silva, braga)', 'Brazillian(ailton_silva) ∧ Footballer(ailton_silva) ∧ PlaysFor(ailton_silva, nautico)', 'FootballClub(braga) ∧ FootballClub(nautico) ∧ FootballClub(fluminense)'], 'conclusion-FOL': '¬PlaysFor(ailton_silva, x)'}
+{'premises-FOL': ['Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)', 'FootballPlayer(ailton_silva) ∧ LoanedTo(ailton_silva, braga)', 'Brazillian(ailton_silva) ∧ Footballer(ailton_silva) ∧ PlaysFor(ailton_silva, nautico)', 'FootballClub(braga) ∧ FootballClub(nautico) ∧ FootballClub(fluminense)'], 'conclusion-FOL': '¬PlaysFor(ailton_silva, x)'}
+[200] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)', 'FootballPlayer(ailton_silva) ∧ LoanedTo(ailton_silva, braga)', 'Brazillian(ailton_silva) ∧ Footballer(ailton_silva) ∧ PlaysFor(ailton_silva, nautico)', 'FootballClub(braga) ∧ FootballClub(nautico) ∧ FootballClub(fluminense)'], 'conclusion-FOL': '¬LoanedTo(ailton_silva, braga)'}
+{'premises-FOL': ['Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)', 'FootballPlayer(ailton_silva) ∧ LoanedTo(ailton_silva, braga)', 'Brazillian(ailton_silva) ∧ Footballer(ailton_silva) ∧ PlaysFor(ailton_silva, nautico)', 'FootballClub(braga) ∧ FootballClub(nautico) ∧ FootballClub(fluminense)'], 'conclusion-FOL': '¬LoanedTo(ailton_silva, braga)'}
+{'premises-FOL': ['Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)', 'FootballPlayer(ailton_silva) ∧ LoanedTo(ailton_silva, braga)', 'Brazillian(ailton_silva) ∧ Footballer(ailton_silva) ∧ PlaysFor(ailton_silva, nautico)', 'FootballClub(braga) ∧ FootballClub(nautico) ∧ FootballClub(fluminense)'], 'conclusion-FOL': '¬LoanedTo(ailton_silva, braga)'}
+[201] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)', 'FootballPlayer(ailton_silva) ∧ LoanedTo(ailton_silva, braga)', 'BrazillianFootballer(ailton_silva) ∧ PlaysFor(ailton_silva, nautico)', 'FootballClub(braga) ∧ FootballClub(nautico) ∧ FootballClub(fluminense)'], 'conclusion-FOL': 'PlaysFor(ailton_silva, fluminense)'}
+{'premises-FOL': ['Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)', 'FootballPlayer(ailton_silva) ∧ LoanedTo(ailton_silva, braga)', 'BrazillianFootballer(ailton_silva) ∧ PlaysFor(ailton_silva, nautico)', 'FootballClub(braga) ∧ FootballClub(nautico) ∧ FootballClub(fluminense)'], 'conclusion-FOL': 'PlaysFor(ailton_silva, fluminense)'}
+{'premises-FOL': ['Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)', 'FootballPlayer(ailton_silva) ∧ LoanedTo(ailton_silva, braga)', 'BrazillianFootballer(ailton_silva) ∧ PlaysFor(ailton_silva, nautico)', 'FootballClub(braga) ∧ FootballClub(nautico) ∧ FootballClub(fluminense)'], 'conclusion-FOL': 'PlaysFor(ailton_silva, fluminense)'}
+[202] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)', 'FootballPlayer(ailton_silva) ∧ LoanedTo(ailton_silva, braga)', 'Brazillian(ailton_silva) ∧ Footballer(ailton_silva) ∧ PlaysFor(ailton_silva, nautico)', 'FootballClub(braga) ∧ FootballClub(nautico) ∧ FootballClub(fluminense)'], 'conclusion-FOL': 'LoanedTo(ailton_silva, braga)'}
+{'premises-FOL': ['Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)', 'FootballPlayer(ailton_silva) ∧ LoanedTo(ailton_silva, braga)', 'Brazillian(ailton_silva) ∧ Footballer(ailton_silva) ∧ PlaysFor(ailton_silva, nautico)', 'FootballClub(braga) ∧ FootballClub(nautico) ∧ FootballClub(fluminense)'], 'conclusion-FOL': 'LoanedTo(ailton_silva, braga)'}
+{'premises-FOL': ['Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)', 'FootballPlayer(ailton_silva) ∧ LoanedTo(ailton_silva, braga)', 'Brazillian(ailton_silva) ∧ Footballer(ailton_silva) ∧ PlaysFor(ailton_silva, nautico)', 'FootballClub(braga) ∧ FootballClub(nautico) ∧ FootballClub(fluminense)'], 'conclusion-FOL': 'LoanedTo(ailton_silva, braga)'}
+[203] Pred: Uncertain  | Gold: Uncertain
+
+Accuracy: 59.80%
+
+Accuracy: 111/170 = 0.6529
+Not ignored samples due to errors: 34

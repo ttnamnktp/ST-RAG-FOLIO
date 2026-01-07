@@ -1,0 +1,1388 @@
+(folio) Nam@MacBook-Air-4 FOLIO % python run_translate_story_fix.py
+Loaded embedding model: BAAI/bge-small-en-v1.5
+Loading KB from data/translation-kb.json ...
+Loading cached story embeddings...
+28 stories ready.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+        - Avoid using `tokenizers` before the fork if possible
+        - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+        - Avoid using `tokenizers` before the fork if possible
+        - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+=========== FOL ===========
+{'premises-FOL': ['∀x (PerformInTalentShowsOften(x) → (AttendSchoolEvents(x) ∧ EngagedWithSchoolEvents(x)))', '∀x (PerformInTalentShowsOften(x) ⊕ (InactiveAndDisinterestedCommunityMember(x) ∧ ChaperoneHighSchoolDances(x)))', '∀x (ChaperoneHighSchoolDances(x) → ¬StudentAttendSchool(x))', '∀x ((InactiveAndDisinterestedCommunityMember(x) ∧ ChaperoneHighSchoolDances(x)) → StudentAttendSchool(x))', '∀x ((YoungChildOrTeenager(x) ∧ WishFurtherAcademicCareer(x)) → StudentAttendSchool(x))'], 'conclusion-FOL': '(Bonnie ⊕ (¬(AttendSchoolEvents(bonnie) ∧ EngagedWithSchoolEvents(bonnie)) ∧ ¬StudentAttendSchool(bonnie)))'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got XOR (\u2295)", "error_line": "(Bonnie \u2295 (\u00ac(AttendSchoolEvents(bonnie) \u2227 EngagedWithSchoolEvents(bonnie)) \u2227 \u00acStudentAttendSchool(bonnie)))", "pointer": "        ^"}
+[INFO] Fixed conclusion-FOL
+=== Parsing successfully ===
+[0] Pred: False      | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (PerformTalentShowOften(x) → (AttendEvents(x) ∧ EngagedWithSchoolEvents(x)))', '(PerformTalentShowOften(x) ⊕ (InactiveCommunityMember(x) ∧ DisinterestedCommunityMember(x)))', 'ChaperoneHighSchoolDances(x) → ¬StudentAttendingSchool(x)', '∀x ((InactiveCommunityMember(x) ∧ DisinterestedCommunityMember(x)) → ChaperoneHighSchoolDances(x))', '∀x (YoungChildTeenagerWishingFurtherAcademicCareerAndOpportunities(x) → StudentAttendingSchool(x))'], 'conclusion-FOL': '(Bonnie ⊕ ¬(AttendEvents(bonnie) ∧ EngagedWithSchoolEvents(bonnie))) ↔ (StudentAttendingSchool(bonnie) ∨ InactiveCommunityMember(bonnie))'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got XOR (\u2295)", "error_line": "(Bonnie \u2295 \u00ac(AttendEvents(bonnie) \u2227 EngagedWithSchoolEvents(bonnie))) \u2194 (StudentAttendingSchool(bonnie) \u2228 InactiveCommunityMember(bonnie))", "pointer": "        ^"}
+[INFO] Fixed conclusion-FOL
+[Attempt 2] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got AND (\u2227)", "error_line": "(Bonnie \u2227 (\u2295 (AttendEvents(bonnie) \u2227 EngagedWithSchoolEvents(bonnie)), \u00ac(AttendEvents(bonnie) \u2227 EngagedWithSchoolEvents(bonnie)))) \u2194 (StudentAttendingSchool(bonnie) \u2228 InactiveCommunityMember(bonnie))", "pointer": "        ^"}
+[INFO] Fixed conclusion-FOL
+[Attempt 3] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got AND (\u2227)", "error_line": "(Bonnie \u2227 (\u2295 ((AttendEvents(bonnie) \u2227 EngagedWithSchoolEvents(bonnie)), \u00ac(AttendEvents(bonnie) \u2227 EngagedWithSchoolEvents(bonnie))))) \u2194 (StudentAttendingSchool(bonnie) \u2228 InactiveCommunityMember(bonnie))", "pointer": "        ^"}
+[INFO] Fixed conclusion-FOL
+[Attempt 4] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got AND (\u2227)", "error_line": "(Bonnie \u2227 (\u2295 ((AttendEvents(bonnie) \u2227 EngagedWithSchoolEvents(bonnie)), \u00ac(AttendEvents(bonnie) \u2227 EngagedWithSchoolEvents(bonnie))))) \u2194 (StudentAttendingSchool(bonnie) \u2228 InactiveCommunityMember(bonnie))", "pointer": "        ^"}
+[INFO] Fixed conclusion-FOL
+[Attempt 5] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got AND (\u2227)", "error_line": "(Bonnie \u2227 (\u2295 ((AttendEvents(bonnie) \u2227 EngagedWithSchoolEvents(bonnie)), \u00ac(AttendEvents(bonnie) \u2227 EngagedWithSchoolEvents(bonnie))))) \u2194 (StudentAttendingSchool(bonnie) \u2228 InactiveCommunityMember(bonnie))", "pointer": "        ^"}
+[INFO] Fixed conclusion-FOL
+[Attempt 6] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got AND (\u2227)", "error_line": "(Bonnie \u2227 (\u2295 ((AttendEvents(bonnie) \u2227 EngagedWithSchoolEvents(bonnie)), \u00ac(AttendEvents(bonnie) \u2227 EngagedWithSchoolEvents(bonnie))))) \u2194 (StudentAttendingSchool(bonnie) \u2228 InactiveCommunityMember(bonnie))", "pointer": "        ^"}
+[INFO] Fixed conclusion-FOL
+[WARN] Maximum attempts reached, returning 'Uncertain'
+[1] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (PerformTalentShowOften(x) → (AttendSchoolEvents(x) ∧ EngagedWithSchoolEvents(x)))', '∀x (PerformTalentShowOften(x) ⊕ (InactiveCommunityMember(x) ∧ DisinterestedCommunityMember(x)))', '∀x (ChaperoneHighSchoolDances(x) → ¬StudentAttendsSchool(x))', '∀x ((InactiveCommunityMember(x) ∧ DisinterestedCommunityMember(x)) → ChaperoneHighSchoolDances(x))', '∀x (((YoungChildTeenager(x) ∧ WishFurtherAcademicCareerEducationOpportunities(x))) → StudentAttendsSchool(x))'], 'conclusion-FOL': '(ChaperoneHighSchoolDances(bonnie) ∨ (¬ChaperoneHighSchoolDances(bonnie) ∧ PerformTalentShowOften(bonnie))) → ((YoungChildTeenager(bonnie) ∧ WishFurtherAcademicCareerEducationOpportunities(bonnie)) ∧ (InactiveCommunityMember(bonnie) ∧ DisinterestedCommunityMember(bonnie)))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[2] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Employee(x) ∧ MeetingWithCustomer(x) → AppearInCompanyToday(x))', '∀x (LunchInCompany(x) → MeetingWithCustomer(x))', '∀x (Employee(x) → LunchInCompany(x) ⊕ LunchAtHome(x))', '∀x (LunchAtHome(x) → RemoteWorkFromHome(x))', '∀x ((Employee(x) ∧ InOtherCountries(x)) → RemoteWorkFromHome(x))', '∀x (Manager(x) → ¬RemoteWorkFromHome(x))', '(Manager(james) ∧ AppearInCompanyToday(james)) ⊕ (¬Manager(james) ∧ ¬AppearInCompanyToday(james))'], 'conclusion-FOL': 'LunchInCompany(james)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[3] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Employee(x) ∧ MeetingWithCustomer(x) → AppearInCompanyToday(x))', '∀x (LunchInCompany(x) → MeetingWithCustomer(x))', '∀x (Employee(x) → LunchInCompany(x) ⊕ LunchAtHome(x))', '∀x (LunchAtHome(x) → RemoteWorkFromHome(x))', '∀x ((Employee(x) ∧ InOtherCountries(x)) → RemoteWorkFromHome(x))', '∀x (Manager(x) → ¬RemoteWorkFromHome(x))', '(Manager(james) ∧ AppearInCompanyToday(james)) ⊕ (¬Manager(james) ∧ ¬AppearInCompanyToday(james))'], 'conclusion-FOL': '¬LunchInCompany(james)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[4] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Employee(x) ∧ MeetingWithCustomer(x) → AppearInCompanyToday(x))', '∀x (LunchInCompany(x) → MeetingWithCustomer(x))', '∀x (Employee(x) → LunchInCompany(x) ⊕ LunchAtHome(x))', '∀x (LunchAtHome(x) → RemoteWorkFromHome(x))', '∀x (OtherCountries(x) → RemoteWorkFromHome(x))', '¬∃x (Manager(x) ∧ RemoteWorkFromHome(x))', '(JamesIsManager ⊕ ¬JamesIsManager) ↔ ((JamesIsManager ∧ AppearInCompanyToday(James)) ⊕ (¬JamesIsManager ∧ ¬AppearInCompanyToday(James)))'], 'conclusion-FOL': '(JamesIsManager ∨ OtherCountries(James)) → ((LunchAtHome(James) ∧ RemoteWorkFromHome(James)) ⊕ (¬LunchAtHome(James) ∧ ¬RemoteWorkFromHome(James)))'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 6, "error_msg": "Syntax error at line 1, column 17\nExpected LPAREN, got XOR (\u2295)", "error_line": "(JamesIsManager \u2295 \u00acJamesIsManager) \u2194 ((JamesIsManager \u2227 AppearInCompanyToday(James)) \u2295 (\u00acJamesIsManager \u2227 \u00acAppearInCompanyToday(James)))", "pointer": "                ^"}
+[INFO] Fixed premise-FOL at index 6
+Current FOL sample: {'premises-FOL': ['∀x (Employee(x) ∧ MeetingWithCustomer(x) → AppearInCompanyToday(x))', '∀x (LunchInCompany(x) → MeetingWithCustomer(x))', '∀x (Employee(x) → LunchInCompany(x) ⊕ LunchAtHome(x))', '∀x (LunchAtHome(x) → RemoteWorkFromHome(x))', '∀x (OtherCountries(x) → RemoteWorkFromHome(x))', '¬∃x (Manager(x) ∧ RemoteWorkFromHome(x))', '(Manager(James) ⊕ ¬Manager(James)) ↔ ((Manager(James) ∧ AppearInCompanyToday(James)) ⊕ (¬Manager(James) ∧ ¬AppearInCompanyToday(James)))'], 'conclusion-FOL': '(JamesIsManager ∨ OtherCountries(James)) → ((LunchAtHome(James) ∧ RemoteWorkFromHome(James)) ⊕ (¬LunchAtHome(James) ∧ ¬RemoteWorkFromHome(James)))'}
+[Attempt 2] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 17\nExpected LPAREN, got OR (\u2228)", "error_line": "(JamesIsManager \u2228 OtherCountries(James)) \u2192 ((LunchAtHome(James) \u2227 RemoteWorkFromHome(James)) \u2295 (\u00acLunchAtHome(James) \u2227 \u00acRemoteWorkFromHome(James)))", "pointer": "                ^"}
+[INFO] Fixed conclusion-FOL
+=== Parsing successfully ===
+[5] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Monkeypox(x) → InfectiousDisease(x))', '∀x (MonkeypoxVirus(x) → (∃y Animal(y) ∧ InfectedBy(y, x)))', '∀x (Human(x) → Mammal(x))', '∀x (Mammal(x) → Animal(x))', '∀x (Symptoms(Monkeypox(x), Fever(x)) ∧ Symptoms(Monkeypox(x), Headache(x)) ∧ Symptoms(Monkeypox(x), MusclePain(x)) ∧ Symptoms(Monkeypox(x), Tiredness(x)))', '∀x (Glu(x) → Tiredness(x))'], 'conclusion-FOL': '∃x Animal(x)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 4, "error_msg": "Syntax error at line 1, column 23\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x (Symptoms(Monkeypox(x), Fever(x)) \u2227 Symptoms(Monkeypox(x), Headache(x)) \u2227 Symptoms(Monkeypox(x), MusclePain(x)) \u2227 Symptoms(Monkeypox(x), Tiredness(x)))", "pointer": "                      ^"}
+[INFO] Fixed premise-FOL at index 4
+Current FOL sample: {'premises-FOL': ['∀x (Monkeypox(x) → InfectiousDisease(x))', '∀x (MonkeypoxVirus(x) → (∃y Animal(y) ∧ InfectedBy(y, x)))', '∀x (Human(x) → Mammal(x))', '∀x (Mammal(x) → Animal(x))', '∀x (Monkeypox(x) ∧ Symptoms(Fever(x)) ∧ Symptoms(Headache(x)) ∧ Symptoms(MusclePain(x)) ∧ Symptoms(Tiredness(x)))', '∀x (Glu(x) → Tiredness(x))'], 'conclusion-FOL': '∃x Animal(x)'}
+[Attempt 2] Failed: {"index": 4, "error_msg": "Syntax error at line 1, column 34\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x (Monkeypox(x) \u2227 Symptoms(Fever(x)) \u2227 Symptoms(Headache(x)) \u2227 Symptoms(MusclePain(x)) \u2227 Symptoms(Tiredness(x)))", "pointer": "                                 ^"}
+[INFO] Fixed premise-FOL at index 4
+Current FOL sample: {'premises-FOL': ['∀x (Monkeypox(x) → InfectiousDisease(x))', '∀x (MonkeypoxVirus(x) → (∃y Animal(y) ∧ InfectedBy(y, x)))', '∀x (Human(x) → Mammal(x))', '∀x (Mammal(x) → Animal(x))', '∀x (Monkeypox(x) ∧ Symptoms(fever) ∧ Symptoms(headache) ∧ Symptoms(musclePain) ∧ Symptoms(tiredness))', '∀x (Glu(x) → Tiredness(x))'], 'conclusion-FOL': '∃x Animal(x)'}
+=== Parsing successfully ===
+[6] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Monkeypox(x) → InfectiousDisease(x))', '∀x (MonkeypoxVirus(x) → (∃y Animal(y) ∧ InfectedBy(y, x)))', '∀x (Human(x) → Mammal(x))', '∀x (Mammal(x) → Animal(x))', '∀x (Symptoms(Monkeypox(x)) → (Fever(x) ∨ Headache(x) ∨ MusclePain(x) ∨ Tiredness(x)))', '∀x (Glu(x) → Tiredness(x))'], 'conclusion-FOL': '¬∃x Glu(x)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 4, "error_msg": "Syntax error at line 1, column 23\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x (Symptoms(Monkeypox(x)) \u2192 (Fever(x) \u2228 Headache(x) \u2228 MusclePain(x) \u2228 Tiredness(x)))", "pointer": "                      ^"}
+[INFO] Fixed premise-FOL at index 4
+Current FOL sample: {'premises-FOL': ['∀x (Monkeypox(x) → InfectiousDisease(x))', '∀x (MonkeypoxVirus(x) → (∃y Animal(y) ∧ InfectedBy(y, x)))', '∀x (Human(x) → Mammal(x))', '∀x (Mammal(x) → Animal(x))', '∀x (Monkeypox(x) → (Fever(x) ∨ Headache(x) ∨ MusclePain(x) ∨ Tiredness(x)))', '∀x (Glu(x) → Tiredness(x))'], 'conclusion-FOL': '¬∃x Glu(x)'}
+=== Parsing successfully ===
+[7] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Monkeypox(x) → InfectiousDisease(x))', '∀x (MonkeypoxVirus(x) → OccursInAnimals(x))', '∀x (Human(x) → Mammal(x))', '∀x (Mammal(x) → Animal(x))', '∀x (SymptomsOfMonkeypox(x) → (Fever(x) ∧ Headache(x) ∧ MusclePain(x) ∧ Tiredness(x)))', '∀x (GetsGlu(x) → Tiredness(x))'], 'conclusion-FOL': '∀x (SymptomsOfMonkeypox(x) → Coughing(x))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[8] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∃x (WildTurkey(x) ∧ EasternWildTurkey(x))', '∃x (WildTurkey(x) ∧ OsceolaWildTurkey(x))', '∃x (WildTurkey(x) ∧ GouldsWildTurkey(x))', '∃x (WildTurkey(x) ∧ MerriamsWildTurkey(x))', '∃x (WildTurkey(x) ∧ RioGrandeWildTurkey(x))', '∃x (WildTurkey(x) ∧ OcellatedWildTurkey(x))', '¬EasternWildTurkey(tom)', '¬OsceolaWildTurkey(tom)', '(GouldsWildTurkey(tom) ⊕ MerriamsWildTurkey(tom) ⊕ RioGrandeWildTurkey(tom)) → (¬GouldsWildTurkey(tom) ∧ ¬MerriamsWildTurkey(tom) ∧ ¬RioGrandeWildTurkey(tom))', 'WildTurkey(tom)'], 'conclusion-FOL': 'OcellatedWildTurkey(tom)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[9] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∃x (WildTurkey(x) ∧ EasternWildTurkey(x))', '∃x (WildTurkey(x) ∧ OsceolaWildTurkey(x))', '∃x (WildTurkey(x) ∧ GouldsWildTurkey(x))', '∃x (WildTurkey(x) ∧ MerriamsWildTurkey(x))', '∃x (WildTurkey(x) ∧ RioGrandeWildTurkey(x))', '∃x (WildTurkey(x) ∧ OcellatedWildTurkey(x))', '¬EasternWildTurkey(tom)', '¬OsceolaWildTurkey(tom)', '(GouldsWildTurkey(tom) ⊕ MerriamsWildTurkey(tom) ⊕ RioGrandeWildTurkey(tom)) → (¬GouldsWildTurkey(tom) ∧ ¬MerriamsWildTurkey(tom) ∧ ¬RioGrandeWildTurkey(tom))', 'WildTurkey(tom)'], 'conclusion-FOL': 'EasternWildTurkey(tom)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[10] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∃x (WildTurkey(x) ∧ EasternWildTurkey(x))', '∃x (WildTurkey(x) ∧ OsceolaWildTurkey(x))', '∃x (WildTurkey(x) ∧ GouldsWildTurkey(x))', '∃x (WildTurkey(x) ∧ MerriamsWildTurkey(x))', '∃x (WildTurkey(x) ∧ RioGrandeWildTurkey(x))', '∃x (WildTurkey(x) ∧ OcellatedWildTurkey(x))', '¬EasternWildTurkey(tom)', '¬OsceolaWildTurkey(tom)', '(GouldsWildTurkey(tom) ⊕ MerriamsWildTurkey(tom) ⊕ RioGrandeWildTurkey(tom)) → ¬(GouldsWildTurkey(tom) ∨ MerriamsWildTurkey(tom) ∨ RioGrandeWildTurkey(tom))', 'WildTurkey(tom)'], 'conclusion-FOL': 'WildTurkey(joey)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[11] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∃x (JapaneseGameCompany(x) ∧ CreatedBy(x, theLegendOfZelda))', '∀y (InTop10List(y) ↔ ∃z (JapaneseGameCompany(z) ∧ MadeBy(y, z)))', '∀w (SellsMoreThanOneMillion(w) → InTop10List(w))', 'SellsMoreThanOneMillion(theLegendOfZelda)'], 'conclusion-FOL': 'InTop10List(theLegendOfZelda)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[12] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∃x (JapaneseGameCompany(x) ∧ CreatedBy(x, theLegendOfZelda))', '∀y (InTop10(y) → ∃z (JapaneseGameCompany(z) ∧ MadeBy(z, y)))', '∀w (SellsMoreThanOneMillion(w) → InTop10(w))', 'SellsMoreThanOneMillion(theLegendOfZelda)'], 'conclusion-FOL': '∃x (JapaneseVideoGameCompany(x) ∧ MadeBy(x, fifa22))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[13] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∃x (JapaneseGameCompany(x) ∧ CreatedBy(x, theLegendOfZelda))', '∀y (InTop10List(y) → ∃z (JapaneseGameCompany(z) ∧ MadeBy(z, y)))', '∀w (SellsMoreThanOneMillion(w) → InTop10List(w))', 'SellsMoreThanOneMillion(theLegendOfZelda)'], 'conclusion-FOL': '¬InTop10List(theLegendOfZelda)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[14] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Square(x) → FourSides(x))', '∀x (FourSides(x) → Shape(x))'], 'conclusion-FOL': '∀x (Square(x) → Shape(x))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[15] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Rabbit(x) → Cute(x))', '∃y Turtle(y)', '∀z (Animal(z) ↔ (Rabbit(z) ⊕ Squirrel(z)))', '∀w (Skittish(w) → ¬Still(w))', '∀v (Squirrel(v) → Skittish(v))', 'Still(rock)'], 'conclusion-FOL': 'Turtle(rock)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[16] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Rabbit(x) → Cute(x))', '∃x Turtle(x)', '∀x (Animal(x) ↔ (Rabbit(x) ∨ Squirrel(x)))', '∀x (Skittish(x) → ¬Still(x))', '∀x (Squirrel(x) → Skittish(x))', 'Still(rock)'], 'conclusion-FOL': '¬Turtle(rock)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[17] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Rabbit(x) → Cute(x))', '∃y Turtle(y)', '∀z (Animal(z) ↔ (Rabbit(z) ∨ Squirrel(z)))', '∀w (Skittish(w) → ¬Still(w))', '∀v (Squirrel(v) → Skittish(v))', 'Still(rock)'], 'conclusion-FOL': 'Turtle(rock) ∨ Cute(rock)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[18] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Rabbit(x) → Cute(x))', '∃y Turtle(y)', '∀z (Animal(z) ↔ (Rabbit(z) ∨ Squirrel(z)))', '∀w (Skittish(w) → ¬Still(w))', '∀v (Squirrel(v) → Skittish(v))', 'Still(rock)'], 'conclusion-FOL': '(¬(Turtle(rock) ∧ Squirrel(rock)) → (Cute(rock) ∨ Skittish(rock)))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[19] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Rabbit(x) → Cute(x))', '∃y Turtle(y)', '∀z (Animal(z) ↔ (Rabbit(z) ⊕ Squirrel(z)))', '∀w (Skittish(w) → ¬Still(w))', '∀v (Squirrel(v) → Skittish(v))', 'Still(rock)'], 'conclusion-FOL': '(Cute(rock) ∧ Still(rock)) → (Turtle(rock) ⊕ Skittish(rock))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[20] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['Popular(StrangerThings)', '∀x (Popular(x) → BingeWatchKaren(x))', '∀x (BingeWatchKaren(x) ↔ DownloadKaren(x))', '¬DownloadKaren(BlackMirror)', 'NetflixShow(BlackMirror)'], 'conclusion-FOL': 'ShareToLisa(StrangerThings)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[21] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['Popular(strangerThings)', '∀x (Popular(x) → BingeWatch(karen, x))', '∀x (BingeWatch(karen, x) ↔ Download(karen, x))', '¬Download(karen, blackMirror)', 'NetflixShow(blackMirror)'], 'conclusion-FOL': 'Popular(blackMirror)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[22] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['Popular(StrangerThings)', '∀x (Popular(x) → BingeWatchKaren(x))', '∀x (BingeWatchKaren(x) ↔ DownloadKaren(x))', '¬DownloadKaren(BlackMirror)', 'NetflixShow(BlackMirror)'], 'conclusion-FOL': 'ShareToLisa(BingeWatchKaren(BlackMirror))'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 28\nExpected RPAREN, got LPAREN (()", "error_line": "ShareToLisa(BingeWatchKaren(BlackMirror))", "pointer": "                           ^"}
+[INFO] Fixed conclusion-FOL
+=== Parsing successfully ===
+[23] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['CapitalOf(beijing, peoplesrepublicofchina)', 'MostPopulousNationalCapitalCity(beijing)', 'LocatedIn(beijing, northernchina)', 'HostedOlympicsAndParalympics(beijing, summer2008olympics, summer2008paralympics)', 'HostedBothSummerWinterOlympicsAndParalympics(beijing)', 'ManyOfBeijingsUniversitiesRankAmongTheBestInAsiaPacificAndWorld'], 'conclusion-FOL': 'HostedOlympicsAndParalympics(beijing, summer2008olympics) ∧ HostedWinterOlympics(beijing)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 5, "error_msg": "Unexpected end of input, expected LPAREN", "error_line": "ManyOfBeijingsUniversitiesRankAmongTheBestInAsiaPacificAndWorld", "pointer": "^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['CapitalOf(beijing, peoplesrepublicofchina)', 'MostPopulousNationalCapitalCity(beijing)', 'LocatedIn(beijing, northernchina)', 'HostedOlympicsAndParalympics(beijing, summer2008olympics, summer2008paralympics)', 'HostedBothSummerWinterOlympicsAndParalympics(beijing)', 'ManyOfBeijingsUniversitiesRankAmongTheBestInAsiaPacificAndWorld(91) → ManyOfBeijing UniversitiesRankAmongTheBestInAsiaPacificAndWorld(universities91)\n\nRewriting with symbolic constants and proper syntax:\nManyOfBeijingUniversitiesRankAmongTheBestInAsiaPacificAndWorld(universities91)'], 'conclusion-FOL': 'HostedOlympicsAndParalympics(beijing, summer2008olympics) ∧ HostedWinterOlympics(beijing)'}
+[Attempt 2] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 67\nExpected ID, got RPAREN ())", "error_line": "ManyOfBeijingsUniversitiesRankAmongTheBestInAsiaPacificAndWorld(91) \u2192 ManyOfBeijing UniversitiesRankAmongTheBestInAsiaPacificAndWorld(universities91)", "pointer": "                                                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['CapitalOf(beijing, peoplesrepublicofchina)', 'MostPopulousNationalCapitalCity(beijing)', 'LocatedIn(beijing, northernchina)', 'HostedOlympicsAndParalympics(beijing, summer2008olympics, summer2008paralympics)', 'HostedBothSummerWinterOlympicsAndParalympics(beijing)', 'ManyOfBeijingUniversitiesRankAmongTheBestInAsiaPacificAndWorld(universities91) → ManyOfBeijingsUniversitiesRankAmongTheBestInAsiaPacificAndWorld(ranking91)'], 'conclusion-FOL': 'HostedOlympicsAndParalympics(beijing, summer2008olympics) ∧ HostedWinterOlympics(beijing)'}
+[Attempt 3] Failed: b'Wrong number of arguments (2) passed to function (declare-fun HostedOlympicsAndParalympics (U U U) Bool) \narg: beijing\n\narg: summer2008olympics\n'
+[WARN] Parser error is not in JSON format: b'Wrong number of arguments (2) passed to function (declare-fun HostedOlympicsAndParalympics (U U U) Bool) \narg: beijing\n\narg: summer2008olympics\n'
+[24] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['CapitalOf(beijing, peoplesrepublicofchina)', 'MostPopulousNationalCapitalCity(beijing)', 'LocatedInNorthChina(beijing)', 'HostedSummerOlympicsAndParalympics(beijing, summer2008olympicsandparalympics)', 'HostedBothSummernWinterOlympicsAndParalympics(beijing)', 'ManyOfBeijingsUniversitiesRankAmongBestInAsiaPacificAndWorld'], 'conclusion-FOL': 'LocatedInSouthChina(beijing)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 5, "error_msg": "Unexpected end of input, expected LPAREN", "error_line": "ManyOfBeijingsUniversitiesRankAmongBestInAsiaPacificAndWorld", "pointer": "^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['CapitalOf(beijing, peoplesrepublicofchina)', 'MostPopulousNationalCapitalCity(beijing)', 'LocatedInNorthChina(beijing)', 'HostedSummerOlympicsAndParalympics(beijing, summer2008olympicsandparalympics)', 'HostedBothSummernWinterOlympicsAndParalympics(beijing)', 'ManyOfBeijingsUniversitiesRankAmongBestInAsiaPacificAndWorld(91) → ManyOfBeijingUniversitiesHaveGlobalRank\n\nRewriting according to the rules:\n\nManyOfBeijingUniversitiesHaveGlobalRank(universities91, asiaPacific, world)'], 'conclusion-FOL': 'LocatedInSouthChina(beijing)'}
+[Attempt 2] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 64\nExpected ID, got RPAREN ())", "error_line": "ManyOfBeijingsUniversitiesRankAmongBestInAsiaPacificAndWorld(91) \u2192 ManyOfBeijingUniversitiesHaveGlobalRank", "pointer": "                                                               ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['CapitalOf(beijing, peoplesrepublicofchina)', 'MostPopulousNationalCapitalCity(beijing)', 'LocatedInNorthChina(beijing)', 'HostedSummerOlympicsAndParalympics(beijing, summer2008olympicsandparalympics)', 'HostedBothSummernWinterOlympicsAndParalympics(beijing)', 'ManyOfBeijingsUniversitiesRankAmongBestInAsiaPacificAndWorld(constant91) → ManyOfBeijingUniversitiesHaveGlobalRank'], 'conclusion-FOL': 'LocatedInSouthChina(beijing)'}
+[Attempt 3] Failed: {"index": 5, "error_msg": "Unexpected end of input, expected LPAREN", "error_line": "ManyOfBeijingsUniversitiesRankAmongBestInAsiaPacificAndWorld(constant91) \u2192 ManyOfBeijingUniversitiesHaveGlobalRank", "pointer": "                                                                           ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['CapitalOf(beijing, peoplesrepublicofchina)', 'MostPopulousNationalCapitalCity(beijing)', 'LocatedInNorthChina(beijing)', 'HostedSummerOlympicsAndParalympics(beijing, summer2008olympicsandparalympics)', 'HostedBothSummernWinterOlympicsAndParalympics(beijing)', 'ManyOfBeijingsUniversitiesRankAmongBestInAsiaPacificAndWorld(constant91) → ManyOfBeijingUniversitiesHaveGlobalRank(constant91)'], 'conclusion-FOL': 'LocatedInSouthChina(beijing)'}
+=== Parsing successfully ===
+[25] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['CapitalOf(beijing, peoplesrepublicofchina)', 'MostPopulousNationalCapitalCity(beijing)', 'LocatedIn(beijing, northernchina)', 'Hosted(beijing, summer2008olympics) ∧ Hosted(beijing, paralympic2008summergames)', 'Hosted(beijing, summerolympics) ∧ Hosted(beijing, winterolympics) ∧ Hosted(beijing, summerparalympics) ∧ Hosted(beijing, winterparalympics)', '∀x (University(x) → (LocatedIn(x, beijing) ↔ RanksAmongBest(x)))'], 'conclusion-FOL': 'SecondLargestCityByUrbanPopulation(beijing)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[26] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Alien(x) → Extraterrestrial(x))', '∀x (FromMars(x) → Alien(x))', '∀x (Extraterrestrial(x) → ¬Human(x))', '∀x (FromEarth(x) → Human(x))', '¬(FromEarth(marvin) ∧ FromMars(marvin))', '(¬FromEarth(marvin) → Extraterrestrial(marvin))'], 'conclusion-FOL': 'Alien(marvin)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[27] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Alien(x) → Extraterrestrial(x))', '∀x (FromMars(x) → Alien(x))', '∀x (Extraterrestrial(x) → ¬Human(x))', '∀x (FromEarth(x) → Human(x))', '¬(FromEarth(marvin) ∧ FromMars(marvin))', '(¬FromEarth(marvin) → Extraterrestrial(marvin))'], 'conclusion-FOL': '(¬Human(marvin) ⊕ ¬FromMars(marvin))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[28] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Alien(x) → Extraterrestrial(x))', '∀x (FromMars(x) → Alien(x))', '∀x (Extraterrestrial(x) → ¬Human(x))', '∀x (FromEarth(x) → Human(x))', '¬(FromEarth(marvin) ∧ FromMars(marvin))', '(¬FromEarth(marvin) → Extraterrestrial(marvin))'], 'conclusion-FOL': '(¬FromMars(marvin) → Human(marvin))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[29] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Person(x) → (GrandSlamChampion(x) ⊕ OscarNominatedActor(x)))', '∀x (GrandSlamChampion(x) → ProfessionalTennisPlayer(x))', '∀x (OscarNominatedActor(x) → Celebrity(x))', '∀x (ProfessionalTennisPlayer(x) → Athlete(x))', '∀x (Celebrity(x) → WellPaid(x))', '∀x (Athlete(x) → Famous(x))', '∀x (WellPaid(x) → LivesInTaxHaven(x))'], 'conclusion-FOL': 'GrandSlamChampion(djokovic)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[30] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (GrandSlamChampion(x) ⊕ OscarNominatedActor(x))', '∀x (GrandSlamChampion(x) → ProfessionalTennisPlayer(x))', '∀x (OscarNominatedActor(x) → Celebrity(x))', '∀x (ProfessionalTennisPlayer(x) → Athlete(x))', '∀x (Celebrity(x) → WellPaid(x))', '∀x (Athlete(x) → Famous(x))', '∀x (WellPaid(x) → LivesInTaxHaven(x))'], 'conclusion-FOL': 'LivesInTaxHaven(djokovic)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[31] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (GrandSlamChampion(x) ⊕ OscarNominatedActor(x))', '∀x (GrandSlamChampion(x) → ProfessionalTennisPlayer(x))', '∀x (OscarNominatedActor(x) → Celebrity(x))', '∀x (ProfessionalTennisPlayer(x) → Athlete(x))', '∀x (Celebrity(x) → WellPaid(x))', '∀x (Athlete(x) → Famous(x))', '∀x (WellPaid(x) → LivesInTaxHaven(x))'], 'conclusion-FOL': '¬LivesInTaxHaven(djokovic)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[32] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['Stable(diamondMine)', 'FormedInWWE(diamondMine)', 'LeaderOf(roderickStrong, diamondMine)', 'Includes(diamondMine, creedBrothers)', 'Includes(diamondMine, ivyNile)', 'Feud(imperium, diamondMine)'], 'conclusion-FOL': 'LeaderOf(roderickStrong, stable)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[33] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['Stable(diamondMine)', 'FormedInWWE(diamondMine)', 'LeaderOf(roderickStrong, diamondMine)', 'Includes(diamondMine, creedBrothers)', 'Includes(diamondMine, ivyNile)', 'Feud(imperium, diamondMine)'], 'conclusion-FOL': 'LeaderOf(roderickStrong, creedBrothers)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[34] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['ProfessionalWrestlingStable(diamondMine)', 'FormedInWWE(diamondMine)', 'LeaderOf(diamondMine, roderickStrong)', 'Includes(diamondMine, creedBrothers) ∧ Includes(diamondMine, ivyNile)', 'Feud(imperium, diamondMine)'], 'conclusion-FOL': '¬Feud(imperium, x) ∨ ¬ProfessionalWrestlingStable(x) ∨ ¬Includes(x, ivyNile)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[35] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['MusicPiece(SymphonyNo9)', '∀x (Composer(x) → ∃y MusicPiece(y) ∧ Wrote(x, y))', 'Wrote(Beethoven, SymphonyNo9)', 'Premiered(ViennaMusicSociety, SymphonyNo9)', 'Orchestra(ViennaMusicSociety)', 'Leads(Beethoven, ViennaMusicSociety)', '∀x (Orchestra(x) → ∃y Conductor(y) ∧ Leads(y, x))'], 'conclusion-FOL': 'Composer(Beethoven)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[36] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['MusicPiece(symphony9)', '∀x (Composer(x) → ∃y (MusicPiece(y) ∧ Wrote(x, y)))', 'Wrote(beethoven, symphony9)', 'Premiered(viennaSociety, symphony9)', 'Orchestra(viennaSociety)', 'Leads(beethoven, viennaSociety)', '∀x (Orchestra(x) → ∃y (Conductor(y) ∧ Leads(y, x)))'], 'conclusion-FOL': '∃x (Orchestra(x) ∧ ∃y (MusicPiece(y) ∧ Premiered(x, y)))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[37] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['MusicPiece(symphony9)', '∀x (Composer(x) → ∃y (MusicPiece(y) ∧ Wrote(x, y)))', 'Wrote(beethoven, symphony9)', 'Premiered(viennaSociety, symphony9)', 'Orchestra(viennaSociety)', 'Leads(beethoven, viennaSociety)', '∀x (Orchestra(x) → ∃y (Conductor(y) ∧ Leads(y, x)))'], 'conclusion-FOL': '¬Conductor(beethoven)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[38] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (DesignStyle(x, zahaHadid) → Timeless(x))', '∀x (MassProductDesign(x) → ¬Timeless(x))', 'DesignStyle(zahaHadidDesign, zahaHadid) ⊕ DesignStyle(kellyWearstlerDesign, kellyWearstler)', '∀x (DesignStyle(x, kellyWearstler) → Evocative(x))', '∀x (DesignStyle(x, kellyWearstler) → Dreamy(x))', '(Timeless(maxDesign) ∧ DesignByMax(maxDesign)) → (MassProductDesign(maxDesign) ∧ Evocative(maxDesign))'], 'conclusion-FOL': 'DesignByMax(maxDesign) → MassProductDesign(maxDesign)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[39] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (DesignStyle(x, zahaHadid) → Timeless(x))', '∀y (MassProduct(y) → ¬Timeless(y))', 'DesignStyle(z, zahaHadid) ⊕ DesignStyle(w, kellyWearstler)', '∀z (DesignStyle(z, kellyWearstler) → Evocative(z))', '∀w (DesignStyle(w, kellyWearstler) → Dreamy(w))'], 'conclusion-FOL': '(Timeless(max) ∧ MassProduct(max) ∧ Evocative(max)) → (Evocative(max) ∧ Dreamy(max))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[40] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (DesignStyle(x, zahaHadid) → Timeless(x))', '∀y (MassProduct(y) → ¬Timeless(y))', '(∃z (DesignStyle(z, zahaHadid))) ⊕ (∃w (DesignStyle(w, kellyWearstler)))', '∀x (DesignStyle(x, kellyWearstler) → Evocative(x))', '∀y (DesignStyle(y, kellyWearstler) → Dreamy(y))', '(Timeless(maxDesign) ∧ MassProduct(maxDesign)) ⊕ (Evocative(maxDesign))'], 'conclusion-FOL': 'Evocative(maxDesign) ∨ Dreamy(maxDesign)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[41] Pred: True       | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (RankedHighlyByWTA(x) → MostActiveInMajorTennis(x))', '∀x (LostToIgaSwiatek(x) → RankedHighlyByWTA(x))', '∀x (FemalePlayerAtRolandGarros2022(x) → LostToIgaSwiatek(x))', '(FemalePlayerAtRolandGarros2022(cocogauff) ⊕ MalePlayerAtRolandGarros2022(cocogauff))', '∀x (MalePlayerAtRolandGarros2022(x) → LostToRafaelNadal(x))', '(RankedHighlyByWTA(cocogauff) ∨ LostToRafaelNadal(cocogauff)) → ¬MalePlayerAtRolandGarros2022(cocogauff)'], 'conclusion-FOL': 'MostActiveInMajorTennis(cocogauff)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[42] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (RankedHighlyByWTA(x) → MostActiveInMajorTennis(x))', '∀x (LostToIgaSwiatek(x) → RankedHighlyByWTA(x))', '∀x (FemalePlayerAtRolandGarros2022(x) → LostToIgaSwiatek(x))', '(FemalePlayerAtRolandGarros2022(cocogauff) ⊕ MalePlayerAtRolandGarros2022(cocogauff))', '∀x (MalePlayerAtRolandGarros2022(x) → LostToRafaelNadal(x))', '(RankedHighlyByWTA(cocogauff) ∨ LostToRafaelNadal(cocogauff)) → ¬MalePlayerAtRolandGarros2022(cocogauff)'], 'conclusion-FOL': 'LostToRafaelNadal(cocogauff)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[43] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (RankedHighlyByWTA(x) → MostActiveInMajorTennis(x))', '∀x (LostToIgaSwiatek(x) → RankedHighlyByWTA(x))', '∀x (FemalePlayerAtRolandGarros2022(x) → LostToIgaSwiatek(x))', '(FemalePlayerAtRolandGarros2022(cocogauff) ⊕ MalePlayerAtRolandGarros2022(cocogauff))', '∀x (MalePlayerAtRolandGarros2022(x) → LostToRafaelNadal(x))', '(RankedHighlyByWTA(cocogauff) ∨ LostToRafaelNadal(cocogauff)) → ¬MalePlayerAtRolandGarros2022(cocogauff)'], 'conclusion-FOL': '¬(LostToIgaSwiatek(cocogauff) ∨ MostActiveInMajorTennis(cocogauff))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[44] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Cat(x) → Mammal(x))', '∃y (Pet(y) ∧ ¬Mammal(y))'], 'conclusion-FOL': '∀z (Pet(z) → ¬Cat(z))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[45] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∃s1 (Season(s1) ∧ SeasonName(s1, spring))', '∃s2 (Season(s2) ∧ SeasonName(s2, summer))', '∃s3 (Season(s3) ∧ SeasonName(s3, fall))', '∃s4 (Season(s4) ∧ SeasonName(s4, winter))', '∀x (Student(x) → (WantLongVacation(x) ↔ LoveSummerMost(x)))', 'LoveSummerMost(emma)', 'FavoriteSeason(mia) ⊕ FavoriteSeason(emma)', 'WantLongVacation(james)'], 'conclusion-FOL': 'LoveSummerMost(james)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[46] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∃s1 (Season(s1) ∧ SeasonName(s1, spring))', '∃s2 (Season(s2) ∧ SeasonName(s2, summer))', '∃s3 (Season(s3) ∧ SeasonName(s3, fall))', '∃s4 (Season(s4) ∧ SeasonName(s4, winter))', '∀x (Student(x) → (WantLongVacation(x) ↔ LoveSummerMost(x)))', 'LoveSummerMost(emma)', 'FavoriteSeason(mia) ⊕ FavoriteSeason(emma)', 'WantLongVacation(james)'], 'conclusion-FOL': 'FavoriteSeason(james, fall)'}
+=========== FOL ===========
+[Attempt 1] Failed: b'index out of bounds'
+[WARN] Parser error is not in JSON format: b'index out of bounds'
+[47] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∃s1 ∃s2 ∃s3 ∃s4 (Season(s1) ∧ Season(s2) ∧ Season(s3) ∧ Season(s4) ∧ s1 ≠ s2 ∧ s1 ≠ s3 ∧ s1 ≠ s4 ∧ s2 ≠ s3 ∧ s2 ≠ s4 ∧ s3 ≠ s4 ∧ ∀x (Season(x) → x = s1 ∨ x = s2 ∨ x = s3 ∨ x = s4))', '∀s (Student(s) ∧ WantsLongVacation(s) → LovesSummerMost(s))', 'LovesSummerMost(emma)', 'FavoriteSeason(mia) ≠ FavoriteSeason(emma)', 'WantsLongVacation(james)'], 'conclusion-FOL': 'FavoriteSeason(mia) = spring'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 0, "error_msg": "Syntax error at line 1, column 75\nExpected LPAREN, got ID (s2)", "error_line": "\u2203s1 \u2203s2 \u2203s3 \u2203s4 (Season(s1) \u2227 Season(s2) \u2227 Season(s3) \u2227 Season(s4) \u2227 s1 \u2260 s2 \u2227 s1 \u2260 s3 \u2227 s1 \u2260 s4 \u2227 s2 \u2260 s3 \u2227 s2 \u2260 s4 \u2227 s3 \u2260 s4 \u2227 \u2200x (Season(x) \u2192 x = s1 \u2228 x = s2 \u2228 x = s3 \u2228 x = s4))", "pointer": "                                                                          ^"}
+[INFO] Fixed premise-FOL at index 0
+Current FOL sample: {'premises-FOL': ['∃s1 ∃s2 ∃s3 ∃s4 (Season(s1) ∧ Season(s2) ∧ Season(s3) ∧ Season(s4) ∧ s1 ≠ s2 ∧ s1 ≠ s3 ∧ s1 ≠ s4 ∧ s2 ≠ s3 ∧ s2 ≠ s4 ∧ s3 ≠ s4 ∧ ∀x (Season(x) → (x = s1 ∨ x = s2 ∨ x = s3 ∨ x = s4)))', '∀s (Student(s) ∧ WantsLongVacation(s) → LovesSummerMost(s))', 'LovesSummerMost(emma)', 'FavoriteSeason(mia) ≠ FavoriteSeason(emma)', 'WantsLongVacation(james)'], 'conclusion-FOL': 'FavoriteSeason(mia) = spring'}
+[Attempt 2] Failed: {"index": 0, "error_msg": "Syntax error at line 1, column 75\nExpected LPAREN, got ID (s2)", "error_line": "\u2203s1 \u2203s2 \u2203s3 \u2203s4 (Season(s1) \u2227 Season(s2) \u2227 Season(s3) \u2227 Season(s4) \u2227 s1 \u2260 s2 \u2227 s1 \u2260 s3 \u2227 s1 \u2260 s4 \u2227 s2 \u2260 s3 \u2227 s2 \u2260 s4 \u2227 s3 \u2260 s4 \u2227 \u2200x (Season(x) \u2192 (x = s1 \u2228 x = s2 \u2228 x = s3 \u2228 x = s4)))", "pointer": "                                                                          ^"}
+[INFO] Fixed premise-FOL at index 0
+Current FOL sample: {'premises-FOL': ['∃s1 ∃s2 ∃s3 ∃s4 (Season(s1) ∧ Season(s2) ∧ Season(s3) ∧ Season(s4) ∧ s1 ≠ s2 ∧ s1 ≠ s3 ∧ s1 ≠ s4 ∧ s2 ≠ s3 ∧ s2 ≠ s4 ∧ s3 ≠ s4 ∧ ∀x (Season(x) → ((x = s1) ∨ (x = s2) ∨ (x = s3) ∨ (x = s4))))', '∀s (Student(s) ∧ WantsLongVacation(s) → LovesSummerMost(s))', 'LovesSummerMost(emma)', 'FavoriteSeason(mia) ≠ FavoriteSeason(emma)', 'WantsLongVacation(james)'], 'conclusion-FOL': 'FavoriteSeason(mia) = spring'}
+[Attempt 3] Failed: {"index": 0, "error_msg": "Syntax error at line 1, column 75\nExpected LPAREN, got ID (s2)", "error_line": "\u2203s1 \u2203s2 \u2203s3 \u2203s4 (Season(s1) \u2227 Season(s2) \u2227 Season(s3) \u2227 Season(s4) \u2227 s1 \u2260 s2 \u2227 s1 \u2260 s3 \u2227 s1 \u2260 s4 \u2227 s2 \u2260 s3 \u2227 s2 \u2260 s4 \u2227 s3 \u2260 s4 \u2227 \u2200x (Season(x) \u2192 ((x = s1) \u2228 (x = s2) \u2228 (x = s3) \u2228 (x = s4))))", "pointer": "                                                                          ^"}
+[INFO] Fixed premise-FOL at index 0
+Current FOL sample: {'premises-FOL': ['∃s1 ∃s2 ∃s3 ∃s4 (Season(s1) ∧ Season(s2) ∧ Season(s3) ∧ Season(s4) ∧ s1 ≠ s2 ∧ s1 ≠ s3 ∧ s1 ≠ s4 ∧ s2 ≠ s3 ∧ s2 ≠ s4 ∧ s3 ≠ s4 ∧ ∀x (Season(x) → ((SameAs(x, s1)) ∨ (SameAs(x, s2)) ∨ (SameAs(x, s3)) ∨ (SameAs(x, s4))))))', '∀s (Student(s) ∧ WantsLongVacation(s) → LovesSummerMost(s))', 'LovesSummerMost(emma)', 'FavoriteSeason(mia) ≠ FavoriteSeason(emma)', 'WantsLongVacation(james)'], 'conclusion-FOL': 'FavoriteSeason(mia) = spring'}
+[Attempt 4] Failed: {"index": 0, "error_msg": "Syntax error at line 1, column 75\nExpected LPAREN, got ID (s2)", "error_line": "\u2203s1 \u2203s2 \u2203s3 \u2203s4 (Season(s1) \u2227 Season(s2) \u2227 Season(s3) \u2227 Season(s4) \u2227 s1 \u2260 s2 \u2227 s1 \u2260 s3 \u2227 s1 \u2260 s4 \u2227 s2 \u2260 s3 \u2227 s2 \u2260 s4 \u2227 s3 \u2260 s4 \u2227 \u2200x (Season(x) \u2192 ((SameAs(x, s1)) \u2228 (SameAs(x, s2)) \u2228 (SameAs(x, s3)) \u2228 (SameAs(x, s4))))))", "pointer": "                                                                          ^"}
+[INFO] Fixed premise-FOL at index 0
+Current FOL sample: {'premises-FOL': ['∃s1 ∃s2 ∃s3 ∃s4 (Season(s1) ∧ Season(s2) ∧ Season(s3) ∧ Season(s4) ∧ s1 ≠ s2 ∧ s1 ≠ s3 ∧ s1 ≠ s4 ∧ s2 ≠ s3 ∧ s2 ≠ s4 ∧ s3 ≠ s4 ∧ ∀x (Season(x) → ((SameAs(x, s1)) ∨ (SameAs(x, s2)) ∨ (SameAs(x, s3)) ∨ (SameAs(x, s4)))))', '∀s (Student(s) ∧ WantsLongVacation(s) → LovesSummerMost(s))', 'LovesSummerMost(emma)', 'FavoriteSeason(mia) ≠ FavoriteSeason(emma)', 'WantsLongVacation(james)'], 'conclusion-FOL': 'FavoriteSeason(mia) = spring'}
+[Attempt 5] Failed: {"index": 0, "error_msg": "Syntax error at line 1, column 75\nExpected LPAREN, got ID (s2)", "error_line": "\u2203s1 \u2203s2 \u2203s3 \u2203s4 (Season(s1) \u2227 Season(s2) \u2227 Season(s3) \u2227 Season(s4) \u2227 s1 \u2260 s2 \u2227 s1 \u2260 s3 \u2227 s1 \u2260 s4 \u2227 s2 \u2260 s3 \u2227 s2 \u2260 s4 \u2227 s3 \u2260 s4 \u2227 \u2200x (Season(x) \u2192 ((SameAs(x, s1)) \u2228 (SameAs(x, s2)) \u2228 (SameAs(x, s3)) \u2228 (SameAs(x, s4)))))", "pointer": "                                                                          ^"}
+[INFO] Fixed premise-FOL at index 0
+Current FOL sample: {'premises-FOL': ['∃s1 ∃s2 ∃s3 ∃s4 (Season(s1) ∧ Season(s2) ∧ Season(s3) ∧ Season(s4) ∧ s1 ≠ s2 ∧ s1 ≠ s3 ∧ s1 ≠ s4 ∧ s2 ≠ s3 ∧ s2 ≠ s4 ∧ s3 ≠ s4 ∧ ∀x (Season(x) → ((SameAs(x, s1)) ∨ (SameAs(x, s2)) ∨ (SameAs(x, s3)) ∨ (SameAs(x, s4))))))', '∀s (Student(s) ∧ WantsLongVacation(s) → LovesSummerMost(s))', 'LovesSummerMost(emma)', 'FavoriteSeason(mia) ≠ FavoriteSeason(emma)', 'WantsLongVacation(james)'], 'conclusion-FOL': 'FavoriteSeason(mia) = spring'}
+[Attempt 6] Failed: {"index": 0, "error_msg": "Syntax error at line 1, column 75\nExpected LPAREN, got ID (s2)", "error_line": "\u2203s1 \u2203s2 \u2203s3 \u2203s4 (Season(s1) \u2227 Season(s2) \u2227 Season(s3) \u2227 Season(s4) \u2227 s1 \u2260 s2 \u2227 s1 \u2260 s3 \u2227 s1 \u2260 s4 \u2227 s2 \u2260 s3 \u2227 s2 \u2260 s4 \u2227 s3 \u2260 s4 \u2227 \u2200x (Season(x) \u2192 ((SameAs(x, s1)) \u2228 (SameAs(x, s2)) \u2228 (SameAs(x, s3)) \u2228 (SameAs(x, s4))))))", "pointer": "                                                                          ^"}
+[INFO] Fixed premise-FOL at index 0
+Current FOL sample: {'premises-FOL': ['∃s1 ∃s2 ∃s3 ∃s4 (Season(s1) ∧ Season(s2) ∧ Season(s3) ∧ Season(s4) ∧ s1 ≠ s2 ∧ s1 ≠ s3 ∧ s1 ≠ s4 ∧ s2 ≠ s3 ∧ s2 ≠ s4 ∧ s3 ≠ s4 ∧ ∀x (Season(x) → ((SameAs(x, s1)) ∨ (SameAs(x, s2)) ∨ (SameAs(x, s3)) ∨ (SameAs(x, s4)))))', '∀s (Student(s) ∧ WantsLongVacation(s) → LovesSummerMost(s))', 'LovesSummerMost(emma)', 'FavoriteSeason(mia) ≠ FavoriteSeason(emma)', 'WantsLongVacation(james)'], 'conclusion-FOL': 'FavoriteSeason(mia) = spring'}
+[WARN] Maximum attempts reached, returning 'Uncertain'
+[48] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (DigitalMedia(x) → ¬Analog(x))', '∀x (PrintedText(x) → Analog(x))', '∀x (StreamingService(x) → DigitalMedia(x))', '∀x (HardcoverBook(x) → PrintedText(x))', '(StreamingService(nineteenEightyFour) → HardcoverBook(nineteenEightyFour))'], 'conclusion-FOL': 'PrintedText(nineteenEightyFour)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[49] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (DigitalMedia(x) → ¬Analog(x))', '∀x (PrintedText(x) → Analog(x))', '∀x (StreamingService(x) → DigitalMedia(x))', '∀x (HardcoverBook(x) → PrintedText(x))', '(StreamingService(nineteenEightyFour) → HardcoverBook(nineteenEightyFour))'], 'conclusion-FOL': 'StreamingService(nineteenEightyFour)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[50] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (DigitalMedia(x) → ¬Analog(x))', '∀x (PrintedText(x) → Analog(x))', '∀x (StreamingService(x) → DigitalMedia(x))', '∀x (HardcoverBook(x) → PrintedText(x))', '(StreamingService(nineteenEightyFour) → HardcoverBook(nineteenEightyFour))'], 'conclusion-FOL': '¬StreamingService(nineteenEightyFour)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[51] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (RomanceLanguage(x) → IndoEuropeanLanguage(x))', '∃y ∀z (RomanceLanguage(z) ↔ Family(y, z))', '∀w ∀v ((Family(w, v) ∧ RomanceLanguage(v)) → RelatedTo(w, v))', 'RomanceLanguage(french)', 'RomanceLanguage(spanish)', 'RelatedTo(german, spanish)', '∀u (Basque(u) → ¬∃v (RelatedTo(u, v)))'], 'conclusion-FOL': 'Basque(basque) → RomanceLanguage(basque)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[52] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (RomanceLanguage(x) → IndoEuropeanLanguage(x))', '∃y ∀z (RomanceLanguage(z) ↔ Family(y, z))', '∀w ∀v ((Family(w, v) ∧ RomanceLanguage(v)) → RelatedTo(w, v))', 'RomanceLanguage(french) ∧ RomanceLanguage(spanish)', 'RelatedTo(german, spanish)', '∀u (Basque(u) → ¬∃v (RelatedTo(u, v)))'], 'conclusion-FOL': 'RomanceLanguage(german)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[53] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (RomanceLanguage(x) → IndoEuropeanLanguage(x))', '∃y ∀z (RomanceLanguage(z) ↔ Family(y, z))', '∀w ∀v ((Family(w, v) ∧ RomanceLanguage(v)) → RelatedTo(w, v))', 'RomanceLanguage(french)', 'RomanceLanguage(spanish)', 'RelatedTo(german, spanish)', '∀u (Basque(u) → ¬∃v (RelatedTo(u, v)))'], 'conclusion-FOL': 'IndoEuropeanLanguage(french)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[54] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['Striker(robertLewandowski)', '∀x (Striker(x) → SoccerPlayer(x))', 'LeftTeam(robertLewandowski, bayernMunchen)', '∀x ∀y (LeftTeam(x, y) → ¬PlaysFor(x, y))'], 'conclusion-FOL': 'SoccerPlayer(robertLewandowski)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[55] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['Striker(robertLewandowski)', '∀x (Striker(x) → SoccerPlayer(x))', 'LeftTeam(robertLewandowski, bayernMunchen)', '∀x ∀y (LeftTeam(x, y) → ¬PlaysFor(x, y))'], 'conclusion-FOL': '¬PlaysFor(robertLewandowski, bayernMunchen)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[56] Pred: True       | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['Striker(robertLewandowski)', '∀x (Striker(x) → SoccerPlayer(x))', 'LeftTeam(robertLewandowski, bayernMunchen)', '∀x ∀y (LeftTeam(x, y) → ¬PlaysFor(x, y))'], 'conclusion-FOL': 'Star(robertLewandowski)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[57] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['City(billings) ∧ In(billings, montana)', 'Includes(montana, butte) ∧ Includes(montana, helena) ∧ Includes(montana, missoula)', 'In(white_sulphur_springs, state(x)) ∧ In(butte, state(x))', '¬In(pierre, montana)', '∀x (City(x) ∧ In(x, butte) → ¬In(x, pierre))'], 'conclusion-FOL': '(In(butte, state(x)) ∧ In(pierre, state(x)))'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 2, "error_msg": "Syntax error at line 1, column 32\nExpected RPAREN, got LPAREN (()", "error_line": "In(white_sulphur_springs, state(x)) \u2227 In(butte, state(x))", "pointer": "                               ^"}
+[INFO] Fixed premise-FOL at index 2
+Current FOL sample: {'premises-FOL': ['City(billings) ∧ In(billings, montana)', 'Includes(montana, butte) ∧ Includes(montana, helena) ∧ Includes(montana, missoula)', 'In(white_sulphur_springs, state(some_state)) ∧ In(butte, state(some_state))', '¬In(pierre, montana)', '∀x (City(x) ∧ In(x, butte) → ¬In(x, pierre))'], 'conclusion-FOL': '(In(butte, state(x)) ∧ In(pierre, state(x)))'}
+[Attempt 2] Failed: {"index": 2, "error_msg": "Syntax error at line 1, column 32\nExpected RPAREN, got LPAREN (()", "error_line": "In(white_sulphur_springs, state(some_state)) \u2227 In(butte, state(some_state))", "pointer": "                               ^"}
+[INFO] Fixed premise-FOL at index 2
+Current FOL sample: {'premises-FOL': ['City(billings) ∧ In(billings, montana)', 'Includes(montana, butte) ∧ Includes(montana, helena) ∧ Includes(montana, missoula)', 'In(white_sulphur_springs, some_state) ∧ In(butte, some_state)', '¬In(pierre, montana)', '∀x (City(x) ∧ In(x, butte) → ¬In(x, pierre))'], 'conclusion-FOL': '(In(butte, state(x)) ∧ In(pierre, state(x)))'}
+[Attempt 3] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 17\nExpected RPAREN, got LPAREN (()", "error_line": "(In(butte, state(x)) \u2227 In(pierre, state(x)))", "pointer": "                ^"}
+[INFO] Fixed conclusion-FOL
+[Attempt 4] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 17\nExpected RPAREN, got LPAREN (()", "error_line": "(In(butte, state(y)) \u2227 In(pierre, state(y)))", "pointer": "                ^"}
+[INFO] Fixed conclusion-FOL
+[Attempt 5] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 17\nExpected RPAREN, got LPAREN (()", "error_line": "(In(butte, state(z)) \u2227 In(pierre, state(z)))", "pointer": "                ^"}
+[INFO] Fixed conclusion-FOL
+[Attempt 6] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 17\nExpected RPAREN, got LPAREN (()", "error_line": "(In(butte, state(z)) \u2227 In(pierre, state(z)))", "pointer": "                ^"}
+[INFO] Fixed conclusion-FOL
+[WARN] Maximum attempts reached, returning 'Uncertain'
+[58] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['City(billings) ∧ InState(billings, montana)', 'InState(butte, montana) ∧ InState(helena, montana) ∧ InState(missoula, montana)', 'InSameState(butte, whiteSulphurSprings) ∧ InState(whiteSulphurSprings, montana)', '¬City(pierre) ∨ ¬InState(pierre, montana)', '∀x (City(x) → (¬InState(x, butte) ∨ ¬InState(x, pierre)))'], 'conclusion-FOL': 'InSameState(pierre, bismarck)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[59] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['City(billings) ∧ InState(billings, montana)', 'InState(butte, montana) ∧ InState(helena, montana) ∧ InState(missoula, montana)', 'InSameState(whiteSulphurSprings, butte) ∧ InState(whiteSulphurSprings, montana) ∧ InState(butte, montana)', '¬City(pierre) ∨ ¬InState(pierre, montana)', '∀x (City(x) → (InState(x, butte) ⊕ ¬InState(x, pierre)))'], 'conclusion-FOL': 'InState(missoula, montana)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[60] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (InternationalStudentInUS(x) → (F1Visa(x) ⊕ J1Visa(x)))', '∀x (InternationalStudentInUS(x) ∧ F1Visa(x) → (ApplyForCPT(x) ∨ ApplyForOPT(x)) ↔ WantsToWorkInUS(x))', 'InternationalStudentInUS(mike)', 'WantsToWorkInUS(mike) → ApplyForCPT(mike)'], 'conclusion-FOL': 'F1Visa(mike)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[61] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (InternationalStudentInUS(x) → (F1Visa(x) ⊕ J1Visa(x)))', '∀x (InternationalStudentInUS(x) ∧ F1Visa(x) → (ApplyForCPT(x) ∨ ApplyForOPT(x)) ↔ WantsToWorkInUS(x))', 'InternationalStudentInUS(mike)', 'WantsToWorkInUS(mike) → ApplyForCPT(mike)'], 'conclusion-FOL': 'J1Visa(mike)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[62] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Cow(x) → Bovine(x))', '∃y (Pet(y) ∧ Cow(y))', '∀z (Bovine(z) → Domesticated(z))', '∀w (Domesticated(w) → ¬Alligator(w))', 'Alligator(ted)'], 'conclusion-FOL': '¬Pet(ted)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[63] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Cow(x) → Bovine(x))', '∃y (Pet(y) ∧ Cow(y))', '∀z (Bovine(z) → Domesticated(z))', '∀w (Domesticated(w) → ¬Alligator(w))', 'Alligator(ted)'], 'conclusion-FOL': '(Pet(ted) ∧ Cow(ted))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[64] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Cow(x) → Bovine(x))', '∃y (Pet(y) ∧ Cow(y))', '∀z (Bovine(z) → Domesticated(z))', '∀w (Domesticated(w) → ¬Alligator(w))', 'Alligator(ted)'], 'conclusion-FOL': '(Cow(ted) → ¬Pet(ted))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[65] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['PrivateIvyLeagueResearchUniversity(yale_university)', 'MovedToNewHavenIn1716(yale_university)', 'EndowmentValuedAt42Point3Billion(yale_university)', 'OrganizedInto27ConstituentCollegesAndSchools(yale_university)', 'ResidentialCollege(benjamin_franklin_college, yale_university)', 'ResidentialCollege(berkeley_college, yale_university)', 'ResidentialCollege(branford_college, yale_university)', 'ResidentialCollege(davenport_college, yale_university)', 'ResidentialCollege(ezra_stiles_college, yale_university)', 'ResidentialCollege(grace_hopper_college, yale_university)', 'ResidentialCollege(jonathan_edwards_college, yale_university)', 'ResidentialCollege(morse_college, yale_university)', 'ResidentialCollege(pauli_murray_college, yale_university)', 'ResidentialCollege(pierson_college, yale_university)', 'ResidentialCollege(saybrook_college, yale_university)', 'ResidentialCollege(silliman_college, yale_university)', 'ResidentialCollege(timothy_dwight_college, yale_university)', 'ResidentialCollege(trumbull_college, yale_university)'], 'conclusion-FOL': 'PrivateIvyLeagueResearchUniversity(x) → MovedToNewHavenIn1716(x)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[66] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['PrivateIvyLeagueResearchUniversity(YaleUniversity)', 'MovedToNewHavenIn1716(YaleUniversity)', 'EndowmentValue(YaleUniversity, 42.3BillionDollars)', 'OrganizedIntoConstituentCollegesAndSchools(YaleUniversity, 27)', 'ResidentialCollegeAtYale(BenjaminFranklinCollege)', 'ResidentialCollegeAtYale(BerkeleyCollege)', 'ResidentialCollegeAtYale(BranfordCollege)', 'ResidentialCollegeAtYale(DavenportCollege)', 'ResidentialCollegeAtYale(EzraStilesCollege)', 'ResidentialCollegeAtYale(GraceHopperCollege)', 'ResidentialCollegeAtYale(JonathanEdwardsCollege)', 'ResidentialCollegeAtYale(MorseCollege)', 'ResidentialCollegeAtYale(PauliMurrayCollege)', 'ResidentialCollegeAtYale(PiersonCollege)', 'ResidentialCollegeAtYale(SaybrookCollege)', 'ResidentialCollegeAtYale(SillimanCollege)', 'ResidentialCollegeAtYale(TimothyDwightCollege)', 'ResidentialCollegeAtYale(TrumbullCollege)'], 'conclusion-FOL': 'EndowmentValue(YaleUniversity, 42.3BillionDollars) → LargestEndowmentOfAnyEducationalInstitution(YaleUniversity)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 3, "error_msg": "Syntax error at line 1, column 62\nExpected ID, got RPAREN ())", "error_line": "OrganizedIntoConstituentCollegesAndSchools(YaleUniversity, 27)", "pointer": "                                                             ^"}
+[INFO] Fixed premise-FOL at index 3
+Current FOL sample: {'premises-FOL': ['PrivateIvyLeagueResearchUniversity(YaleUniversity)', 'MovedToNewHavenIn1716(YaleUniversity)', 'EndowmentValue(YaleUniversity, 42.3BillionDollars)', 'OrganizedIntoConstituentCollegesAndSchools(YaleUniversity, num27)', 'ResidentialCollegeAtYale(BenjaminFranklinCollege)', 'ResidentialCollegeAtYale(BerkeleyCollege)', 'ResidentialCollegeAtYale(BranfordCollege)', 'ResidentialCollegeAtYale(DavenportCollege)', 'ResidentialCollegeAtYale(EzraStilesCollege)', 'ResidentialCollegeAtYale(GraceHopperCollege)', 'ResidentialCollegeAtYale(JonathanEdwardsCollege)', 'ResidentialCollegeAtYale(MorseCollege)', 'ResidentialCollegeAtYale(PauliMurrayCollege)', 'ResidentialCollegeAtYale(PiersonCollege)', 'ResidentialCollegeAtYale(SaybrookCollege)', 'ResidentialCollegeAtYale(SillimanCollege)', 'ResidentialCollegeAtYale(TimothyDwightCollege)', 'ResidentialCollegeAtYale(TrumbullCollege)'], 'conclusion-FOL': 'EndowmentValue(YaleUniversity, 42.3BillionDollars) → LargestEndowmentOfAnyEducationalInstitution(YaleUniversity)'}
+=== Parsing successfully ===
+[67] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['University(yale_university)', 'MovedToNewHavenIn1716(yale_university)', 'EndowmentValue(yale_university, 42.3_billion)', 'OrganizedIntoConstituentCollegesAndSchools(yale_university, 27)', 'ResidentialCollege(pierson_college)'], 'conclusion-FOL': 'ResidentialCollege(pierson_college)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 3, "error_msg": "Syntax error at line 1, column 63\nExpected ID, got RPAREN ())", "error_line": "OrganizedIntoConstituentCollegesAndSchools(yale_university, 27)", "pointer": "                                                              ^"}
+[INFO] Fixed premise-FOL at index 3
+Current FOL sample: {'premises-FOL': ['University(yale_university)', 'MovedToNewHavenIn1716(yale_university)', 'EndowmentValue(yale_university, 42.3_billion)', 'OrganizedIntoConstituentCollegesAndSchools(yale_university, num27)', 'ResidentialCollege(pierson_college)'], 'conclusion-FOL': 'ResidentialCollege(pierson_college)'}
+=== Parsing successfully ===
+[68] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['BritishSitcom(Badults) ∧ Series(Badults) ∧ StarringMembersOfPappys(Badults)', 'PilotedInMonthYear(Badults, july, 2013) ∧ OnChannel(Badults, bbcThree)', 'WorkingTitle(Badults, theSecretDudeSociety)', 'ScriptEditor(AndrewCollins, Badults)'], 'conclusion-FOL': '∃x (Series(x) ∧ WorkingTitle(x, theSecretDudeSociety) ∧ ScriptEditor(AndrewCollins, x))'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 1, "error_msg": "Syntax error at line 1, column 39\nExpected ID, got RPAREN ())", "error_line": "PilotedInMonthYear(Badults, july, 2013) \u2227 OnChannel(Badults, bbcThree)", "pointer": "                                      ^"}
+[INFO] Fixed premise-FOL at index 1
+Current FOL sample: {'premises-FOL': ['BritishSitcom(Badults) ∧ Series(Badults) ∧ StarringMembersOfPappys(Badults)', 'PilotedInMonthYear(Badults, july, year2013) ∧ OnChannel(Badults, bbcThree)', 'WorkingTitle(Badults, theSecretDudeSociety)', 'ScriptEditor(AndrewCollins, Badults)'], 'conclusion-FOL': '∃x (Series(x) ∧ WorkingTitle(x, theSecretDudeSociety) ∧ ScriptEditor(AndrewCollins, x))'}
+=== Parsing successfully ===
+[69] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['BritishSitcom(Badults) ∧ Series(Badults) ∧ StarringPappysMembers(Badults)', 'PilotedInJuly2013OnBBCThree(Badults)', 'WorkingTitleSecretDudeSociety(Badults)', 'ScriptEditorFor(AndrewCollins, Badults)'], 'conclusion-FOL': '∀x (StarringPappysMembers(x) → ¬(PilotingOnBBCTwoOrBBCThree(x)))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[70] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (GrowthCompanyStock(x) → Volatile(x))', '∀x (Volatile(x) → ¬SuitableForRetirementFund(x))', '∃x GrowthCompanyStock(x)', '∀x (MatureCompanyStock(x) → SuitableForRetirementFund(x))', 'MatureCompanyStock(ko)'], 'conclusion-FOL': 'CompanyStock(ko)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[71] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (GrowthCompanyStock(x) → Volatile(x))', '∀x (Volatile(x) → ¬SuitableForRetirementFund(x))', '∃x GrowthCompanyStock(x)', '∀x (MatureCompanyStock(x) → SuitableForRetirementFund(x))', 'MatureCompanyStock(ko)'], 'conclusion-FOL': 'GrowthCompanyStock(ko) ∧ MatureCompanyStock(ko)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[72] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (GrowthCompanyStock(x) → Volatile(x))', '∀x (Volatile(x) → ¬SuitableForRetirementFund(x))', '∃x GrowthCompanyStock(x)', '∀x (MatureCompanyStock(x) → SuitableForRetirementFund(x))', 'MatureCompanyStock(ko)'], 'conclusion-FOL': '(GrowthCompanyStock(ko) ∨ Volatile(ko)) → ¬(CompanyStock(ko) ∧ Volatile(ko))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[73] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Plate(x) → BeginsWith34(x))', '∀x (¬BeginsWith34(x) → ¬IstanbulPlate(x))', 'IstanbulPlate(joe)', 'BeginsWith35(tom)', '∀x (BeginsWith35(x) → ¬BeginsWith34(x))'], 'conclusion-FOL': 'BeginsWith34(joe)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[74] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (PlateFromIstanbul(x) ↔ BeginsWith34(x))', '∀x (¬BeginsWith34(x) → ¬PlateFromIstanbul(x))', 'PlateFromIstanbul(joe)', 'BeginsWith35(tom)', '∀x (BeginsWith35(x) → ¬BeginsWith34(x))'], 'conclusion-FOL': '¬PlateFromIstanbul(tom)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[75] Pred: True       | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (StudentJob(x) → EarnMoney(x))', '∀x (TakeoutFrequent(x) → StudentJob(x))', 'TakeoutFrequent(mary) ∨ DiningHallEnjoyment(mary)', 'DiningHallEnjoyment(x) → ¬PickyEater(x)', 'DiningHallEnjoyment(x) → TimeSpentEatingAndSocializing(x)', '(StudentJob(mary) ∧ EarnMoney(mary)) → (¬EarnMoney(mary) ∨ ¬PickyEater(mary))'], 'conclusion-FOL': 'EarnMoney(mary)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[76] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (StudentJob(x) → EarnMoney(x))', '∀x (TakeoutFrequent(x) → StudentJob(x))', 'TakeoutFrequent(mary) ∨ DiningHallEnjoyment(mary)', '∀x (DiningHallEnjoyment(x) → ¬PickyEater(x))', '∀x (DiningHallEnjoyment(x) → TimeSpentEatingAndSocializing(x))', '(StudentJob(mary) ∧ EarnMoney(mary)) → (¬PickyEater(mary) ∧ ¬EarnMoney(mary))'], 'conclusion-FOL': '¬PickyEater(mary) ∧ TimeSpentEatingAndSocializing(mary)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[77] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (StudentJob(x) → EarnMoney(x))', '∀x (TakeoutFrequent(x) → StudentJob(x))', 'TakeoutFrequent(mary) ∨ DiningHallEnjoyment(mary)', 'DiningHallEnjoyment(x) → ¬PickyEater(x)', 'DiningHallEnjoyment(x) → TimeSpentEatingAndSocializing(x)', '(StudentJob(mary) ∧ EarnMoney(mary)) → (¬PickyEater(mary) ∨ ¬EarnMoney(mary))'], 'conclusion-FOL': '(¬PickyEater(mary) ∨ (PickyEater(mary) → TimeSpentEatingAndSocializing(mary)))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[78] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Bakery(x) → ¬Spicy(x))', '∀x (Cupcake(x) → Bakery(x))', '∀x (Hotpot(x) → Spicy(x))', '∀x ((ProductOfBakedByMelissa(x)) → Cupcake(x))', '(Spicy(driedThaiChilies) ∨ Bakery(driedThaiChilies)) → (Hotpot(driedThaiChilies) ∨ Spicy(driedThaiChilies))'], 'conclusion-FOL': 'ProductOfBakedByMelissa(driedThaiChilies)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[79] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Bakery(x) → ¬Spicy(x))', '∀x (Cupcake(x) → Bakery(x))', '∀x (Hotpot(x) → Spicy(x))', '∀x ((ProductOfBakedByMelissa(x)) → Cupcake(x))', '(Spicy(driedThaiChilies) ∨ Bakery(driedThaiChilies)) → (Hotpot(driedThaiChilies) ∨ Spicy(driedThaiChilies))'], 'conclusion-FOL': '¬ProductOfBakedByMelissa(driedThaiChilies)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[80] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Bakery(x) → ¬Spicy(x))', '∀x (Cupcake(x) → Bakery(x))', '∀x (Hotpot(x) → Spicy(x))', '∀x (ProductOfBakedByMelissa(x) → Cupcake(x))', '(Spicy(driedThaiChilies) ∨ Bakery(driedThaiChilies)) → (Hotpot(driedThaiChilies) ∨ Spicy(driedThaiChilies))'], 'conclusion-FOL': 'Hotpot(driedThaiChilies)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[81] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Bakery(x) → ¬Spicy(x))', '∀x (Cupcake(x) → Bakery(x))', '∀x (Hotpot(x) → Spicy(x))', '∀x (ProductOfBakedByMelissa(x) → Cupcake(x))', '(Spicy(driedThaiChilies) ∨ Bakery(driedThaiChilies)) → (Hotpot(driedThaiChilies) ∨ Spicy(driedThaiChilies))'], 'conclusion-FOL': '¬(ProductOfBakedByMelissa(driedThaiChilies) ∨ Bakery(driedThaiChilies))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[82] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Bakery(x) → ¬Spicy(x))', '∀x (Cupcake(x) → Bakery(x))', '∀x (Hotpot(x) → Spicy(x))', '∀x ((ProductOfBakedByMelissa(x) → Cupcake(x)))', '(Spicy(driedThaiChilies) ∨ Bakery(driedThaiChilies)) → (Hotpot(driedThaiChilies) ∨ Spicy(driedThaiChilies))'], 'conclusion-FOL': 'Cupcake(driedThaiChilies) ∧ ProductOfBakedByMelissa(driedThaiChilies)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[83] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (YelpRecommend(x) → ¬NegativeReviews(x))', '∀x (RatingGreaterThan9(x) → YelpRecommend(x))', '∃x (¬TakeOutService(x) ∧ NegativeReviews(x))', '∀x (PopularAmongResidents(x) → RatingGreaterThan9(x))', 'RatingGreaterThan9(subway) ∨ PopularAmongResidents(subway)'], 'conclusion-FOL': '(TakeOutService(subway) ∧ NegativeReviews(subway)) → (RatingGreaterThan9(subway) ∧ ¬TakeOutService(subway))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[84] Pred: True       | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (YelpRecommend(x) → ¬NegativeReviews(x))', '∀x (RatingGreaterThan9(x) → YelpRecommend(x))', '∃x (¬TakeoutService(x) ∧ NegativeReviews(x))', '∀x (PopularAmongResidents(x) → RatingGreaterThan9(x))', 'RatingGreaterThan9(subway) ∨ PopularAmongResidents(subway)'], 'conclusion-FOL': 'TakeoutService(subway) ∧ ¬NegativeReviews(subway)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[85] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (YelpRecommend(x) → ¬NegativeReviews(x))', '∀x (RatingGreaterThan9(x) → YelpRecommend(x))', '∃x (¬TakeoutService(x) ∧ NegativeReviews(x))', '∀x (PopularAmongResidents(x) → RatingGreaterThan9(x))', 'RatingGreaterThan9(subway) ∨ PopularAmongResidents(subway)'], 'conclusion-FOL': '¬TakeoutService(subway)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[86] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (SuperheroMovie(x) → GoodGuysWin(x))', 'SuperheroMovie(TheSurprisingAdventuresOfSirDigbyChickenCaesar)', '∀x ∀y ((GoodGuy(x) ∧ BadGuy(y)) → Fight(x, y))', 'Fight(SirDigby, Nemesis(SirDigby))', '∀x (NamedAfterCharacter(x) → GoodGuy(CharacterName(x)))', 'NamedAfterCharacter(TheSurprisingAdventuresOfSirDigbyChickenCaesar)', '∀x (NamedAfterCharacter(x) → CharacterAppearsInMovie(CharacterName(x), x))', '∀x ∀y ((WinsFight(x, y) → LosesFight(y, x))'], 'conclusion-FOL': 'LosesFight(Nemesis(SirDigby), SirDigby)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 3, "error_msg": "Syntax error at line 1, column 24\nExpected RPAREN, got LPAREN (()", "error_line": "Fight(SirDigby, Nemesis(SirDigby))", "pointer": "                       ^"}
+[INFO] Fixed premise-FOL at index 3
+Current FOL sample: {'premises-FOL': ['∀x (SuperheroMovie(x) → GoodGuysWin(x))', 'SuperheroMovie(TheSurprisingAdventuresOfSirDigbyChickenCaesar)', '∀x ∀y ((GoodGuy(x) ∧ BadGuy(y)) → Fight(x, y))', 'Fight(SirDigby, nemesis) ∧ Nemesis(nemesis, SirDigby)', '∀x (NamedAfterCharacter(x) → GoodGuy(CharacterName(x)))', 'NamedAfterCharacter(TheSurprisingAdventuresOfSirDigbyChickenCaesar)', '∀x (NamedAfterCharacter(x) → CharacterAppearsInMovie(CharacterName(x), x))', '∀x ∀y ((WinsFight(x, y) → LosesFight(y, x))'], 'conclusion-FOL': 'LosesFight(Nemesis(SirDigby), SirDigby)'}
+[Attempt 2] Failed: {"index": 4, "error_msg": "Syntax error at line 1, column 51\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x (NamedAfterCharacter(x) \u2192 GoodGuy(CharacterName(x)))", "pointer": "                                                  ^"}
+[INFO] Fixed premise-FOL at index 4
+Current FOL sample: {'premises-FOL': ['∀x (SuperheroMovie(x) → GoodGuysWin(x))', 'SuperheroMovie(TheSurprisingAdventuresOfSirDigbyChickenCaesar)', '∀x ∀y ((GoodGuy(x) ∧ BadGuy(y)) → Fight(x, y))', 'Fight(SirDigby, nemesis) ∧ Nemesis(nemesis, SirDigby)', '∀x (NamedAfterCharacter(x) → GoodGuy(characterName))', 'NamedAfterCharacter(TheSurprisingAdventuresOfSirDigbyChickenCaesar)', '∀x (NamedAfterCharacter(x) → CharacterAppearsInMovie(CharacterName(x), x))', '∀x ∀y ((WinsFight(x, y) → LosesFight(y, x))'], 'conclusion-FOL': 'LosesFight(Nemesis(SirDigby), SirDigby)'}
+[Attempt 3] Failed: {"index": 6, "error_msg": "Syntax error at line 1, column 67\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x (NamedAfterCharacter(x) \u2192 CharacterAppearsInMovie(CharacterName(x), x))", "pointer": "                                                                  ^"}
+[INFO] Fixed premise-FOL at index 6
+Current FOL sample: {'premises-FOL': ['∀x (SuperheroMovie(x) → GoodGuysWin(x))', 'SuperheroMovie(TheSurprisingAdventuresOfSirDigbyChickenCaesar)', '∀x ∀y ((GoodGuy(x) ∧ BadGuy(y)) → Fight(x, y))', 'Fight(SirDigby, nemesis) ∧ Nemesis(nemesis, SirDigby)', '∀x (NamedAfterCharacter(x) → GoodGuy(characterName))', 'NamedAfterCharacter(TheSurprisingAdventuresOfSirDigbyChickenCaesar)', '∀x (NamedAfterCharacter(x) → (∃y CharacterName(y) ∧ CharacterAppearsInMovie(y, x)))', '∀x ∀y ((WinsFight(x, y) → LosesFight(y, x))'], 'conclusion-FOL': 'LosesFight(Nemesis(SirDigby), SirDigby)'}
+[Attempt 4] Failed: {"index": 7, "error_msg": "Unexpected end of input, expected RPAREN", "error_line": "\u2200x \u2200y ((WinsFight(x, y) \u2192 LosesFight(y, x))", "pointer": "                                          ^"}
+[INFO] Fixed premise-FOL at index 7
+Current FOL sample: {'premises-FOL': ['∀x (SuperheroMovie(x) → GoodGuysWin(x))', 'SuperheroMovie(TheSurprisingAdventuresOfSirDigbyChickenCaesar)', '∀x ∀y ((GoodGuy(x) ∧ BadGuy(y)) → Fight(x, y))', 'Fight(SirDigby, nemesis) ∧ Nemesis(nemesis, SirDigby)', '∀x (NamedAfterCharacter(x) → GoodGuy(characterName))', 'NamedAfterCharacter(TheSurprisingAdventuresOfSirDigbyChickenCaesar)', '∀x (NamedAfterCharacter(x) → (∃y CharacterName(y) ∧ CharacterAppearsInMovie(y, x)))', '∀x ∀y ((WinsFight(x, y) → LosesFight(y, x)))'], 'conclusion-FOL': 'LosesFight(Nemesis(SirDigby), SirDigby)'}
+[Attempt 5] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 19\nExpected RPAREN, got LPAREN (()", "error_line": "LosesFight(Nemesis(SirDigby), SirDigby)", "pointer": "                  ^"}
+[INFO] Fixed conclusion-FOL
+=== Parsing successfully ===
+[87] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Book(x) → ContainsKnowledge(x))', '∀x ∀y (ReadsPersonBook(x, y) → GainsKnowledge(x))', '∀x (GainsKnowledge(x) → BecomesSmarter(x))'], 'conclusion-FOL': 'ContainsKnowledge(walden)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[88] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Book(x) → Knowledge(x))', '∀x ∀y (Read(x, y) → GainKnowledge(x))', '∀x (GainKnowledge(x) → Smarter(x))', 'Read(harry, walden)'], 'conclusion-FOL': 'Smarter(harry)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[89] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Book(x) → ContainsKnowledge(x))', '∀x ∀y (Reads(y, x) → GainsKnowledge(y))', '∀x (GainsKnowledge(x) → BecomesSmarter(x))'], 'conclusion-FOL': '∀x (BecomesSmarter(x) ↔ GainsKnowledge(x))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[90] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (NaturalLanguageProcessingTask(x) → (LanguageGenerationTask(x) ⊕ LanguageUnderstandingTask(x)))', '∀x ((NaturalLanguageProcessingTask(x) ∧ TextSequence(output(x))) → LanguageGenerationTask(x))', 'NaturalLanguageProcessingTask(machineTranslation)', 'TextSequence(output(machineTranslation))'], 'conclusion-FOL': 'LanguageGenerationTask(machineTranslation)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 1, "error_msg": "Syntax error at line 1, column 60\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((NaturalLanguageProcessingTask(x) \u2227 TextSequence(output(x))) \u2192 LanguageGenerationTask(x))", "pointer": "                                                           ^"}
+[INFO] Fixed premise-FOL at index 1
+Current FOL sample: {'premises-FOL': ['∀x (NaturalLanguageProcessingTask(x) → (LanguageGenerationTask(x) ⊕ LanguageUnderstandingTask(x)))', '∀x ((NaturalLanguageProcessingTask(x) ∧ TextSequence(output(x))) → LanguageGenerationTask(x))', 'NaturalLanguageProcessingTask(machineTranslation)', 'TextSequence(output(machineTranslation))'], 'conclusion-FOL': 'LanguageGenerationTask(machineTranslation)'}
+[Attempt 2] Failed: {"index": 1, "error_msg": "Syntax error at line 1, column 60\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((NaturalLanguageProcessingTask(x) \u2227 TextSequence(output(x))) \u2192 LanguageGenerationTask(x))", "pointer": "                                                           ^"}
+[INFO] Fixed premise-FOL at index 1
+Current FOL sample: {'premises-FOL': ['∀x (NaturalLanguageProcessingTask(x) → (LanguageGenerationTask(x) ⊕ LanguageUnderstandingTask(x)))', '∀x ((NaturalLanguageProcessingTask(x) ∧ TextSequence(output(x))) → LanguageGenerationTask(x))', 'NaturalLanguageProcessingTask(machineTranslation)', 'TextSequence(output(machineTranslation))'], 'conclusion-FOL': 'LanguageGenerationTask(machineTranslation)'}
+[Attempt 3] Failed: {"index": 1, "error_msg": "Syntax error at line 1, column 60\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((NaturalLanguageProcessingTask(x) \u2227 TextSequence(output(x))) \u2192 LanguageGenerationTask(x))", "pointer": "                                                           ^"}
+[INFO] Fixed premise-FOL at index 1
+Current FOL sample: {'premises-FOL': ['∀x (NaturalLanguageProcessingTask(x) → (LanguageGenerationTask(x) ⊕ LanguageUnderstandingTask(x)))', '∀x ((NaturalLanguageProcessingTask(x) ∧ TextSequence(output(x))) → LanguageGenerationTask(x))', 'NaturalLanguageProcessingTask(machineTranslation)', 'TextSequence(output(machineTranslation))'], 'conclusion-FOL': 'LanguageGenerationTask(machineTranslation)'}
+[Attempt 4] Failed: {"index": 1, "error_msg": "Syntax error at line 1, column 60\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((NaturalLanguageProcessingTask(x) \u2227 TextSequence(output(x))) \u2192 LanguageGenerationTask(x))", "pointer": "                                                           ^"}
+[INFO] Fixed premise-FOL at index 1
+Current FOL sample: {'premises-FOL': ['∀x (NaturalLanguageProcessingTask(x) → (LanguageGenerationTask(x) ⊕ LanguageUnderstandingTask(x)))', '∀x ((NaturalLanguageProcessingTask(x) ∧ TextSequence(output(x))) → LanguageGenerationTask(x))', 'NaturalLanguageProcessingTask(machineTranslation)', 'TextSequence(output(machineTranslation))'], 'conclusion-FOL': 'LanguageGenerationTask(machineTranslation)'}
+[Attempt 5] Failed: {"index": 1, "error_msg": "Syntax error at line 1, column 60\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((NaturalLanguageProcessingTask(x) \u2227 TextSequence(output(x))) \u2192 LanguageGenerationTask(x))", "pointer": "                                                           ^"}
+[INFO] Fixed premise-FOL at index 1
+Current FOL sample: {'premises-FOL': ['∀x (NaturalLanguageProcessingTask(x) → (LanguageGenerationTask(x) ⊕ LanguageUnderstandingTask(x)))', '∀x ((NaturalLanguageProcessingTask(x) ∧ TextSequence(output(x))) → LanguageGenerationTask(x))', 'NaturalLanguageProcessingTask(machineTranslation)', 'TextSequence(output(machineTranslation))'], 'conclusion-FOL': 'LanguageGenerationTask(machineTranslation)'}
+[WARN] Maximum attempts reached, returning 'Uncertain'
+[91] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (NLP_Task(x) → (Language_Generation_Task(x) ⊕ Language_Understanding_Task(x)))', '∀x ((Output_Text_Sequence(x) ∧ NLP_Task(x)) → Language_Generation_Task(x))', 'Machine_Translation(jack)', 'Output_Text_Sequence(Machine_Translation)'], 'conclusion-FOL': 'Language_Understanding_Task(Machine_Translation)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[92] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowsPets(x))', '∀x (RentApartmentInManagedBuilding(x) → RequiresDeposit(x))', '∀x (SecurityDeposit(x) ↔ (EqualOrMoreThanOneMonthRent(x) ∨ MoreThanOneMonthRent(x)))', 'Fluffy(cat(tom))', '∀x (Cat(x) → Pet(x))', 'OliveGarden(managedBuilding)', 'MonthlyRent(OliveGarden, 2000)', 'Tom(RentApartmentInManagedBuilding) ↔ (AllowsPets(OliveGarden) ∧ SecurityDeposit(OliveGarden) ≤ 1500)', '(2000 > 1500)'], 'conclusion-FOL': 'Tom(RentApartmentInManagedBuilding)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 3, "error_msg": "Syntax error at line 1, column 11\nExpected RPAREN, got LPAREN (()", "error_line": "Fluffy(cat(tom))", "pointer": "          ^"}
+[INFO] Fixed premise-FOL at index 3
+Current FOL sample: {'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowsPets(x))', '∀x (RentApartmentInManagedBuilding(x) → RequiresDeposit(x))', '∀x (SecurityDeposit(x) ↔ (EqualOrMoreThanOneMonthRent(x) ∨ MoreThanOneMonthRent(x)))', 'Fluffy(cat) ∧ cat(tom)', '∀x (Cat(x) → Pet(x))', 'OliveGarden(managedBuilding)', 'MonthlyRent(OliveGarden, 2000)', 'Tom(RentApartmentInManagedBuilding) ↔ (AllowsPets(OliveGarden) ∧ SecurityDeposit(OliveGarden) ≤ 1500)', '(2000 > 1500)'], 'conclusion-FOL': 'Tom(RentApartmentInManagedBuilding)'}
+[Attempt 2] Failed: {"index": 6, "error_msg": "Syntax error at line 1, column 30\nExpected ID, got RPAREN ())", "error_line": "MonthlyRent(OliveGarden, 2000)", "pointer": "                             ^"}
+[INFO] Fixed premise-FOL at index 6
+Current FOL sample: {'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowsPets(x))', '∀x (RentApartmentInManagedBuilding(x) → RequiresDeposit(x))', '∀x (SecurityDeposit(x) ↔ (EqualOrMoreThanOneMonthRent(x) ∨ MoreThanOneMonthRent(x)))', 'Fluffy(cat) ∧ cat(tom)', '∀x (Cat(x) → Pet(x))', 'OliveGarden(managedBuilding)', 'MonthlyRent(OliveGarden, rent2000)', 'Tom(RentApartmentInManagedBuilding) ↔ (AllowsPets(OliveGarden) ∧ SecurityDeposit(OliveGarden) ≤ 1500)', '(2000 > 1500)'], 'conclusion-FOL': 'Tom(RentApartmentInManagedBuilding)'}
+[Attempt 3] Failed: {"index": 8, "error_msg": "Syntax error at line 1, column 13\nExpected ID, got RPAREN ())", "error_line": "(2000 > 1500)", "pointer": "            ^"}
+[INFO] Fixed premise-FOL at index 8
+Current FOL sample: {'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowsPets(x))', '∀x (RentApartmentInManagedBuilding(x) → RequiresDeposit(x))', '∀x (SecurityDeposit(x) ↔ (EqualOrMoreThanOneMonthRent(x) ∨ MoreThanOneMonthRent(x)))', 'Fluffy(cat) ∧ cat(tom)', '∀x (Cat(x) → Pet(x))', 'OliveGarden(managedBuilding)', 'MonthlyRent(OliveGarden, rent2000)', 'Tom(RentApartmentInManagedBuilding) ↔ (AllowsPets(OliveGarden) ∧ SecurityDeposit(OliveGarden) ≤ 1500)', 'MoreThan(2000, 1500)'], 'conclusion-FOL': 'Tom(RentApartmentInManagedBuilding)'}
+[Attempt 4] Failed: {"index": 8, "error_msg": "Syntax error at line 1, column 14\nExpected ID, got COMMA (,)", "error_line": "MoreThan(2000, 1500)", "pointer": "             ^"}
+[INFO] Fixed premise-FOL at index 8
+Current FOL sample: {'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowsPets(x))', '∀x (RentApartmentInManagedBuilding(x) → RequiresDeposit(x))', '∀x (SecurityDeposit(x) ↔ (EqualOrMoreThanOneMonthRent(x) ∨ MoreThanOneMonthRent(x)))', 'Fluffy(cat) ∧ cat(tom)', '∀x (Cat(x) → Pet(x))', 'OliveGarden(managedBuilding)', 'MonthlyRent(OliveGarden, rent2000)', 'Tom(RentApartmentInManagedBuilding) ↔ (AllowsPets(OliveGarden) ∧ SecurityDeposit(OliveGarden) ≤ 1500)', 'MoreThan(money2000, money1500)'], 'conclusion-FOL': 'Tom(RentApartmentInManagedBuilding)'}
+=== Parsing successfully ===
+[93] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowsPets(x))', '∀x (RentApartmentInManagedBuilding(x) → RequiresDeposit(x))', '∀x (RequiresDeposit(x) → (EqualOrMoreThanOneMonthRent(x) ∨ EqualToOneMonthRent(x)))', 'Fluffy(cat(tom))', '∀x (Cat(x) → Pet(x))', 'OliveGarden(managedBuilding)', 'MonthlyRent(OliveGarden, 2000)', 'Tom(RentApartmentInManagedBuilding) ↔ (AllowsPets(OliveGarden) ∧ NotMoreThan1500(SecurityDeposit))', '2000 > 1500'], 'conclusion-FOL': 'Tom(RentApartmentInManagedBuilding)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 3, "error_msg": "Syntax error at line 1, column 11\nExpected RPAREN, got LPAREN (()", "error_line": "Fluffy(cat(tom))", "pointer": "          ^"}
+[INFO] Fixed premise-FOL at index 3
+Current FOL sample: {'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowsPets(x))', '∀x (RentApartmentInManagedBuilding(x) → RequiresDeposit(x))', '∀x (RequiresDeposit(x) → (EqualOrMoreThanOneMonthRent(x) ∨ EqualToOneMonthRent(x)))', 'Fluffy(cat) ∧ cat(tom)', '∀x (Cat(x) → Pet(x))', 'OliveGarden(managedBuilding)', 'MonthlyRent(OliveGarden, 2000)', 'Tom(RentApartmentInManagedBuilding) ↔ (AllowsPets(OliveGarden) ∧ NotMoreThan1500(SecurityDeposit))', '2000 > 1500'], 'conclusion-FOL': 'Tom(RentApartmentInManagedBuilding)'}
+[Attempt 2] Failed: {"index": 6, "error_msg": "Syntax error at line 1, column 30\nExpected ID, got RPAREN ())", "error_line": "MonthlyRent(OliveGarden, 2000)", "pointer": "                             ^"}
+[INFO] Fixed premise-FOL at index 6
+Current FOL sample: {'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowsPets(x))', '∀x (RentApartmentInManagedBuilding(x) → RequiresDeposit(x))', '∀x (RequiresDeposit(x) → (EqualOrMoreThanOneMonthRent(x) ∨ EqualToOneMonthRent(x)))', 'Fluffy(cat) ∧ cat(tom)', '∀x (Cat(x) → Pet(x))', 'OliveGarden(managedBuilding)', 'MonthlyRent(OliveGarden, rent2000)', 'Tom(RentApartmentInManagedBuilding) ↔ (AllowsPets(OliveGarden) ∧ NotMoreThan1500(SecurityDeposit))', '2000 > 1500'], 'conclusion-FOL': 'Tom(RentApartmentInManagedBuilding)'}
+[Attempt 3] Failed: 'NoneType' object is not subscriptable
+[WARN] Parser error is not in JSON format: 'NoneType' object is not subscriptable
+[94] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowedPets(x))', '∀x (RentApartmentIn(x) → DepositRequired(x))', '∀x (DepositEqualOrMoreThanOneMonthRent(x) ∨ DepositLessThanOneMonthRent(x))', 'FluffyIsTomCat(fluffy, tom)', '∀x (Cat(x) → Pet(x))', 'ManagedBuilding(oliveGarden)', 'MonthlyRentAtOliveGarden(2000)', '(tomRentsApartmentInManagedBuilding(tom) ↔ (AllowedToMoveWithFluffy(tom) ∧ DepositNoMoreThan1500(tom)))', '2000 > 1500'], 'conclusion-FOL': 'DepositAtOliveGarden(2000) ∨ DepositAtOliveGardenMoreThan2000'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 6, "error_msg": "Syntax error at line 1, column 30\nExpected ID, got RPAREN ())", "error_line": "MonthlyRentAtOliveGarden(2000)", "pointer": "                             ^"}
+[INFO] Fixed premise-FOL at index 6
+Current FOL sample: {'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowedPets(x))', '∀x (RentApartmentIn(x) → DepositRequired(x))', '∀x (DepositEqualOrMoreThanOneMonthRent(x) ∨ DepositLessThanOneMonthRent(x))', 'FluffyIsTomCat(fluffy, tom)', '∀x (Cat(x) → Pet(x))', 'ManagedBuilding(oliveGarden)', 'MonthlyRentAtOliveGarden(oliveGarden, rent2000)', '(tomRentsApartmentInManagedBuilding(tom) ↔ (AllowedToMoveWithFluffy(tom) ∧ DepositNoMoreThan1500(tom)))', '2000 > 1500'], 'conclusion-FOL': 'DepositAtOliveGarden(2000) ∨ DepositAtOliveGardenMoreThan2000'}
+[Attempt 2] Failed: 'NoneType' object is not subscriptable
+[WARN] Parser error is not in JSON format: 'NoneType' object is not subscriptable
+[95] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (LovedByTourists(x) → MaxFavoriteAnimal(x))', '∀x (AustralianAnimal(x) → LovedByTourists(x))', '∀x (Quokka(x) → AustralianAnimal(x))', '∀x (MaxFavoriteAnimal(x) → VeryFluffy(x))', '∀x (MaxFavoriteAnimal(x) → LovesToSleep(x))', '∀x (VeryFluffy(x) ∧ Koala(x) → ¬Quokka(x))'], 'conclusion-FOL': 'Koala(k) → LovesToSleep(k)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[96] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (LovedByTourists(x) → MaxFavoriteAnimal(x))', '∀x (AustralianAnimal(x) → LovedByTourists(x))', '∀x (Quokka(x) → AustralianAnimal(x))', '∀x (MaxFavoriteAnimal(x) → VeryFluffy(x))', '∀x (MaxFavoriteAnimal(x) → LovesToSleep(x))', '∀x (VeryFluffy(x) ∧ Koala(x) → ¬Quokka(x))'], 'conclusion-FOL': '(Koala(koala) ∧ Quokka(koala)) ↔ (LovesToSleep(koala) ∧ Quokka(koala))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[97] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (LovedByTourists(x) → MaxFavoriteAnimal(x))', '∀x (AustralianAnimal(x) → LovedByTourists(x))', '∀x (Quokka(x) → AustralianAnimal(x))', '∀x (MaxFavoriteAnimal(x) → VeryFluffy(x))', '∀x (MaxFavoriteAnimal(x) → LovesToSleep(x))'], 'conclusion-FOL': '(Koala(x) ∧ Quokka(x)) → (LovesToSleep(x) ∨ VeryFluffy(x))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[98] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Man(x) → Kind(x) ⊕ Evil(x))', '∀x (Ugly(x) → ¬Handsome(x))', '∀x (Evil(x) → Ugly(x))', '∀x (Gentleman(x) → Handsome(x))', '∀x (CEO(x) → Gentleman(x))', 'Gentleman(harry)'], 'conclusion-FOL': 'CEO(harry)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[99] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Man(x) → (Kind(x) ⊕ Evil(x)))', '∀x (Ugly(x) ↔ ¬Handsome(x))', '∀x (Evil(x) → Ugly(x))', '∀x (Gentleman(x) → Handsome(x))', '∀x (CEO(x) → Gentleman(x))', 'Gentleman(harry)'], 'conclusion-FOL': '(Kind(harry) ∨ CEO(harry))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[100] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Man(x) → (Kind(x) ⊕ Evil(x)))', '∀x (Ugly(x) ↔ ¬Handsome(x))', '∀x (Evil(x) → Ugly(x))', '∀x (Gentleman(x) → Handsome(x))', '∀x (CEO(x) → Gentleman(x))', 'Gentleman(harry)'], 'conclusion-FOL': '(Evil(harry) ∧ Ugly(harry)) ⊕ (¬Evil(harry) ∧ ¬Ugly(harry)) → (¬Kind(harry) ∧ ¬CEO(harry))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[101] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x ((TwinsOrTriplets(x) ∨ Triplets(x)) → HangOutWithSiblings(x))', '∀x (SameAgeSiblings(x) → TwinsOrTriplets(x))', '∀x (ComplainOftenAnnoyingSiblings(x) → SameAgeSiblings(x))', '∀x (¬LiveAtHomeRegularly(x) → ¬StrongBondsFamilyMembers(x))', '∀x (HangOutWithSiblings(x) → ¬LiveAtHomeRegularly(x))', '(TwinsOrTriplets(luke) ∧ StrongBondsFamilyMembers(luke)) ⊕ (¬TwinsOrTriplets(luke) ∧ ¬StrongBondsFamilyMembers(luke))'], 'conclusion-FOL': 'HangOutWithSiblings(luke)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[102] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x ((TwinsOrTriplets(x) ∨ Triplets(x)) → HangOutWithSiblings(x) ∧ PlayWithSiblings(x))', '∀x (SameAgeSiblings(x) → TwinsOrTriplets(x) ∨ Triplets(x))', '∀x (ComplainOftenAboutAnnoyingSiblings(x) → SameAgeSiblings(x))', '∀x (¬LiveAtHomeRegularly(x) → ¬DevelopStrongBondsWithFamilyMembers(x))', '∀x (HangOutWithSiblings(x) ∧ PlayWithSiblings(x) → ¬LiveAtHomeRegularly(x))', '(TwinsOrTriplets(luke) ∨ Triplets(luke) ⊕ DevelopStrongBondsWithFamilyMembers(luke)) ⊕ (¬(TwinsOrTriplets(luke) ∨ Triplets(luke)) ∧ ¬DevelopStrongBondsWithFamilyMembers(luke))'], 'conclusion-FOL': 'ComplainOftenAboutAnnoyingSiblings(luke)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[103] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x ((TwinsOrTriplets(x) ∨ Triplets(x)) → HangOutWithSiblings(x))', '∀x (SameAgeSiblings(x) → TwinsOrTriplets(x))', '∀x (ComplainOftenAnnoyingSiblings(x) → SameAgeSiblings(x))', '∀x (¬LiveAtHomeRegularly(x) → ¬StrongBondsFamilyMembers(x))', '∀x (HangOutWithSiblings(x) → ¬LiveAtHomeRegularly(x))', '(TwinsOrTriplets(luke) ∧ StrongBondsFamilyMembers(luke)) ⊕ (¬TwinsOrTriplets(luke) ∧ ¬StrongBondsFamilyMembers(luke))'], 'conclusion-FOL': '¬(TwinsOrTriplets(luke) ∨ ComplainOftenAnnoyingSiblings(luke))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[104] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['Costs(takeGRE, usd205)', '∀x (Applicant(x) ∧ TakesGRE(x) ∧ ProvesEconomicHardship(x) → ProvidesFinancialAid(ets, x))', 'ProvesEconomicHardship(x) ↔ HasTooLittleMoneyOrResources(x)', 'LivesInSingleParentFamily(tom)', 'UnemployedForMoreThanAYear(dadOfTom)'], 'conclusion-FOL': 'Applicant(tom) ∧ TakesGRE(tom) ∧ ProvesEconomicHardship(tom) → ProvidesFinancialAid(ets, tom)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[105] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['Costs(GRE, usd205)', '∀x (Applicant(x) ∧ TakesGRE(x) ∧ ProvesEconomicHardship(x) → ProvidesFinancialAid(ets, x))', 'ProvesEconomicHardship(x) ↔ HasTooLittleMoneyOrResources(x)', 'LivesInSingleParentFamily(tom)', 'HasBeenOutOfWorkForMoreThanAYear(dadOfTom)'], 'conclusion-FOL': 'Costs(GRE, usd205) → CostsBelowUsd300(GRE)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[106] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (TakeGRE(x) → Cost(x, usd205))', '∃y (FinancialAid(y) ∧ ∀z (ProveEconomicHardship(z) → ApplicantForFinancialAid(z, y)))', '∀w (EconomicHardship(w) ↔ DifficultyCausedByMoneyOrResources(w))', 'LivesInSingleParentFamily(tom)', 'UnemployedForMoreThanAYear(dadOfTom)'], 'conclusion-FOL': '¬∃y (FinancialAid(y) ∧ TakeGRE(tom))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[107] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (SpillFood(x) → (¬TidySpace(x) ∧ EnjoyCleaning(x)))', '∀x (FrequentDiner(x) → SpillFood(x))', '∀x ((OnlyChild(x) ∧ NoSiblings(x)) → (TidySpace(x) ∧ EnjoyCleaning(x)))', '∀x (BusyParents(x) → (OnlyChild(x) ∧ NoSiblings(x)))', '∀x (HighIncomeHousehold(x) → BusyParents(x))', '(SpillFood(peter) ∧ OnlyChild(peter) ∧ NoSiblings(peter)) ⊕ (¬SpillFood(peter) ∧ ¬(OnlyChild(peter) ∧ NoSiblings(peter)))'], 'conclusion-FOL': 'TidySpace(peter) ∧ EnjoyCleaning(peter)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[108] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (SpillFood(x) → (¬TidySpace(x) ∧ EnjoyCleaning(x)))', '∀x (FrequentDiner(x) → SpillFood(x))', '∀x ((OnlyChild(x) ∧ NoSiblings(x)) → (TidySpace(x) ∧ EnjoyCleaning(x)))', '∀x ((BusyParents(x) ∧ RegularJob(x)) → OnlyChild(x))', '∀x (HighIncomeHousehold(x) → BusyParents(x))', '(SpillFood(peter) ∧ OnlyChild(peter) ∧ NoSiblings(peter)) ⊕ (¬SpillFood(peter) ∧ ¬OnlyChild(peter) ∧ ¬NoSiblings(peter))'], 'conclusion-FOL': '(FrequentDiner(peter) ∨ HighIncomeHousehold(peter))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[109] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (SpillFood(x) → (¬TidySpace(x) ∧ EnjoyCleaning(x)))', '∀x (FrequentDiner(x) → SpillFood(x))', '∀x ((OnlyChild(x) ∧ NoSiblings(x)) → (TidySpace(x) ∧ EnjoyCleaning(x)))', '∀x ((BusyParents(x) ∧ RegularJob(x)) → OnlyChild(x))', '∀x (HighIncomeHousehold(x) → BusyParents(x))', '(SpillFood(peter) ∧ OnlyChild(peter) ∧ NoSiblings(peter)) ⊕ (¬SpillFood(peter) ∧ ¬OnlyChild(peter) ∧ ¬NoSiblings(peter))'], 'conclusion-FOL': '(FrequentDiner(peter) ∨ HighIncomeHousehold(peter)) ⊕ (FrequentDiner(peter) ∧ ¬HighIncomeHousehold(peter))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[110] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (FirTree(x) → Evergreen(x))', '∃y (ObjectOfWorship(y) ∧ FirTree(y))'], 'conclusion-FOL': '∃z (Evergreen(z) ∧ ¬ObjectOfWorship(z))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[111] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['PicurisMountainsInNMorTX', 'VisitedJuanDeOnate(PicurisMountains)', 'Donated(HardingPegmatiteMine) ∧ LocatedIn(HardingPegmatiteMine, PicurisMountains)', '¬∃x (MountainRange(x) ∧ InTexas(x) ∧ HasMines(x) ∧ Donated(MinesOfX))'], 'conclusion-FOL': 'VisitedJuanDeOnate(NewMexicoMountainRange)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 0, "error_msg": "Unexpected end of input, expected LPAREN", "error_line": "PicurisMountainsInNMorTX", "pointer": "^"}
+[INFO] Fixed premise-FOL at index 0
+Current FOL sample: {'premises-FOL': ['InPicurisMountains(picurisMountains) ∨ InState(picurisMountains, newMexico) ∨ InState(picurisMountains, texas)', 'VisitedJuanDeOnate(PicurisMountains)', 'Donated(HardingPegmatiteMine) ∧ LocatedIn(HardingPegmatiteMine, PicurisMountains)', '¬∃x (MountainRange(x) ∧ InTexas(x) ∧ HasMines(x) ∧ Donated(MinesOfX))'], 'conclusion-FOL': 'VisitedJuanDeOnate(NewMexicoMountainRange)'}
+=== Parsing successfully ===
+[112] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['PicurisMountainsInNMorTX', 'VisitedJuanDeOnate(PicurisMountains)', 'Donated(HardingPegmatiteMine) ∧ LocatedIn(HardingPegmatiteMine, PicurisMountains)', '∀x (MountainRange(x) ∧ InTexas(x) → ¬∃y (Mine(y) ∧ LocatedIn(y, x) ∧ Donated(y)))'], 'conclusion-FOL': 'VisitedJuanDeOnate(MountainRangeTX)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 0, "error_msg": "Unexpected end of input, expected LPAREN", "error_line": "PicurisMountainsInNMorTX", "pointer": "^"}
+[INFO] Fixed premise-FOL at index 0
+Current FOL sample: {'premises-FOL': ['InPicurisMountains(picurisMountains) ∨ InState(picurisMountains, newMexico) ∨ InState(picurisMountains, texas)', 'VisitedJuanDeOnate(PicurisMountains)', 'Donated(HardingPegmatiteMine) ∧ LocatedIn(HardingPegmatiteMine, PicurisMountains)', '∀x (MountainRange(x) ∧ InTexas(x) → ¬∃y (Mine(y) ∧ LocatedIn(y, x) ∧ Donated(y)))'], 'conclusion-FOL': 'VisitedJuanDeOnate(MountainRangeTX)'}
+=== Parsing successfully ===
+[113] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['PicurisMountainsInNMorTX', 'VisitedJuanDeOnate(PicurisMountains)', 'Donated(HardingPegmatiteMine) ∧ LocatedIn(HardingPegmatiteMine, PicurisMountains)', '¬∃x (MountainRange(x) ∧ InTexas(x) ∧ ∃y (Mine(y) ∧ LocatedIn(y, x) ∧ Donated(y)))'], 'conclusion-FOL': '¬LocatedIn(HardingPegmatiteMine, MountainRangeNM)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 0, "error_msg": "Unexpected end of input, expected LPAREN", "error_line": "PicurisMountainsInNMorTX", "pointer": "^"}
+[INFO] Fixed premise-FOL at index 0
+Current FOL sample: {'premises-FOL': ['InPicurisMountains(picurisMountains) ∨ InState(picurisMountains, newMexico) ∨ InState(picurisMountains, texas)', 'VisitedJuanDeOnate(PicurisMountains)', 'Donated(HardingPegmatiteMine) ∧ LocatedIn(HardingPegmatiteMine, PicurisMountains)', '¬∃x (MountainRange(x) ∧ InTexas(x) ∧ ∃y (Mine(y) ∧ LocatedIn(y, x) ∧ Donated(y)))'], 'conclusion-FOL': '¬LocatedIn(HardingPegmatiteMine, MountainRangeNM)'}
+=== Parsing successfully ===
+[114] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x ∀y (Man(x) ∧ Man(y) ∧ TallerThan(x, y) → CanBlock(x, y))', "man(michael) ∧ ∀z (Man(z) ∧ ClassMemberOf(z, michael's_class) → TallerThan(michael, z))", '∀x ∀y ∀z ((TallerThan(x, y) ∧ TallerThan(y, z)) → TallerThan(x, z))', 'man(peter) ∧ TallerThan(peter, michael)', '∀x (Man(michael) ∧ CanBlock(michael, x) ∧ ¬JumpsWhenShooting(x) → CanBlock(michael, x))', '¬CanBlock(michael, windy)', '∀x (Shooter(x) ∧ JumpsWhenShooting(x) → GreatShooter(x))'], 'conclusion-FOL': "∃z (Man(z) ∧ ClassMemberOf(z, michael's_class) ∧ ¬TallerThan(peter, z))"}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 1, "error_msg": "Syntax error at line 1, column 54\nExpected RPAREN, got ID (s_class)", "error_line": "man(michael) \u2227 \u2200z (Man(z) \u2227 ClassMemberOf(z, michael's_class) \u2192 TallerThan(michael, z))", "pointer": "                                                     ^"}
+[INFO] Fixed premise-FOL at index 1
+Current FOL sample: {'premises-FOL': ['∀x ∀y (Man(x) ∧ Man(y) ∧ TallerThan(x, y) → CanBlock(x, y))', 'man(michael) ∧ ∀z (Man(z) ∧ ClassMemberOf(z, michael_class) → TallerThan(michael, z))', '∀x ∀y ∀z ((TallerThan(x, y) ∧ TallerThan(y, z)) → TallerThan(x, z))', 'man(peter) ∧ TallerThan(peter, michael)', '∀x (Man(michael) ∧ CanBlock(michael, x) ∧ ¬JumpsWhenShooting(x) → CanBlock(michael, x))', '¬CanBlock(michael, windy)', '∀x (Shooter(x) ∧ JumpsWhenShooting(x) → GreatShooter(x))'], 'conclusion-FOL': "∃z (Man(z) ∧ ClassMemberOf(z, michael's_class) ∧ ¬TallerThan(peter, z))"}
+[Attempt 2] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 39\nExpected RPAREN, got ID (s_class)", "error_line": "\u2203z (Man(z) \u2227 ClassMemberOf(z, michael's_class) \u2227 \u00acTallerThan(peter, z))", "pointer": "                                      ^"}
+[INFO] Fixed conclusion-FOL
+=== Parsing successfully ===
+[115] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x ∀y (Man(x) ∧ Man(y) ∧ TallerThan(x, y) → CanBlock(x, y))', '∃x (Man(michael) ∧ ∀y (TallerThan(x, y) ↔ PersonInClass(y)))', '∀x ∀y ∀z ((TallerThan(x, y) ∧ TallerThan(y, z)) → TallerThan(x, z))', 'Man(peter) ∧ TallerThan(peter, michael)', '∃x (Man(michael) ∧ ∀y (CanBlock(michael, y) ↔ ¬JumpWhenShooting(y)))', '¬CanBlock(michael, windy)', '∀x ((Shooter(x) ∧ CanJump(x)) → GreatShooter(x))'], 'conclusion-FOL': 'GreatShooter(windy)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[116] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x ∀y (Man(x) ∧ Man(y) ∧ TallerThan(x, y) → CanBlock(x, y))', '∃x (Man(michael) ∧ ∀y (Man(y) → (y = michael ∨ TallerThan(michael, y))))', '∀x ∀y ∀z ((TallerThan(x, y) ∧ TallerThan(y, z)) → TallerThan(x, z))', '∃x (Man(peter) ∧ TallerThan(peter, michael))', '∀x (Man(michael) ∧ ¬JumpsWhenShooting(x) → CanBlock(michael, x))', '¬CanBlock(michael, windy)', '∀x (ShootsAndJumps(x) → GreatShooter(x))'], 'conclusion-FOL': 'CanBlock(peter, windy)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 1, "error_msg": "Syntax error at line 1, column 38\nExpected LPAREN, got ID (michael)", "error_line": "\u2203x (Man(michael) \u2227 \u2200y (Man(y) \u2192 (y = michael \u2228 TallerThan(michael, y))))", "pointer": "                                     ^"}
+[INFO] Fixed premise-FOL at index 1
+Current FOL sample: {'premises-FOL': ['∀x ∀y (Man(x) ∧ Man(y) ∧ TallerThan(x, y) → CanBlock(x, y))', '∃x (Man(michael) ∧ ∀y (Man(y) → (¬SameAs(y, michael) → TallerThan(michael, y))))', '∀x ∀y ∀z ((TallerThan(x, y) ∧ TallerThan(y, z)) → TallerThan(x, z))', '∃x (Man(peter) ∧ TallerThan(peter, michael))', '∀x (Man(michael) ∧ ¬JumpsWhenShooting(x) → CanBlock(michael, x))', '¬CanBlock(michael, windy)', '∀x (ShootsAndJumps(x) → GreatShooter(x))'], 'conclusion-FOL': 'CanBlock(peter, windy)'}
+=== Parsing successfully ===
+[117] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['NamedAfter(barutin_cove, barutin_settlement)', 'LocatedOn(barutin_cove, southwest_coast_of_snow_island)', 'Includes(south_shetland_islands, snow_island) ∧ Includes(south_shetland_islands, greenwich_island) ∧ Includes(south_shetland_islands, deception_island)', 'PartOf(south_shetland_islands, antarctica)', '(LocatedIn(x, y) ∧ LocatedIn(y, z)) → LocatedIn(x, z)'], 'conclusion-FOL': '∀x (Island(x) ∧ PartOf(x, antarctica) → NamedAfter(barutin_cove, x))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[118] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['NamedAfter(barutin_cove, barutin_settlement)', 'LocatedOn(barutin_cove, southwest_coast_of_snow_island)', 'Includes(south_shetland_islands, snow_island) ∧ Includes(south_shetland_islands, greenwich_island) ∧ Includes(south_shetland_islands, deception_island)', 'PartOf(south_shetland_islands, antarctica)', '∀x ∀y ∀z (LocatedIn(x, y) ∧ LocatedIn(y, z) → LocatedIn(x, z))'], 'conclusion-FOL': '∃x ∃y (Cove(x) ∧ NamedAfter(x, y) ∧ BulgarianSettlement(y) ∧ PartOf(south_shetland_islands, antarctica) ∧ Includes(south_shetland_islands, snow_island) ∧ LocatedOn(x, southwest_coast_of_snow_island) → LocatedIn(x, antarctica))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[119] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['NamedAfter(barutin_cove, barutin_settlement)', 'LocatedOn(barutin_cove, southwest_coast_of_snow_island)', 'Includes(south_shetland_islands, snow_island) ∧ Includes(south_shetland_islands, greenwich_island) ∧ Includes(south_shetland_islands, deception_island)', 'PartOf(south_shetland_islands, antarctica)', '∀x ∀y ∀z (LocatedIn(x, y) ∧ LocatedIn(y, z) → LocatedIn(x, z))'], 'conclusion-FOL': '¬(LocatedIn(barutin_settlement, antarctica))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[120] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∃x (Affection(x) ∧ Love(x))', '∃y (Love(y) ∧ Positive(y))'], 'conclusion-FOL': '∃z (Affection(z) ∧ Positive(z))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[121] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (CanTransportMultiplePassengers(x) → ¬Empty(x))', '∀x (Airline(x) → CanTransportMultiplePassengers(x))', '∀x (Plane(x) → Empty(x))', '∀x (Boeing707(x) → Plane(x))', '(¬Airline(greyhound) → ∀y (Greyhound(y) → ¬Airline(y)))'], 'conclusion-FOL': 'Airline(greyhound)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[122] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (CanTransportMultiplePassengers(x) → ¬Empty(x))', '∀x (Airline(x) → CanTransportMultiplePassengers(x))', '∀x (Plane(x) → Empty(x))', '∀x (Boeing707(x) → Plane(x))', '(¬Airline(greyhound) → ∀y (Greyhound(y) → ¬Airline(y)))'], 'conclusion-FOL': 'greyhound ⊕ Boeing707(greyhound)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 11\nExpected LPAREN, got XOR (\u2295)", "error_line": "greyhound \u2295 Boeing707(greyhound)", "pointer": "          ^"}
+[INFO] Fixed conclusion-FOL
+=== Parsing successfully ===
+[123] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (CanTransportMultiplePassengers(x) → ¬Empty(x))', '∀x (Airline(x) → CanTransportMultiplePassengers(x))', '∀x (Plane(x) → Empty(x))', '∀x (Boeing707(x) → Plane(x))', '(¬Airline(greyhound) → ∀y (Greyhound(y) → ¬Airline(y)))'], 'conclusion-FOL': 'greyhound ⊕ boeing707'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 11\nExpected LPAREN, got XOR (\u2295)", "error_line": "greyhound \u2295 boeing707", "pointer": "          ^"}
+[INFO] Fixed conclusion-FOL
+=== Parsing successfully ===
+[124] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Mammal(x) → Animal(x))', '∀x (Monkey(x) → Mammal(x))', '∀x (Animal(x) ↔ (Monkey(x) ⊕ Bird(x)))', '∀x (Bird(x) → Fly(x))', '∀x (Animal(x) → Breathe(x))', '(Fly(rock) ∨ Bird(rock)) → Wings(rock)', '¬(Fly(rock) ∨ Bird(rock)) → ¬(Breathe(rock) ∧ Fly(rock))'], 'conclusion-FOL': 'Monkey(rock)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[125] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Mammal(x) → Animal(x))', '∀x (Monkey(x) → Mammal(x))', '∀x (Animal(x) ↔ (Monkey(x) ⊕ Bird(x)))', '∀x (Bird(x) → Fly(x))', '∀x (Animal(x) → Breathe(x))', 'Fly(x) → Wings(x)', '¬(Fly(rocker) ∨ Bird(rocker)) → ¬(Fly(rocker) ∨ Breathe(rocker))'], 'conclusion-FOL': 'Wings(rocker)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[126] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Mammal(x) → Animal(x))', '∀x (Monkey(x) → Mammal(x))', '∀x (Animal(x) ↔ (Monkey(x) ⊕ Bird(x)))', '∀x (Bird(x) → Fly(x))', '∀x (Animal(x) → Breathe(x))', '∀x (Fly(x) → Wing(x))', '(¬(Rock → Fly(Rock)) ∧ ¬(Rock → Bird(Rock))) → (¬(Rock → Fly(Rock)) ∧ ¬(Rock → Breathe(Rock)))'], 'conclusion-FOL': '¬Wing(Rock)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 6, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got IMPLIES (\u2192)", "error_line": "(\u00ac(Rock \u2192 Fly(Rock)) \u2227 \u00ac(Rock \u2192 Bird(Rock))) \u2192 (\u00ac(Rock \u2192 Fly(Rock)) \u2227 \u00ac(Rock \u2192 Breathe(Rock)))", "pointer": "        ^"}
+[INFO] Fixed premise-FOL at index 6
+Current FOL sample: {'premises-FOL': ['∀x (Mammal(x) → Animal(x))', '∀x (Monkey(x) → Mammal(x))', '∀x (Animal(x) ↔ (Monkey(x) ⊕ Bird(x)))', '∀x (Bird(x) → Fly(x))', '∀x (Animal(x) → Breathe(x))', '∀x (Fly(x) → Wing(x))', '(¬(Rock → Fly(Rock)) ∧ ¬(Bird(Rock))) → (¬Fly(Rock) ∧ ¬Breathe(Rock))'], 'conclusion-FOL': '¬Wing(Rock)'}
+[Attempt 2] Failed: {"index": 6, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got IMPLIES (\u2192)", "error_line": "(\u00ac(Rock \u2192 Fly(Rock)) \u2227 \u00ac(Bird(Rock))) \u2192 (\u00acFly(Rock) \u2227 \u00acBreathe(Rock))", "pointer": "        ^"}
+[INFO] Fixed premise-FOL at index 6
+Current FOL sample: {'premises-FOL': ['∀x (Mammal(x) → Animal(x))', '∀x (Monkey(x) → Mammal(x))', '∀x (Animal(x) ↔ (Monkey(x) ⊕ Bird(x)))', '∀x (Bird(x) → Fly(x))', '∀x (Animal(x) → Breathe(x))', '∀x (Fly(x) → Wing(x))', '(¬(Rock → Fly(Rock)) ∧ ¬Bird(Rock)) → (¬Fly(Rock) ∧ ¬Breathe(Rock))'], 'conclusion-FOL': '¬Wing(Rock)'}
+[Attempt 3] Failed: {"index": 6, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got IMPLIES (\u2192)", "error_line": "(\u00ac(Rock \u2192 Fly(Rock)) \u2227 \u00acBird(Rock)) \u2192 (\u00acFly(Rock) \u2227 \u00acBreathe(Rock))", "pointer": "        ^"}
+[INFO] Fixed premise-FOL at index 6
+Current FOL sample: {'premises-FOL': ['∀x (Mammal(x) → Animal(x))', '∀x (Monkey(x) → Mammal(x))', '∀x (Animal(x) ↔ (Monkey(x) ⊕ Bird(x)))', '∀x (Bird(x) → Fly(x))', '∀x (Animal(x) → Breathe(x))', '∀x (Fly(x) → Wing(x))', '(¬(Rock → Fly(Rock)) ∧ ¬Bird(Rock)) → (¬Fly(Rock) ∧ ¬Breathe(Rock))'], 'conclusion-FOL': '¬Wing(Rock)'}
+[Attempt 4] Failed: {"index": 6, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got IMPLIES (\u2192)", "error_line": "(\u00ac(Rock \u2192 Fly(Rock)) \u2227 \u00acBird(Rock)) \u2192 (\u00acFly(Rock) \u2227 \u00acBreathe(Rock))", "pointer": "        ^"}
+[INFO] Fixed premise-FOL at index 6
+Current FOL sample: {'premises-FOL': ['∀x (Mammal(x) → Animal(x))', '∀x (Monkey(x) → Mammal(x))', '∀x (Animal(x) ↔ (Monkey(x) ⊕ Bird(x)))', '∀x (Bird(x) → Fly(x))', '∀x (Animal(x) → Breathe(x))', '∀x (Fly(x) → Wing(x))', '(¬(Rock → Fly(Rock)) ∧ ¬Bird(Rock)) → (¬Fly(Rock) ∧ ¬Breathe(Rock))'], 'conclusion-FOL': '¬Wing(Rock)'}
+[Attempt 5] Failed: {"index": 6, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got IMPLIES (\u2192)", "error_line": "(\u00ac(Rock \u2192 Fly(Rock)) \u2227 \u00acBird(Rock)) \u2192 (\u00acFly(Rock) \u2227 \u00acBreathe(Rock))", "pointer": "        ^"}
+[INFO] Fixed premise-FOL at index 6
+Current FOL sample: {'premises-FOL': ['∀x (Mammal(x) → Animal(x))', '∀x (Monkey(x) → Mammal(x))', '∀x (Animal(x) ↔ (Monkey(x) ⊕ Bird(x)))', '∀x (Bird(x) → Fly(x))', '∀x (Animal(x) → Breathe(x))', '∀x (Fly(x) → Wing(x))', '(¬(Rock → Fly(Rock)) ∧ ¬Bird(Rock)) → (¬Fly(Rock) ∧ ¬Breathe(Rock))'], 'conclusion-FOL': '¬Wing(Rock)'}
+[Attempt 6] Failed: {"index": 6, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got IMPLIES (\u2192)", "error_line": "(\u00ac(Rock \u2192 Fly(Rock)) \u2227 \u00acBird(Rock)) \u2192 (\u00acFly(Rock) \u2227 \u00acBreathe(Rock))", "pointer": "        ^"}
+[INFO] Fixed premise-FOL at index 6
+Current FOL sample: {'premises-FOL': ['∀x (Mammal(x) → Animal(x))', '∀x (Monkey(x) → Mammal(x))', '∀x (Animal(x) ↔ (Monkey(x) ⊕ Bird(x)))', '∀x (Bird(x) → Fly(x))', '∀x (Animal(x) → Breathe(x))', '∀x (Fly(x) → Wing(x))', '(¬(Rock → Fly(Rock)) ∧ ¬Bird(Rock)) → (¬Fly(Rock) ∧ ¬Breathe(Rock))'], 'conclusion-FOL': '¬Wing(Rock)'}
+[Attempt 7] Failed: {"index": 6, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got IMPLIES (\u2192)", "error_line": "(\u00ac(Rock \u2192 Fly(Rock)) \u2227 \u00acBird(Rock)) \u2192 (\u00acFly(Rock) \u2227 \u00acBreathe(Rock))", "pointer": "        ^"}
+[INFO] Fixed premise-FOL at index 6
+Current FOL sample: {'premises-FOL': ['∀x (Mammal(x) → Animal(x))', '∀x (Monkey(x) → Mammal(x))', '∀x (Animal(x) ↔ (Monkey(x) ⊕ Bird(x)))', '∀x (Bird(x) → Fly(x))', '∀x (Animal(x) → Breathe(x))', '∀x (Fly(x) → Wing(x))', '(¬(Rock → Fly(Rock)) ∧ ¬Bird(Rock)) → (¬Fly(Rock) ∧ ¬Breathe(Rock))'], 'conclusion-FOL': '¬Wing(Rock)'}
+[Attempt 8] Failed: {"index": 6, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got IMPLIES (\u2192)", "error_line": "(\u00ac(Rock \u2192 Fly(Rock)) \u2227 \u00acBird(Rock)) \u2192 (\u00acFly(Rock) \u2227 \u00acBreathe(Rock))", "pointer": "        ^"}
+[INFO] Fixed premise-FOL at index 6
+Current FOL sample: {'premises-FOL': ['∀x (Mammal(x) → Animal(x))', '∀x (Monkey(x) → Mammal(x))', '∀x (Animal(x) ↔ (Monkey(x) ⊕ Bird(x)))', '∀x (Bird(x) → Fly(x))', '∀x (Animal(x) → Breathe(x))', '∀x (Fly(x) → Wing(x))', '(¬(Rock → Fly(Rock)) ∧ ¬Bird(Rock)) → (¬Fly(Rock) ∧ ¬Breathe(Rock))'], 'conclusion-FOL': '¬Wing(Rock)'}
+[WARN] Maximum attempts reached, returning 'Uncertain'
+[127] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((July(Wedding(x)) ∧ TravelToParisForHoneymoon(x)) → WellAttended(Wedding(x)))', '∃x (WellAttended(Wedding(x)) ∧ July(Wedding(x)))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttended(Wedding(john)) → ((July(Wedding(john)) ∨ TravelToParisForHoneymoon(john))))'], 'conclusion-FOL': 'WellAttended(Wedding(john))'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 2, "error_msg": "Syntax error at line 1, column 18\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((July(Wedding(x)) \u2227 TravelToParisForHoneymoon(x)) \u2192 WellAttended(Wedding(x)))", "pointer": "                 ^"}
+[INFO] Fixed premise-FOL at index 2
+Current FOL sample: {'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((July(Wedding(x))) ∧ TravelToParisForHoneymoon(x) → WellAttended(Wedding(x)))', '∃x (WellAttended(Wedding(x)) ∧ July(Wedding(x)))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttended(Wedding(john)) → ((July(Wedding(john)) ∨ TravelToParisForHoneymoon(john))))'], 'conclusion-FOL': 'WellAttended(Wedding(john))'}
+[Attempt 2] Failed: {"index": 2, "error_msg": "Syntax error at line 1, column 18\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((July(Wedding(x))) \u2227 TravelToParisForHoneymoon(x) \u2192 WellAttended(Wedding(x)))", "pointer": "                 ^"}
+[INFO] Fixed premise-FOL at index 2
+Current FOL sample: {'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((July(Wedding(x))) ∧ TravelToParisForHoneymoon(x) → WellAttended(Wedding(x)))', '∃x (WellAttended(Wedding(x)) ∧ July(Wedding(x)))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttended(Wedding(john)) → ((July(Wedding(john)) ∨ TravelToParisForHoneymoon(john))))'], 'conclusion-FOL': 'WellAttended(Wedding(john))'}
+[Attempt 3] Failed: {"index": 2, "error_msg": "Syntax error at line 1, column 18\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((July(Wedding(x))) \u2227 TravelToParisForHoneymoon(x) \u2192 WellAttended(Wedding(x)))", "pointer": "                 ^"}
+[INFO] Fixed premise-FOL at index 2
+Current FOL sample: {'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((July(Wedding(x))) ∧ TravelToParisForHoneymoon(x) → WellAttended(Wedding(x)))', '∃x (WellAttended(Wedding(x)) ∧ July(Wedding(x)))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttended(Wedding(john)) → ((July(Wedding(john)) ∨ TravelToParisForHoneymoon(john))))'], 'conclusion-FOL': 'WellAttended(Wedding(john))'}
+[Attempt 4] Failed: {"index": 2, "error_msg": "Syntax error at line 1, column 18\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((July(Wedding(x))) \u2227 TravelToParisForHoneymoon(x) \u2192 WellAttended(Wedding(x)))", "pointer": "                 ^"}
+[INFO] Fixed premise-FOL at index 2
+Current FOL sample: {'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((July(Wedding(x))) ∧ TravelToParisForHoneymoon(x) → WellAttended(Wedding(x)))', '∃x (WellAttended(Wedding(x)) ∧ July(Wedding(x)))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttended(Wedding(john)) → ((July(Wedding(john)) ∨ TravelToParisForHoneymoon(john))))'], 'conclusion-FOL': 'WellAttended(Wedding(john))'}
+[Attempt 5] Failed: {"index": 2, "error_msg": "Syntax error at line 1, column 18\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((July(Wedding(x))) \u2227 TravelToParisForHoneymoon(x) \u2192 WellAttended(Wedding(x)))", "pointer": "                 ^"}
+[INFO] Fixed premise-FOL at index 2
+Current FOL sample: {'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((July(Wedding(x))) ∧ TravelToParisForHoneymoon(x) → WellAttended(Wedding(x)))', '∃x (WellAttended(Wedding(x)) ∧ July(Wedding(x)))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttended(Wedding(john)) → ((July(Wedding(john)) ∨ TravelToParisForHoneymoon(john))))'], 'conclusion-FOL': 'WellAttended(Wedding(john))'}
+[Attempt 6] Failed: {"index": 2, "error_msg": "Syntax error at line 1, column 18\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((July(Wedding(x))) \u2227 TravelToParisForHoneymoon(x) \u2192 WellAttended(Wedding(x)))", "pointer": "                 ^"}
+[INFO] Fixed premise-FOL at index 2
+Current FOL sample: {'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((July(Wedding(x))) ∧ TravelToParisForHoneymoon(x) → WellAttended(Wedding(x)))', '∃x (WellAttended(Wedding(x)) ∧ July(Wedding(x)))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttended(Wedding(john)) → ((July(Wedding(john)) ∨ TravelToParisForHoneymoon(john))))'], 'conclusion-FOL': 'WellAttended(Wedding(john))'}
+[Attempt 7] Failed: {"index": 2, "error_msg": "Syntax error at line 1, column 18\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((July(Wedding(x))) \u2227 TravelToParisForHoneymoon(x) \u2192 WellAttended(Wedding(x)))", "pointer": "                 ^"}
+[INFO] Fixed premise-FOL at index 2
+Current FOL sample: {'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((July(Wedding(x))) ∧ TravelToParisForHoneymoon(x) → WellAttended(Wedding(x)))', '∃x (WellAttended(Wedding(x)) ∧ July(Wedding(x)))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttended(Wedding(john)) → ((July(Wedding(john)) ∨ TravelToParisForHoneymoon(john))))'], 'conclusion-FOL': 'WellAttended(Wedding(john))'}
+[WARN] Maximum attempts reached, returning 'Uncertain'
+[128] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((July(Wedding(x)) ∧ TravelToParisForHoneymoon(x)) → WellAttended(Wedding(x)))', '∃x (WellAttended(Wedding(x)) ∧ July(Wedding(x)))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttended(Wedding(john)) → ((July(Wedding(john)) ∨ TravelToParisForHoneymoon(john))))'], 'conclusion-FOL': '¬WellAttended(Wedding(john))'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 2, "error_msg": "Syntax error at line 1, column 18\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((July(Wedding(x)) \u2227 TravelToParisForHoneymoon(x)) \u2192 WellAttended(Wedding(x)))", "pointer": "                 ^"}
+[INFO] Fixed premise-FOL at index 2
+Current FOL sample: {'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((July(Wedding(x))) ∧ TravelToParisForHoneymoon(x) → WellAttended(Wedding(x)))', '∃x (WellAttended(Wedding(x)) ∧ July(Wedding(x)))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttended(Wedding(john)) → ((July(Wedding(john)) ∨ TravelToParisForHoneymoon(john))))'], 'conclusion-FOL': '¬WellAttended(Wedding(john))'}
+[Attempt 2] Failed: {"index": 2, "error_msg": "Syntax error at line 1, column 18\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((July(Wedding(x))) \u2227 TravelToParisForHoneymoon(x) \u2192 WellAttended(Wedding(x)))", "pointer": "                 ^"}
+[INFO] Fixed premise-FOL at index 2
+Current FOL sample: {'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((July(Wedding(x))) ∧ TravelToParisForHoneymoon(x) → WellAttended(Wedding(x)))', '∃x (WellAttended(Wedding(x)) ∧ July(Wedding(x)))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttended(Wedding(john)) → ((July(Wedding(john)) ∨ TravelToParisForHoneymoon(john))))'], 'conclusion-FOL': '¬WellAttended(Wedding(john))'}
+[Attempt 3] Failed: {"index": 2, "error_msg": "Syntax error at line 1, column 18\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((July(Wedding(x))) \u2227 TravelToParisForHoneymoon(x) \u2192 WellAttended(Wedding(x)))", "pointer": "                 ^"}
+[INFO] Fixed premise-FOL at index 2
+Current FOL sample: {'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((July(Wedding(x))) ∧ TravelToParisForHoneymoon(x) → WellAttended(Wedding(x)))', '∃x (WellAttended(Wedding(x)) ∧ July(Wedding(x)))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttended(Wedding(john)) → ((July(Wedding(john)) ∨ TravelToParisForHoneymoon(john))))'], 'conclusion-FOL': '¬WellAttended(Wedding(john))'}
+[Attempt 4] Failed: {"index": 2, "error_msg": "Syntax error at line 1, column 18\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((July(Wedding(x))) \u2227 TravelToParisForHoneymoon(x) \u2192 WellAttended(Wedding(x)))", "pointer": "                 ^"}
+[INFO] Fixed premise-FOL at index 2
+Current FOL sample: {'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((July(Wedding(x))) ∧ TravelToParisForHoneymoon(x) → WellAttended(Wedding(x)))', '∃x (WellAttended(Wedding(x)) ∧ July(Wedding(x)))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttended(Wedding(john)) → ((July(Wedding(john)) ∨ TravelToParisForHoneymoon(john))))'], 'conclusion-FOL': '¬WellAttended(Wedding(john))'}
+[Attempt 5] Failed: {"index": 2, "error_msg": "Syntax error at line 1, column 18\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((July(Wedding(x))) \u2227 TravelToParisForHoneymoon(x) \u2192 WellAttended(Wedding(x)))", "pointer": "                 ^"}
+[INFO] Fixed premise-FOL at index 2
+Current FOL sample: {'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((July(Wedding(x))) ∧ TravelToParisForHoneymoon(x) → WellAttended(Wedding(x)))', '∃x (WellAttended(Wedding(x)) ∧ July(Wedding(x)))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttended(Wedding(john)) → ((July(Wedding(john)) ∨ TravelToParisForHoneymoon(john))))'], 'conclusion-FOL': '¬WellAttended(Wedding(john))'}
+[Attempt 6] Failed: {"index": 2, "error_msg": "Syntax error at line 1, column 18\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((July(Wedding(x))) \u2227 TravelToParisForHoneymoon(x) \u2192 WellAttended(Wedding(x)))", "pointer": "                 ^"}
+[INFO] Fixed premise-FOL at index 2
+Current FOL sample: {'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((July(Wedding(x))) ∧ TravelToParisForHoneymoon(x) → WellAttended(Wedding(x)))', '∃x (WellAttended(Wedding(x)) ∧ July(Wedding(x)))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttended(Wedding(john)) → ((July(Wedding(john)) ∨ TravelToParisForHoneymoon(john))))'], 'conclusion-FOL': '¬WellAttended(Wedding(john))'}
+[Attempt 7] Failed: {"index": 2, "error_msg": "Syntax error at line 1, column 18\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x ((July(Wedding(x))) \u2227 TravelToParisForHoneymoon(x) \u2192 WellAttended(Wedding(x)))", "pointer": "                 ^"}
+[INFO] Fixed premise-FOL at index 2
+Current FOL sample: {'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((July(Wedding(x))) ∧ TravelToParisForHoneymoon(x) → WellAttended(Wedding(x)))', '∃x (WellAttended(Wedding(x)) ∧ July(Wedding(x)))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttended(Wedding(john)) → ((July(Wedding(john)) ∨ TravelToParisForHoneymoon(john))))'], 'conclusion-FOL': '¬WellAttended(Wedding(john))'}
+[WARN] Maximum attempts reached, returning 'Uncertain'
+[129] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((JulyWedding(x) ∧ TravelToParisForHoneymoon(x)) → Wedding(x))', '∃x (WellAttendedWedding(x) ∧ JulyWedding(x))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttendedWedding(john) → ((JulyWedding(john) ∨ TravelToParisForHoneymoon(john))))'], 'conclusion-FOL': 'Child(john)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[130] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Wedding(x) → Child(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((JulyWedding(x) ∧ TravelToParisForHoneymoon(x)) → Wedding(x))', '∃x (JulyWedding(x) ∧ WellAttended(x))', '(Child(john) → (¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john)))', '(WellAttended(john) ∧ JulyWedding(john)) ∨ ((¬WellAttended(john) ∨ ¬JulyWedding(john)) → TravelToParisForHoneymoon(john))'], 'conclusion-FOL': '¬(WellAttended(john) ∨ TravelToParisForHoneymoon(john))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[131] Pred: False      | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∃x (Mammal(x) ∧ Teeth(x))', '∀x (Platypus(x) → ¬Teeth(x))', '∀x (Platypus(x) → Mammal(x))', 'Humans(human1) ∧ Teeth(human1)'], 'conclusion-FOL': '∀x (Platypus(x) → (Mammal(x) ∧ ¬Teeth(x)))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[132] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∃x (Mammal(x) ∧ Teeth(x))', '∀x (Platypus(x) → ¬Teeth(x))', '∀x (Platypus(x) → Mammal(x))', 'Teeth(humans)'], 'conclusion-FOL': 'Platypus(reptiles)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[133] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∃x (Mammal(x) ∧ Teeth(x))', '∀x (Platypus(x) → ¬Teeth(x))', '∀x (Platypus(x) → Mammal(x))', '∀x (Human(x) → Teeth(x))'], 'conclusion-FOL': '∀x (Human(x) → Mammal(x))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[134] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Plunger(x) → Sucks(x))', '∀x (Vacuum(x) → Sucks(x))', '∀x (Vampire(x) → Sucks(x))', 'Space = Vacuum(space)', '∀x (Duster(x) → ¬Sucks(x))'], 'conclusion-FOL': 'Sucks(space)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 3, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got ID (Vacuum)", "error_line": "Space = Vacuum(space)", "pointer": "        ^"}
+[INFO] Fixed premise-FOL at index 3
+Current FOL sample: {'premises-FOL': ['∀x (Plunger(x) → Sucks(x))', '∀x (Vacuum(x) → Sucks(x))', '∀x (Vampire(x) → Sucks(x))', 'SameAs(Space, Vacuum(space))', '∀x (Duster(x) → ¬Sucks(x))'], 'conclusion-FOL': 'Sucks(space)'}
+[Attempt 2] Failed: {"index": 3, "error_msg": "Syntax error at line 1, column 21\nExpected RPAREN, got LPAREN (()", "error_line": "SameAs(Space, Vacuum(space))", "pointer": "                    ^"}
+[INFO] Fixed premise-FOL at index 3
+Current FOL sample: {'premises-FOL': ['∀x (Plunger(x) → Sucks(x))', '∀x (Vacuum(x) → Sucks(x))', '∀x (Vampire(x) → Sucks(x))', 'SameAs(Space, Vacuum) ∧ Vacuum(space)', '∀x (Duster(x) → ¬Sucks(x))'], 'conclusion-FOL': 'Sucks(space)'}
+=== Parsing successfully ===
+[135] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Plunger(x) → Suck(x))', '∀x (Vacuum(x) → Suck(x))', '∀x (Vampire(x) → Suck(x))', 'Space = Vacuum(somevac)', '∀x (Duster(x) → ¬Suck(x))'], 'conclusion-FOL': 'Space = Vampire(somevamp)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 3, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got ID (Vacuum)", "error_line": "Space = Vacuum(somevac)", "pointer": "        ^"}
+[INFO] Fixed premise-FOL at index 3
+Current FOL sample: {'premises-FOL': ['∀x (Plunger(x) → Suck(x))', '∀x (Vacuum(x) → Suck(x))', '∀x (Vampire(x) → Suck(x))', 'SameAs(Space, Vacuum(somevac))', '∀x (Duster(x) → ¬Suck(x))'], 'conclusion-FOL': 'Space = Vampire(somevamp)'}
+[Attempt 2] Failed: {"index": 3, "error_msg": "Syntax error at line 1, column 21\nExpected RPAREN, got LPAREN (()", "error_line": "SameAs(Space, Vacuum(somevac))", "pointer": "                    ^"}
+[INFO] Fixed premise-FOL at index 3
+Current FOL sample: {'premises-FOL': ['∀x (Plunger(x) → Suck(x))', '∀x (Vacuum(x) → Suck(x))', '∀x (Vampire(x) → Suck(x))', 'SameAs(Space, Vacuum) ∧ Vacuum(somevac)', '∀x (Duster(x) → ¬Suck(x))'], 'conclusion-FOL': 'Space = Vampire(somevamp)'}
+[Attempt 3] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got ID (Vampire)", "error_line": "Space = Vampire(somevamp)", "pointer": "        ^"}
+[INFO] Fixed conclusion-FOL
+[Attempt 4] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 22\nExpected RPAREN, got LPAREN (()", "error_line": "SameAs(Space, Vampire(somevamp))", "pointer": "                     ^"}
+[INFO] Fixed conclusion-FOL
+=== Parsing successfully ===
+[136] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Plunger(x) → Suck(x))', '∀x (Vacuum(x) → Suck(x))', '∀x (Vampire(x) → Suck(x))', '∀x (Space(x) → Vacuum(x))', '∀x (Duster(x) ∧ HouseholdAppliance(x) → ¬Suck(x))'], 'conclusion-FOL': '∀x (HouseholdAppliance(x) → Suck(x))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[137] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (MLAlgorithm(x) → (SupervisedLearning(x) ∨ UnsupervisedLearning(x) ∨ ReinforcementLearning(x)))', '∀x (UnsupervisedLearning(x) → ¬RequiresLabelledData(x))', '∃y (TextSummarizationModel(y) ∧ ∀z (TrainsWithMLAlgorithm(z, y) → MLAlgorithm(z)))', '¬ReinforcementLearning(rl) ∧ TrainsWithMLAlgorithm(rl, ts)', '∀x (TrainsWithMLAlgorithm(x, ts) → RequiresLabelledData(x))'], 'conclusion-FOL': 'SupervisedLearning(sl) ∧ TrainsWithMLAlgorithm(sl, ts)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[138] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (MLAlgorithm(x) → (SupervisedLearning(x) ∨ UnsupervisedLearning(x) ∨ ReinforcementLearning(x)))', '∀x (UnsupervisedLearning(x) → ¬RequiresLabelledData(x))', '∃y (TextSummarizationModel(y) ∧ (∃z (MLAlgorithm(z) ∧ TrainsWith(z, y))))', '¬(∃z (ReinforcementLearning(z) ∧ TrainsWith(z, textSummarizationModel)))', '∀x (TrainsWith(x, textSummarizationModel) → RequiresLabelledData(x))'], 'conclusion-FOL': 'UnsupervisedLearning(unusedVariable) ∧ TrainsWith(unusedVariable, textSummarizationModel)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[139] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Funny(x) → Popular(x))', '∀x (Ugly(x) → ¬Popular(x))', '∀x (LovedByChildren(x) → Funny(x))', '∀x (FromTheSimpsons(x) → LovedByChildren(x))', '∀x (Yellow(x) → FromTheSimpsons(x))', 'Ben ⊕ Funny(Ben)'], 'conclusion-FOL': 'LovedByChildren(Ben)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 5\nExpected LPAREN, got XOR (\u2295)", "error_line": "Ben \u2295 Funny(Ben)", "pointer": "    ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (Funny(x) → Popular(x))', '∀x (Ugly(x) → ¬Popular(x))', '∀x (LovedByChildren(x) → Funny(x))', '∀x (FromTheSimpsons(x) → LovedByChildren(x))', '∀x (Yellow(x) → FromTheSimpsons(x))', '(Ben ∈ TheSimpsons) ∨ Funny(Ben)'], 'conclusion-FOL': 'LovedByChildren(Ben)'}
+[Attempt 2] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 8\nExpected LPAREN, got ID (TheSimpsons)", "error_line": "(Ben \u2208 TheSimpsons) \u2228 Funny(Ben)", "pointer": "       ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (Funny(x) → Popular(x))', '∀x (Ugly(x) → ¬Popular(x))', '∀x (LovedByChildren(x) → Funny(x))', '∀x (FromTheSimpsons(x) → LovedByChildren(x))', '∀x (Yellow(x) → FromTheSimpsons(x))', '(Membership(Ben, TheSimpsons)) ∨ Funny(Ben)'], 'conclusion-FOL': 'LovedByChildren(Ben)'}
+=== Parsing successfully ===
+[140] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Funny(x) → Popular(x))', '∀x (Ugly(x) → ¬Popular(x))', '∀x (LovedByChildren(x) → Funny(x))', '∀x (FromTheSimpsons(x) → LovedByChildren(x))', '∀x (Yellow(x) → FromTheSimpsons(x))', '(FromTheSimpsons(ben) ⊕ Funny(ben))'], 'conclusion-FOL': 'Ugly(ben) ∨ Yellow(ben)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[141] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Funny(x) → Popular(x))', '∀x (Ugly(x) → ¬Popular(x))', '∀x (LovedByChildren(x) → Funny(x))', '∀x ((FromTheSimpsons(x) → LovedByChildren(x)))', '∀x (Yellow(x) → FromTheSimpsons(x))'], 'conclusion-FOL': '(Yellow(ben) ∧ Ugly(ben)) ⊕ (¬Yellow(ben) ∧ ¬Ugly(ben))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[142] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (BreedingBack(x) ↔ ArtificialSelection(x))', '∃y (HeckCattle(y) ∧ BreedingBack(y) ∧ Resemble(y, Aurochs))', '∀z (HeckCattle(z) → Animal(z))', '∀w (Aurochs(w) → Animal(w))', '∃v (Animal(v) ∧ ToBeBreedingBack(v) → ∃u (Extinct(u) ∧ Resemble(v, u))'], 'conclusion-FOL': '∃x (HeckCattle(x) ∧ ArtificialSelection(x))'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 4, "error_msg": "Unexpected end of input, expected RPAREN", "error_line": "\u2203v (Animal(v) \u2227 ToBeBreedingBack(v) \u2192 \u2203u (Extinct(u) \u2227 Resemble(v, u))", "pointer": "                                                                     ^"}
+[INFO] Fixed premise-FOL at index 4
+Current FOL sample: {'premises-FOL': ['∀x (BreedingBack(x) ↔ ArtificialSelection(x))', '∃y (HeckCattle(y) ∧ BreedingBack(y) ∧ Resemble(y, Aurochs))', '∀z (HeckCattle(z) → Animal(z))', '∀w (Aurochs(w) → Animal(w))', '∃v (Animal(v) ∧ ToBeBreedingBack(v) → ∃u (Extinct(u) ∧ Resemble(v, u)))'], 'conclusion-FOL': '∃x (HeckCattle(x) ∧ ArtificialSelection(x))'}
+=== Parsing successfully ===
+[143] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (BreedingBack(x) ↔ ArtificialSelection(x) ∧ DeliberateSelectiveBreeding(x, DomesticAnimals(x)))', 'HeckCattleWereBredBackIn1920s(heckCattle)', 'Animal(heckCattle)', 'Animal(aurochs)', '∃x (ToBeBredBack(x) → ResembleExtinctAnimals(x))'], 'conclusion-FOL': 'Extinct(aurochs)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 0, "error_msg": "Syntax error at line 1, column 94\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x (BreedingBack(x) \u2194 ArtificialSelection(x) \u2227 DeliberateSelectiveBreeding(x, DomesticAnimals(x)))", "pointer": "                                                                                             ^"}
+[INFO] Fixed premise-FOL at index 0
+Current FOL sample: {'premises-FOL': ['∀x (BreedingBack(x) ↔ ArtificialSelection(x) ∧ DeliberateSelectiveBreeding(x, DomesticAnimals))', 'HeckCattleWereBredBackIn1920s(heckCattle)', 'Animal(heckCattle)', 'Animal(aurochs)', '∃x (ToBeBredBack(x) → ResembleExtinctAnimals(x))'], 'conclusion-FOL': 'Extinct(aurochs)'}
+=== Parsing successfully ===
+[144] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Student(x) → Human(x))', '∀x (Studies(x) → Student(x))', '∀x (Studies(x) ⊕ Teaches(x))', '∀x (Young(x) → ¬Teaches(x))', '¬Teaches(jerry) ∧ ¬Manager(jerry)', 'Young(rose) ∨ Student(rose)'], 'conclusion-FOL': 'Young(jerry)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[145] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Student(x) → Human(x))', '∀x (Studies(x) → Student(x))', '∀x (Studies(x) ⊕ Teaches(x))', '∀x (Young(x) → ¬Teaches(x))', '¬Teaches(jerry) ∧ ¬Manager(jerry)', 'Young(rose) ∨ Student(rose)'], 'conclusion-FOL': '¬Young(jerry)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[146] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Student(x) → Human(x))', '∀x (Studies(x) → Student(x))', '∀x (Studies(x) ⊕ Teaches(x))', '∀x (Young(x) → ¬Teaches(x))', '¬Teaches(jerry) ∧ ¬Manager(jerry)', 'Young(rose) ∨ Student(rose)'], 'conclusion-FOL': 'Human(rose) ∨ Manager(rose)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[147] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Student(x) → Human(x))', '∀x (Studies(x) → Student(x))', '∀x (Studies(x) ⊕ Teaches(x))', '∀x (Young(x) → ¬Teaches(x))', '¬Teaches(jerry) ∧ ¬Manager(jerry)', 'Young(rose) ∨ Student(rose)'], 'conclusion-FOL': 'Human(rose) ∨ Manager(jerry)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[148] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Student(x) → Human(x))', '∀x (Studies(x) → Student(x))', '∀x (Studies(x) ⊕ Teaches(x))', '∀x (Young(x) → ¬Teaches(x))', '¬Teaches(jerry) ∧ ¬Manager(jerry)', 'Young(rose) ∨ Student(rose)'], 'conclusion-FOL': '¬(Student(rose) ∧ Human(jerry))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[149] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (PublishingHouse(x) → ∀y (Translate(y, x) ↔ ForeignLiterature(y)))', '∀x (PublishedBy(x, newVesselPress) → EnglishBook(x))', 'PublishedBy(neapolitanChronicles, newVesselPress)', 'Translate(neapolitanChronicles, italian)', 'PublishedBy(palaceOfFlies, newVesselPress)'], 'conclusion-FOL': 'EnglishBook(neapolitanChronicles)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[150] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (PublishingHouse(x) → ∀y (Translate(y, x) ↔ ForeignLiterature(y)))', '∀x (PublishedBy(x, newVesselPress) → EnglishLanguage(x))', 'PublishedBy(neapolitanChronicles, newVesselPress)', 'TranslatedFrom(neapolitanChronicles, italian)', 'PublishedBy(palaceOfFlies, newVesselPress)'], 'conclusion-FOL': 'PublishedBy(harryPotter, newVesselPress)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[151] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (PublishingHouse(x) → ∀y (PublishedBy(y, x) → TranslatedIntoEnglish(y)))', '∀x (PublishedBy(x, newVesselPress) → TranslatedIntoEnglish(x))', 'PublishedBy(neapolitanChronicles, newVesselPress)', 'TranslatedFromItalian(neapolitanChronicles)', 'PublishedBy(palaceOfFlies, newVesselPress)'], 'conclusion-FOL': 'TranslatedFromItalian(palaceOfFlies)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[152] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Monitor(x) → WorkHomeRegularlyOften(x))', '∀x (Office(x) → Monitor(x))', '∀x (WorkHomeRegularlyOften(x) → TidyOrganizeFreeTime(x))', '∀x (WorkHomeRegularlyOften(x) → VisitSupplyStoreRegularly(x))', '∀x (TidyOrganizeFreeTime(x) → ¬LateBedWakeNoon(x))', '(LateBedWakeNoon(remy) ∧ TidyOrganizeFreeTime(remy)) ⊕ (¬LateBedWakeNoon(remy) ∧ ¬TidyOrganizeFreeTime(remy))'], 'conclusion-FOL': 'VisitSupplyStoreRegularly(remy)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[153] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Monitor(x) → WorkHome(x))', '∀x (Office(x) → Monitor(x))', '∀x (WorkHome(x) → TidyOrganize(x))', '∀x (WorkHome(x) → VisitStore(x))', '∀x (TidyOrganize(x) → ¬LateBed(x) ∧ ¬WakeNoon(x))', '(LateBed(remy) ∧ WakeNoon(remy) ∧ TidyOrganize(remy)) ⊕ (¬LateBed(remy) ∧ ¬WakeNoon(remy) ∧ ¬TidyOrganize(remy))'], 'conclusion-FOL': 'Office(remy) ∧ VisitStore(remy)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[154] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (DesktopMonitor(x) → RegularWorkAtHome(x))', '∀x (ImpressiveOffice(x) → DesktopMonitor(x))', '∀x (RegularWorkAtHome(x) → TidyOrganizeFreeTime(x))', '∀x (RegularWorkAtHome(x) → VisitSupplyStoreRegularly(x))', '∀x (TidyOrganizeFreeTime(x) → ¬LateBedtimeAndNoonWakeUp(x))', '(LateBedtimeAndNoonWakeUp(remy) ∧ TidyOrganizeFreeTime(remy)) ⊕ (¬LateBedtimeAndNoonWakeUp(remy) ∧ ¬TidyOrganizeFreeTime(remy))'], 'conclusion-FOL': '(LateBedtimeAndNoonWakeUp(remy) ∨ VisitSupplyStoreRegularly(remy)) → (¬TidyOrganizeFreeTime(remy) ∧ ¬ImpressiveOffice(remy))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[155] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Human(x) → Mortal(x))', '∀x (Greek(x) → Human(x))'], 'conclusion-FOL': '∃x (Greek(x) ∧ Mortal(x))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[156] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Student(x) ∧ WorksInLibrary(x) → ¬FromComputerScienceDepartment(x))', '∀x (HasPartTimeJobOfferedByUniversity(x) → Student(x) ∧ WorksInLibrary(x))', '∀x (TakesDatabaseCourse(x) → FromComputerScienceDepartment(x))', '∀x (InstructedByProfessorDavid(x) → TakesDatabaseCourse(x))', '∀x (WorksInLab(x) → InstructedByProfessorDavid(x))', 'WorksInLab(james)', '¬(HasPartTimeJobOfferedByUniversity(jack) ∨ WorksInLab(jack))'], 'conclusion-FOL': 'HasPartTimeJobOfferedByUniversity(james)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[157] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Student(x) ∧ WorksInLibrary(x) → ¬FromComputerScienceDepartment(x))', '∀x (HasPartTimeJobOfferedByUniversity(x) → Student(x) ∧ WorksInLibrary(x))', '∀x (TakesDatabaseCourse(x) → FromComputerScienceDepartment(x))', '∀x (InstructedByProfessorDavid(x) → TakesDatabaseCourse(x))', '∀x (WorksInLab(x) → InstructedByProfessorDavid(x))', 'WorksInLab(james)', '¬(HasPartTimeJobOfferedByUniversity(jack) ∨ WorksInLab(jack))'], 'conclusion-FOL': '¬HasPartTimeJobOfferedByUniversity(james)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[158] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Student(x) ∧ WorksInLibrary(x) → ¬FromComputerScienceDepartment(x))', '∀x (HasPartTimeJobOfferedByUniversity(x) → (Student(x) ∧ WorksInLibrary(x)))', '∀x (TakesDatabaseCourse(x) → FromComputerScienceDepartment(x))', '∀x (InstructedByProfessorDavid(x) → TakesDatabaseCourse(x))', '∀x (WorksInLab(x) → InstructedByProfessorDavid(x))', 'WorksInLab(james)', '¬(HasPartTimeJobOfferedByUniversity(jack) ∨ WorksInLab(jack))'], 'conclusion-FOL': '(TakesDatabaseCourse(james) ⊕ HasPartTimeJobOfferedByUniversity(james))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[159] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Student(x) ∧ WorksInLibrary(x) → ¬FromComputerScienceDepartment(x))', '∀x (HasPartTimeJobOfferedByUniversity(x) → (WorksInLibrary(x)))', '∀x (TakesDatabaseCourse(x) → FromComputerScienceDepartment(x))', '∀x (InstructedByProfessorDavid(x) → TakesDatabaseCourse(x))', '∀x (WorksInLab(x) → InstructedByProfessorDavid(x))', 'WorksInLab(james)', '¬(HasPartTimeJobOfferedByUniversity(jack) ∨ WorksInLab(jack))'], 'conclusion-FOL': 'TakesDatabaseCourse(jack)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[160] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (LikesMusic(x) → WantsToCompose(x))', '∀x (HasAccessToProgram(x) → CanCompose(x))', '∀x ((CanCompose(x) ∧ WantsToCompose(x)) → WillCompose(x))'], 'conclusion-FOL': '(LikesMusic(george) ∧ HasAccessToProgram(george)) → WillCompose(george)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[161] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (LikesMusic(x) → WantsToCompose(x))', '∀x (HasAccessToProgram(x) → CanCompose(x))', '∀x ((CanCompose(x) ∧ WantsToCompose(x)) → WillCompose(x))'], 'conclusion-FOL': '(¬WillCompose(george) → ¬CanCompose(george))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[162] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Hawk(x) → ¬Lands(x))', '∃y (Bird(y) ∧ Hawk(y))'], 'conclusion-FOL': '∀z (Bird(z) → Lands(z))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[163] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∃x (Monday(x) ∧ Time8pm(x) → RoseGivenOutOnTV(x))', '∀x (RoseGivenOutOnTV(x) → OnTheBachelor(x))', '∀x (OnTheBachelor(x) → PortraysRealPeople(x))', '∀x (PortraysRealPeople(x) → RealityTVShow(x))', '¬RealityTVShow(BreakingBad)'], 'conclusion-FOL': 'Monday(BreakingBad) ∧ Time8pm(BreakingBad)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[164] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∃x (Monday(x) ∧ RoseGivenOutOnTV(x,8pm))', '∀y (RoseGivenOutOnTV(y,t) → OnTheBachelor(y))', '∀z (OnTheBachelor(z) → PortraysRealPeopleLives(z))', '∀w (PortraysRealPeopleLives(w) → RealityTVShow(w))', '¬RealityTVShow(BreakingBad)'], 'conclusion-FOL': 'RoseGivenOutOnTV(BreakingBad,8pm) ∧ Monday(8pm)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[165] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∃x (Monday(x) ∧ EightPM(x) ∧ RosesGivenOutOnTV(x))', '∀x (RosesGivenOutOnTV(x) → OnTheBachelor(x))', '∀x (OnTheBachelor(x) → PortraysRealPeople(x))', '∀x (PortraysRealPeople(x) → RealityTVShow(x))', '¬RealityTVShow(BreakingBad)'], 'conclusion-FOL': '(RosesGivenOutDuring(BreakingBad) → (Monday(EightPM) ∧ EightPM))'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 63\nExpected LPAREN, got RPAREN ())", "error_line": "(RosesGivenOutDuring(BreakingBad) \u2192 (Monday(EightPM) \u2227 EightPM))", "pointer": "                                                              ^"}
+[INFO] Fixed conclusion-FOL
+[Attempt 2] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 45\nExpected LPAREN, got AND (\u2227)", "error_line": "(RosesGivenOutDuring(BreakingBad) \u2192 (Monday \u2227 EightPM))", "pointer": "                                            ^"}
+[INFO] Fixed conclusion-FOL
+[Attempt 3] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 45\nExpected LPAREN, got AND (\u2227)", "error_line": "(RosesGivenOutDuring(BreakingBad) \u2192 (Monday \u2227 Time(EightPM)))", "pointer": "                                            ^"}
+[INFO] Fixed conclusion-FOL
+[Attempt 4] Failed: {"index": -1, "error_msg": "Syntax error at line 1, column 45\nExpected LPAREN, got AND (\u2227)", "error_line": "(RosesGivenOutDuring(BreakingBad) \u2192 (Monday \u2227 TimeIs(EightPM)))", "pointer": "                                            ^"}
+[INFO] Fixed conclusion-FOL
+=== Parsing successfully ===
+[166] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['Politician(heinrichScmidt)', 'NaziGerman(heinrichScmidt)', 'MemberOfPrussianStateParliament(heinrichScmidt)', 'MemberOfNaziReichstag(heinrichScmidt)'], 'conclusion-FOL': 'German(heinrichScmidt) ⊕ Russian(heinrichScmidt)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[167] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['Politician(heinrichScmidt, naziGerman)', 'MemberOfParliament(heinrichScmidt, prussianStateParliament) ∧ MemberOfReichstag(heinrichScmidt, nazi)'], 'conclusion-FOL': '∃x (Politician(x, naziGerman) ∧ MemberOfParliament(x, prussianStateParliament) ∧ MemberOfReichstag(x, nazi))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[168] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['Politician(heinrichScmidt)', 'MemberOfParliament(heinrichScmidt, prussianStateParliament)', 'MemberOfReichstag(heinrichScmidt)'], 'conclusion-FOL': '∀x (Politician(x) → ¬MemberOfReichstag(x))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[169] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': 'SevereCancer(colorectalCancer)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': 'SevereCancer(colorectalCancer)'}
+[Attempt 2] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': 'SevereCancer(colorectalCancer)'}
+[Attempt 3] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': 'SevereCancer(colorectalCancer)'}
+[Attempt 4] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': 'SevereCancer(colorectalCancer)'}
+[Attempt 5] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': 'SevereCancer(colorectalCancer)'}
+[Attempt 6] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': 'SevereCancer(colorectalCancer)'}
+[Attempt 7] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': 'SevereCancer(colorectalCancer)'}
+[WARN] Maximum attempts reached, returning 'Uncertain'
+[170] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(ColorectalCancerIsBileDuctCancer ∨ Cholangiocarcinoma(colorectalCancer)) → (ColorectalCancerIsBileDuctCancer ∧ MildFlu(colorectalCancer))'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(ColorectalCancerIsBileDuctCancer ∨ Cholangiocarcinoma(colorectalCancer)) → (ColorectalCancerIsBileDuctCancer ∧ MildFlu(colorectalCancer))'}
+[Attempt 2] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(ColorectalCancerIsBileDuctCancer ∨ Cholangiocarcinoma(colorectalCancer)) → (ColorectalCancerIsBileDuctCancer ∧ MildFlu(colorectalCancer))'}
+[Attempt 3] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(ColorectalCancerIsBileDuctCancer ∨ Cholangiocarcinoma(colorectalCancer)) → (ColorectalCancerIsBileDuctCancer ∧ MildFlu(colorectalCancer))'}
+[Attempt 4] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(ColorectalCancerIsBileDuctCancer ∨ Cholangiocarcinoma(colorectalCancer)) → (ColorectalCancerIsBileDuctCancer ∧ MildFlu(colorectalCancer))'}
+[Attempt 5] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(ColorectalCancerIsBileDuctCancer ∨ Cholangiocarcinoma(colorectalCancer)) → (ColorectalCancerIsBileDuctCancer ∧ MildFlu(colorectalCancer))'}
+[Attempt 6] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(ColorectalCancerIsBileDuctCancer ∨ Cholangiocarcinoma(colorectalCancer)) → (ColorectalCancerIsBileDuctCancer ∧ MildFlu(colorectalCancer))'}
+[Attempt 7] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(ColorectalCancerIsBileDuctCancer ∨ Cholangiocarcinoma(colorectalCancer)) → (ColorectalCancerIsBileDuctCancer ∧ MildFlu(colorectalCancer))'}
+[WARN] Maximum attempts reached, returning 'Uncertain'
+[171] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(¬MildFlu(colorectalCancer) ∧ Cholangiocarcinoma(colorectalCancer)) → (BileDuctCancer(colorectalCancer) ∨ Cholangiocarcinoma(colorectalCancer))'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(¬MildFlu(colorectalCancer) ∧ Cholangiocarcinoma(colorectalCancer)) → (BileDuctCancer(colorectalCancer) ∨ Cholangiocarcinoma(colorectalCancer))'}
+[Attempt 2] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(¬MildFlu(colorectalCancer) ∧ Cholangiocarcinoma(colorectalCancer)) → (BileDuctCancer(colorectalCancer) ∨ Cholangiocarcinoma(colorectalCancer))'}
+[Attempt 3] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(¬MildFlu(colorectalCancer) ∧ Cholangiocarcinoma(colorectalCancer)) → (BileDuctCancer(colorectalCancer) ∨ Cholangiocarcinoma(colorectalCancer))'}
+[Attempt 4] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(¬MildFlu(colorectalCancer) ∧ Cholangiocarcinoma(colorectalCancer)) → (BileDuctCancer(colorectalCancer) ∨ Cholangiocarcinoma(colorectalCancer))'}
+[Attempt 5] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(¬MildFlu(colorectalCancer) ∧ Cholangiocarcinoma(colorectalCancer)) → (BileDuctCancer(colorectalCancer) ∨ Cholangiocarcinoma(colorectalCancer))'}
+[Attempt 6] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(¬MildFlu(colorectalCancer) ∧ Cholangiocarcinoma(colorectalCancer)) → (BileDuctCancer(colorectalCancer) ∨ Cholangiocarcinoma(colorectalCancer))'}
+[Attempt 7] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 35\nExpected LPAREN, got AND (\u2227)", "error_line": "(ColorectalCancerIsBileDuctCancer \u2227 LowSurvivalRate(colorectalCancer)) \u2192 \u00acColorectalCancerIsBileDuctCancer", "pointer": "                                  ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (DeadlyDisease(x) → LowSurvivalRate(x))', '∀x (SevereCancer(x) → DeadlyDisease(x))', 'SevereCancer(bileDuctCancer)', '∀x (Cholangiocarcinoma(x) → BileDuctCancer(x))', '∀x (MildFlu(x) ⊕ ¬LowSurvivalRate(x))', '(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalCancer)) → ¬ColorectalCancerIsBileDuctCancer'], 'conclusion-FOL': '(¬MildFlu(colorectalCancer) ∧ Cholangiocarcinoma(colorectalCancer)) → (BileDuctCancer(colorectalCancer) ∨ Cholangiocarcinoma(colorectalCancer))'}
+[WARN] Maximum attempts reached, returning 'Uncertain'
+[172] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (EatSalads(x) → ConsciousHealth(x))', '∀x (GrewUpHealthyHome(x) → EatSalads(x))', '∀x (FulfillNutritionIntake(x) → GrewUpHealthyHome(x))', '∀x (GoodRelationshipParents(x) → FulfillNutritionIntake(x))', '∀x (GoodRelationshipParents(x) → ¬EatSalads(x))', '∀x (VisitGymDaily(x) → FulfillNutritionIntake(x))', '(GrewUpHealthyHome(taylor) ∧ GoodRelationshipParents(taylor)) ⊕ (¬GrewUpHealthyHome(taylor) ∧ ¬GoodRelationshipParents(taylor))'], 'conclusion-FOL': 'EatSalads(taylor)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[173] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (EatSalads(x) → HealthConscious(x))', '∀x (HealthChildhoodHome(x) → EatSalads(x))', '∀x (FulfillIntake(x) → HealthChildhoodHome(x))', '∀x (GoodRelationshipParents(x) → FulfillIntake(x))', '∀x (GoodRelationshipParents(x) → ¬EatSalads(x))', '∀x (VisitGymDaily(x) → FulfillIntake(x))', '(HealthChildhoodHome(taylor) ∧ GoodRelationshipParents(taylor)) ⊕ (¬HealthChildhoodHome(taylor) ∧ ¬GoodRelationshipParents(taylor))'], 'conclusion-FOL': 'VisitGymDaily(taylor)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[174] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (EatSalads(x) → ConsciousHealth(x))', '∀x (GrewUpHealthyHome(x) → EatSalads(x))', '∀x (FulfillNutritionIntake(x) → GrewUpHealthyHome(x))', '∀x (GoodRelationshipParents(x) → FulfillNutritionIntake(x))', '∀x (GoodRelationshipParents(x) → ¬EatSalads(x))', '∀x (VisitGymDaily(x) → FulfillNutritionIntake(x))', '(GrewUpHealthyHome(taylor) ∧ GoodRelationshipParents(taylor)) ⊕ (¬GrewUpHealthyHome(taylor) ∧ ¬GoodRelationshipParents(taylor))'], 'conclusion-FOL': '¬(GrewUpHealthyHome(taylor) ∨ VisitGymDaily(taylor))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[175] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['SportingEvent(OlympicGames)', 'HeldIn(lastOlympics, tokyo)', 'Won(unitedstates, mostmedalsTokyo)'], 'conclusion-FOL': 'SportingEvent(worldChampionships)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[176] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['SportingEvent(OlympicGames)', 'HeldIn(lastOlympic, tokyo)', 'Won(unitedstates, mostmedals) ∧ HeldIn(lastOlympic, tokyo)'], 'conclusion-FOL': '¬HeldIn(lastOlympic, tokyo)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[177] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['SportingEvent(OlympicGames)', 'HeldIn(lastOlympicGames, tokyo)', 'Won(unitedstates, mostmedalsTokyo)'], 'conclusion-FOL': 'Won(unitedstates, mostmedalsLastOlympicGames)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[178] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Horse(x) → Hooves(x))', '∀x (Human(x) → ¬Hooves(x))'], 'conclusion-FOL': '∃x (Human(x) ∧ Horse(x))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[179] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['Fly(susan, lga)', '¬(Departure(x, y) ∧ Arrival(x, y))', 'Fly(john, lga)'], 'conclusion-FOL': 'Fly(susan, lga) → Fly(susan, lga)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[180] Pred: True       | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['Fly(susan, lga)', '∀x ∀y (Departure(x,y) ⊕ Arrival(x,y))', 'Fly(john, lga)'], 'conclusion-FOL': 'Fly(john, lga) → ¬Arrival(john, lga)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[181] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (NiceToAnimals(x) → ¬MeanToAnimals(x))', '∃x (Grumpy(x) ∧ MeanToAnimals(x))', '∀x (LoveAnimals(x) → NiceToAnimals(x))', '∀x (OwnsPet(x) → LoveAnimals(x))', 'OwnsPet(tom)'], 'conclusion-FOL': 'Grumpy(tom)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[182] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (NiceToAnimals(x) → ¬MeanToAnimals(x))', '∃x (Grumpy(x) ∧ MeanToAnimals(x))', '∀x (LoveAnimals(x) → NiceToAnimals(x))', '∀x (OwnsPet(x) → LoveAnimals(x))', 'OwnsPet(tom)'], 'conclusion-FOL': '(¬Grumpy(tom) ∧ ¬MeanToAnimals(tom))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[183] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (NiceToAnimals(x) → ¬MeanToAnimals(x))', '∃x (Grumpy(x) ∧ MeanToAnimals(x))', '∀x (AnimalLover(x) → NiceToAnimals(x))', '∀x (PetOwner(x) → LoveAnimals(x))', 'PetOwner(tom)'], 'conclusion-FOL': '(¬Grumpy(tom) ∧ MeanToAnimals(tom)) → (¬Grumpy(tom) ∧ ¬AnimalLover(tom))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[184] Pred: True       | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Podcast(x) → ¬Novel(x))', '∀x (BornInAmericanCity(x) → American(x))', '∀x ∀y ((Novel(y) ∧ WrittenBy(y, x)) → NovelWriter(x))', 'American(daniShapiro) ∧ Writer(daniShapiro)', 'WrittenBy(familyHistory, daniShapiro)', 'Novel(familyHistory) ∧ YearOfPublication(familyHistory, 2003)', 'CreatedPodcast(daniShapiro, familySecrets)', 'AmericanCity(boston)'], 'conclusion-FOL': 'NovelWriter(daniShapiro)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 61\nExpected ID, got RPAREN ())", "error_line": "Novel(familyHistory) \u2227 YearOfPublication(familyHistory, 2003)", "pointer": "                                                            ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (Podcast(x) → ¬Novel(x))', '∀x (BornInAmericanCity(x) → American(x))', '∀x ∀y ((Novel(y) ∧ WrittenBy(y, x)) → NovelWriter(x))', 'American(daniShapiro) ∧ Writer(daniShapiro)', 'WrittenBy(familyHistory, daniShapiro)', 'Novel(familyHistory) ∧ YearOfPublication(familyHistory, year2003)', 'CreatedPodcast(daniShapiro, familySecrets)', 'AmericanCity(boston)'], 'conclusion-FOL': 'NovelWriter(daniShapiro)'}
+=== Parsing successfully ===
+[185] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (Podcast(x) → ¬Novel(x))', '∀x (BornInAmericanCity(x) → American(x))', '∀x ∀y ((Novel(y) ∧ WrittenBy(y, x)) → NovelWriter(x))', 'American(daniShapiro) ∧ Writer(daniShapiro)', 'WrittenBy(familyHistory, daniShapiro)', 'Novel(familyHistory) ∧ YearOfPublication(familyHistory, 2003)', 'Podcast(familySecrets) ∧ CreatedBy(familySecrets, daniShapiro)', 'AmericanCity(boston)'], 'conclusion-FOL': 'Novel(familySecrets)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 61\nExpected ID, got RPAREN ())", "error_line": "Novel(familyHistory) \u2227 YearOfPublication(familyHistory, 2003)", "pointer": "                                                            ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (Podcast(x) → ¬Novel(x))', '∀x (BornInAmericanCity(x) → American(x))', '∀x ∀y ((Novel(y) ∧ WrittenBy(y, x)) → NovelWriter(x))', 'American(daniShapiro) ∧ Writer(daniShapiro)', 'WrittenBy(familyHistory, daniShapiro)', 'Novel(familyHistory) ∧ YearOfPublication(familyHistory, year2003)', 'Podcast(familySecrets) ∧ CreatedBy(familySecrets, daniShapiro)', 'AmericanCity(boston)'], 'conclusion-FOL': 'Novel(familySecrets)'}
+=== Parsing successfully ===
+[186] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Podcast(x) → ¬Novel(x))', '∀x (BornInAmericanCity(x) → American(x))', '∀x ∀y ((Novel(y) ∧ WrittenBy(y, x)) → NovelWriter(x))', 'American(daniShapiro) ∧ Writer(daniShapiro)', 'WrittenBy(familyHistory, daniShapiro)', 'Novel(familyHistory) ∧ YearOfPublication(familyHistory, 2003)', 'Podcast(familySecrets) ∧ CreatedBy(familySecrets, daniShapiro)', 'AmericanCity(boston)'], 'conclusion-FOL': 'BornInBoston(daniShapiro)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 5, "error_msg": "Syntax error at line 1, column 61\nExpected ID, got RPAREN ())", "error_line": "Novel(familyHistory) \u2227 YearOfPublication(familyHistory, 2003)", "pointer": "                                                            ^"}
+[INFO] Fixed premise-FOL at index 5
+Current FOL sample: {'premises-FOL': ['∀x (Podcast(x) → ¬Novel(x))', '∀x (BornInAmericanCity(x) → American(x))', '∀x ∀y ((Novel(y) ∧ WrittenBy(y, x)) → NovelWriter(x))', 'American(daniShapiro) ∧ Writer(daniShapiro)', 'WrittenBy(familyHistory, daniShapiro)', 'Novel(familyHistory) ∧ YearOfPublication(familyHistory, year2003)', 'Podcast(familySecrets) ∧ CreatedBy(familySecrets, daniShapiro)', 'AmericanCity(boston)'], 'conclusion-FOL': 'BornInBoston(daniShapiro)'}
+=== Parsing successfully ===
+[187] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∃x (BasketballPlayer(x) ∧ ¬American(x))', '∀x (BasketballPlayer(x) → Tall(x))', '∀x (Tall(x) → WearsLargeShoes(x))', '∀x (WearsLargeShoes(x) → WearsLargeClothes(x))', '¬WearsLargeClothes(yuri)'], 'conclusion-FOL': 'American(yuri)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[188] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∃x (BasketballPlayer(x) ∧ ¬American(x))', '∀x (BasketballPlayer(x) → Tall(x))', '∀x (Tall(x) → WearsLargeShoes(x))', '∀x (WearsLargeShoes(x) → WearsLargeClothes(x))', '¬WearsLargeClothes(yuri)'], 'conclusion-FOL': 'BasketballPlayer(yuri) ∧ American(yuri) → WearsLargeClothes(yuri)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[189] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∃x (BasketballPlayer(x) ∧ ¬American(x))', '∀x (BasketballPlayer(x) → Tall(x))', '∀x (Tall(x) → WearsLargeShoes(x))', '∀x (WearsLargeShoes(x) → WearsLargeClothes(x))', '¬WearsLargeClothes(yuri)'], 'conclusion-FOL': 'BasketballPlayer(yuri) ∧ American(yuri)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[190] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∃x (BasketballPlayer(x) ∧ ¬American(x))', '∀x (BasketballPlayer(x) → Tall(x))', '∀x (Tall(x) → WearsLargeShoes(x))', '∀x (WearsLargeShoes(x) → WearsLargeClothes(x))', '¬WearsLargeClothes(yuri)'], 'conclusion-FOL': '(¬WearsLargeShoes(yuri) → (American(yuri) ∧ BasketballPlayer(yuri)))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[191] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∃x (BasketballPlayer(x) ∧ ¬American(x))', '∀x (BasketballPlayer(x) → Tall(x))', '∀x (Tall(x) → WearsLargeShoes(x))', '∀x (WearsLargeShoes(x) → WearsLargeClothes(x))', '¬WearsLargeClothes(yuri)'], 'conclusion-FOL': '(¬(BasketballPlayer(yuri) ∧ American(yuri)) → BasketballPlayer(yuri))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[192] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Event(x) → (Happy(x) ⊕ Sad(x)))', '∃x (Event(x) ∧ Happy(x))'], 'conclusion-FOL': '∀x (Event(x) → Sad(x))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[193] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['Winner(steinhauer, duMaurierClassic1992)', 'ParticipatedIn(steinhauer, duMaurierClassic1992)', '∃x (SixWayTie(x) ∧ LeaderboardPosition(x))', 'Belgian(descampe) ∧ OnLeaderboard(descampe, duMaurierClassic1992)', '∀x (OnLeaderboard(x, duMaurierClassic1992) → ParticipatedIn(x, duMaurierClassic1992))'], 'conclusion-FOL': '¬Winner(steinhauer, duMaurierClassic1992)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[194] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['Winner(steinhauer, duMaurierClassic1992)', 'ParticipatedIn(steinhauer, duMaurierClassic1992)', '∃x (SixWayTie(x) ∧ ∃y (Belgian(y) ∧ MemberOfSixWayTie(y)))', 'Belgian(descampe) ∧ OnLeaderboard(descampe, duMaurierClassic1992)', '∀x (OnLeaderboard(x, duMaurierClassic1992) → ParticipatedIn(x, duMaurierClassic1992))'], 'conclusion-FOL': 'MemberOfSixWayTie(descampe)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[195] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Barks(x) → ¬LikesJane(x))', '∀x (Dog(x) → Barks(x))', '∀x (Jumps(x) → LikesJane(x))', '∀x (HasLegs(x) → Jumps(x))', '∀x (Terricolous(x) → HasLegs(x))', '(¬(Jumps(KiKi) ∨ HasLegs(KiKi)) ⊕ (Terricolous(KiKi) ∨ HasLegs(KiKi)))'], 'conclusion-FOL': 'Terricolous(KiKi)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[196] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Barks(x) → ¬LikesJane(x))', '∀x (Dog(x) → (Animal(x) ∧ Barks(x)))', '∀x (Jumps(x) → LikesJane(x))', '∀x (HasLegs(x) → Jumps(x))', '∀x (Terricolous(x) → HasLegs(x))', '(¬(Jumps(KiKi) ∨ HasLegs(KiKi)) ⊕ (Terricolous(KiKi) ∨ HasLegs(KiKi)))'], 'conclusion-FOL': 'Barks(KiKi) ∧ Dog(KiKi)'}
+=========== FOL ===========
+=== Parsing successfully ===
+[197] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Barks(x) → ¬LikesJane(x))', '∀x (Dog(x) → (Animal(x) ∧ Barks(x)))', '∀x (Jumps(x) → LikesJane(x))', '∀x (HasLegs(x) → Jumps(x))', '∀x (Terricolous(x) → HasLegs(x))', '(¬(Jumps(KiKi) ∨ HasLegs(KiKi)) ⊕ (Terricolous(KiKi) ∨ HasLegs(KiKi)))'], 'conclusion-FOL': '¬(Barks(KiKi) ∨ Dog(KiKi))'}
+=========== FOL ===========
+=== Parsing successfully ===
+[198] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (BornIn(x, 1995) → CommonName(x, ailton))', 'CommonName(ailton, ailton) ∧ FootballPlayer(ailton) ∧ LoanedTo(ailton, braga)', 'Footballer(ailtonsilva) ∧ Brazilian(ailtonsilva) ∧ PlaysFor(ailtonsilva, nautico)', 'FootballClub(nautico) ∧ FootballClub(braga)', 'FootballClub(fluminense)'], 'conclusion-FOL': '∀x (PlaysFor(x, nautico) → ¬Brazilian(x))'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 0, "error_msg": "Syntax error at line 1, column 19\nExpected ID, got RPAREN ())", "error_line": "\u2200x (BornIn(x, 1995) \u2192 CommonName(x, ailton))", "pointer": "                  ^"}
+[INFO] Fixed premise-FOL at index 0
+Current FOL sample: {'premises-FOL': ['∀x (BornIn(x, year1995) → CommonName(x, ailton))', 'CommonName(ailton, ailton) ∧ FootballPlayer(ailton) ∧ LoanedTo(ailton, braga)', 'Footballer(ailtonsilva) ∧ Brazilian(ailtonsilva) ∧ PlaysFor(ailtonsilva, nautico)', 'FootballClub(nautico) ∧ FootballClub(braga)', 'FootballClub(fluminense)'], 'conclusion-FOL': '∀x (PlaysFor(x, nautico) → ¬Brazilian(x))'}
+=== Parsing successfully ===
+[199] Pred: False      | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['BornIn(ailtonsilva, 1995)', 'CommonName(ailtonsilva, ailton)', 'FootballPlayer(ailton)', 'LoanedOutTo(ailton, braga)', 'BrazillianFootballer(ailtonsilva)', 'PlaysFor(ailtonsilva, nautico)', 'FootballClub(nautico)', 'FootballClub(braga)', 'FootballClub(fluminense)'], 'conclusion-FOL': '¬(PlaysFor(ailtonsilva, x) ∧ FootballClub(x))'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 0, "error_msg": "Syntax error at line 1, column 25\nExpected ID, got RPAREN ())", "error_line": "BornIn(ailtonsilva, 1995)", "pointer": "                        ^"}
+[INFO] Fixed premise-FOL at index 0
+Current FOL sample: {'premises-FOL': ['BornIn(ailtonsilva, year1995)', 'CommonName(ailtonsilva, ailton)', 'FootballPlayer(ailton)', 'LoanedOutTo(ailton, braga)', 'BrazillianFootballer(ailtonsilva)', 'PlaysFor(ailtonsilva, nautico)', 'FootballClub(nautico)', 'FootballClub(braga)', 'FootballClub(fluminense)'], 'conclusion-FOL': '¬(PlaysFor(ailtonsilva, x) ∧ FootballClub(x))'}
+=== Parsing successfully ===
+[200] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['BornIn(ailtonsilva, 1995)', 'CommonName(ailtonsilva, ailton)', 'FootballPlayer(ailton)', 'LoanedOutTo(ailton, braga)', 'BrazillianFootballer(ailtonsilva)', 'PlaysFor(ailtonsilva, nautico)', 'FootballClub(nautico)', 'FootballClub(braga)', 'FootballClub(fluminense)'], 'conclusion-FOL': '¬LoanedOutTo(ailton, footballclub)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 0, "error_msg": "Syntax error at line 1, column 25\nExpected ID, got RPAREN ())", "error_line": "BornIn(ailtonsilva, 1995)", "pointer": "                        ^"}
+[INFO] Fixed premise-FOL at index 0
+Current FOL sample: {'premises-FOL': ['BornIn(ailtonsilva, year1995)', 'CommonName(ailtonsilva, ailton)', 'FootballPlayer(ailton)', 'LoanedOutTo(ailton, braga)', 'BrazillianFootballer(ailtonsilva)', 'PlaysFor(ailtonsilva, nautico)', 'FootballClub(nautico)', 'FootballClub(braga)', 'FootballClub(fluminense)'], 'conclusion-FOL': '¬LoanedOutTo(ailton, footballclub)'}
+=== Parsing successfully ===
+[201] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['BornIn(ailtonsilva, 1995)', 'CommonName(ailtonsilva, ailton)', 'FootballPlayer(ailton)', 'LoanedTo(ailton, braga)', 'BrazillianFootballer(ailtonsilva)', 'PlaysFor(ailtonsilva, nautico)', 'FootballClub(nautico)', 'FootballClub(braga)', 'FootballClub(fluminense)'], 'conclusion-FOL': 'PlaysFor(ailtonsilva, fluminense)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 0, "error_msg": "Syntax error at line 1, column 25\nExpected ID, got RPAREN ())", "error_line": "BornIn(ailtonsilva, 1995)", "pointer": "                        ^"}
+[INFO] Fixed premise-FOL at index 0
+Current FOL sample: {'premises-FOL': ['BornIn(ailtonsilva, year1995)', 'CommonName(ailtonsilva, ailton)', 'FootballPlayer(ailton)', 'LoanedTo(ailton, braga)', 'BrazillianFootballer(ailtonsilva)', 'PlaysFor(ailtonsilva, nautico)', 'FootballClub(nautico)', 'FootballClub(braga)', 'FootballClub(fluminense)'], 'conclusion-FOL': 'PlaysFor(ailtonsilva, fluminense)'}
+=== Parsing successfully ===
+[202] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['BornIn(ailtonsilva, 1995)', 'CommonName(ailtonsilva, ailton)', 'FootballPlayer(ailton)', 'LoanedOutTo(ailton, braga)', 'BrazillianFootballer(ailtonsilva)', 'PlaysFor(ailtonsilva, nautico)', 'FootballClub(nautico)', 'FootballClub(braga)', 'FootballClub(fluminense)'], 'conclusion-FOL': 'LoanedOutTo(ailtonsilva, u) ∧ FootballClub(u)'}
+=========== FOL ===========
+[Attempt 1] Failed: {"index": 0, "error_msg": "Syntax error at line 1, column 25\nExpected ID, got RPAREN ())", "error_line": "BornIn(ailtonsilva, 1995)", "pointer": "                        ^"}
+[INFO] Fixed premise-FOL at index 0
+Current FOL sample: {'premises-FOL': ['BornIn(ailtonsilva, year1995)', 'CommonName(ailtonsilva, ailton)', 'FootballPlayer(ailton)', 'LoanedOutTo(ailton, braga)', 'BrazillianFootballer(ailtonsilva)', 'PlaysFor(ailtonsilva, nautico)', 'FootballClub(nautico)', 'FootballClub(braga)', 'FootballClub(fluminense)'], 'conclusion-FOL': 'LoanedOutTo(ailtonsilva, u) ∧ FootballClub(u)'}
+=== Parsing successfully ===
+[203] Pred: Uncertain  | Gold: Uncertain
+
+Accuracy: 64.22%
+
+Accuracy: 126/190 = 0.6632
+Ignored samples due to errors: 14

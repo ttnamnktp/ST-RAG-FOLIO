@@ -1,0 +1,1047 @@
+(folio) Nam@macbook-air FOLIO % python run_naive_predictor.py
+[0] Pred: Uncertain  | Gold: Uncertain
+[1] Pred: True       | Gold: True
+[2] Pred: False      | Gold: False
+[3] Pred: Uncertain  | Gold: Uncertain
+[4] Pred: Uncertain  | Gold: Uncertain
+[5] Pred: Uncertain  | Gold: True
+[6] Pred: True       | Gold: True
+[7] Pred: False      | Gold: Uncertain
+[8] Pred: False      | Gold: Uncertain
+[9] Pred: True       | Gold: True
+[10] Pred: False      | Gold: False
+[11] Pred: False      | Gold: Uncertain
+[12] Pred: True       | Gold: True
+[13] Pred: False      | Gold: Uncertain
+[14] Pred: False      | Gold: False
+[15] Pred: True       | Gold: True
+[16] Pred: Uncertain  | Gold: Uncertain
+[17] Pred: Uncertain  | Gold: Uncertain
+[18] Pred: Uncertain  | Gold: True
+[19] Pred: Uncertain  | Gold: True
+[20] Pred: False      | Gold: False
+[21] Pred: Uncertain  | Gold: True
+[22] Pred: Uncertain  | Gold: False
+[23] Pred: False      | Gold: Uncertain
+[24] Pred: True       | Gold: True
+[25] Pred: False      | Gold: Uncertain
+[26] Pred: False      | Gold: Uncertain
+[27] Pred: True       | Gold: False
+[28] Pred: Uncertain  | Gold: True
+[29] Pred: True       | Gold: Uncertain
+[30] Pred: Uncertain  | Gold: Uncertain
+[31] Pred: Uncertain  | Gold: True
+[32] Pred: True       | Gold: False
+[33] Pred: True       | Gold: True
+[34] Pred: False      | Gold: Uncertain
+[35] Pred: False      | Gold: False
+[36] Pred: True       | Gold: True
+[37] Pred: True       | Gold: True
+[38] Pred: False      | Gold: False
+[39] Pred: Uncertain  | Gold: Uncertain
+[40] Pred: Uncertain  | Gold: True
+[41] Pred: Uncertain  | Gold: False
+[42] Pred: Uncertain  | Gold: True
+[43] Pred: Uncertain  | Gold: Uncertain
+[44] Pred: False      | Gold: False
+[45] Pred: False      | Gold: Uncertain
+[46] Pred: Uncertain  | Gold: True
+[47] Pred: Uncertain  | Gold: False
+[48] Pred: Uncertain  | Gold: Uncertain
+[49] Pred: Uncertain  | Gold: Uncertain
+[50] Pred: False      | Gold: False
+[51] Pred: True       | Gold: True
+[52] Pred: False      | Gold: False
+[53] Pred: False      | Gold: Uncertain
+[54] Pred: True       | Gold: True
+[55] Pred: True       | Gold: True
+[56] Pred: False      | Gold: False
+[57] Pred: Uncertain  | Gold: Uncertain
+[58] Pred: False      | Gold: False
+[59] Pred: Uncertain  | Gold: Uncertain
+[60] Pred: True       | Gold: True
+[61] Pred: Uncertain  | Gold: Uncertain
+[62] Pred: Uncertain  | Gold: Uncertain
+[63] Pred: False      | Gold: Uncertain
+[64] Pred: False      | Gold: False
+[65] Pred: False      | Gold: True
+[66] Pred: True       | Gold: True
+[67] Pred: Uncertain  | Gold: Uncertain
+[68] Pred: True       | Gold: True
+[69] Pred: True       | Gold: True
+[70] Pred: False      | Gold: False
+[71] Pred: True       | Gold: Uncertain
+[72] Pred: False      | Gold: False
+[73] Pred: False      | Gold: True
+[74] Pred: True       | Gold: True
+[75] Pred: False      | Gold: False
+[76] Pred: True       | Gold: Uncertain
+[77] Pred: Uncertain  | Gold: True
+[78] Pred: True       | Gold: False
+[79] Pred: False      | Gold: False
+[80] Pred: Uncertain  | Gold: True
+[81] Pred: Uncertain  | Gold: Uncertain
+[82] Pred: True       | Gold: True
+[83] Pred: False      | Gold: False
+[84] Pred: False      | Gold: Uncertain
+[85] Pred: Uncertain  | Gold: True
+[86] Pred: Uncertain  | Gold: False
+[87] Pred: True       | Gold: True
+[88] Pred: True       | Gold: True
+[89] Pred: Uncertain  | Gold: True
+[90] Pred: Uncertain  | Gold: Uncertain
+[91] Pred: True       | Gold: True
+[92] Pred: False      | Gold: False
+[93] Pred: False      | Gold: False
+[94] Pred: False      | Gold: Uncertain
+[95] Pred: True       | Gold: True
+[96] Pred: Uncertain  | Gold: Uncertain
+[97] Pred: True       | Gold: False
+[98] Pred: False      | Gold: True
+[99] Pred: Uncertain  | Gold: Uncertain
+[100] Pred: Uncertain  | Gold: True
+[101] Pred: False      | Gold: False
+[102] Pred: Uncertain  | Gold: Uncertain
+[103] Pred: Uncertain  | Gold: False
+[104] Pred: Uncertain  | Gold: True
+[105] Pred: Uncertain  | Gold: True
+[106] Pred: True       | Gold: True
+[107] Pred: False      | Gold: False
+[108] Pred: Uncertain  | Gold: Uncertain
+[109] Pred: True       | Gold: False
+[110] Pred: Uncertain  | Gold: True
+[111] Pred: Uncertain  | Gold: Uncertain
+[112] Pred: Uncertain  | Gold: True
+[113] Pred: False      | Gold: Uncertain
+[114] Pred: False      | Gold: False
+[115] Pred: False      | Gold: False
+[116] Pred: Uncertain  | Gold: True
+[117] Pred: Uncertain  | Gold: Uncertain
+[118] Pred: False      | Gold: Uncertain
+[119] Pred: True       | Gold: True
+[120] Pred: False      | Gold: False
+[121] Pred: Uncertain  | Gold: Uncertain
+[122] Pred: Uncertain  | Gold: Uncertain
+[123] Pred: False      | Gold: False
+[124] Pred: Uncertain  | Gold: True
+[125] Pred: Uncertain  | Gold: Uncertain
+[126] Pred: Uncertain  | Gold: True
+[127] Pred: Uncertain  | Gold: False
+[128] Pred: Uncertain  | Gold: False
+[129] Pred: Uncertain  | Gold: True
+[130] Pred: Uncertain  | Gold: Uncertain
+[131] Pred: Uncertain  | Gold: True
+[132] Pred: True       | Gold: True
+[133] Pred: False      | Gold: Uncertain
+[134] Pred: True       | Gold: Uncertain
+[135] Pred: True       | Gold: True
+[136] Pred: False      | Gold: Uncertain
+[137] Pred: False      | Gold: False
+[138] Pred: True       | Gold: True
+[139] Pred: False      | Gold: False
+[140] Pred: True       | Gold: Uncertain
+[141] Pred: Uncertain  | Gold: False
+[142] Pred: Uncertain  | Gold: True
+[143] Pred: True       | Gold: True
+[144] Pred: Uncertain  | Gold: Uncertain
+[145] Pred: Uncertain  | Gold: Uncertain
+[146] Pred: Uncertain  | Gold: Uncertain
+[147] Pred: Uncertain  | Gold: True
+[148] Pred: True       | Gold: True
+[149] Pred: True       | Gold: False
+[150] Pred: True       | Gold: True
+[151] Pred: False      | Gold: Uncertain
+[152] Pred: Uncertain  | Gold: Uncertain
+[153] Pred: True       | Gold: Uncertain
+[154] Pred: Uncertain  | Gold: False
+[155] Pred: Uncertain  | Gold: True
+[156] Pred: True       | Gold: Uncertain
+[157] Pred: False      | Gold: False
+[158] Pred: True       | Gold: True
+[159] Pred: True       | Gold: True
+[160] Pred: Uncertain  | Gold: Uncertain
+[161] Pred: True       | Gold: True
+[162] Pred: False      | Gold: Uncertain
+[163] Pred: False      | Gold: False
+[164] Pred: False      | Gold: Uncertain
+[165] Pred: False      | Gold: False
+[166] Pred: False      | Gold: True
+[167] Pred: Uncertain  | Gold: True
+[168] Pred: True       | Gold: True
+[169] Pred: False      | Gold: False
+[170] Pred: False      | Gold: Uncertain
+[171] Pred: False      | Gold: True
+[172] Pred: Uncertain  | Gold: False
+[173] Pred: True       | Gold: Uncertain
+[174] Pred: Uncertain  | Gold: False
+[175] Pred: Uncertain  | Gold: True
+[176] Pred: False      | Gold: Uncertain
+[177] Pred: False      | Gold: False
+[178] Pred: True       | Gold: True
+[179] Pred: False      | Gold: False
+[180] Pred: False      | Gold: False
+[181] Pred: False      | Gold: False
+[182] Pred: Uncertain  | Gold: Uncertain
+[183] Pred: True       | Gold: True
+[184] Pred: True       | Gold: False
+[185] Pred: True       | Gold: True
+[186] Pred: False      | Gold: False
+[187] Pred: Uncertain  | Gold: Uncertain
+[188] Pred: True       | Gold: Uncertain
+[189] Pred: True       | Gold: True
+[190] Pred: False      | Gold: False
+[191] Pred: Uncertain  | Gold: False
+[192] Pred: False      | Gold: False
+[193] Pred: False      | Gold: False
+[194] Pred: False      | Gold: False
+[195] Pred: Uncertain  | Gold: Uncertain
+[196] Pred: Uncertain  | Gold: Uncertain
+[197] Pred: False      | Gold: False
+[198] Pred: Uncertain  | Gold: True
+[199] Pred: False      | Gold: False
+[200] Pred: False      | Gold: False
+[201] Pred: False      | Gold: False
+[202] Pred: Uncertain  | Gold: Uncertain
+[203] Pred: True       | Gold: Uncertain
+
+Accuracy: 58.33%
+
+(folio) Nam@macbook-air FOLIO % python run_rag_predictor.py
+Loaded embedding model: BAAI/bge-small-en-v1.5
+Loading KB from: data/folio-train.jsonl
+KB loaded: 1004 examples
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+        - Avoid using `tokenizers` before the fork if possible
+        - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+        - Avoid using `tokenizers` before the fork if possible
+        - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+[0] Pred: Uncertain  | Gold: Uncertain
+[1] Pred: True       | Gold: True
+[2] Pred: False      | Gold: False
+[3] Pred: Uncertain  | Gold: Uncertain
+[4] Pred: Uncertain  | Gold: Uncertain
+[5] Pred: Uncertain  | Gold: True
+[6] Pred: True       | Gold: True
+[7] Pred: False      | Gold: Uncertain
+[8] Pred: False      | Gold: Uncertain
+[9] Pred: True       | Gold: True
+[10] Pred: False      | Gold: False
+[11] Pred: False      | Gold: Uncertain
+[12] Pred: True       | Gold: True
+[13] Pred: False      | Gold: Uncertain
+[14] Pred: False      | Gold: False
+[15] Pred: True       | Gold: True
+[16] Pred: Uncertain  | Gold: Uncertain
+[17] Pred: Uncertain  | Gold: Uncertain
+[18] Pred: Uncertain  | Gold: True
+[19] Pred: True       | Gold: True
+[20] Pred: False      | Gold: False
+[21] Pred: True       | Gold: True
+[22] Pred: False      | Gold: False
+[23] Pred: False      | Gold: Uncertain
+[24] Pred: True       | Gold: True
+[25] Pred: False      | Gold: Uncertain
+[26] Pred: Uncertain  | Gold: Uncertain
+[27] Pred: True       | Gold: False
+[28] Pred: Uncertain  | Gold: True
+[29] Pred: True       | Gold: Uncertain
+[30] Pred: Uncertain  | Gold: Uncertain
+[31] Pred: True       | Gold: True
+[32] Pred: False      | Gold: False
+[33] Pred: True       | Gold: True
+[34] Pred: False      | Gold: Uncertain
+[35] Pred: False      | Gold: False
+[36] Pred: True       | Gold: True
+[37] Pred: True       | Gold: True
+[38] Pred: False      | Gold: False
+[39] Pred: Uncertain  | Gold: Uncertain
+[40] Pred: Uncertain  | Gold: True
+[41] Pred: Uncertain  | Gold: False
+[42] Pred: True       | Gold: True
+[43] Pred: Uncertain  | Gold: Uncertain
+[44] Pred: False      | Gold: False
+[45] Pred: False      | Gold: Uncertain
+[46] Pred: Uncertain  | Gold: True
+[47] Pred: Uncertain  | Gold: False
+[48] Pred: Uncertain  | Gold: Uncertain
+[49] Pred: False      | Gold: Uncertain
+[50] Pred: False      | Gold: False
+[51] Pred: True       | Gold: True
+[52] Pred: False      | Gold: False
+[53] Pred: False      | Gold: Uncertain
+[54] Pred: True       | Gold: True
+[55] Pred: True       | Gold: True
+[56] Pred: False      | Gold: False
+[57] Pred: Uncertain  | Gold: Uncertain
+[58] Pred: False      | Gold: False
+[59] Pred: Uncertain  | Gold: Uncertain
+[60] Pred: True       | Gold: True
+[61] Pred: True       | Gold: Uncertain
+[62] Pred: Uncertain  | Gold: Uncertain
+[63] Pred: False      | Gold: Uncertain
+[64] Pred: False      | Gold: False
+[65] Pred: False      | Gold: True
+[66] Pred: True       | Gold: True
+[67] Pred: Uncertain  | Gold: Uncertain
+[68] Pred: True       | Gold: True
+[69] Pred: True       | Gold: True
+[70] Pred: False      | Gold: False
+[71] Pred: True       | Gold: Uncertain
+[72] Pred: False      | Gold: False
+[73] Pred: False      | Gold: True
+[74] Pred: True       | Gold: True
+[75] Pred: False      | Gold: False
+[76] Pred: False      | Gold: Uncertain
+[77] Pred: False      | Gold: True
+[78] Pred: True       | Gold: False
+[79] Pred: False      | Gold: False
+[80] Pred: True       | Gold: True
+[81] Pred: Uncertain  | Gold: Uncertain
+[82] Pred: True       | Gold: True
+[83] Pred: False      | Gold: False
+[84] Pred: False      | Gold: Uncertain
+[85] Pred: Uncertain  | Gold: True
+[86] Pred: Uncertain  | Gold: False
+[87] Pred: True       | Gold: True
+[88] Pred: True       | Gold: True
+[89] Pred: True       | Gold: True
+[90] Pred: True       | Gold: Uncertain
+[91] Pred: True       | Gold: True
+[92] Pred: False      | Gold: False
+[93] Pred: False      | Gold: False
+[94] Pred: False      | Gold: Uncertain
+[95] Pred: True       | Gold: True
+[96] Pred: Uncertain  | Gold: Uncertain
+[97] Pred: False      | Gold: False
+[98] Pred: False      | Gold: True
+[99] Pred: Uncertain  | Gold: Uncertain
+[100] Pred: True       | Gold: True
+[101] Pred: True       | Gold: False
+[102] Pred: Uncertain  | Gold: Uncertain
+[103] Pred: Uncertain  | Gold: False
+[104] Pred: True       | Gold: True
+[105] Pred: Uncertain  | Gold: True
+[106] Pred: True       | Gold: True
+[107] Pred: False      | Gold: False
+[108] Pred: True       | Gold: Uncertain
+[109] Pred: Uncertain  | Gold: False
+[110] Pred: Uncertain  | Gold: True
+[111] Pred: Uncertain  | Gold: Uncertain
+[112] Pred: True       | Gold: True
+[113] Pred: False      | Gold: Uncertain
+[114] Pred: False      | Gold: False
+[115] Pred: False      | Gold: False
+[116] Pred: True       | Gold: True
+[117] Pred: True       | Gold: Uncertain
+[118] Pred: False      | Gold: Uncertain
+[119] Pred: True       | Gold: True
+[120] Pred: False      | Gold: False
+[121] Pred: Uncertain  | Gold: Uncertain
+[122] Pred: True       | Gold: Uncertain
+[123] Pred: False      | Gold: False
+[124] Pred: Uncertain  | Gold: True
+[125] Pred: Uncertain  | Gold: Uncertain
+[126] Pred: False      | Gold: True
+[127] Pred: True       | Gold: False
+[128] Pred: Uncertain  | Gold: False
+[129] Pred: True       | Gold: True
+[130] Pred: Uncertain  | Gold: Uncertain
+[131] Pred: True       | Gold: True
+[132] Pred: True       | Gold: True
+[133] Pred: False      | Gold: Uncertain
+[134] Pred: True       | Gold: Uncertain
+[135] Pred: True       | Gold: True
+[136] Pred: False      | Gold: Uncertain
+[137] Pred: False      | Gold: False
+[138] Pred: True       | Gold: True
+[139] Pred: False      | Gold: False
+[140] Pred: True       | Gold: Uncertain
+[141] Pred: Uncertain  | Gold: False
+[142] Pred: True       | Gold: True
+[143] Pred: True       | Gold: True
+[144] Pred: Uncertain  | Gold: Uncertain
+[145] Pred: True       | Gold: Uncertain
+[146] Pred: True       | Gold: Uncertain
+[147] Pred: Uncertain  | Gold: True
+[148] Pred: True       | Gold: True
+[149] Pred: False      | Gold: False
+[150] Pred: True       | Gold: True
+[151] Pred: False      | Gold: Uncertain
+[152] Pred: Uncertain  | Gold: Uncertain
+[153] Pred: True       | Gold: Uncertain
+[154] Pred: Uncertain  | Gold: False
+[155] Pred: True       | Gold: True
+[156] Pred: True       | Gold: Uncertain
+[157] Pred: False      | Gold: False
+[158] Pred: True       | Gold: True
+[159] Pred: True       | Gold: True
+[160] Pred: False      | Gold: Uncertain
+[161] Pred: True       | Gold: True
+[162] Pred: True       | Gold: Uncertain
+[163] Pred: False      | Gold: False
+[164] Pred: False      | Gold: Uncertain
+[165] Pred: False      | Gold: False
+[166] Pred: False      | Gold: True
+[167] Pred: Uncertain  | Gold: True
+[168] Pred: True       | Gold: True
+[169] Pred: False      | Gold: False
+[170] Pred: Uncertain  | Gold: Uncertain
+[171] Pred: False      | Gold: True
+[172] Pred: True       | Gold: False
+[173] Pred: False      | Gold: Uncertain
+[174] Pred: Uncertain  | Gold: False
+[175] Pred: True       | Gold: True
+[176] Pred: False      | Gold: Uncertain
+[177] Pred: False      | Gold: False
+[178] Pred: True       | Gold: True
+[179] Pred: False      | Gold: False
+[180] Pred: False      | Gold: False
+[181] Pred: False      | Gold: False
+[182] Pred: Uncertain  | Gold: Uncertain
+[183] Pred: True       | Gold: True
+[184] Pred: Uncertain  | Gold: False
+[185] Pred: True       | Gold: True
+[186] Pred: False      | Gold: False
+[187] Pred: Uncertain  | Gold: Uncertain
+[188] Pred: True       | Gold: Uncertain
+[189] Pred: True       | Gold: True
+[190] Pred: False      | Gold: False
+[191] Pred: Uncertain  | Gold: False
+[192] Pred: False      | Gold: False
+[193] Pred: False      | Gold: False
+[194] Pred: False      | Gold: False
+[195] Pred: Uncertain  | Gold: Uncertain
+[196] Pred: Uncertain  | Gold: Uncertain
+[197] Pred: False      | Gold: False
+[198] Pred: Uncertain  | Gold: True
+[199] Pred: False      | Gold: False
+[200] Pred: False      | Gold: False
+[201] Pred: False      | Gold: False
+[202] Pred: Uncertain  | Gold: Uncertain
+[203] Pred: True       | Gold: Uncertain
+
+Accuracy: 63.73%
+
+(folio) Nam@macbook-air FOLIO % python run_translate_predictor.py
+Loaded embedding model: BAAI/bge-small-en-v1.5
+Loading KB from: data/folio-train.jsonl
+KB loaded: 1004 examples
+[0] Pred: Uncertain  | Gold: Uncertain
+[1] Pred: True       | Gold: True
+[2] Pred: Uncertain  | Gold: False
+[3] Pred: Uncertain  | Gold: Uncertain
+[4] Pred: Uncertain  | Gold: Uncertain
+[5] Pred: Uncertain  | Gold: True
+Error: Syntax error at line 1, column 60
+Expected LPAREN, got ID (animal)
+∀animal (IsAnimal(animal) → (∃human Human(human) ∧ human = animal))
+                                                           ^
+[6] Pred: Uncertain  | Gold: True
+[7] Pred: Uncertain  | Gold: Uncertain
+[8] Pred: Uncertain  | Gold: Uncertain
+[9] Pred: Uncertain  | Gold: True
+[10] Pred: False      | Gold: False
+[11] Pred: Uncertain  | Gold: Uncertain
+Error: Syntax error at line 1, column 21
+Expected RPAREN, got LPAREN (()
+JapaneseCompany(Game(TheLegendOfZelda))
+                    ^
+[12] Pred: Uncertain  | Gold: True
+Error: Syntax error at line 1, column 44
+Expected RPAREN, got LPAREN (()
+∀y (InTop10(y) → JapaneseGameCompany(MadeBy(y)))
+                                           ^
+[13] Pred: Uncertain  | Gold: Uncertain
+Error: Syntax error at line 1, column 21
+Expected RPAREN, got LPAREN (()
+JapaneseCompany(Game(TheLegendOfZelda))
+                    ^
+[14] Pred: Uncertain  | Gold: False
+[15] Pred: True       | Gold: True
+Error: Syntax error at line 1, column 6
+Expected LPAREN, got BIMPLIES (↔)
+Rock ↔ Turtle
+     ^
+[16] Pred: Uncertain  | Gold: Uncertain
+[17] Pred: Uncertain  | Gold: Uncertain
+[18] Pred: Uncertain  | Gold: True
+[19] Pred: Uncertain  | Gold: True
+[20] Pred: Uncertain  | Gold: False
+Error: Syntax error at line 1, column 20
+Expected RPAREN, got LPAREN (()
+Popular(NetflixShow('Stranger Things'))
+                   ^
+[21] Pred: Uncertain  | Gold: True
+Error: Syntax error at line 1, column 20
+Expected RPAREN, got LPAREN (()
+Popular(NetflixShow(StrangerThings))
+                   ^
+[22] Pred: Uncertain  | Gold: False
+Error: Syntax error at line 1, column 20
+Expected RPAREN, got LPAREN (()
+Popular(NetflixShow('Stranger Things'))
+                   ^
+[23] Pred: Uncertain  | Gold: Uncertain
+[24] Pred: Uncertain  | Gold: True
+[25] Pred: Uncertain  | Gold: Uncertain
+[26] Pred: Uncertain  | Gold: Uncertain
+[27] Pred: Uncertain  | Gold: False
+[28] Pred: Uncertain  | Gold: True
+[29] Pred: Uncertain  | Gold: Uncertain
+[30] Pred: Uncertain  | Gold: Uncertain
+[31] Pred: Uncertain  | Gold: True
+[32] Pred: Uncertain  | Gold: False
+Error: Syntax error at line 1, column 50
+Expected RPAREN, got LPAREN (()
+Leads(RoderickStrong, ProfessionalWrestlingStable(x))
+                                                 ^
+[33] Pred: Uncertain  | Gold: True
+[34] Pred: Uncertain  | Gold: Uncertain
+[35] Pred: Uncertain  | Gold: False
+[36] Pred: True       | Gold: True
+[37] Pred: True       | Gold: True
+[38] Pred: False      | Gold: False
+[39] Pred: Uncertain  | Gold: Uncertain
+[40] Pred: Uncertain  | Gold: True
+[41] Pred: Uncertain  | Gold: False
+[42] Pred: True       | Gold: True
+[43] Pred: Uncertain  | Gold: Uncertain
+[44] Pred: Uncertain  | Gold: False
+[45] Pred: Uncertain  | Gold: Uncertain
+[46] Pred: Uncertain  | Gold: True
+[47] Pred: Uncertain  | Gold: False
+[48] Pred: True       | Gold: Uncertain
+Error: Syntax error at line 1, column 23
+Expected ID, got RPAREN ())
+(StreamingService(1984) → HardcoverBook(1984))
+                      ^
+[49] Pred: Uncertain  | Gold: Uncertain
+Error: Syntax error at line 1, column 22
+Expected LPAREN, got RPAREN ())
+1984(StreamingService) → 1984(HardcoverBook)
+                     ^
+[50] Pred: Uncertain  | Gold: False
+Error: Syntax error at line 1, column 22
+Expected LPAREN, got RPAREN ())
+1984(StreamingService) → 1984(HardcoverBook)
+                     ^
+[51] Pred: Uncertain  | Gold: True
+[52] Pred: True       | Gold: False
+[53] Pred: Uncertain  | Gold: Uncertain
+[54] Pred: True       | Gold: True
+[55] Pred: True       | Gold: True
+[56] Pred: True       | Gold: False
+[57] Pred: Uncertain  | Gold: Uncertain
+[58] Pred: Uncertain  | Gold: False
+[59] Pred: Uncertain  | Gold: Uncertain
+[60] Pred: True       | Gold: True
+Error: Unexpected end of input, expected LPAREN
+MikeIsAnInternationalStudent
+^
+[61] Pred: Uncertain  | Gold: Uncertain
+Error: Unexpected end of input, expected LPAREN
+MikeIsAnInternationalStudent
+^
+[62] Pred: Uncertain  | Gold: Uncertain
+[63] Pred: Uncertain  | Gold: Uncertain
+[64] Pred: False      | Gold: False
+[65] Pred: True       | Gold: True
+Error: Syntax error at line 1, column 23
+Expected ID, got COMMA (,)
+OrganizedInto(yale, 27, residentialColleges, YaleGraduateSchoolOfArtsAndSciences, professionalSchools)
+                      ^
+[66] Pred: Uncertain  | Gold: True
+Error: Syntax error at line 1, column 23
+Expected ID, got RPAREN ())
+OrganizedInto(yale, 27) ∧ OrganizedInto(yale, residentialColleges) ∧ OrganizedInto(yale, YaleGraduateSchoolOfArtsAndSciences) ∧ OrganizedInto(yale, professionalSchools)
+                      ^
+[67] Pred: Uncertain  | Gold: Uncertain
+Error: Syntax error at line 1, column 63
+Expected ID, got RPAREN ())
+OrganizedIntoConstituentCollegesAndSchools(yale_university, 27)
+                                                              ^
+[68] Pred: Uncertain  | Gold: True
+[69] Pred: Uncertain  | Gold: True
+[70] Pred: Uncertain  | Gold: False
+[71] Pred: Uncertain  | Gold: Uncertain
+Error: Syntax error at line 1, column 6
+Expected LPAREN, got ID (companyStock)
+ko = companyStock ∧ GrowthCompany(ko)
+     ^
+[72] Pred: Uncertain  | Gold: False
+[73] Pred: True       | Gold: True
+[74] Pred: True       | Gold: True
+[75] Pred: Uncertain  | Gold: False
+[76] Pred: Uncertain  | Gold: Uncertain
+[77] Pred: Uncertain  | Gold: True
+[78] Pred: True       | Gold: False
+Error: Syntax error at line 1, column 20
+Expected LPAREN, got ID (ProductOfBakedByMelissa)
+driedThaiChilies = ProductOfBakedByMelissa
+                   ^
+[79] Pred: Uncertain  | Gold: False
+[80] Pred: True       | Gold: True
+[81] Pred: Uncertain  | Gold: Uncertain
+[82] Pred: True       | Gold: True
+[83] Pred: False      | Gold: False
+Error: Syntax error at line 1, column 22
+Expected LPAREN, got OR (∨)
+SubwayRatingGreater9 ∨ PopularAmongResidents(Subway)
+                     ^
+[84] Pred: Uncertain  | Gold: Uncertain
+Error: Syntax error at line 1, column 8
+Expected LPAREN, got XOR (⊕)
+Subway ⊕ (RatingGreaterThanNine(Subway) ∨ PopularAmongResidents(Subway))
+       ^
+[85] Pred: Uncertain  | Gold: True
+Error: Syntax error at line 1, column 8
+Expected LPAREN, got XOR (⊕)
+Subway ⊕ (RatingGreaterThan9(Subway) ∨ PopularAmongResidents(Subway))
+       ^
+[86] Pred: Uncertain  | Gold: False
+Error: Syntax error at line 1, column 24
+Expected RPAREN, got LPAREN (()
+Fight(SirDigby, Nemesis(SirDigby))
+                       ^
+[87] Pred: Uncertain  | Gold: True
+[88] Pred: Uncertain  | Gold: True
+[89] Pred: Uncertain  | Gold: True
+[90] Pred: Uncertain  | Gold: Uncertain
+Error: Syntax error at line 1, column 60
+Expected RPAREN, got LPAREN (()
+∀x ((NaturalLanguageProcessingTask(x) ∧ TextSequence(output(x))) → LanguageGenerationTask(x))
+                                                           ^
+[91] Pred: Uncertain  | Gold: True
+Error: Syntax error at line 1, column 60
+Expected RPAREN, got LPAREN (()
+∀x ((NaturalLanguageProcessingTask(x) ∧ TextSequence(Output(x))) → LanguageGenerationTask(x))
+                                                           ^
+[92] Pred: Uncertain  | Gold: False
+Error: Syntax error at line 1, column 48
+Expected RPAREN, got ID (RentMonth)
+∀x (DepositRequired(x) → (SecurityDeposit(x) = RentMonth(x) ∨ SecurityDeposit(x) > RentMonth(x)))
+                                               ^
+[93] Pred: Uncertain  | Gold: False
+Error: Syntax error at line 1, column 48
+Expected RPAREN, got ID (OneMonthsRent)
+∀x (DepositRequired(x) → (SecurityDeposit(x) = OneMonthsRent(x) ∨ SecurityDeposit(x) > OneMonthsRent(x)))
+                                               ^
+[94] Pred: Uncertain  | Gold: Uncertain
+Error: Syntax error at line 1, column 48
+Expected RPAREN, got ID (OneMonthsRent)
+∀x (DepositRequired(x) → (SecurityDeposit(x) = OneMonthsRent(x) ∨ SecurityDeposit(x) > OneMonthsRent(x)))
+                                               ^
+[95] Pred: Uncertain  | Gold: True
+[96] Pred: Uncertain  | Gold: Uncertain
+[97] Pred: Uncertain  | Gold: False
+[98] Pred: True       | Gold: True
+[99] Pred: Uncertain  | Gold: Uncertain
+[100] Pred: Uncertain  | Gold: True
+[101] Pred: Uncertain  | Gold: False
+[102] Pred: Uncertain  | Gold: Uncertain
+[103] Pred: Uncertain  | Gold: False
+[104] Pred: Uncertain  | Gold: True
+Error: Syntax error at line 1, column 15
+Expected RPAREN, got LPAREN (()
+costs(gre, usd(205))
+              ^
+[105] Pred: Uncertain  | Gold: True
+Error: 'NoneType' object is not subscriptable
+[106] Pred: Uncertain  | Gold: True
+Error: Syntax error at line 1, column 15
+Expected RPAREN, got LPAREN (()
+costs(gre, usd(205))
+              ^
+[107] Pred: Uncertain  | Gold: False
+[108] Pred: Uncertain  | Gold: Uncertain
+[109] Pred: False      | Gold: False
+[110] Pred: False      | Gold: True
+[111] Pred: Uncertain  | Gold: Uncertain
+[112] Pred: True       | Gold: True
+[113] Pred: Uncertain  | Gold: Uncertain
+[114] Pred: False      | Gold: False
+[115] Pred: Uncertain  | Gold: False
+Error: Syntax error at line 1, column 55
+Expected LPAREN, got ID (z)
+Man(michael) ∧ ∀z (TallerThan(michael, z) ∨ michael = z)
+                                                      ^
+[116] Pred: Uncertain  | Gold: True
+Error: Syntax error at line 1, column 55
+Expected LPAREN, got ID (z)
+Man(michael) ∧ ∀z (TallerThan(michael, z) ∨ michael = z)
+                                                      ^
+[117] Pred: Uncertain  | Gold: Uncertain
+[118] Pred: Uncertain  | Gold: Uncertain
+[119] Pred: Uncertain  | Gold: True
+[120] Pred: Uncertain  | Gold: False
+[121] Pred: Uncertain  | Gold: Uncertain
+[122] Pred: Uncertain  | Gold: Uncertain
+Error: Syntax error at line 1, column 11
+Expected LPAREN, got BIMPLIES (↔)
+greyhound ↔ Boeing707(greyhound)
+          ^
+[123] Pred: Uncertain  | Gold: False
+Error: Syntax error at line 1, column 11
+Expected LPAREN, got XOR (⊕)
+greyhound ⊕ Boeing707(greyhound)
+          ^
+[124] Pred: Uncertain  | Gold: True
+[125] Pred: Uncertain  | Gold: Uncertain
+[126] Pred: Uncertain  | Gold: True
+[127] Pred: Uncertain  | Gold: False
+[128] Pred: False      | Gold: False
+[129] Pred: Uncertain  | Gold: True
+[130] Pred: Uncertain  | Gold: Uncertain
+[131] Pred: True       | Gold: True
+[132] Pred: True       | Gold: True
+[133] Pred: Uncertain  | Gold: Uncertain
+[134] Pred: Uncertain  | Gold: Uncertain
+[135] Pred: Uncertain  | Gold: True
+Error: Syntax error at line 1, column 14
+Expected ID, got RPAREN ())
+PlungerSucks()
+             ^
+[136] Pred: Uncertain  | Gold: Uncertain
+[137] Pred: False      | Gold: False
+Error: Syntax error at line 1, column 37
+Expected RPAREN, got LPAREN (()
+¬ReinforcementLearning(TrainedWithML(TextSummarizationModel(z)))
+                                    ^
+[138] Pred: Uncertain  | Gold: True
+Error: Unexpected end of input, expected LPAREN
+StateOfTheArtTextSummarizationModelIsTrainedWithML
+^
+[139] Pred: Uncertain  | Gold: False
+[140] Pred: Uncertain  | Gold: Uncertain
+[141] Pred: Uncertain  | Gold: False
+[142] Pred: True       | Gold: True
+[143] Pred: True       | Gold: True
+[144] Pred: Uncertain  | Gold: Uncertain
+Error: Syntax error at line 1, column 11
+Expected RPAREN, got LPAREN (()
+Rose(young(r) ∨ Student(r))
+          ^
+[145] Pred: Uncertain  | Gold: Uncertain
+Error: Syntax error at line 1, column 11
+Expected RPAREN, got LPAREN (()
+Rose(young(r) ∨ Student(r))
+          ^
+[146] Pred: Uncertain  | Gold: Uncertain
+[147] Pred: True       | Gold: True
+[148] Pred: True       | Gold: True
+[149] Pred: False      | Gold: False
+[150] Pred: True       | Gold: True
+[151] Pred: True       | Gold: Uncertain
+[152] Pred: Uncertain  | Gold: Uncertain
+[153] Pred: Uncertain  | Gold: Uncertain
+[154] Pred: False      | Gold: False
+[155] Pred: True       | Gold: True
+[156] Pred: Uncertain  | Gold: Uncertain
+[157] Pred: False      | Gold: False
+[158] Pred: True       | Gold: True
+[159] Pred: Uncertain  | Gold: True
+[160] Pred: Uncertain  | Gold: Uncertain
+[161] Pred: True       | Gold: True
+[162] Pred: Uncertain  | Gold: Uncertain
+[163] Pred: False      | Gold: False
+Error: Syntax error at line 1, column 13
+Expected LPAREN, got BIMPLIES (↔)
+BreakingBad ↔ (Monday ∧ Time8pm)
+            ^
+[164] Pred: Uncertain  | Gold: Uncertain
+[165] Pred: Uncertain  | Gold: False
+[166] Pred: True       | Gold: True
+[167] Pred: Uncertain  | Gold: True
+[168] Pred: True       | Gold: True
+[169] Pred: False      | Gold: False
+[170] Pred: Uncertain  | Gold: Uncertain
+Error: Syntax error at line 1, column 35
+Expected LPAREN, got AND (∧)
+(ColorectalCancerIsBileDuctCancer ∧ LowSurvivalRate(colorectalcancer)) → ¬ColorectalCancerIsBileDuctCancer
+                                  ^
+[171] Pred: Uncertain  | Gold: True
+[172] Pred: True       | Gold: False
+[173] Pred: Uncertain  | Gold: Uncertain
+[174] Pred: False      | Gold: False
+[175] Pred: True       | Gold: True
+[176] Pred: Uncertain  | Gold: Uncertain
+[177] Pred: False      | Gold: False
+[178] Pred: Uncertain  | Gold: True
+[179] Pred: False      | Gold: False
+Error: Syntax error at line 1, column 46
+Expected LPAREN, got ID (y)
+∀x ∀y (Departs(x, y) ∧ Arrives(x, z) → ¬(z = y))
+                                             ^
+[180] Pred: Uncertain  | Gold: False
+Error: Syntax error at line 1, column 46
+Expected LPAREN, got ID (y)
+∀x ∀y (Departs(x, y) ∧ Arrives(x, z) → ¬(z = y))
+                                             ^
+[181] Pred: Uncertain  | Gold: False
+[182] Pred: Uncertain  | Gold: Uncertain
+[183] Pred: Uncertain  | Gold: True
+[184] Pred: True       | Gold: False
+Error: Syntax error at line 1, column 57
+Expected ID, got RPAREN ())
+Novel(family_history) ∧ YearWritten(family_history, 2003)
+                                                        ^
+[185] Pred: Uncertain  | Gold: True
+Error: Syntax error at line 1, column 59
+Expected ID, got RPAREN ())
+Novel(family_history) ∧ YearPublished(family_history, 2003)
+                                                          ^
+[186] Pred: Uncertain  | Gold: False
+Error: Syntax error at line 1, column 63
+Expected ID, got RPAREN ())
+Novel(family_history) ∧ YearOfPublication(family_history, 2003)
+                                                              ^
+[187] Pred: Uncertain  | Gold: Uncertain
+[188] Pred: Uncertain  | Gold: Uncertain
+[189] Pred: True       | Gold: True
+[190] Pred: False      | Gold: False
+[191] Pred: False      | Gold: False
+[192] Pred: False      | Gold: False
+[193] Pred: False      | Gold: False
+[194] Pred: False      | Gold: False
+[195] Pred: Uncertain  | Gold: Uncertain
+[196] Pred: Uncertain  | Gold: Uncertain
+[197] Pred: False      | Gold: False
+[198] Pred: True       | Gold: True
+Error: Syntax error at line 1, column 49
+Expected ID, got RPAREN ())
+Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)
+                                                ^
+[199] Pred: Uncertain  | Gold: False
+Error: Syntax error at line 1, column 35
+Expected ID, got COMMA (,)
+Person(ailton_silva) ∧ BornIn(1995, ailton_silva) ∧ KnownAs(ailton_silva, 'Ailton')
+                                  ^
+[200] Pred: Uncertain  | Gold: False
+Error: Syntax error at line 1, column 35
+Expected ID, got COMMA (,)
+Person(ailton_silva) ∧ BornIn(1995, ailton_silva) ∧ KnownAs(ailton, ailton_silva)
+                                  ^
+[201] Pred: Uncertain  | Gold: False
+Error: Syntax error at line 1, column 49
+Expected ID, got RPAREN ())
+Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)
+                                                ^
+[202] Pred: Uncertain  | Gold: Uncertain
+Error: Syntax error at line 1, column 49
+Expected ID, got RPAREN ())
+Person(ailton_silva) ∧ BornIn(ailton_silva, 1995) ∧ KnownAs(ailton_silva, ailton)
+                                                ^
+[203] Pred: Uncertain  | Gold: Uncertain
+
+Accuracy: 58.33%
+
+(folio) Nam@macbook-air FOLIO % python run_reasoning_predictor.py
+[0] Pred: Uncertain  | Gold: Uncertain
+[1] Pred: Uncertain  | Gold: True
+[2] Pred: Uncertain  | Gold: False
+[3] Pred: Uncertain  | Gold: Uncertain
+[4] Pred: Uncertain  | Gold: Uncertain
+[5] Pred: Uncertain  | Gold: True
+[6] Pred: True       | Gold: True
+[7] Pred: False      | Gold: Uncertain
+[8] Pred: False      | Gold: Uncertain
+[9] Pred: True       | Gold: True
+[10] Pred: False      | Gold: False
+[11] Pred: Uncertain  | Gold: Uncertain
+[12] Pred: True       | Gold: True
+[13] Pred: Uncertain  | Gold: Uncertain
+[14] Pred: False      | Gold: False
+[15] Pred: True       | Gold: True
+[16] Pred: False      | Gold: Uncertain
+[17] Pred: Uncertain  | Gold: Uncertain
+[18] Pred: Uncertain  | Gold: True
+[19] Pred: False      | Gold: True
+[20] Pred: False      | Gold: False
+[21] Pred: Uncertain  | Gold: True
+[22] Pred: False      | Gold: False
+[23] Pred: Uncertain  | Gold: Uncertain
+[24] Pred: True       | Gold: True
+[25] Pred: False      | Gold: Uncertain
+[26] Pred: Uncertain  | Gold: Uncertain
+[27] Pred: Uncertain  | Gold: False
+[28] Pred: Uncertain  | Gold: True
+[29] Pred: Uncertain  | Gold: Uncertain
+[30] Pred: Uncertain  | Gold: Uncertain
+[31] Pred: Uncertain  | Gold: True
+[32] Pred: Uncertain  | Gold: False
+[33] Pred: True       | Gold: True
+[34] Pred: Uncertain  | Gold: Uncertain
+[35] Pred: False      | Gold: False
+[36] Pred: True       | Gold: True
+[37] Pred: True       | Gold: True
+[38] Pred: False      | Gold: False
+[39] Pred: Uncertain  | Gold: Uncertain
+[40] Pred: Uncertain  | Gold: True
+[41] Pred: Uncertain  | Gold: False
+[42] Pred: True       | Gold: True
+[43] Pred: Uncertain  | Gold: Uncertain
+[44] Pred: Uncertain  | Gold: False
+[45] Pred: Uncertain  | Gold: Uncertain
+[46] Pred: True       | Gold: True
+[47] Pred: False      | Gold: False
+[48] Pred: Uncertain  | Gold: Uncertain
+[49] Pred: Uncertain  | Gold: Uncertain
+[50] Pred: Uncertain  | Gold: False
+[51] Pred: Uncertain  | Gold: True
+[52] Pred: False      | Gold: False
+[53] Pred: False      | Gold: Uncertain
+[54] Pred: True       | Gold: True
+[55] Pred: True       | Gold: True
+[56] Pred: False      | Gold: False
+[57] Pred: Uncertain  | Gold: Uncertain
+[58] Pred: False      | Gold: False
+[59] Pred: Uncertain  | Gold: Uncertain
+[60] Pred: True       | Gold: True
+[61] Pred: Uncertain  | Gold: Uncertain
+[62] Pred: Uncertain  | Gold: Uncertain
+[63] Pred: False      | Gold: Uncertain
+[64] Pred: False      | Gold: False
+[65] Pred: Uncertain  | Gold: True
+[66] Pred: True       | Gold: True
+[67] Pred: False      | Gold: Uncertain
+[68] Pred: True       | Gold: True
+[69] Pred: True       | Gold: True
+[70] Pred: False      | Gold: False
+[71] Pred: Uncertain  | Gold: Uncertain
+[72] Pred: False      | Gold: False
+[73] Pred: True       | Gold: True
+[74] Pred: True       | Gold: True
+[75] Pred: True       | Gold: False
+[76] Pred: Uncertain  | Gold: Uncertain
+[77] Pred: Uncertain  | Gold: True
+[78] Pred: Uncertain  | Gold: False
+[79] Pred: Uncertain  | Gold: False
+[80] Pred: Uncertain  | Gold: True
+[81] Pred: Uncertain  | Gold: Uncertain
+[82] Pred: Uncertain  | Gold: True
+[83] Pred: Uncertain  | Gold: False
+[84] Pred: Uncertain  | Gold: Uncertain
+[85] Pred: Uncertain  | Gold: True
+[86] Pred: Uncertain  | Gold: False
+[87] Pred: Uncertain  | Gold: True
+[88] Pred: True       | Gold: True
+[89] Pred: True       | Gold: True
+[90] Pred: True       | Gold: Uncertain
+[91] Pred: True       | Gold: True
+[92] Pred: False      | Gold: False
+[93] Pred: Uncertain  | Gold: False
+[94] Pred: False      | Gold: Uncertain
+[95] Pred: False      | Gold: True
+[96] Pred: Uncertain  | Gold: Uncertain
+[97] Pred: Uncertain  | Gold: False
+[98] Pred: True       | Gold: True
+[99] Pred: Uncertain  | Gold: Uncertain
+[100] Pred: Uncertain  | Gold: True
+[101] Pred: Uncertain  | Gold: False
+[102] Pred: Uncertain  | Gold: Uncertain
+[103] Pred: False      | Gold: False
+[104] Pred: True       | Gold: True
+[105] Pred: Uncertain  | Gold: True
+[106] Pred: True       | Gold: True
+[107] Pred: Uncertain  | Gold: False
+[108] Pred: Uncertain  | Gold: Uncertain
+[109] Pred: Uncertain  | Gold: False
+[110] Pred: Uncertain  | Gold: True
+[111] Pred: Uncertain  | Gold: Uncertain
+[112] Pred: Uncertain  | Gold: True
+[113] Pred: False      | Gold: Uncertain
+[114] Pred: Uncertain  | Gold: False
+[115] Pred: False      | Gold: False
+[116] Pred: Uncertain  | Gold: True
+[117] Pred: Uncertain  | Gold: Uncertain
+[118] Pred: Uncertain  | Gold: Uncertain
+[119] Pred: True       | Gold: True
+[120] Pred: False      | Gold: False
+[121] Pred: Uncertain  | Gold: Uncertain
+[122] Pred: Uncertain  | Gold: Uncertain
+[123] Pred: Uncertain  | Gold: False
+[124] Pred: Uncertain  | Gold: True
+[125] Pred: Uncertain  | Gold: Uncertain
+[126] Pred: Uncertain  | Gold: True
+[127] Pred: Uncertain  | Gold: False
+[128] Pred: Uncertain  | Gold: False
+[129] Pred: Uncertain  | Gold: True
+[130] Pred: Uncertain  | Gold: Uncertain
+[131] Pred: Uncertain  | Gold: True
+[132] Pred: True       | Gold: True
+[133] Pred: Uncertain  | Gold: Uncertain
+[134] Pred: True       | Gold: Uncertain
+[135] Pred: True       | Gold: True
+[136] Pred: Uncertain  | Gold: Uncertain
+[137] Pred: False      | Gold: False
+[138] Pred: Uncertain  | Gold: True
+[139] Pred: False      | Gold: False
+[140] Pred: True       | Gold: Uncertain
+[141] Pred: Uncertain  | Gold: False
+[142] Pred: True       | Gold: True
+[143] Pred: True       | Gold: True
+[144] Pred: Uncertain  | Gold: Uncertain
+[145] Pred: Uncertain  | Gold: Uncertain
+[146] Pred: Uncertain  | Gold: Uncertain
+[147] Pred: Uncertain  | Gold: True
+[148] Pred: Uncertain  | Gold: True
+[149] Pred: True       | Gold: False
+[150] Pred: True       | Gold: True
+[151] Pred: False      | Gold: Uncertain
+[152] Pred: Uncertain  | Gold: Uncertain
+[153] Pred: Uncertain  | Gold: Uncertain
+[154] Pred: True       | Gold: False
+[155] Pred: Uncertain  | Gold: True
+[156] Pred: True       | Gold: Uncertain
+[157] Pred: True       | Gold: False
+[158] Pred: Uncertain  | Gold: True
+[159] Pred: True       | Gold: True
+[160] Pred: Uncertain  | Gold: Uncertain
+[161] Pred: True       | Gold: True
+[162] Pred: Uncertain  | Gold: Uncertain
+[163] Pred: False      | Gold: False
+[164] Pred: Uncertain  | Gold: Uncertain
+[165] Pred: False      | Gold: False
+[166] Pred: True       | Gold: True
+[167] Pred: Uncertain  | Gold: True
+[168] Pred: True       | Gold: True
+[169] Pred: False      | Gold: False
+[170] Pred: Uncertain  | Gold: Uncertain
+[171] Pred: Uncertain  | Gold: True
+[172] Pred: Uncertain  | Gold: False
+[173] Pred: True       | Gold: Uncertain
+[174] Pred: Uncertain  | Gold: False
+[175] Pred: Uncertain  | Gold: True
+[176] Pred: False      | Gold: Uncertain
+[177] Pred: False      | Gold: False
+[178] Pred: True       | Gold: True
+[179] Pred: False      | Gold: False
+[180] Pred: False      | Gold: False
+[181] Pred: False      | Gold: False
+[182] Pred: Uncertain  | Gold: Uncertain
+[183] Pred: True       | Gold: True
+[184] Pred: False      | Gold: False
+[185] Pred: Uncertain  | Gold: True
+[186] Pred: False      | Gold: False
+[187] Pred: Uncertain  | Gold: Uncertain
+[188] Pred: Uncertain  | Gold: Uncertain
+[189] Pred: Uncertain  | Gold: True
+[190] Pred: False      | Gold: False
+[191] Pred: Uncertain  | Gold: False
+[192] Pred: True       | Gold: False
+[193] Pred: False      | Gold: False
+[194] Pred: Uncertain  | Gold: False
+[195] Pred: Uncertain  | Gold: Uncertain
+[196] Pred: Uncertain  | Gold: Uncertain
+[197] Pred: True       | Gold: False
+[198] Pred: Uncertain  | Gold: True
+[199] Pred: False      | Gold: False
+[200] Pred: False      | Gold: False
+[201] Pred: False      | Gold: False
+[202] Pred: False      | Gold: Uncertain
+[203] Pred: True       | Gold: Uncertain
+
+Accuracy: 58.82%

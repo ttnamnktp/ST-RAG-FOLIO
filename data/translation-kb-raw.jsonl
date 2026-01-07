@@ -1,0 +1,3710 @@
+{
+  "id": "folio_tr_406_1131_p1",
+  "sentence": "All people who regularly drink coffee are dependent on caffeine.",
+
+  "predicates": {
+    "Drinks": 1,
+    "Dependent": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal quantifier from 'All people'",
+    "Use variable x to represent a person",
+    "Drinks(x) represents 'x regularly drinks coffee'",
+    "Dependent(x) represents 'x is dependent on caffeine'",
+    "Form implication: Drinks(x) → Dependent(x)"
+  ],
+
+  "fol_formula": "∀x (Drinks(x) → Dependent(x))"
+}
+{
+  "id": "folio_tr_406_1131_p2",
+  "sentence": "People either regularly drink coffee or joke about being addicted to caffeine.",
+
+  "predicates": {
+    "Drinks": 1,
+    "Jokes": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal scope from 'People'",
+    "Use exclusive disjunction because 'either ... or' implies mutually exclusive choices",
+    "Drinks(x) represents 'x regularly drinks coffee'",
+    "Jokes(x) represents 'x jokes about being addicted to caffeine'",
+    "Form exclusive disjunction: Drinks(x) ⊕ Jokes(x)"
+  ],
+
+  "fol_formula": "∀x (Drinks(x) ⊕ Jokes(x))"
+}
+{
+  "id": "folio_tr_406_1131_p3",
+  "sentence": "No one who jokes about being addicted to caffeine is unaware that caffeine is a drug.",
+
+  "predicates": {
+    "Jokes": 1,
+    "Unaware": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Interpret 'No one who A is B' as a universal implication",
+    "Use variable x to represent a person",
+    "Jokes(x) represents 'x jokes about being addicted to caffeine'",
+    "Unaware(x) represents 'x is unaware that caffeine is a drug'",
+    "Form implication with negation: Jokes(x) → ¬Unaware(x)"
+  ],
+
+  "fol_formula": "∀x (Jokes(x) → ¬Unaware(x))"
+}
+{
+  "id": "folio_tr_406_1131_p4",
+  "sentence": "Rina is either a student and unaware that caffeine is a drug, or neither a student nor unaware that caffeine is a drug.",
+
+  "predicates": {
+    "Student": 1,
+    "Unaware": 1
+  },
+
+  "constants": {
+    "rina": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify constant 'Rina' and represent it as rina",
+    "First option is a conjunction: Student(rina) ∧ Unaware(rina)",
+    "Second option is 'neither A nor B', which is ¬(A ∨ B)",
+    "Use exclusive disjunction between the two options",
+    "Form exclusive disjunction between the two expressions"
+  ],
+
+  "fol_formula": "(Student(rina) ∧ Unaware(rina)) ⊕ ¬(Student(rina) ∨ Unaware(rina))"
+}
+{
+  "id": "folio_tr_406_1131_p5",
+  "sentence": "If Rina is not a person dependent on caffeine and a student, then Rina is either a person dependent on caffeine and a student, or neither a person dependent on caffeine nor a student.",
+
+  "predicates": {
+    "Dependent": 1,
+    "Student": 1
+  },
+
+  "constants": {
+    "rina": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify implication structure from 'If ... then ...'",
+    "Antecedent is the negation of a conjunction: ¬(Dependent(rina) ∧ Student(rina))",
+    "Consequent is an exclusive disjunction",
+    "First option is a conjunction: Dependent(rina) ∧ Student(rina)",
+    "Second option is 'neither A nor B', represented as ¬(A ∨ B)",
+    "Form implication from antecedent to consequent"
+  ],
+
+  "fol_formula": "¬(Dependent(rina) ∧ Student(rina)) → (Dependent(rina) ∧ Student(rina)) ⊕ ¬(Dependent(rina) ∨ Student(rina))"
+}
+{
+  "id": "folio_tr_193_553_p1",
+  "sentence": "A La Liga soccer team ranks higher than another if it receives more points.",
+
+  "predicates": {
+    "LaLiga": 1,
+    "MorePoints": 2,
+    "HigherRank": 2
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "team",
+    "y": "team"
+  },
+
+  "translation_steps": [
+    "Identify a general rule applying to any two teams",
+    "Use universal quantification for both teams",
+    "LaLiga(x) and LaLiga(y) represent that both are La Liga teams",
+    "MorePoints(x, y) represents 'x receives more points than y'",
+    "HigherRank(x, y) represents 'x ranks higher than y'",
+    "Form implication from conditions to ranking result"
+  ],
+
+  "fol_formula": "∀x ∀y (LaLiga(x) ∧ LaLiga(y) ∧ MorePoints(x, y) → HigherRank(x, y))"
+}
+{
+  "id": "folio_tr_193_553_p2",
+  "sentence": "If two La Liga soccer teams recieve the same points, the team which recieves more points from the games between the two teams ranks higher.",
+
+  "predicates": {
+    "LaLiga": 1,
+    "MorePoints": 2,
+    "MorePointsInGameBetween": 2,
+    "HigherRank": 2
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "team",
+    "y": "team"
+  },
+
+  "translation_steps": [
+    "Identify conditional structure 'If ... then ...'",
+    "Use universal quantification for two teams",
+    "Same total points is represented by neither team having more points than the other",
+    "¬MorePoints(x, y) and ¬MorePoints(y, x) encode equal points",
+    "MorePointsInGameBetween(x, y) represents x getting more points in direct matches",
+    "Form implication leading to HigherRank(x, y)"
+  ],
+
+  "fol_formula": "∀x ∀y (LaLiga(x) ∧ LaLiga(y) ∧ ¬MorePoints(x, y) ∧ ¬MorePoints(y, x) ∧ MorePointsInGameBetween(x, y) → HigherRank(x, y))"
+}
+{
+  "id": "folio_tr_193_553_p3",
+  "sentence": "Real Madrid and Barcelona are both La Liga soccer teams.",
+
+  "predicates": {
+    "LaLiga": 1
+  },
+
+  "constants": {
+    "realMadrid": "team",
+    "barcelona": "team"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify two named teams as constants",
+    "Apply predicate LaLiga to each team",
+    "Combine the two facts using conjunction"
+  ],
+
+  "fol_formula": "LaLiga(realMadrid) ∧ LaLiga(barcelona)"
+}
+{
+  "id": "folio_tr_193_553_p4",
+  "sentence": "In La Liga 2021-2022, Real Madrid recieves 86 points and Barcelon recieves 73 points.",
+
+  "predicates": {
+    "MorePoints": 2
+  },
+
+  "constants": {
+    "realMadrid": "team",
+    "barcelona": "team"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Compare the total points of the two teams",
+    "Since 86 is greater than 73, Real Madrid has more points than Barcelona",
+    "Represent this comparison using MorePoints(realMadrid, barcelona)"
+  ],
+
+  "fol_formula": "MorePoints(realMadrid, barcelona)"
+}
+{
+  "id": "folio_tr_193_553_p5",
+  "sentence": "In La Liga 2021-2022, Real Madrid and Barcelona both recieve 3 points from the games between them.",
+
+  "predicates": {
+    "MorePointsInGameBetween": 2
+  },
+
+  "constants": {
+    "realMadrid": "team",
+    "barcelona": "team"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Interpret 'both receive the same points' as neither team having more points than the other",
+    "Use negation to express that Real Madrid does not have more points than Barcelona",
+    "Also express that Barcelona does not have more points than Real Madrid",
+    "Combine both statements using conjunction"
+  ],
+
+  "fol_formula": "¬MorePointsInGameBetween(realMadrid, barcelona) ∧ ¬MorePointsInGameBetween(barcelona, realMadrid)"
+}
+{
+  "id": "folio_tr_chem_001_p1",
+  "sentence": "A controlled substance is a drug.",
+
+  "predicates": {
+    "ControlledSubstances": 1,
+    "Drugs": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "substance"
+  },
+
+  "translation_steps": [
+    "Identify universal quantification implied by 'is a'",
+    "Use variable x for a substance",
+    "ControlledSubstances(x) represents 'x is a controlled substance'",
+    "Drugs(x) represents 'x is a drug'",
+    "Form implication: ControlledSubstances(x) → Drugs(x)"
+  ],
+
+  "fol_formula": "∀x (ControlledSubstances(x) → Drugs(x))"
+}
+{
+  "id": "folio_tr_chem_001_p2",
+  "sentence": "There exist both harmful and beneficial controlled substances.",
+
+  "predicates": {
+    "ControlledSubstances": 1,
+    "Harmful": 1,
+    "Beneficial": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "substance",
+    "y": "substance"
+  },
+
+  "translation_steps": [
+    "Identify existential quantification from 'There exist'",
+    "Use variables x and y for controlled substances",
+    "Express that x is beneficial and y is harmful",
+    "Combine with conjunction: ControlledSubstances(x) ∧ ControlledSubstances(y) ∧ Beneficial(x) ∧ Harmful(y)"
+  ],
+
+  "fol_formula": "∃x ∃y (ControlledSubstances(x) ∧ ControlledSubstances(y) ∧ Beneficial(x) ∧ Harmful(y))"
+}
+{
+  "id": "folio_tr_chem_001_p3",
+  "sentence": "If a child is exposed to a controlled substance, he or she is in chemical endangerment.",
+
+  "predicates": {
+    "ExposedToControlledSubstance": 2,
+    "ChemicalEndangerment": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "child",
+    "y": "substance"
+  },
+
+  "translation_steps": [
+    "Identify conditional structure 'If ... then ...'",
+    "Use variables x for child and y for substance",
+    "ExposedToControlledSubstance(x, y) represents 'x is exposed to y'",
+    "ChemicalEndangerment(x) represents 'x is in chemical endangerment'",
+    "Form implication: ExposedToControlledSubstance(x, y) → ChemicalEndangerment(x)"
+  ],
+
+  "fol_formula": "∀x ∀y (ExposedToControlledSubstance(x, y) → ChemicalEndangerment(x))"
+}
+{
+  "id": "folio_tr_chem_001_p4",
+  "sentence": "Chemical Endangerment is harmful.",
+
+  "predicates": {
+    "ChemicalEndangerment": 1,
+    "Harmful": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "entity"
+  },
+
+  "translation_steps": [
+    "Interpret 'is harmful' as universal statement",
+    "Use variable x for an entity",
+    "ChemicalEndangerment(x) represents 'x is chemical endangerment'",
+    "Harmful(x) represents 'x is harmful'",
+    "Form implication: ChemicalEndangerment(x) → Harmful(x)"
+  ],
+
+  "fol_formula": "∀x (ChemicalEndangerment(x) → Harmful(x))"
+}
+{
+  "id": "folio_tr_chem_001_p5",
+  "sentence": "The Controlled Substances Act was an act passed in 1971.",
+
+  "predicates": {
+    "Act": 1,
+    "PassedIn": 2
+  },
+
+  "constants": {
+    "controlledSubstancesAct": "act",
+    "year1971": "year"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify controlled substances act as a constant",
+    "Identify year 1971 as a constant",
+    "Act(controlledSubstancesAct) represents 'it is an act'",
+    "PassedIn(controlledSubstancesAct, year1971) represents 'the act was passed in 1971'",
+    "Combine with conjunction"
+  ],
+
+  "fol_formula": "PassedIn(controlledSubstancesAct, year1971) ∧ Act(controlledSubstancesAct)"
+}
+{
+  "id": "folio_tr_chem_001_p6",
+  "sentence": "Some Acts prevent harmful things.",
+
+  "predicates": {
+    "Act": 1,
+    "PreventsHarm": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "act"
+  },
+
+  "translation_steps": [
+    "Identify existential quantification from 'Some Acts'",
+    "Use variable x for an act",
+    "Act(x) represents 'x is an act'",
+    "PreventsHarm(x) represents 'x prevents harmful things'",
+    "Form conjunction inside existential quantification"
+  ],
+
+  "fol_formula": "∃x (Act(x) ∧ PreventsHarm(x))"
+}
+{
+  "id": "folio_tr_kitchen_001_p1",
+  "sentence": "There are two kitchens in the house: the upstairs kitchen and the downstairs kitchen.",
+
+  "predicates": {
+    "Kitchen": 1,
+    "Up": 1,
+    "Down": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "kitchen"
+  },
+
+  "translation_steps": [
+    "Identify universal quantification implied by 'There are ... kitchens'",
+    "Use variable x for a kitchen",
+    "Kitchen(x) represents 'x is a kitchen'",
+    "Up(x) represents 'x is upstairs', Down(x) represents 'x is downstairs'",
+    "Form exclusive disjunction: Kitchen(x) → Up(x) ⊕ Down(x)"
+  ],
+
+  "fol_formula": "∀x (Kitchen(x) → Up(x) ⊕ Down(x))"
+}
+{
+  "id": "folio_tr_kitchen_001_p2",
+  "sentence": "When someone is cooking in the downstairs kitchen, the first floor becomes smokey unless the air conditioner is running.",
+
+  "predicates": {
+    "Cook": 1,
+    "Run": 1,
+    "Smokey": 1
+  },
+
+  "constants": {
+    "downstairs": "location",
+    "ac": "appliance",
+    "firstFloor": "location"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify conditional structure 'When ... unless ...'",
+    "Cook(downstairs) represents 'someone is cooking downstairs'",
+    "Run(ac) represents 'air conditioner is running'",
+    "Smokey(firstFloor) represents 'first floor becomes smokey'",
+    "Form implication with negation for 'unless': (Cook(downstairs) ∧ ¬Run(ac)) → Smokey(firstFloor)"
+  ],
+
+  "fol_formula": "(Cook(downstairs) ∧ ¬Run(ac)) → Smokey(firstFloor)"
+}
+{
+  "id": "folio_tr_kitchen_001_p3",
+  "sentence": "If the air conditioner is running and someone is cooking in the downstairs kitchen, all the smoke travels to the second floor.",
+
+  "predicates": {
+    "Cook": 1,
+    "Run": 1,
+    "Smokey": 1
+  },
+
+  "constants": {
+    "downstairs": "location",
+    "ac": "appliance",
+    "secondFloor": "location"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify conditional structure 'If ... then ...'",
+    "Cook(downstairs) represents 'someone is cooking downstairs'",
+    "Run(ac) represents 'air conditioner is running'",
+    "Smokey(secondFloor) represents 'second floor becomes smokey'",
+    "Form implication: (Cook(downstairs) ∧ Run(ac)) → Smokey(secondFloor)"
+  ],
+
+  "fol_formula": "(Cook(downstairs) ∧ Run(ac)) → Smokey(secondFloor)"
+}
+{
+  "id": "folio_tr_olympics_001_p1",
+  "sentence": "The 2008 Summer Olympics were held in Beijing, China.",
+
+  "predicates": {
+    "HeldIn": 2
+  },
+
+  "constants": {
+    "summer2008olympics": "event",
+    "beijingchina": "location"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify the relation 'held in' between event and location",
+    "HeldIn(summer2008olympics, beijingchina) represents '2008 Olympics held in Beijing, China'"
+  ],
+
+  "fol_formula": "HeldIn(summer2008olympics, beijingchina)"
+}
+{
+  "id": "folio_tr_olympics_001_p2",
+  "sentence": "The 2008 Summer Olympics were the second Summer Olympic Games to be held in a communist state.",
+
+  "predicates": {
+    "SecondToBe": 2
+  },
+
+  "constants": {
+    "summer2008olympics": "event",
+    "heldincommuniststate": "property"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify ordinal relation 'second to be' between event and property",
+    "SecondToBe(summer2008olympics, heldincommuniststate) represents '2008 Olympics were second to be held in communist state'"
+  ],
+
+  "fol_formula": "SecondToBe(summer2008olympics, heldincommuniststate)"
+}
+{
+  "id": "folio_tr_olympics_001_p3",
+  "sentence": "China won the most gold medals (48) in the 2008 Summer Olympics.",
+
+  "predicates": {
+    "Won": 2
+  },
+
+  "constants": {
+    "china": "country",
+    "mostgoldmedals": "award"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify winning relation",
+    "Won(china, mostgoldmedals) represents 'China won most gold medals'"
+  ],
+
+  "fol_formula": "Won(china, mostgoldmedals)"
+}
+{
+  "id": "folio_tr_olympics_001_p4",
+  "sentence": "The United States placed second in the gold medal tally but won the highest number of medals overall (112) in the 2008 Summer Olympics.",
+
+  "predicates": {
+    "Placed": 2,
+    "Won": 2
+  },
+
+  "constants": {
+    "unitedstates": "country",
+    "secondingoldmedals": "rank",
+    "highestnumberofmedals": "award"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Placed(unitedstates, secondingoldmedals) represents 'US placed second in gold medals'",
+    "Won(unitedstates, highestnumberofmedals) represents 'US won highest number of medals overall'",
+    "Combine with conjunction because both facts are true for US"
+  ],
+
+  "fol_formula": "Placed(unitedstates, secondingoldmedals) ∧ Won(unitedstates, highestnumberofmedals)"
+}
+{
+  "id": "folio_tr_olympics_001_p5",
+  "sentence": "The third place in the gold medal tally was achieved by Russia in the 2008 Summer Olympics.",
+
+  "predicates": {
+    "Placed": 2
+  },
+
+  "constants": {
+    "russia": "country",
+    "thirdingoldmedals": "rank"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Placed(russia, thirdingoldmedals) represents 'Russia placed third in gold medals'"
+  ],
+
+  "fol_formula": "Placed(russia, thirdingoldmedals)"
+}
+{
+  "id": "folio_tr_olympics_001_p6",
+  "sentence": "If a country places third in gold medals, then they had fewer gold medals than the team that won the most gold medals.",
+
+  "predicates": {
+    "Placed": 2,
+    "Won": 2,
+    "FewerGoldMedalsThan": 2
+  },
+
+  "constants": {
+    "thirdingoldmedals": "rank",
+    "mostgoldmedals": "award"
+  },
+
+  "variable_mapping": {
+    "x": "country",
+    "y": "country"
+  },
+
+  "translation_steps": [
+    "Identify universal quantifiers 'for all x, y'",
+    "Conditional structure: 'if ... then ...'",
+    "Placed(x, thirdingoldmedals) ∧ Won(y, mostgoldmedals) → FewerGoldMedalsThan(x, y)"
+  ],
+
+  "fol_formula": "∀x ∀y (Placed(x, thirdingoldmedals) ∧ Won(y, mostgoldmedals) → FewerGoldMedalsThan(x, y))"
+}
+{
+  "id": "folio_tr_olympics_001_p7",
+  "sentence": "87 countries won at least one medal during the 2008 Games.",
+
+  "predicates": {
+    "Country": 1,
+    "Won": 2
+  },
+
+  "constants": {
+    "medal": "award"
+  },
+
+  "variable_mapping": {
+    "x": "country"
+  },
+
+  "translation_steps": [
+    "Existential quantification implied by '87 countries ...'",
+    "∃x (Country(x) ∧ Won(x, medal))"
+  ],
+
+  "fol_formula": "∃x (Country(x) ∧ Won(x, medal))"
+}
+{
+  "id": "folio_tr_michael_001_p1",
+  "sentence": "All people who grow their own fresh vegetables in their home garden also have ample space.",
+
+  "predicates": {
+    "Garden": 1,
+    "Space": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal quantifier 'all people ...'",
+    "Garden(x) represents 'x grows own fresh vegetables in home garden'",
+    "Space(x) represents 'x has ample space'",
+    "Form implication: Garden(x) → Space(x)"
+  ],
+
+  "fol_formula": "∀x (Garden(x) → Space(x))"
+}
+{
+  "id": "folio_tr_michael_001_p2",
+  "sentence": "If people are young working professionals who live in large cities, then they do not have ample space.",
+
+  "predicates": {
+    "Professional": 1,
+    "Space": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional for people",
+    "Professional(x) represents 'x is a young working professional living in large cities'",
+    "¬Space(x) represents 'x does not have ample space'",
+    "Form implication: Professional(x) → ¬Space(x)"
+  ],
+
+  "fol_formula": "∀x (Professional(x) → ¬Space(x))"
+}
+{
+  "id": "folio_tr_michael_001_p3",
+  "sentence": "If people order takeout from delivery services often, then they grow their own fresh vegetables in their home garden.",
+
+  "predicates": {
+    "Takeout": 1,
+    "Garden": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "Takeout(x) represents 'x orders takeout often'",
+    "Garden(x) represents 'x grows own fresh vegetables in home garden'",
+    "Form implication: Takeout(x) → Garden(x)"
+  ],
+
+  "fol_formula": "∀x (Takeout(x) → Garden(x))"
+}
+{
+  "id": "folio_tr_michael_001_p4",
+  "sentence": "If people enjoy going out often to restaurants with friends, then they order takeout from delivery services often.",
+
+  "predicates": {
+    "GoingOut": 1,
+    "Takeout": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "GoingOut(x) represents 'x enjoys going out often to restaurants with friends'",
+    "Takeout(x) represents 'x orders takeout often'",
+    "Form implication: GoingOut(x) → Takeout(x)"
+  ],
+
+  "fol_formula": "∀x (GoingOut(x) → Takeout(x))"
+}
+{
+  "id": "folio_tr_michael_001_p5",
+  "sentence": "If people regularly tout the benefits of homegrown and homecooked meals over fast food, then they enjoy going out often to restaurants with friends.",
+
+  "predicates": {
+    "Homecooked": 1,
+    "GoingOut": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "Homecooked(x) represents 'x touts benefits of homegrown/homecooked meals over fast food'",
+    "GoingOut(x) represents 'x enjoys going out often to restaurants with friends'",
+    "Form implication: Homecooked(x) → GoingOut(x)"
+  ],
+
+  "fol_formula": "∀x (Homecooked(x) → GoingOut(x))"
+}
+{
+  "id": "folio_tr_michael_001_p6",
+  "sentence": "Michael grows his own fresh vegetables in his home garden or regularly touts the benefits of homegrown and homecooked meals over fast food.",
+
+  "predicates": {
+    "Garden": 1,
+    "Homecooked": 1
+  },
+
+  "constants": {
+    "michael": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify disjunction for a specific person Michael",
+    "Garden(michael) represents 'Michael grows his own fresh vegetables in home garden'",
+    "Homecooked(michael) represents 'Michael touts benefits of homegrown/homecooked meals'",
+    "Form disjunction: Garden(michael) ∨ Homecooked(michael)"
+  ],
+
+  "fol_formula": "Garden(michael) ∨ Homecooked(michael)"
+}
+{
+  "id": "folio_tr_ipod1_001_p1",
+  "sentence": "All devices belonging to the company are connected to Google Home.",
+
+  "predicates": {
+    "Company": 1,
+    "GoogleHome": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "device"
+  },
+
+  "translation_steps": [
+    "Identify universal quantifier 'All devices ...'",
+    "Company(x) represents 'x belongs to the company'",
+    "GoogleHome(x) represents 'x is connected to Google Home'",
+    "Form implication: Company(x) → GoogleHome(x)"
+  ],
+
+  "fol_formula": "∀x (Company(x) → GoogleHome(x))"
+}
+{
+  "id": "folio_tr_ipod1_001_p2",
+  "sentence": "All devices belonging to employees are connected to the company's wifi.",
+
+  "predicates": {
+    "Employee": 1,
+    "Wifi": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "device"
+  },
+
+  "translation_steps": [
+    "Identify universal quantifier",
+    "Employee(x) represents 'x belongs to an employee'",
+    "Wifi(x) represents 'x is connected to the company's wifi'",
+    "Form implication: Employee(x) → Wifi(x)"
+  ],
+
+  "fol_formula": "∀x (Employee(x) → Wifi(x))"
+}
+{
+  "id": "folio_tr_ipod1_001_p3",
+  "sentence": "All devices connected to Google Home are controlled by the managers.",
+
+  "predicates": {
+    "GoogleHome": 1,
+    "Controlled": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "device"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "GoogleHome(x) represents 'x is connected to Google Home'",
+    "Controlled(x) represents 'x is controlled by managers'",
+    "Form implication: GoogleHome(x) → Controlled(x)"
+  ],
+
+  "fol_formula": "∀x (GoogleHome(x) → Controlled(x))"
+}
+{
+  "id": "folio_tr_ipod1_001_p4",
+  "sentence": "All devices that connect to the company's wifi are easy to operate.",
+
+  "predicates": {
+    "Wifi": 1,
+    "EasyToOperate": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "device"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "Wifi(x) represents 'x is connected to company's wifi'",
+    "EasyToOperate(x) represents 'x is easy to operate'",
+    "Form implication: Wifi(x) → EasyToOperate(x)"
+  ],
+
+  "fol_formula": "∀x (Wifi(x) → EasyToOperate(x))"
+}
+{
+  "id": "folio_tr_ipod1_001_p5",
+  "sentence": "IPod1 belongs to employees.",
+
+  "predicates": {
+    "Employee": 1
+  },
+
+  "constants": {
+    "iPod1": "device"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify constant device iPod1",
+    "Employee(iPod1) represents 'iPod1 belongs to employees'"
+  ],
+
+  "fol_formula": "Employee(iPod1)"
+}
+{
+  "id": "folio_tr_harry_001_p1",
+  "sentence": "If someone yells, then they are not cool.",
+
+  "predicates": {
+    "Yell": 1,
+    "Cool": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional 'If someone ...'",
+    "Yell(x) represents 'x yells'",
+    "Cool(x) represents 'x is cool'",
+    "Form implication: Yell(x) → ¬Cool(x)"
+  ],
+
+  "fol_formula": "∀x (Yell(x) → ¬Cool(x))"
+}
+{
+  "id": "folio_tr_harry_001_p2",
+  "sentence": "If someone is angry, then they yell.",
+
+  "predicates": {
+    "Angry": 1,
+    "Yell": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "Angry(x) represents 'x is angry'",
+    "Yell(x) represents 'x yells'",
+    "Form implication: Angry(x) → Yell(x)"
+  ],
+
+  "fol_formula": "∀x (Angry(x) → Yell(x))"
+}
+{
+  "id": "folio_tr_harry_001_p3",
+  "sentence": "If someone flies, then they are cool.",
+
+  "predicates": {
+    "Fly": 1,
+    "Cool": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "Fly(x) represents 'x flies'",
+    "Cool(x) represents 'x is cool'",
+    "Form implication: Fly(x) → Cool(x)"
+  ],
+
+  "fol_formula": "∀x (Fly(x) → Cool(x))"
+}
+{
+  "id": "folio_tr_harry_001_p4",
+  "sentence": "Every person that knows magic can fly.",
+
+  "predicates": {
+    "KnowMagic": 1,
+    "Fly": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "KnowMagic(x) represents 'x knows magic'",
+    "Fly(x) represents 'x can fly'",
+    "Form implication: KnowMagic(x) → Fly(x)"
+  ],
+
+  "fol_formula": "∀x (KnowMagic(x) → Fly(x))"
+}
+{
+  "id": "folio_tr_harry_001_p5",
+  "sentence": "All wizards know magic.",
+
+  "predicates": {
+    "Wizard": 1,
+    "KnowMagic": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "Wizard(x) represents 'x is a wizard'",
+    "KnowMagic(x) represents 'x knows magic'",
+    "Form implication: Wizard(x) → KnowMagic(x)"
+  ],
+
+  "fol_formula": "∀x (Wizard(x) → KnowMagic(x))"
+}
+{
+  "id": "folio_tr_harry_001_p6",
+  "sentence": "Harry either yells and flies, or neither yells nor flies.",
+
+  "predicates": {
+    "Yell": 1,
+    "Fly": 1
+  },
+
+  "constants": {
+    "harry": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify XOR (exclusive or) structure",
+    "Yell(harry) ∧ Fly(harry) represents 'Harry yells and flies'",
+    "¬Yell(harry) ∧ ¬Fly(harry) represents 'Harry neither yells nor flies'",
+    "Form exclusive disjunction: (Yell(harry) ∧ Fly(harry)) ⊕ (¬Yell(harry) ∧ ¬Fly(harry))"
+  ],
+
+  "fol_formula": "(Yell(harry) ∧ Fly(harry)) ⊕ (¬Yell(harry) ∧ ¬Fly(harry))"
+}
+{
+  "id": "folio_tr_harry_001_p7",
+  "sentence": "Potter is a wizard and flies.",
+
+  "predicates": {
+    "Wizard": 1,
+    "Fly": 1
+  },
+
+  "constants": {
+    "potter": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify conjunction",
+    "Wizard(potter) represents 'Potter is a wizard'",
+    "Fly(potter) represents 'Potter flies'",
+    "Form conjunction: Wizard(potter) ∧ Fly(potter)"
+  ],
+
+  "fol_formula": "Wizard(potter) ∧ Fly(potter)"
+}
+{
+  "id": "folio_tr_g910_001_p1",
+  "sentence": "Products are either produced in China or the US.",
+
+  "predicates": {
+    "China": 1,
+    "US": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "product"
+  },
+
+  "translation_steps": [
+    "Identify exclusive or between locations",
+    "China(x) represents 'x is produced in China'",
+    "US(x) represents 'x is produced in the US'",
+    "Form exclusive disjunction: China(x) ⊕ US(x)"
+  ],
+
+  "fol_formula": "∀x (China(x) ⊕ US(x))"
+}
+{
+  "id": "folio_tr_g910_001_p2",
+  "sentence": "All produced in China are labeled.",
+
+  "predicates": {
+    "China": 1,
+    "Labeled": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "product"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "China(x) represents 'x is produced in China'",
+    "Labeled(x) represents 'x is labeled'",
+    "Form implication: China(x) → Labeled(x)"
+  ],
+
+  "fol_formula": "∀x (China(x) → Labeled(x))"
+}
+{
+  "id": "folio_tr_g910_001_p3",
+  "sentence": "All produced in the US are sold in the US.",
+
+  "predicates": {
+    "US": 1,
+    "SoldInUS": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "product"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "US(x) represents 'x is produced in the US'",
+    "SoldInUS(x) represents 'x is sold in the US'",
+    "Form implication: US(x) → SoldInUS(x)"
+  ],
+
+  "fol_formula": "∀x (US(x) → SoldInUS(x))"
+}
+{
+  "id": "folio_tr_g910_001_p4",
+  "sentence": "If labeled, then the product is cheaper.",
+
+  "predicates": {
+    "Labeled": 1,
+    "Cheaper": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "product"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "Labeled(x) represents 'x is labeled'",
+    "Cheaper(x) represents 'x is cheaper'",
+    "Form implication: Labeled(x) → Cheaper(x)"
+  ],
+
+  "fol_formula": "∀x (Labeled(x) → Cheaper(x))"
+}
+{
+  "id": "folio_tr_g910_001_p5",
+  "sentence": "All sold in the US are sold in Walmart.",
+
+  "predicates": {
+    "SoldInUS": 1,
+    "SoldInWalmart": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "product"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "SoldInUS(x) represents 'x is sold in the US'",
+    "SoldInWalmart(x) represents 'x is sold in Walmart'",
+    "Form implication: SoldInUS(x) → SoldInWalmart(x)"
+  ],
+
+  "fol_formula": "∀x (SoldInUS(x) → SoldInWalmart(x))"
+}
+{
+  "id": "folio_tr_g910_001_p6",
+  "sentence": "All displayed on the homepage are sold in Walmart.",
+
+  "predicates": {
+    "DisplayedInHomepage": 1,
+    "SoldInWalmart": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "product"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "DisplayedInHomepage(x) represents 'x is displayed on homepage'",
+    "SoldInWalmart(x) represents 'x is sold in Walmart'",
+    "Form implication: DisplayedInHomepage(x) → SoldInWalmart(x)"
+  ],
+
+  "fol_formula": "∀x (DisplayedInHomepage(x) → SoldInWalmart(x))"
+}
+{
+  "id": "folio_tr_g910_001_p7",
+  "sentence": "No products returned by customers are sold in Walmart.",
+
+  "predicates": {
+    "ReturnedByCustomer": 1,
+    "SoldInWalmart": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "product"
+  },
+
+  "translation_steps": [
+    "Identify universal negation",
+    "ReturnedByCustomer(x) represents 'x is returned by customers'",
+    "SoldInWalmart(x) represents 'x is sold in Walmart'",
+    "Form implication: ReturnedByCustomer(x) → ¬SoldInWalmart(x)"
+  ],
+
+  "fol_formula": "∀x (ReturnedByCustomer(x) → ¬SoldInWalmart(x))"
+}
+{
+  "id": "folio_tr_g910_001_p8",
+  "sentence": "G-910 is either displayed on the homepage or cheaper.",
+
+  "predicates": {
+    "DisplayedInHomepage": 1,
+    "Cheaper": 1
+  },
+
+  "constants": {
+    "g910": "product"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify exclusive or",
+    "DisplayedInHomepage(g910) represents 'G-910 is displayed on homepage'",
+    "Cheaper(g910) represents 'G-910 is cheaper'",
+    "Form exclusive disjunction: DisplayedInHomepage(g910) ⊕ Cheaper(g910)"
+  ],
+
+  "fol_formula": "DisplayedInHomepage(g910) ⊕ Cheaper(g910)"
+}
+{
+  "id": "folio_tr_marcy_001_p1",
+  "sentence": "People either order a lot of Amazon packages or are environmentally conscious.",
+
+  "predicates": {
+    "Amazon": 1,
+    "Environmental": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify exclusive disjunction",
+    "Amazon(x) represents 'x orders a lot of Amazon packages'",
+    "Environmental(x) represents 'x is environmentally conscious'",
+    "Form exclusive disjunction: Amazon(x) ⊕ Environmental(x)"
+  ],
+
+  "fol_formula": "∀x (Amazon(x) ⊕ Environmental(x))"
+}
+{
+  "id": "folio_tr_marcy_001_p2",
+  "sentence": "If people order a lot of Amazon packages, then they get a lot of daily mail delivered.",
+
+  "predicates": {
+    "Amazon": 1,
+    "DailyMail": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "Amazon(x) represents 'x orders a lot of Amazon packages'",
+    "DailyMail(x) represents 'x gets a lot of daily mail delivered'",
+    "Form implication: Amazon(x) → DailyMail(x)"
+  ],
+
+  "fol_formula": "∀x (Amazon(x) → DailyMail(x))"
+}
+{
+  "id": "folio_tr_marcy_001_p3",
+  "sentence": "If people are environmentally conscious, then they have solar panels in their homes.",
+
+  "predicates": {
+    "Environmental": 1,
+    "Solar": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "Environmental(x) represents 'x is environmentally conscious'",
+    "Solar(x) represents 'x has solar panels in their home'",
+    "Form implication: Environmental(x) → Solar(x)"
+  ],
+
+  "fol_formula": "∀x (Environmental(x) → Solar(x))"
+}
+{
+  "id": "folio_tr_marcy_001_p4",
+  "sentence": "If people get a lot of daily mail delivered, then they are very involved with their neighborhood.",
+
+  "predicates": {
+    "DailyMail": 1,
+    "Neighborhood": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "DailyMail(x) represents 'x gets a lot of daily mail delivered'",
+    "Neighborhood(x) represents 'x is very involved with their neighborhood'",
+    "Form implication: DailyMail(x) → Neighborhood(x)"
+  ],
+
+  "fol_formula": "∀x (DailyMail(x) → Neighborhood(x))"
+}
+{
+  "id": "folio_tr_marcy_001_p5",
+  "sentence": "If people have solar panels in their homes, then they save a lot of money.",
+
+  "predicates": {
+    "Solar": 1,
+    "SaveMoney": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal conditional",
+    "Solar(x) represents 'x has solar panels in their home'",
+    "SaveMoney(x) represents 'x saves a lot of money'",
+    "Form implication: Solar(x) → SaveMoney(x)"
+  ],
+
+  "fol_formula": "∀x (Solar(x) → SaveMoney(x))"
+}
+{
+  "id": "folio_tr_marcy_001_p6",
+  "sentence": "If Marcy either gets a lot of mail and is very involved with her neighborhood or if she does not order a lot of Amazon packages nor is very involved with her neighborhood, then Marcy does not both get a lot of daily mail and order a lot of Amazon packages.",
+
+  "predicates": {
+    "DailyMail": 1,
+    "Neighborhood": 1,
+    "Amazon": 1
+  },
+
+  "constants": {
+    "marcy": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify conditional involving specific person",
+    "DailyMail(marcy) represents 'Marcy gets a lot of daily mail delivered'",
+    "Neighborhood(marcy) represents 'Marcy is very involved with her neighborhood'",
+    "Amazon(marcy) represents 'Marcy orders a lot of Amazon packages'",
+    "Form implication using negation and exclusive disjunction: ¬(DailyMail(marcy) ⊕ Neighborhood(marcy)) → (¬DailyMail(marcy) ∨ ¬Amazon(marcy))"
+  ],
+
+  "fol_formula": "¬(DailyMail(marcy) ⊕ Neighborhood(marcy)) → (¬DailyMail(marcy) ∨ ¬Amazon(marcy))"
+}
+{
+  "id": "folio_tr_jack_001_p1",
+  "sentence": "All phones are things.",
+
+  "predicates": {
+    "Phone": 1,
+    "Thing": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "object"
+  },
+
+  "translation_steps": [
+    "Identify universal quantifier 'All'",
+    "Phone(x) represents 'x is a phone'",
+    "Thing(x) represents 'x is a thing'",
+    "Form implication: Phone(x) → Thing(x)"
+  ],
+
+  "fol_formula": "∀x (Phone(x) → Thing(x))"
+}
+{
+  "id": "folio_tr_jack_001_p2",
+  "sentence": "All cellphones are phones.",
+
+  "predicates": {
+    "Cellphone": 1,
+    "Phone": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "object"
+  },
+
+  "translation_steps": [
+    "Identify universal quantifier 'All'",
+    "Cellphone(x) represents 'x is a cellphone'",
+    "Phone(x) represents 'x is a phone'",
+    "Form implication: Cellphone(x) → Phone(x)"
+  ],
+
+  "fol_formula": "∀x (Cellphone(x) → Phone(x))"
+}
+{
+  "id": "folio_tr_jack_001_p3",
+  "sentence": "All iPhones are cellphones.",
+
+  "predicates": {
+    "Iphone": 1,
+    "Cellphone": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "object"
+  },
+
+  "translation_steps": [
+    "Identify universal quantifier 'All'",
+    "Iphone(x) represents 'x is an iPhone'",
+    "Cellphone(x) represents 'x is a cellphone'",
+    "Form implication: Iphone(x) → Cellphone(x)"
+  ],
+
+  "fol_formula": "∀x (Iphone(x) → Cellphone(x))"
+}
+{
+  "id": "folio_tr_jack_001_p4",
+  "sentence": "All engineers are workers.",
+
+  "predicates": {
+    "Engineer": 1,
+    "Worker": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal quantifier 'All'",
+    "Engineer(x) represents 'x is an engineer'",
+    "Worker(x) represents 'x is a worker'",
+    "Form implication: Engineer(x) → Worker(x)"
+  ],
+
+  "fol_formula": "∀x (Engineer(x) → Worker(x))"
+}
+{
+  "id": "folio_tr_jack_001_p5",
+  "sentence": "All workers are human.",
+
+  "predicates": {
+    "Worker": 1,
+    "Human": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal quantifier 'All'",
+    "Worker(x) represents 'x is a worker'",
+    "Human(x) represents 'x is human'",
+    "Form implication: Worker(x) → Human(x)"
+  ],
+
+  "fol_formula": "∀x (Worker(x) → Human(x))"
+}
+{
+  "id": "folio_tr_jack_001_p6",
+  "sentence": "Jack is either an engineer or a worker.",
+
+  "predicates": {
+    "Engineer": 1,
+    "Worker": 1
+  },
+
+  "constants": {
+    "jack": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify exclusive disjunction for a specific person",
+    "Engineer(jack) represents 'Jack is an engineer'",
+    "Worker(jack) represents 'Jack is a worker'",
+    "Form exclusive disjunction: Engineer(jack) ⊕ Worker(jack)"
+  ],
+
+  "fol_formula": "Engineer(jack) ⊕ Worker(jack)"
+}
+{
+  "id": "folio_tr_jack_001_p7",
+  "sentence": "Jack is either a human or a phone.",
+
+  "predicates": {
+    "Human": 1,
+    "Phone": 1
+  },
+
+  "constants": {
+    "jack": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify exclusive disjunction for a specific person",
+    "Human(jack) represents 'Jack is a human'",
+    "Phone(jack) represents 'Jack is a phone'",
+    "Form exclusive disjunction: Human(jack) ⊕ Phone(jack)"
+  ],
+
+  "fol_formula": "Human(jack) ⊕ Phone(jack)"
+}
+{
+  "id": "folio_tr_bobby_001_p1",
+  "sentence": "Bobby Flynn is a singer-songwriter.",
+
+  "predicates": {
+    "Singer": 1,
+    "SongWriter": 1
+  },
+
+  "constants": {
+    "bobbyFlynn": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify predicates for Bobby Flynn",
+    "Singer(bobbyFlynn) represents 'Bobby Flynn is a singer'",
+    "SongWriter(bobbyFlynn) represents 'Bobby Flynn is a songwriter'",
+    "Combine predicates with conjunction: Singer(bobbyFlynn) ∧ SongWriter(bobbyFlynn)"
+  ],
+
+  "fol_formula": "Singer(bobbyFlynn) ∧ SongWriter(bobbyFlynn)"
+}
+{
+  "id": "folio_tr_bobby_001_p2",
+  "sentence": "Bobby Flynn finished 7th while competing on Australian Idol.",
+
+  "predicates": {
+    "Finished7th": 1,
+    "CompetedOnAustralianIdol": 1
+  },
+
+  "constants": {
+    "bobbyFlynn": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify predicates for Bobby Flynn",
+    "Finished7th(bobbyFlynn) represents 'Bobby Flynn finished 7th'",
+    "CompetedOnAustralianIdol(bobbyFlynn) represents 'Bobby Flynn competed on Australian Idol'",
+    "Combine predicates with conjunction: Finished7th(bobbyFlynn) ∧ CompetedOnAustralianIdol(bobbyFlynn)"
+  ],
+
+  "fol_formula": "Finished7th(bobbyFlynn) ∧ CompetedOnAustralianIdol(bobbyFlynn)"
+}
+{
+  "id": "folio_tr_bobby_001_p3",
+  "sentence": "Australian Idol competitors are Australian citizens.",
+
+  "predicates": {
+    "CompetedOnAustralianIdol": 1,
+    "AustralianCitizen": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Identify universal quantifier 'All competitors'",
+    "CompetedOnAustralianIdol(x) represents 'x competed on Australian Idol'",
+    "AustralianCitizen(x) represents 'x is an Australian citizen'",
+    "Form implication: Competing implies citizenship → ∀x (CompetedOnAustralianIdol(x) → AustralianCitizen(x))"
+  ],
+
+  "fol_formula": "∀x (CompetedOnAustralianIdol(x) → AustralianCitizen(x))"
+}
+{
+  "id": "folio_tr_bobby_001_p4",
+  "sentence": "The Omega Three band made a nationwide tour in 2007.",
+
+  "predicates": {
+    "MadeNationWideTour2007": 1
+  },
+
+  "constants": {
+    "theOmegaThreeBand": "band"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify predicate for the band",
+    "MadeNationWideTour2007(theOmegaThreeBand) represents 'The Omega Three band made a nationwide tour in 2007'"
+  ],
+
+  "fol_formula": "MadeNationWideTour2007(theOmegaThreeBand)"
+}
+{
+  "id": "folio_tr_bobby_001_p5",
+  "sentence": "Bobby Flynn is a member of The Omega Three band.",
+
+  "predicates": {
+    "IsMember": 2
+  },
+
+  "constants": {
+    "bobbyFlynn": "person",
+    "theOmegaThreeBand": "band"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify predicate for membership",
+    "IsMember(bobbyFlynn, theOmegaThreeBand) represents 'Bobby Flynn is a member of The Omega Three band'"
+  ],
+
+  "fol_formula": "IsMember(bobbyFlynn, theOmegaThreeBand)"
+}
+{
+  "id": "folio_tr_bobby_001_p6",
+  "sentence": "Bobby Flynn was born in Queensland.",
+
+  "predicates": {
+    "BornIn": 2
+  },
+
+  "constants": {
+    "bobbyFlynn": "person",
+    "queensland": "location"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify predicate for birthplace",
+    "BornIn(bobbyFlynn, queensland) represents 'Bobby Flynn was born in Queensland'"
+  ],
+
+  "fol_formula": "BornIn(bobbyFlynn, queensland)"
+}
+{
+  "id": "folio_tr_maggie_001_p1",
+  "sentence": "One American screenwriter and producer is Maggie Friedman.",
+
+  "predicates": {
+    "American": 1,
+    "Screenwriter": 1,
+    "Producer": 1
+  },
+
+  "constants": {
+    "maggiefriedman": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify predicates describing Maggie Friedman",
+    "American(maggiefriedman) represents 'Maggie Friedman is American'",
+    "Screenwriter(maggiefriedman) represents 'Maggie Friedman is a screenwriter'",
+    "Producer(maggiefriedman) represents 'Maggie Friedman is a producer'",
+    "Combine predicates with conjunction: American ∧ Screenwriter ∧ Producer"
+  ],
+
+  "fol_formula": "American(maggiefriedman) ∧ Screenwriter(maggiefriedman) ∧ Producer(maggiefriedman)"
+}
+{
+  "id": "folio_tr_maggie_001_p2",
+  "sentence": "Maggie Friedman was the showrunner and executive producer of the lifetime television series Witches of East End.",
+
+  "predicates": {
+    "ShowRunnerOf": 2,
+    "ExecutiveProducerOf": 2,
+    "LifetimeTelevisionSeries": 1
+  },
+
+  "constants": {
+    "maggiefriedman": "person",
+    "witchesofeastend": "series"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify predicates for Maggie Friedman and the series",
+    "ShowRunnerOf(maggiefriedman, witchesofeastend) represents 'Maggie Friedman was showrunner of Witches of East End'",
+    "ExecutiveProducerOf(maggiefriedman, witchesofeastend) represents 'Maggie Friedman was executive producer of Witches of East End'",
+    "LifetimeTelevisionSeries(witchesofeastend) represents 'Witches of East End is a lifetime television series'",
+    "Combine predicates with conjunction"
+  ],
+
+  "fol_formula": "ShowRunnerOf(maggiefriedman, witchesofeastend) ∧ ExecutiveProducerOf(maggiefriedman, witchesofeastend) ∧ LifetimeTelevisionSeries(witchesofeastend)"
+}
+{
+  "id": "folio_tr_maggie_001_p3",
+  "sentence": "Witches of East End is a fantasy-drama series.",
+
+  "predicates": {
+    "Fantasy-Drama": 1,
+    "Series": 1
+  },
+
+  "constants": {
+    "witchesofeastend": "series"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify predicates describing the series",
+    "Fantasy-Drama(witchesofeastend) represents 'Witches of East End is a fantasy-drama series'",
+    "Series(witchesofeastend) represents 'Witches of East End is a series'",
+    "Combine predicates with conjunction"
+  ],
+
+  "fol_formula": "Fantasy-Drama(witchesofeastend) ∧ Series(witchesofeastend)"
+}
+{
+  "id": "folio_tr_maggie_001_p4",
+  "sentence": "Maggie Friedman produced and developed Eastwick.",
+
+  "predicates": {
+    "Produced": 2,
+    "Developed": 2
+  },
+
+  "constants": {
+    "maggiefriedman": "person",
+    "eastwick": "series"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify predicates for Maggie Friedman and Eastwick",
+    "Produced(maggiefriedman, eastwick) represents 'Maggie Friedman produced Eastwick'",
+    "Developed(maggiefriedman, eastwick) represents 'Maggie Friedman developed Eastwick'",
+    "Combine predicates with conjunction"
+  ],
+
+  "fol_formula": "Produced(maggiefriedman, eastwick) ∧ Developed(maggiefriedman, eastwick)"
+}
+{
+  "id": "folio_tr_maggie_001_p5",
+  "sentence": "Eastwick is a series by ABC.",
+
+  "predicates": {
+    "Series": 1,
+    "By": 2
+  },
+
+  "constants": {
+    "eastwick": "series",
+    "abc": "network"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify predicates describing Eastwick",
+    "Series(eastwick) represents 'Eastwick is a series'",
+    "By(eastwick, abc) represents 'Eastwick is by ABC'",
+    "Combine predicates with conjunction"
+  ],
+
+  "fol_formula": "Series(eastwick) ∧ By(eastwick, abc)"
+}
+{
+  "id": "folio_tr_hooray_001_p1",
+  "sentence": "Before releasing their single, \"Hooray! Hooray! It's a Holi-Holiday!\", Boney M. had had seven consecutive German #1 singles.",
+
+  "predicates": {
+    "Song": 1,
+    "By": 2,
+    "N1GermanSingle": 1
+  },
+
+  "constants": {
+    "hooray": "song",
+    "boneym": "artist"
+  },
+
+  "variable_mapping": {
+    "x": "song"
+  },
+
+  "translation_steps": [
+    "Identify the song and artist",
+    "Existential quantification for the song: ∃x",
+    "Song(x) ∧ By(x, boneym) represents 'x is a song by Boney M.'",
+    "N1GermanSingle(x) represents 'x was a #1 single in Germany'",
+    "Combine predicates: ∃x (Song(x) ∧ By(x, boneym) ∧ N1GermanSingle(x))"
+  ],
+
+  "fol_formula": "∃x (Song(x) ∧ By(x, boneym) ∧ N1GermanSingle(x))"
+}
+{
+  "id": "folio_tr_hooray_001_p2",
+  "sentence": "\"Hooray! Hooray! It's a Holi-Holiday!\" was a big hit all over Europe.",
+
+  "predicates": {
+    "Song": 1,
+    "HitEurope": 1
+  },
+
+  "constants": {
+    "hooray": "song"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify the song and predicate describing success in Europe",
+    "Song(hooray) represents 'Hooray is a song'",
+    "HitEurope(hooray) represents 'Hooray was a big hit in Europe'",
+    "Combine predicates with conjunction"
+  ],
+
+  "fol_formula": "Song(hooray) ∧ HitEurope(hooray)"
+}
+{
+  "id": "folio_tr_hooray_001_p3",
+  "sentence": "Nevertheless, \"Hooray! Hooray! It's a Holi-Holiday!\" broke Boney M's streak of consecutive German #1 singles.",
+
+  "predicates": {
+    "Song": 1,
+    "N1GermanSingle": 1
+  },
+
+  "constants": {
+    "hooray": "song"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify the song and its German #1 status",
+    "Song(hooray) represents 'Hooray is a song'",
+    "¬N1GermanSingle(hooray) represents 'Hooray was not a #1 single in Germany'",
+    "Combine predicates with conjunction"
+  ],
+
+  "fol_formula": "Song(hooray) ∧ ¬N1GermanSingle(hooray)"
+}
+{
+  "id": "folio_tr_hooray_001_p4",
+  "sentence": "A song that peaks below #1 on the German charts is also a song that is not the #1 single.",
+
+  "predicates": {
+    "PeaksBelowN1": 1,
+    "N1GermanSingle": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "song"
+  },
+
+  "translation_steps": [
+    "Identify the equivalence between peaking below #1 and not being #1",
+    "∀x (PeaksBelowN1(x) ↔ ¬N1GermanSingle(x)) represents 'for all songs x, peaking below #1 is equivalent to not being a #1 single'"
+  ],
+
+  "fol_formula": "∀x (PeaksBelowN1(x) ↔ ¬N1GermanSingle(x))"
+}
+{
+  "id": "folio_tr_ets_001_p1",
+  "sentence": "ETS develops various standardized tests primarily in the United States for K-12 and higher education.",
+
+  "predicates": {
+    "Develops": 2,
+    "StandardizedTest": 1,
+    "In": 2,
+    "For": 2
+  },
+
+  "constants": {
+    "ets": "organization",
+    "unitedstates": "location",
+    "k-12andhighereducation": "educationlevel"
+  },
+
+  "variable_mapping": {
+    "x": "test"
+  },
+
+  "translation_steps": [
+    "Existential quantification for a test: ∃x",
+    "Develops(ets, x) represents 'ETS develops test x'",
+    "StandardizedTest(x) represents 'x is a standardized test'",
+    "In(x, unitedstates) represents 'x is primarily in the US'",
+    "For(x, k-12andhighereducation) represents 'x is for K-12 and higher education'",
+    "Combine all predicates using conjunction"
+  ],
+
+  "fol_formula": "∃x (Develops(ets, x) ∧ StandardizedTest(x) ∧ In(x, unitedstates) ∧ For(x, k12andhighereducation))"
+}
+{
+  "id": "folio_tr_ets_001_p2",
+  "sentence": "ETS administers international tests including the TOEFL, TOEIC, GRE and subject tests in more than 180 countries.",
+
+  "predicates": {
+    "Administers": 2,
+    "InternationalTest": 1,
+    "TOEFL": 1,
+    "TOEIC": 1,
+    "GRE": 1,
+    "SubjectTests": 1
+  },
+
+  "constants": {
+    "ets": "organization"
+  },
+
+  "variable_mapping": {
+    "x": "test"
+  },
+
+  "translation_steps": [
+    "Existential quantification for a test: ∃x",
+    "Administers(ets, x) represents 'ETS administers test x'",
+    "InternationalTest(x) represents 'x is an international test'",
+    "Include specific tests: TOEFL(x) ∨ TOEIC(x) ∨ GRE(x) ∨ SubjectTests(x)",
+    "Combine predicates with conjunction"
+  ],
+
+  "fol_formula": "∃x (Administers(ets, x) ∧ InternationalTest(x) ∧ (TOEFL(x) ∨ TOEIC(x) ∨ GRE(x) ∨ SubjectTests(x)))"
+}
+{
+  "id": "folio_tr_ets_001_p3",
+  "sentence": "Many of the assessments ETS develops are associated with entry to the US tertiary and quaternary education institutions.",
+
+  "predicates": {
+    "Develops": 2,
+    "AssociatedWith": 2
+  },
+
+  "constants": {
+    "ets": "organization",
+    "entrytouseducationinstitutions": "goal"
+  },
+
+  "variable_mapping": {
+    "x": "test"
+  },
+
+  "translation_steps": [
+    "Existential quantification for a test: ∃x",
+    "Develops(ets, x) represents 'ETS develops test x'",
+    "AssociatedWith(x, entrytouseducationinstitutions) represents 'x is associated with entry to US education institutions'",
+    "Combine predicates with conjunction"
+  ],
+
+  "fol_formula": "∃x (Develops(ets, x) ∧ AssociatedWith(x, entrytouseducationinstitutions))"
+}
+{
+  "id": "folio_tr_ets_001_p4",
+  "sentence": "ETS also develops K-12 statewide assessments used for accountability testing in many states.",
+
+  "predicates": {
+    "Develops": 2,
+    "StateWideAssesment": 1,
+    "UsedFor": 2
+  },
+
+  "constants": {
+    "ets": "organization",
+    "accountabilitytesting": "purpose"
+  },
+
+  "variable_mapping": {
+    "x": "assessment"
+  },
+
+  "translation_steps": [
+    "Existential quantification for an assessment: ∃x",
+    "Develops(ets, x) represents 'ETS develops assessment x'",
+    "StateWideAssesment(x) represents 'x is a K-12 statewide assessment'",
+    "UsedFor(x, accountabilitytesting) represents 'x is used for accountability testing'",
+    "Combine predicates with conjunction"
+  ],
+
+  "fol_formula": "∃x (Develops(ets, x) ∧ StateWideAssesment(x) ∧ UsedFor(x, accountabilitytesting))"
+}
+{
+  "id": "folio_tr_croton_001_p1",
+  "sentence": "The Croton River watershed is the drainage basin of the Croton River.",
+
+  "predicates": {
+    "DrainageBasinOf": 2
+  },
+
+  "constants": {
+    "crotonriverwatershed": "watershed",
+    "crotonriver": "river"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify the relationship: 'is the drainage basin of'",
+    "Use predicate DrainageBasinOf(watershed, river)",
+    "Assign constants crotonriverwatershed and crotonriver"
+  ],
+
+  "fol_formula": "DrainageBasinOf(crotonriverwatershed, crotonriver)"
+}
+{
+  "id": "folio_tr_croton_001_p2",
+  "sentence": "The Croton River is in southwestern New York.",
+
+  "predicates": {
+    "In": 2
+  },
+
+  "constants": {
+    "crotonriver": "river",
+    "southwesternnewyork": "location"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify location relationship",
+    "Use predicate In(entity, location)",
+    "Assign constants crotonriver and southwesternnewyork"
+  ],
+
+  "fol_formula": "In(crotonriver, southwesternnewyork)"
+}
+{
+  "id": "folio_tr_croton_001_p3",
+  "sentence": "Water from the Croton River watershed flows to the Bronx.",
+
+  "predicates": {
+    "Water": 1,
+    "From": 2,
+    "FlowsTo": 2
+  },
+
+  "constants": {
+    "crotonriverwatershed": "watershed",
+    "bronx": "location"
+  },
+
+  "variable_mapping": {
+    "x": "water"
+  },
+
+  "translation_steps": [
+    "Introduce existential quantifier for water: ∃x",
+    "Water(x) represents 'x is water'",
+    "From(x, crotonriverwatershed) represents 'x is from the Croton River watershed'",
+    "FlowsTo(x, bronx) represents 'x flows to the Bronx'",
+    "Combine predicates with conjunction"
+  ],
+
+  "fol_formula": "∃x (Water(x) ∧ From(x, crotonriverwatershed) ∧ FlowsTo(x, bronx))"
+}
+{
+  "id": "folio_tr_croton_001_p4",
+  "sentence": "The Bronx is in New York.",
+
+  "predicates": {
+    "In": 2
+  },
+
+  "constants": {
+    "bronx": "location",
+    "newyork": "location"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify location relationship",
+    "Use predicate In(entity, location)",
+    "Assign constants bronx and newyork"
+  ],
+
+  "fol_formula": "In(bronx, newyork)"
+}
+{
+  "id": "folio_tr_daniel_001_p1",
+  "sentence": "Daniel is a software engineer and he works at Palantir Technologies.",
+
+  "predicates": {
+    "SoftwareEngineer": 1,
+    "WorksAt": 2
+  },
+
+  "constants": {
+    "daniel": "person",
+    "palantirTechnologies": "company"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify professions and workplaces",
+    "Use predicate SoftwareEngineer(entity) for Daniel",
+    "Use predicate WorksAt(entity, company) for Daniel working at Palantir Technologies",
+    "Combine using logical conjunction"
+  ],
+
+  "fol_formula": "SoftwareEngineer(daniel) ∧ WorksAt(daniel, palantirTechnologies)"
+}
+{
+  "id": "folio_tr_daniel_001_p2",
+  "sentence": "Daniel studied bioengineering during his undergraduate at Rice University.",
+
+  "predicates": {
+    "StudiedBioengineering": 2
+  },
+
+  "constants": {
+    "daniel": "person",
+    "riceUniversity": "university"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify major and university relationship",
+    "Use predicate StudiedBioengineering(person, university)",
+    "Assign constants daniel and riceUniversity"
+  ],
+
+  "fol_formula": "StudiedBioengineering(daniel, riceUniversity)"
+}
+{
+  "id": "folio_tr_daniel_001_p3",
+  "sentence": "Daniel’s older sister works at Meta as a technical sourcer.",
+
+  "predicates": {
+    "WorksAtMeta": 1,
+    "TechnicalSourcer": 1
+  },
+
+  "constants": {
+    "danielsOlderSister": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify workplace and profession",
+    "Use predicate WorksAtMeta(person) for Daniel's sister",
+    "Use predicate TechnicalSourcer(person) for Daniel's sister",
+    "Combine using conjunction"
+  ],
+
+  "fol_formula": "WorksAtMeta(danielsOlderSister) ∧ TechnicalSourcer(danielsOlderSister)"
+}
+{
+  "id": "folio_tr_daniel_001_p4",
+  "sentence": "Daniel’s dad and older sister both graduated from Stanford University.",
+
+  "predicates": {
+    "GraduatedFromStanfordUniversity": 1
+  },
+
+  "constants": {
+    "danielsDad": "person",
+    "danielsOlderSister": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify graduation relationship",
+    "Apply predicate GraduatedFromStanfordUniversity(person) to both Danial's dad and older sister",
+    "Combine using logical conjunction"
+  ],
+
+  "fol_formula": "GraduatedFromStanfordUniversity(danielsOlderSister) ∧ GraduatedFromStanfordUniversity(danielsDad)"
+}
+{
+  "id": "folio_tr_daniel_001_p5",
+  "sentence": "Daniel’s dad is a doctor practicing internal medicine at a veteran’s hospital in Minneapolis.",
+
+  "predicates": {
+    "DoctorPracticingInternalMedicine": 2
+  },
+
+  "constants": {
+    "danielsDad": "person",
+    "veteransHospitalInMinneapolis": "hospital"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify profession and workplace",
+    "Use predicate DoctorPracticingInternalMedicine(person, hospital)",
+    "Assign constants danielsDad and veteransHospitalInMinneapolis"
+  ],
+
+  "fol_formula": "DoctorPracticingInternalMedicine(danielsDad, veteransHospitalInMinneapolis)"
+}
+{
+  "id": "folio_tr_philippines_001_p1",
+  "sentence": "Luzon is an island in the Philippines.",
+
+  "predicates": {
+    "Island": 1,
+    "In": 2
+  },
+
+  "constants": {
+    "luzon": "location",
+    "philippines": "country"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify Luzon as an island",
+    "Use predicate Island(luzon) to indicate Luzon is an island",
+    "Use predicate In(luzon, philippines) to indicate location relationship"
+  ],
+
+  "fol_formula": "Island(luzon) ∧ In(luzon, philippines)"
+}
+{
+  "id": "folio_tr_philippines_001_p2",
+  "sentence": "In December 1999, an earthquake struck Luzon.",
+
+  "predicates": {
+    "Earthquake": 1,
+    "StruckIn": 2,
+    "Struck": 2
+  },
+
+  "constants": {
+    "luzon": "location",
+    "december1999": "time"
+  },
+
+  "variable_mapping": {
+    "x": "earthquake"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for the earthquake",
+    "Use predicate Earthquake(x) for x",
+    "Use predicate StruckIn(x, december1999) for the time of the earthquake",
+    "Use predicate Struck(x, luzon) for the location of the earthquake",
+    "Combine using conjunction"
+  ],
+
+  "fol_formula": "∃x (Earthquake(x) ∧ StruckIn(x, december1999) ∧ Struck(x, luzon))"
+}
+{
+  "id": "folio_tr_philippines_001_p3",
+  "sentence": "People died in the December 1999 earthquake in Luzon.",
+
+  "predicates": {
+    "Earthquake": 1,
+    "StruckIn": 2,
+    "Struck": 2,
+    "Killed": 1
+  },
+
+  "constants": {
+    "luzon": "location",
+    "december1999": "time"
+  },
+
+  "variable_mapping": {
+    "x": "earthquake"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for the earthquake",
+    "Use predicate Earthquake(x) for x",
+    "Use predicate StruckIn(x, december1999) for the time",
+    "Use predicate Struck(x, luzon) for the location",
+    "Use predicate Killed(x) to indicate people died in the earthquake",
+    "Combine using conjunction"
+  ],
+
+  "fol_formula": "∃x (Earthquake(x) ∧ StruckIn(x, december1999) ∧ Struck(x, luzon) ∧ Killed(x))"
+}
+{
+  "id": "folio_tr_olympics_001_p1",
+  "sentence": "Barbara Ann Marshall is a former swimmer and former world record-holder.",
+
+  "predicates": {
+    "FormerSwimmer": 1,
+    "FormerWorldRecordHolder": 1
+  },
+
+  "constants": {
+    "barbaraannmarshall": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify Barbara Ann Marshall as a former swimmer",
+    "Identify Barbara Ann Marshall as a former world record-holder",
+    "Use conjunction to combine both predicates"
+  ],
+
+  "fol_formula": "FormerSwimmer(barbaraannmarshall) ∧ FormerWorldRecordHolder(barbaraannmarshall)"
+}
+{
+  "id": "folio_tr_olympics_001_p2",
+  "sentence": "Barbara Ann Marshall participated in the 1972 Summer Olympics.",
+
+  "predicates": {
+    "ParticipatedIn": 2
+  },
+
+  "constants": {
+    "barbaraannmarshall": "person",
+    "summer1972olympics": "event"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Use predicate ParticipatedIn(barbaraannmarshall, summer1972olympics) to indicate participation"
+  ],
+
+  "fol_formula": "ParticipatedIn(barbaraannmarshall, summer1972olympics)"
+}
+{
+  "id": "folio_tr_olympics_001_p3",
+  "sentence": "Barbara Ann Marshall's home country is the United States.",
+
+  "predicates": {
+    "HomeCountry": 2
+  },
+
+  "constants": {
+    "barbaraannmarshall": "person",
+    "unitedstates": "country"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Use predicate HomeCountry(barbaraannmarshall, unitedstates) to indicate home country"
+  ],
+
+  "fol_formula": "HomeCountry(barbaraannmarshall, unitedstates)"
+}
+{
+  "id": "folio_tr_olympics_001_p4",
+  "sentence": "All people who compete in the 1972 Summer Olympics represent their home country.",
+
+  "predicates": {
+    "ParticipatedIn": 2,
+    "HomeCountry": 2,
+    "Represented": 2
+  },
+
+  "constants": {
+    "summer1972olympics": "event"
+  },
+
+  "variable_mapping": {
+    "x": "person",
+    "y": "country"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a person and y for a country",
+    "Identify that x participated in summer1972olympics and has home country y",
+    "Formulate that x represents y",
+    "Use universal quantifier ∀x ∃y"
+  ],
+
+  "fol_formula": "∀x ∃y (ParticipatedIn(x, summer1972olympics) ∧ HomeCountry(x, y) → Represented(x, y))"
+}
+{
+  "id": "folio_tr_olympics_001_p5",
+  "sentence": "Barbara Ann Marshall participated in the preliminary heat in the freestyle relay.",
+
+  "predicates": {
+    "ParticipatedIn": 2
+  },
+
+  "constants": {
+    "barbaraannmarshall": "person",
+    "preliminaryheatfreestylerelay": "event"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Use predicate ParticipatedIn(barbaraannmarshall, preliminaryheatfreestylerelay)"
+  ],
+
+  "fol_formula": "ParticipatedIn(barbaraannmarshall, preliminaryheatfreestylerelay)"
+}
+{
+  "id": "folio_tr_olympics_001_p6",
+  "sentence": "Barbara Ann Marshall did not participate in the event final of the 1972 Summer Olympics freestyle relay.",
+
+  "predicates": {
+    "ParticipatedIn": 2
+  },
+
+  "constants": {
+    "barbaraannmarshall": "person",
+    "finalheatfreestylerelay": "event"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Use predicate ¬ParticipatedIn(barbaraannmarshall, finalheatfreestylerelay)"
+  ],
+
+  "fol_formula": "¬ParticipatedIn(barbaraannmarshall, finalheatfreestylerelay)"
+}
+{
+  "id": "folio_tr_olympics_001_p7",
+  "sentence": "Only relay swimmers who participated in the event final received medals.",
+
+  "predicates": {
+    "RelaySwimmer": 1,
+    "ParticipatedIn": 2,
+    "Recieved": 2
+  },
+
+  "constants": {
+    "finalheatfreerelay": "event"
+  },
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a person",
+    "State that if x is a relay swimmer and did not participate in the final heat, then x did not receive a medal",
+    "Use equivalence ↔ for 'only if'"
+  ],
+
+  "fol_formula": "∀x ((RelaySwimmer(x) ∧ ¬ParticipatedIn(x, finalheatfreerelay)) ↔ ¬Recieved(x, medal))"
+}
+{
+  "id": "folio_tr_love_001_p1",
+  "sentence": "People either value physical touch as an especially important love language or value words of affirmation as an especially important love language.",
+
+  "predicates": {
+    "Physical": 1,
+    "Words": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a person",
+    "Identify the two options for love languages: Physical(x) or Words(x)",
+    "Use logical disjunction ∨"
+  ],
+
+  "fol_formula": "∀x (Physical(x) ∨ Words(x))"
+}
+{
+  "id": "folio_tr_love_001_p2",
+  "sentence": "If a person values physical touch as an especially important love language, then they are good with pets.",
+
+  "predicates": {
+    "Physical": 1,
+    "GoodWithPets": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a person",
+    "Formulate implication: if Physical(x) then GoodWithPets(x)"
+  ],
+
+  "fol_formula": "∀x (Physical(x) → GoodWithPets(x))"
+}
+{
+  "id": "folio_tr_love_001_p3",
+  "sentence": "No people that are good with pets are scared of animals.",
+
+  "predicates": {
+    "GoodWithPets": 1,
+    "ScaredOfAnimals": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a person",
+    "Formulate implication: if GoodWithPets(x) then ¬ScaredOfAnimals(x)"
+  ],
+
+  "fol_formula": "∀x (GoodWithPets(x) → ¬ScaredOfAnimals(x))"
+}
+{
+  "id": "folio_tr_love_001_p4",
+  "sentence": "People are either scared of animals or love animals.",
+
+  "predicates": {
+    "ScaredOfAnimals": 1,
+    "LoveAnimals": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a person",
+    "Formulate disjunction: ScaredOfAnimals(x) ∨ LoveAnimals(x)"
+  ],
+
+  "fol_formula": "∀x (ScaredOfAnimals(x) ∨ LoveAnimals(x))"
+}
+{
+  "id": "folio_tr_love_001_p5",
+  "sentence": "Adam is either a person who values physical touch as an especially important love language or a person who loves animals.",
+
+  "predicates": {
+    "Physical": 1,
+    "LoveAnimals": 1
+  },
+
+  "constants": {
+    "adam": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "State that Adam satisfies exactly one of the options",
+    "Use exclusive disjunction ⊕: Physical(adam) ⊕ LoveAnimals(adam)"
+  ],
+
+  "fol_formula": "Physical(adam) ⊕ LoveAnimals(adam)"
+}
+{
+  "id": "folio_tr_num_001_p1",
+  "sentence": "Six, seven and eight are real numbers.",
+
+  "predicates": {
+    "RealNum": 1
+  },
+
+  "constants": {
+    "six": "number",
+    "seven": "number",
+    "eight": "number"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "State that six, seven, and eight are real numbers using predicate RealNum",
+    "Use conjunction ∧ to combine them"
+  ],
+
+  "fol_formula": "RealNum(six) ∧ RealNum(seven) ∧ RealNum(eight)"
+}
+{
+  "id": "folio_tr_num_001_p2",
+  "sentence": "If a real number equals another real number adding one, the first number is larger.",
+
+  "predicates": {
+    "RealNum": 1,
+    "EqualAddOne": 2,
+    "Larger": 2
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "number",
+    "y": "number"
+  },
+
+  "translation_steps": [
+    "Introduce variables x and y for numbers",
+    "Identify condition: EqualAddOne(x, y) and both are real numbers",
+    "Formulate implication: EqualAddOne(x, y) → Larger(x, y)"
+  ],
+
+  "fol_formula": "∀x ∀y (RealNum(x) ∧ RealNum(y) ∧ EqualAddOne(x, y) → Larger(x, y))"
+}
+{
+  "id": "folio_tr_num_001_p3",
+  "sentence": "If the number x is larger than number y, then y is not larger than x.",
+
+  "predicates": {
+    "Larger": 2
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "number",
+    "y": "number"
+  },
+
+  "translation_steps": [
+    "Introduce variables x and y",
+    "Express the symmetry condition using ↔ or equivalence",
+    "Larger(x, y) ↔ ¬Larger(y, x)"
+  ],
+
+  "fol_formula": "∀x ∀y (Larger(x, y) ↔ ¬Larger(y, x))"
+}
+{
+  "id": "folio_tr_num_001_p4",
+  "sentence": "Seven equals six plus one.",
+
+  "predicates": {
+    "EqualAddOne": 2
+  },
+
+  "constants": {
+    "six": "number",
+    "seven": "number"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Directly represent the equality using EqualAddOne(seven, six)"
+  ],
+
+  "fol_formula": "EqualAddOne(seven, six)"
+}
+{
+  "id": "folio_tr_num_001_p5",
+  "sentence": "Eight equals seven plus one.",
+
+  "predicates": {
+    "EqualAddOne": 2
+  },
+
+  "constants": {
+    "seven": "number",
+    "eight": "number"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Directly represent the equality using EqualAddOne(eight, seven)"
+  ],
+
+  "fol_formula": "EqualAddOne(eight, seven)"
+}
+{
+  "id": "folio_tr_num_001_p6",
+  "sentence": "Two is positive.",
+
+  "predicates": {
+    "Positive": 1
+  },
+
+  "constants": {
+    "two": "number"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Use Positive(two) to state that two is positive"
+  ],
+
+  "fol_formula": "Positive(two)"
+}
+{
+  "id": "folio_tr_num_001_p7",
+  "sentence": "If a number is positive, then the double of it is also positive.",
+
+  "predicates": {
+    "Positive": 1,
+    "EqualDouble": 2
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "number",
+    "y": "number"
+  },
+
+  "translation_steps": [
+    "Introduce variables x and y",
+    "If x is positive and y is double of x, then y is positive",
+    "Formulate implication"
+  ],
+
+  "fol_formula": "∀x ∀y ((Positive(x) ∧ EqualDouble(y, x)) → Positive(y))"
+}
+{
+  "id": "folio_tr_num_001_p8",
+  "sentence": "Eight is the double of four.",
+
+  "predicates": {
+    "EqualDouble": 2
+  },
+
+  "constants": {
+    "eight": "number",
+    "four": "number"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Directly represent as EqualDouble(eight, four)"
+  ],
+
+  "fol_formula": "EqualDouble(eight, four)"
+}
+{
+  "id": "folio_tr_num_001_p9",
+  "sentence": "Four is the double of two.",
+
+  "predicates": {
+    "EqualDouble": 2
+  },
+
+  "constants": {
+    "four": "number",
+    "two": "number"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Directly represent as EqualDouble(four, two)"
+  ],
+
+  "fol_formula": "EqualDouble(four, two)"
+}
+{
+  "id": "folio_tr_eth_001_p1",
+  "sentence": "All Asians are human.",
+
+  "predicates": {
+    "Asian": 1,
+    "Human": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a person",
+    "Translate 'All Asians are human' into implication",
+    "Formulate ∀x (Asian(x) → Human(x))"
+  ],
+
+  "fol_formula": "∀x (Asian(x) → Human(x))"
+}
+{
+  "id": "folio_tr_eth_001_p2",
+  "sentence": "All Chinese are Asian.",
+
+  "predicates": {
+    "Chinese": 1,
+    "Asian": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Introduce variable x",
+    "Translate 'All Chinese are Asian' into implication",
+    "Formulate ∀x (Chinese(x) → Asian(x))"
+  ],
+
+  "fol_formula": "∀x (Chinese(x) → Asian(x))"
+}
+{
+  "id": "folio_tr_eth_001_p3",
+  "sentence": "A man is either Chinese or British.",
+
+  "predicates": {
+    "Chinese": 1,
+    "British": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "man"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a man",
+    "Translate the 'either...or...' into exclusive disjunction",
+    "Formulate Chinese(x) ⊕ British(x)"
+  ],
+
+  "fol_formula": "Chinese(x) ⊕ British(x)"
+}
+{
+  "id": "folio_tr_eth_001_p4",
+  "sentence": "All British are European.",
+
+  "predicates": {
+    "British": 1,
+    "European": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Introduce variable x",
+    "Translate 'All British are European' into implication",
+    "Formulate ∀x (British(x) → European(x))"
+  ],
+
+  "fol_formula": "∀x (British(x) → European(x))"
+}
+{
+  "id": "folio_tr_eth_001_p5",
+  "sentence": "All Spanish are European.",
+
+  "predicates": {
+    "Spanish": 1,
+    "European": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Introduce variable x",
+    "Translate 'All Spanish are European' into implication",
+    "Formulate ∀x (Spanish(x) → European(x))"
+  ],
+
+  "fol_formula": "∀x (Spanish(x) → European(x))"
+}
+{
+  "id": "folio_tr_eth_001_p6",
+  "sentence": "No Indian is European.",
+
+  "predicates": {
+    "Indian": 1,
+    "European": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "person"
+  },
+
+  "translation_steps": [
+    "Introduce variable x",
+    "Translate 'No Indian is European' into implication with negation",
+    "Formulate ∀x (Indian(x) → ¬European(x))"
+  ],
+
+  "fol_formula": "∀x (Indian(x) → ¬European(x))"
+}
+{
+  "id": "folio_tr_eth_001_p7",
+  "sentence": "Jessee is either both an Indian and a human, or neither an Indian nor a human.",
+
+  "predicates": {
+    "Indian": 1,
+    "Human": 1
+  },
+
+  "constants": {
+    "jesse": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Translate the 'either both ... or neither ...' into exclusive disjunction",
+    "Formulate (Indian(jesse) ∧ Human(jesse)) ⊕ (¬Indian(jesse) ∧ ¬Human(jesse))"
+  ],
+
+  "fol_formula": "(Indian(jesse) ∧ Human(jesse)) ⊕ (¬Indian(jesse) ∧ ¬Human(jesse))"
+}
+{
+  "id": "folio_tr_eth_001_p7",
+  "sentence": "Jessee is either both an Indian and a human, or neither an Indian nor a human.",
+
+  "predicates": {
+    "Indian": 1,
+    "Human": 1
+  },
+
+  "constants": {
+    "jesse": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Translate the 'either both ... or neither ...' into exclusive disjunction",
+    "Formulate (Indian(jesse) ∧ Human(jesse)) ⊕ (¬Indian(jesse) ∧ ¬Human(jesse))"
+  ],
+
+  "fol_formula": "(Indian(jesse) ∧ Human(jesse)) ⊕ (¬Indian(jesse) ∧ ¬Human(jesse))"
+}
+{
+  "id": "folio_tr_phil_001_p1",
+  "sentence": "Philatelic literature is divided into the following categories: Stamp catalogues, Periodicals, Auction catalogues, Books, Bibliographies, and Background Material",
+
+  "predicates": {
+    "PhilatelicLit": 1,
+    "Stamp": 1,
+    "Periodical": 1,
+    "Auction": 1,
+    "Book": 1,
+    "Bibliography": 1,
+    "Background": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "literature"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a piece of philatelic literature",
+    "Translate the categorization statement into disjunction",
+    "Formulate ∀x (PhilatelicLit(x) → (Stamp(x) ∨ Periodical(x) ∨ Auction(x) ∨ Book(x) ∨ Bibliography(x) ∨ Background(x)))"
+  ],
+
+  "fol_formula": "∀x (PhilatelicLit(x) → (Stamp(x) ∨ Periodical(x) ∨ Auction(x) ∨ Book(x) ∨ Bibliography(x) ∨ Background(x)))"
+}
+{
+  "id": "folio_tr_phil_001_p2",
+  "sentence": "Mort is not a Stamp catalogue.",
+
+  "predicates": {
+    "Stamp": 1
+  },
+
+  "constants": {
+    "mort": "literature"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Translate 'Mort is not a Stamp catalogue' into negation of predicate",
+    "Formulate ¬Stamp(mort)"
+  ],
+
+  "fol_formula": "¬Stamp(mort)"
+}
+{
+  "id": "folio_tr_phil_001_p3",
+  "sentence": "Mort is not a periodical, auction catalogue, bibliography, or background material.",
+
+  "predicates": {
+    "Periodical": 1,
+    "Auction": 1,
+    "Bibliography": 1,
+    "Background": 1
+  },
+
+  "constants": {
+    "mort": "literature"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Translate 'Mort is not any of these categories' into negation of disjunction",
+    "Formulate ¬(Periodical(mort) ∨ Auction(mort) ∨ Bibliography(mort) ∨ Background(mort))"
+  ],
+
+  "fol_formula": "¬(Periodical(mort) ∨ Auction(mort) ∨ Bibliography(mort) ∨ Background(mort))"
+}
+{
+  "id": "folio_tr_phil_001_p4",
+  "sentence": "Mort is a piece of Philatelic literature.",
+
+  "predicates": {
+    "PhilatelicLit": 1
+  },
+
+  "constants": {
+    "mort": "literature"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Translate 'Mort is a piece of Philatelic literature' directly into predicate",
+    "Formulate PhilatelicLit(mort)"
+  ],
+
+  "fol_formula": "PhilatelicLit(mort)"
+}
+{
+  "id": "folio_tr_dune_001_p1",
+  "sentence": "All imaginative processes are produced in human brains.",
+
+  "predicates": {
+    "ImaginativeProcess": 1,
+    "ProducedInHumanBrains": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "process"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for an imaginative process",
+    "Translate 'all imaginative processes are produced in human brains' into implication",
+    "Formulate ∀x (ImaginativeProcess(x) → ProducedInHumanBrains(x))"
+  ],
+
+  "fol_formula": "∀x (ImaginativeProcess(x) → ProducedInHumanBrains(x))"
+}
+{
+  "id": "folio_tr_dune_001_p2",
+  "sentence": "All science-fiction is from an imaginative process.",
+
+  "predicates": {
+    "ScienceFiction": 1,
+    "ImaginativeProcess": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "work"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a science-fiction work",
+    "Translate 'all science-fiction is from an imaginative process' into implication",
+    "Formulate ∀x (ScienceFiction(x) → ImaginativeProcess(x))"
+  ],
+
+  "fol_formula": "∀x (ScienceFiction(x) → ImaginativeProcess(x))"
+}
+{
+  "id": "folio_tr_dune_001_p3",
+  "sentence": "Either science-fiction or fact.",
+
+  "predicates": {
+    "ScienceFiction": 1,
+    "Fact": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "work"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a work",
+    "Translate 'either science-fiction or fact' into disjunction",
+    "Formulate ∀x (ScienceFiction(x) ∨ Fact(x))"
+  ],
+
+  "fol_formula": "∀x (ScienceFiction(x) ∨ Fact(x))"
+}
+{
+  "id": "folio_tr_dune_001_p4",
+  "sentence": "No facts are proven to be false.",
+
+  "predicates": {
+    "Fact": 1,
+    "ProvedToBeFalse": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "fact"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a fact",
+    "Translate 'no facts are proven to be false' into implication",
+    "Formulate ∀x (Fact(x) → ¬ProvedToBeFalse(x))"
+  ],
+
+  "fol_formula": "∀x (Fact(x) → ¬ProvedToBeFalse(x))"
+}
+{
+  "id": "folio_tr_dune_001_p5",
+  "sentence": "Dune is a science-fiction or proven to be false.",
+
+  "predicates": {
+    "ScienceFiction": 1,
+    "ProvedToBeFalse": 1
+  },
+
+  "constants": {
+    "dune": "work"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Translate 'Dune is a science-fiction or proven to be false' directly into disjunction",
+    "Formulate ScienceFiction(dune) ∨ ProvedToBeFalse(dune)"
+  ],
+
+  "fol_formula": "ScienceFiction(dune) ∨ ProvedToBeFalse(dune)"
+}
+{
+  "id": "folio_tr_john_001_p1",
+  "sentence": "All students are members of the university.",
+
+  "predicates": {
+    "Student": 1,
+    "MemberOfUniversity": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "student"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a student",
+    "Translate 'all students are members of the university' into implication",
+    "Formulate ∀x (Student(x) → MemberOfUniversity(x))"
+  ],
+
+  "fol_formula": "∀x (Student(x) → MemberOfUniversity(x))"
+}
+{
+  "id": "folio_tr_john_001_p2",
+  "sentence": "All graduate students are students.",
+
+  "predicates": {
+    "GraduateStudent": 1,
+    "Student": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "student"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a graduate student",
+    "Translate 'all graduate students are students' into implication",
+    "Formulate ∀x (GraduateStudent(x) → Student(x))"
+  ],
+
+  "fol_formula": "∀x (GraduateStudent(x) → Student(x))"
+}
+{
+  "id": "folio_tr_john_001_p3",
+  "sentence": "All PhD students are graduate students.",
+
+  "predicates": {
+    "PhDStudent": 1,
+    "GraduateStudent": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "student"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a PhD student",
+    "Translate 'all PhD students are graduate students' into implication",
+    "Formulate ∀x (PhDStudent(x) → GraduateStudent(x))"
+  ],
+
+  "fol_formula": "∀x (PhDStudent(x) → GraduateStudent(x))"
+}
+{
+  "id": "folio_tr_john_001_p4",
+  "sentence": "Some PhD students have high IQs.",
+
+  "predicates": {
+    "PhDStudent": 1,
+    "HighIQ": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "student"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a PhD student",
+    "Translate 'some PhD students have high IQs' into existential quantifier",
+    "Formulate ∃x (PhDStudent(x) ∧ HighIQ(x))"
+  ],
+
+  "fol_formula": "∃x (PhDStudent(x) ∧ HighIQ(x))"
+}
+{
+  "id": "folio_tr_john_001_p5",
+  "sentence": "If John is not a PhD student, then he is not a member of the university.",
+
+  "predicates": {
+    "PhDStudent": 1,
+    "MemberOfUniversity": 1
+  },
+
+  "constants": {
+    "john": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Translate the conditional sentence about John directly into implication",
+    "Formulate ¬PhDStudent(john) → ¬MemberOfUniversity(john)"
+  ],
+
+  "fol_formula": "¬PhDStudent(john) → ¬MemberOfUniversity(john)"
+}
+{
+  "id": "folio_tr_john_001_p6",
+  "sentence": "If John has a high IQ, then he is a PhD student or a graduate student.",
+
+  "predicates": {
+    "HighIQ": 1,
+    "PhDStudent": 1,
+    "GraduateStudent": 1
+  },
+
+  "constants": {
+    "john": "person"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Translate the conditional sentence about John with exclusive disjunction",
+    "Formulate HighIQ(john) → PhDStudent(john) ⊕ GraduateStudent(john)"
+  ],
+
+  "fol_formula": "HighIQ(john) → PhDStudent(john) ⊕ GraduateStudent(john)"
+}
+{
+  "id": "folio_tr_prius_001_p1",
+  "sentence": "All sports cars are loud.",
+
+  "predicates": {
+    "SportsCar": 1,
+    "LoudCar": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "car"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a car",
+    "Translate 'all sports cars are loud' into implication",
+    "Formulate ∀x (SportsCar(x) → LoudCar(x))"
+  ],
+
+  "fol_formula": "∀x (SportsCar(x) → LoudCar(x))"
+}
+{
+  "id": "folio_tr_prius_001_p2",
+  "sentence": "No loud cars are electric.",
+
+  "predicates": {
+    "LoudCar": 1,
+    "ElectricCar": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "car"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a car",
+    "Translate 'no loud cars are electric' into implication with negation",
+    "Formulate ∀x (LoudCar(x) → ¬ElectricCar(x))"
+  ],
+
+  "fol_formula": "∀x (LoudCar(x) → ¬ElectricCar(x))"
+}
+{
+  "id": "folio_tr_prius_001_p3",
+  "sentence": "If a car is a Ferrari, then it is a sports car.",
+
+  "predicates": {
+    "Ferrari": 1,
+    "SportsCar": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "car"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a car",
+    "Translate 'if a car is a Ferrari, then it is a sports car' into implication",
+    "Formulate ∀x (Ferrari(x) → SportsCar(x))"
+  ],
+
+  "fol_formula": "∀x (Ferrari(x) → SportsCar(x))"
+}
+{
+  "id": "folio_tr_prius_001_p4",
+  "sentence": "All cars made in Maranello are Ferrari",
+
+  "predicates": {
+    "MadeInMaranello": 1,
+    "Ferrari": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "car"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a car",
+    "Translate 'all cars made in Maranello are Ferrari' into implication",
+    "Formulate ∀x (MadeInMaranello(x) → Ferrari(x))"
+  ],
+
+  "fol_formula": "∀x (MadeInMaranello(x) → Ferrari(x))"
+}
+{
+  "id": "folio_tr_prius_001_p5",
+  "sentence": "If Prius is neither a sports car nor a loud car, then Prius is a Maranello-made car or a loud car.",
+
+  "predicates": {
+    "SportsCar": 1,
+    "LoudCar": 1,
+    "MadeInMaranello": 1
+  },
+
+  "constants": {
+    "prius": "car"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Translate the conditional sentence about Prius with disjunction and negation",
+    "Formulate ¬SportsCar(prius) ∨ ¬LoudCar(prius) → MadeInMaranello(prius) ∨ LoudCar(prius)"
+  ],
+
+  "fol_formula": "¬SportsCar(prius) ∨ ¬LoudCar(prius) → MadeInMaranello(prius) ∨ LoudCar(prius)"
+}
+{
+  "id": "folio_tr_avocado_001_p1",
+  "sentence": "All fruits sold in Boston are shipped from Columbia.",
+
+  "predicates": {
+    "SoldBoston": 1,
+    "ShippedFromColumbia": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "fruit"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a fruit",
+    "Translate 'all fruits sold in Boston are shipped from Columbia' into implication",
+    "Formulate ∀x (SoldBoston(x) → ShippedFromColumbia(x))"
+  ],
+
+  "fol_formula": "∀x (SoldBoston(x) → ShippedFromColumbia(x))"
+}
+{
+  "id": "folio_tr_avocado_001_p2",
+  "sentence": "Some fruits sold in New Haven are shipped from Mexico.",
+
+  "predicates": {
+    "SoldNewHaven": 1,
+    "ShippedFromMexico": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "fruit"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a fruit",
+    "Translate 'some fruits sold in New Haven are shipped from Mexico' as an existential quantifier",
+    "Formulate ∃x (SoldNewHaven(x) ∧ ShippedFromMexico(x))"
+  ],
+
+  "fol_formula": "∃x (SoldNewHaven(x) ∧ ShippedFromMexico(x))"
+}
+{
+  "id": "folio_tr_avocado_001_p3",
+  "sentence": "No fruits shipped from Columbia are fruits sold in New York.",
+
+  "predicates": {
+    "ShippedFromColumbia": 1,
+    "SoldNewYork": 1
+  },
+
+  "constants": {},
+
+  "variable_mapping": {
+    "x": "fruit"
+  },
+
+  "translation_steps": [
+    "Introduce variable x for a fruit",
+    "Translate 'no fruits shipped from Columbia are sold in New York' as implication with negation",
+    "Formulate ∀x (ShippedFromColumbia(x) → ¬SoldNewYork(x))"
+  ],
+
+  "fol_formula": "∀x (ShippedFromColumbia(x) → ¬SoldNewYork(x))"
+}
+{
+  "id": "folio_tr_avocado_001_p4",
+  "sentence": "Avocados are a kind of fruit sold in New York or Boston.",
+
+  "predicates": {
+    "SoldNewYork": 1,
+    "SoldBoston": 1
+  },
+
+  "constants": {
+    "avocado": "fruit"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Translate the sentence about avocado being sold in New York or Boston using disjunction",
+    "Formulate SoldNewYork(avocado) ∨ SoldBoston(avocado)"
+  ],
+
+  "fol_formula": "SoldNewYork(avocado) ∨ SoldBoston(avocado)"
+}
+{
+  "id": "folio_tr_avocado_001_p5",
+  "sentence": "Avocados are either shipped from Columbia and sold in New Haven, or neither shipped from Columbia nor sold in New Haven.",
+
+  "predicates": {
+    "ShippedFromColumbia": 1,
+    "SoldNewHaven": 1
+  },
+
+  "constants": {
+    "avocado": "fruit"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Translate the conditional/disjunctive sentence about avocado using XOR (⊕)",
+    "Formulate ¬(ShippedFromColumbia(avocado) ⊕ SoldNewHaven(avocado))"
+  ],
+
+  "fol_formula": "¬(ShippedFromColumbia(avocado) ⊕ SoldNewHaven(avocado))"
+}
+{
+  "id": "folio_tr_suduva_001_p1",
+  "sentence": "Sūduva Marijampolė holds the Lithuanian Supercup.",
+
+  "predicates": {
+    "Hold": 2
+  },
+
+  "constants": {
+    "suduva": "soccer_team",
+    "thelithuaniansupercup": "trophy"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify the subject and object: Sūduva Marijampolė and the Lithuanian Supercup",
+    "Translate the verb 'holds' as predicate Hold",
+    "Replace invalid characters like ū and ė by u and e, then formulate Hold(suduva, thelithuaniansupercup)"
+  ],
+
+  "fol_formula": "Hold(suduva, thelithuaniansupercup)"
+}
+{
+  "id": "folio_tr_suduva_001_p2",
+  "sentence": "Sūduva Marijampolė is a soccer team.",
+
+  "predicates": {
+    "SoccerTeam": 1
+  },
+
+  "constants": {
+    "suduva": "soccer_team"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify the subject: Sūduva Marijampolė",
+    "Translate 'is a soccer team' as unary predicate SoccerTeam",
+    "Formulate SoccerTeam(suduva)"
+  ],
+
+  "fol_formula": "SoccerTeam(suduva)"
+}
+{
+  "id": "folio_tr_ainderby_001_p1",
+  "sentence": "Ainderby Quernhow is a village and civil parish in the Hambleton District.",
+
+  "predicates": {
+    "Village": 1,
+    "CivilParish": 1,
+    "Hambleton": 1
+  },
+
+  "constants": {
+    "ainderbyquernhow": "place",
+    "hambleton": "district"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify the subject: Ainderby Quernhow",
+    "Translate 'is a village' as Village(ainderbyquernhow)",
+    "Translate 'is a civil parish' as CivilParish(ainderbyquernhow)",
+    "Translate 'in the Hambleton District' as Hambleton(ainderbyquernhow)"
+  ],
+
+  "fol_formula": "Village(ainderbyquernhow) ∧ CivilParish(ainderbyquernhow) ∧ Hambleton(ainderbyquernhow)"
+}
+{
+  "id": "folio_tr_ainderby_001_p2",
+  "sentence": "Hambleton District is in North Yorkshire.",
+
+  "predicates": {
+    "NorthYorkshire": 1
+  },
+
+  "constants": {
+    "hambleton": "district",
+    "northyorkshire": "region"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify the subject: Hambleton District",
+    "Translate 'is in North Yorkshire' as Hambleton(x) → NorthYorkshire(x)"
+  ],
+
+  "fol_formula": "Hambleton(x) → NorthYorkshire(x)"
+}
+{
+  "id": "folio_tr_ainderby_001_p3",
+  "sentence": "North Yorkshire is in England.",
+
+  "predicates": {
+    "England": 1
+  },
+
+  "constants": {
+    "northyorkshire": "region",
+    "england": "country"
+  },
+
+  "variable_mapping": {},
+
+  "translation_steps": [
+    "Identify the subject: North Yorkshire",
+    "Translate 'is in England' as NorthYorkshire(x) → England(x)"
+  ],
+
+  "fol_formula": "NorthYorkshire(x) → England(x)"
+}
