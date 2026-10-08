@@ -1,3 +1,3 @@
 ## Project Poster
 
-[View the Project Poster (PDF)](poster/poster.pdf)
+[View the Project Poster (PDF)](poster.pdf)
