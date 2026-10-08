@@ -1,3 +1,3 @@
 ## Project Poster
 
-[View the Project Poster (PDF)](VNAI_poster.pdf)
+[View the Project Poster (PDF)](VNAI_Poster.pdf)
