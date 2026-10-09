@@ -1,0 +1,380 @@
+(folio) Nam@macbook-air FOLIO % python run_translate_story_fix.py
+Loaded embedding model: BAAI/bge-small-en-v1.5
+Loading KB from data/translation-kb.json ...
+Loading cached story embeddings...
+28 stories ready.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+        - Avoid using `tokenizers` before the fork if possible
+        - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+        - Avoid using `tokenizers` before the fork if possible
+        - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+[0] Pred: Uncertain  | Gold: Uncertain
+[INFO] Fixed conclusion-FOL
+=== Parsing successfully ===
+[1] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[2] Pred: Uncertain  | Gold: False
+[3] Pred: Uncertain  | Gold: Uncertain
+[4] Pred: Uncertain  | Gold: Uncertain
+[5] Pred: Uncertain  | Gold: True
+[6] Pred: Uncertain  | Gold: True
+[7] Pred: Uncertain  | Gold: Uncertain
+[8] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[9] Pred: Uncertain  | Gold: True
+[10] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[11] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[12] Pred: True       | Gold: True
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[13] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[14] Pred: False      | Gold: False
+=== Parsing successfully ===
+[15] Pred: True       | Gold: True
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[16] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[17] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[18] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[19] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[20] Pred: Uncertain  | Gold: False
+[21] Pred: Uncertain  | Gold: True
+[22] Pred: Uncertain  | Gold: False
+[23] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[24] Pred: Uncertain  | Gold: True
+[25] Pred: Uncertain  | Gold: Uncertain
+[26] Pred: Uncertain  | Gold: Uncertain
+[27] Pred: Uncertain  | Gold: False
+[28] Pred: Uncertain  | Gold: True
+[29] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[30] Pred: True       | Gold: Uncertain
+[31] Pred: Uncertain  | Gold: True
+[32] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[33] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[34] Pred: Uncertain  | Gold: Uncertain
+[35] Pred: Uncertain  | Gold: False
+[WARN] Parser error is not in JSON format: b'Wrong number of arguments (1) passed to function (declare-fun Beethoven (U U) Bool) \narg: Composer\n'
+[36] Pred: Uncertain  | Gold: True
+[37] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[38] Pred: Uncertain  | Gold: False
+[39] Pred: Uncertain  | Gold: Uncertain
+[40] Pred: Uncertain  | Gold: True
+[41] Pred: Uncertain  | Gold: False
+[42] Pred: Uncertain  | Gold: True
+[WARN] Parser error is not in JSON format: b'Wrong number of arguments (1) passed to function (declare-fun FemaleRolandGarros2022Player (U U) Bool) \narg: x\n'
+[43] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[44] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[45] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[46] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[47] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[48] Pred: Uncertain  | Gold: Uncertain
+[49] Pred: Uncertain  | Gold: Uncertain
+[50] Pred: Uncertain  | Gold: False
+[51] Pred: Uncertain  | Gold: True
+[52] Pred: Uncertain  | Gold: False
+[53] Pred: Uncertain  | Gold: Uncertain
+[54] Pred: Uncertain  | Gold: True
+[55] Pred: Uncertain  | Gold: True
+[WARN] Parser error is not in JSON format: b'index out of bounds'
+[56] Pred: Uncertain  | Gold: False
+[57] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[58] Pred: Uncertain  | Gold: False
+[59] Pred: Uncertain  | Gold: Uncertain
+[60] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[61] Pred: Uncertain  | Gold: Uncertain
+[WARN] Parser error is not in JSON format: b'index out of bounds'
+[62] Pred: Uncertain  | Gold: Uncertain
+[63] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[64] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[65] Pred: Uncertain  | Gold: True
+[66] Pred: Uncertain  | Gold: True
+[67] Pred: Uncertain  | Gold: Uncertain
+[68] Pred: Uncertain  | Gold: True
+[69] Pred: Uncertain  | Gold: True
+[70] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[71] Pred: True       | Gold: Uncertain
+=== Parsing successfully ===
+[72] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[73] Pred: Uncertain  | Gold: True
+[74] Pred: Uncertain  | Gold: True
+[75] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[76] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[77] Pred: True       | Gold: True
+[ERROR] Translation/Retrieval failed: [StoryTranslatorRagLLM] Invalid JSON:
+{
+  "premises-FOL": [
+    "∀x (StudentJob(x) → NeedsMoneyForTuition(x))",
+    "∀x (OrderTakeoutFrequently(x) → StudentJob(x))",
+    "∃x (OrderTakeoutFrequently(x) ∨ DiningHallMealsAndRecipes(x))",
+    "∀x (DiningHallMealsAndRecipes(x) → NotPickyEater(x))",
+    "∀x (DiningHallMealsAndRecipes(x) → SpendTimeInDiningHalls(x))",
+    "∀x (StudentJob(x) ∧ NeedsMoneyForTuition(x) → ¬NotPickyEater(x) ∧ ¬NeedsMoneyForTuition(x))"
+  ],
+  "conclusion-FOL": "(∃x (OrderTakeoutFrequently(x) ∨ DiningHallMealsAndRecipes(x)) → ((¬NotPickyEater(x) ∨ SpendTimeInDiningHalls(x)) → ¬(StudentJob(x) ∧ NeedsMoneyForTuition(x))))"
+[78] Pred: Uncertain  | Gold: False
+[79] Pred: Uncertain  | Gold: False
+[80] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[81] Pred: False      | Gold: Uncertain
+=== Parsing successfully ===
+[82] Pred: False      | Gold: True
+=== Parsing successfully ===
+[83] Pred: Uncertain  | Gold: False
+[84] Pred: Uncertain  | Gold: Uncertain
+[85] Pred: Uncertain  | Gold: True
+[86] Pred: Uncertain  | Gold: False
+[WARN] Parser error is not in JSON format: b'Wrong number of arguments (1) passed to function (declare-fun GoodGuy (U U) Bool) \narg: x\n'
+[87] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[88] Pred: Uncertain  | Gold: True
+[89] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[90] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[91] Pred: True       | Gold: True
+=== Parsing successfully ===
+[92] Pred: Uncertain  | Gold: False
+[93] Pred: Uncertain  | Gold: False
+[94] Pred: Uncertain  | Gold: Uncertain
+[WARN] Parser error is not in JSON format: 'NoneType' object is not subscriptable
+[95] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[96] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[97] Pred: Uncertain  | Gold: False
+[INFO] Fixed conclusion-FOL
+=== Parsing successfully ===
+[98] Pred: True       | Gold: True
+[99] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[100] Pred: True       | Gold: True
+=== Parsing successfully ===
+[101] Pred: True       | Gold: False
+[102] Pred: Uncertain  | Gold: Uncertain
+[103] Pred: Uncertain  | Gold: False
+[104] Pred: Uncertain  | Gold: True
+[105] Pred: Uncertain  | Gold: True
+[ERROR] Translation/Retrieval failed: [StoryTranslatorRagLLM] Invalid JSON:
+{
+  "premises-FOL": [
+    "∃x (Develops(ets, x) ∧ GRE(x) ∧ In(x, unitedstates) ∧ For(x, k12andhighereducation))",
+    "∀y (∃z (Administers(ets, z) ∧ InternationalTest(z) ∧ (TOEFL(z) ∨ TOEIC(z) ∨ GRE(z) ∨ SubjectTests(z))) → y = z)",
+    "∃x (Develops(ets, x) ∧ StandardizedTest(x) ∧ In(x, unitedstates) ∧ For(x, k12andhighereducation))",
+    "∀y (∃z (Administers(ets, z) ∧ InternationalTest(z) ∧ (TOEFL(z) ∨ TOEIC(z) ∨ GRE(z) ∨ SubjectTests(z))) → y = z)",
+    "∃x (Develops(ets, x) ∧ StandardizedTest(x) ∧ In(x, unitedstates) ∧ For(x, k12andhighereducation))",
+    "∀y (∃z (Administers(ets, z) ∧ InternationalTest(z) ∧ (TOEFL(z) ∨ TOEIC(z) ∨ GRE(z) ∨ SubjectTests(z))) → y = z)",
+    "∃x (Develops(ets, x) ∧ StandardizedTest(x) ∧ In(x, unitedstates) ∧ For(x, k12andhighereducation))",
+    "∀y (∃z (Administers(ets, z) ∧ InternationalTest(z) ∧ (TOEFL(z) ∨ TOEIC(z) ∨ GRE(z) ∨ SubjectTests(z))) → y = z)",
+    "∃x (Develops(ets, x) ∧ StandardizedTest(x) ∧ In(x, unitedstates) ∧ For(x, k12andhighereducation))",
+    "∀y (∃z (Administers(ets, z) ∧ InternationalTest(z) ∧ (TOEFL(z) ∨ TOEIC(z) ∨ GRE(z) ∨ SubjectTests(z))) → y = z)",
+    "∃x (Develops(ets, x) ∧ StandardizedTest(x) ∧ In(x, unitedstates) ∧ For(x, k12andhighereducation))",
+    "∀y (∃z (Administers(ets, z) ∧ InternationalTest(z)
+[106] Pred: Uncertain  | Gold: True
+[107] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[108] Pred: False      | Gold: Uncertain
+[109] Pred: Uncertain  | Gold: False
+[110] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[111] Pred: Uncertain  | Gold: Uncertain
+[112] Pred: Uncertain  | Gold: True
+[113] Pred: Uncertain  | Gold: Uncertain
+[114] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[115] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[116] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[117] Pred: Uncertain  | Gold: Uncertain
+[118] Pred: Uncertain  | Gold: Uncertain
+[119] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[120] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[121] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[122] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[123] Pred: Uncertain  | Gold: False
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[124] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[125] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[126] Pred: True       | Gold: True
+=== Parsing successfully ===
+[127] Pred: Uncertain  | Gold: False
+[128] Pred: Uncertain  | Gold: False
+[129] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[130] Pred: Uncertain  | Gold: Uncertain
+[131] Pred: Uncertain  | Gold: True
+[132] Pred: Uncertain  | Gold: True
+[133] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[134] Pred: True       | Gold: Uncertain
+=== Parsing successfully ===
+[135] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[136] Pred: Uncertain  | Gold: Uncertain
+[137] Pred: Uncertain  | Gold: False
+[138] Pred: Uncertain  | Gold: True
+[139] Pred: Uncertain  | Gold: False
+[140] Pred: Uncertain  | Gold: Uncertain
+[141] Pred: Uncertain  | Gold: False
+[142] Pred: Uncertain  | Gold: True
+[143] Pred: Uncertain  | Gold: True
+[144] Pred: Uncertain  | Gold: Uncertain
+[145] Pred: Uncertain  | Gold: Uncertain
+[146] Pred: Uncertain  | Gold: Uncertain
+[147] Pred: Uncertain  | Gold: True
+[148] Pred: Uncertain  | Gold: True
+[149] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[150] Pred: True       | Gold: True
+[INFO] Fixed conclusion-FOL
+=== Parsing successfully ===
+[151] Pred: True       | Gold: Uncertain
+[152] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[153] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[154] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[155] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[156] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[157] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[158] Pred: Uncertain  | Gold: True
+[159] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[160] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[161] Pred: True       | Gold: True
+[WARN] Parser error is not in JSON format: b'index out of bounds'
+[162] Pred: Uncertain  | Gold: Uncertain
+[163] Pred: Uncertain  | Gold: False
+[164] Pred: Uncertain  | Gold: Uncertain
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[165] Pred: Uncertain  | Gold: False
+[166] Pred: Uncertain  | Gold: True
+[167] Pred: Uncertain  | Gold: True
+[168] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[169] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[170] Pred: Uncertain  | Gold: Uncertain
+[171] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[172] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[173] Pred: False      | Gold: Uncertain
+=== Parsing successfully ===
+[174] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[175] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[176] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[177] Pred: False      | Gold: False
+[178] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[179] Pred: False      | Gold: False
+[180] Pred: Uncertain  | Gold: False
+[181] Pred: Uncertain  | Gold: False
+[182] Pred: Uncertain  | Gold: Uncertain
+[183] Pred: Uncertain  | Gold: True
+[184] Pred: Uncertain  | Gold: False
+[185] Pred: Uncertain  | Gold: True
+[186] Pred: Uncertain  | Gold: False
+[187] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[188] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[189] Pred: Uncertain  | Gold: True
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[190] Pred: Uncertain  | Gold: False
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+=== Parsing successfully ===
+[191] Pred: Uncertain  | Gold: False
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[INFO] Fixed conclusion-FOL
+[192] Pred: Uncertain  | Gold: False
+[193] Pred: Uncertain  | Gold: False
+[194] Pred: Uncertain  | Gold: False
+[WARN] Parser error is not in JSON format: b'index out of bounds'
+[195] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[196] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[197] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[198] Pred: Uncertain  | Gold: True
+[199] Pred: Uncertain  | Gold: False
+[200] Pred: Uncertain  | Gold: False
+[201] Pred: Uncertain  | Gold: False
+[202] Pred: Uncertain  | Gold: Uncertain
+[203] Pred: Uncertain  | Gold: Uncertain
+
+Accuracy: 35/83 = 0.4217
+Ignored samples due to errors: 83
+
+Accuracy: 36.27%

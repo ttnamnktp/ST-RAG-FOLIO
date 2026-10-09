@@ -40,9 +40,9 @@ class TranslateStoryFixPredictor(BasePredictor):
 
             # 2️⃣ Translate to FOL
             fol_sample = self.translate_to_fol(sample, retrieved_examples)
-            print("=========== FOL ===========")
-            print(fol_sample)
-            print("=========== FOL ===========")
+            # print("=========== FOL ===========")
+            # print(fol_sample)
+            # print("=========== FOL ===========")
         except Exception as e:
             print(f"[ERROR] Translation/Retrieval failed: {e}")
             return "Uncertain"
@@ -60,7 +60,7 @@ class TranslateStoryFixPredictor(BasePredictor):
                 return result  # Nếu thành công, trả ngay
             except Exception as e:
                 error_msg = str(e)
-                print(f"[Attempt {attempt+1}] Failed: {error_msg}")
+                # print(f"[Attempt {attempt+1}] Failed: {error_msg}")
 
                 try:
                     error_dict = json.loads(error_msg)
@@ -89,15 +89,15 @@ class TranslateStoryFixPredictor(BasePredictor):
                 fixed_premise = self.fixer.fix(
                     fol_error=error_dict["error_line"],
                     error_msg=error_dict["error_msg"],
-                    premise=sample['premises'][idx]  # dùng đúng premise gốc
+                    premise=sample['premises'][idx] if 0 <= idx < len(sample['premises']) else ""  # dùng đúng premise gốc
                 )
-                fol_sample['premises-FOL'][idx] = fixed_premise
-                print(f"[INFO] Fixed premise-FOL at index {idx}")
+                # fol_sample['premises-FOL'][idx] = fixed_premise
+                # print(f"[INFO] Fixed premise-FOL at index {idx}")
                 attempt += 1
-                print("Current FOL sample:", fol_sample)
+                # print("Current FOL sample:", fol_sample)
 
         # Nếu hết số lần fix mà vẫn lỗi
-        print("[WARN] Maximum attempts reached, returning 'Uncertain'")
+        # print("[WARN] Maximum attempts reached, returning 'Uncertain'")
         return "Uncertain"
 
 

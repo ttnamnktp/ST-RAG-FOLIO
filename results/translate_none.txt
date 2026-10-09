@@ -1,0 +1,332 @@
+(folio) Nam@macbook-air FOLIO % python run_translate_predictor.py 
+Loaded embedding model: BAAI/bge-small-en-v1.5
+Loading KB from: data/folio-train.jsonl
+KB loaded: 1004 examples
+[0] Pred: Uncertain  | Gold: Uncertain
+[1] Pred: True       | Gold: True
+[2] Pred: False      | Gold: False
+[3] Pred: Uncertain  | Gold: Uncertain
+[4] Pred: Uncertain  | Gold: Uncertain
+[5] Pred: Uncertain  | Gold: True
+[6] Pred: Uncertain  | Gold: True
+[7] Pred: Uncertain  | Gold: Uncertain
+[8] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∀x (WildTurkey(x) → (x = EasternWT ∨ x = OsceolaWT ∨ x = GouldsWT ∨ x = MerriamsWT ∨ x = RioGrandeWT ∨ x = OcellatedWT))', 'Tom ≠ EasternWT', 'Tom ≠ OsceolaWT', 'Tom ≠ GouldsWT', 'Tom ≠ MerriamsWT', 'Tom ≠ RioGrandeWT', 'WildTurkey(Tom)'], 'conclusion-FOL': 'Tom = OcellatedWT'}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 26\nExpected LPAREN, got ID (EasternWT)", "error_line": "\u2200x (WildTurkey(x) \u2192 (x = EasternWT \u2228 x = OsceolaWT \u2228 x = GouldsWT \u2228 x = MerriamsWT \u2228 x = RioGrandeWT \u2228 x = OcellatedWT))", "pointer": "                         ^"}
+[9] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['∀x (WildTurkey(x) → (x = EasternWildTurkey ∨ x = OsceolaWildTurkey ∨ x = GouldsWildTurkey ∨ x = MerriamsWildTurkey ∨ x = RioGrandeWildTurkey ∨ x = OcellatedWildTurkey))', 'Tom ≠ EasternWildTurkey', 'Tom ≠ OsceolaWildTurkey', 'Tom ≠ GouldsWildTurkey', 'Tom ≠ MerriamsWildTurkey', 'Tom ≠ RioGrandeWildTurkey', 'WildTurkey(Tom)'], 'conclusion-FOL': 'Tom = EasternWildTurkey'}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 26\nExpected LPAREN, got ID (EasternWildTurkey)", "error_line": "\u2200x (WildTurkey(x) \u2192 (x = EasternWildTurkey \u2228 x = OsceolaWildTurkey \u2228 x = GouldsWildTurkey \u2228 x = MerriamsWildTurkey \u2228 x = RioGrandeWildTurkey \u2228 x = OcellatedWildTurkey))", "pointer": "                         ^"}
+[10] Pred: Uncertain  | Gold: False
+[11] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['JapaneseCompany(GameCompany) ∧ CreatedBy(GameCompany, TheLegendOfZelda)', '∀x (Game(x) → (InTop10List(x) ↔ JapaneseCompany(GameMaker(x))))', 'Game(g) ∧ SoldMoreThanOneMillionCopies(g) → InTop10List(g)', 'SoldMoreThanOneMillionCopies(TheLegendOfZelda)'], 'conclusion-FOL': 'InTop10List(TheLegendOfZelda)'}
+Error: {"index": 1, "error_msg": "Syntax error at line 1, column 58\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x (Game(x) \u2192 (InTop10List(x) \u2194 JapaneseCompany(GameMaker(x))))", "pointer": "                                                         ^"}
+[12] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['JapaneseGameCompany(Creator(TheLegendOfZelda))', '∀x (InTop10(x) → JapaneseGameCompany(Maker(x)))', '(SoldMoreThanOneMillionCopies(game) → InTop10(game))', 'SoldMoreThanOneMillionCopies(TheLegendOfZelda)'], 'conclusion-FOL': 'JapaneseGameCompany(Maker(FIFA22))'}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 28\nExpected RPAREN, got LPAREN (()", "error_line": "JapaneseGameCompany(Creator(TheLegendOfZelda))", "pointer": "                           ^"}
+[13] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['JapaneseCompany(GameCompany) ∧ CreatedBy(GameCompany, TheLegendOfZelda)', '∀x (Game(x) → (OnTop10List(x) ↔ JapaneseCompany(CompanyMade(x))))', '∀x ((Game(x) ∧ SoldMoreThanOneMillionCopies(x)) → OnTop10List(x))', 'SoldMoreThanOneMillionCopies(TheLegendOfZelda)'], 'conclusion-FOL': '¬OnTop10List(TheLegendOfZelda)'}
+Error: {"index": 1, "error_msg": "Syntax error at line 1, column 60\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x (Game(x) \u2192 (OnTop10List(x) \u2194 JapaneseCompany(CompanyMade(x))))", "pointer": "                                                           ^"}
+[14] Pred: Uncertain  | Gold: False
+[15] Pred: True       | Gold: True
+{'premises-FOL': ['∀x (Rabbit(x) → Cute(x))', '∃y Turtle(y)', '∀z (Animal(z) → (Rabbit(z) ⊕ Squirrel(z)))', '∀w (Skittish(w) → ¬Still(w))', '∀v (Squirrel(v) → Skittish(v))', 'Still(Rock)'], 'conclusion-FOL': 'Rock ↔ Turtle'}
+Error: {"index": -1, "error_msg": "Syntax error at line 1, column 6\nExpected LPAREN, got BIMPLIES (\u2194)", "error_line": "Rock \u2194 Turtle", "pointer": "     ^"}
+[16] Pred: Uncertain  | Gold: Uncertain
+[17] Pred: Uncertain  | Gold: Uncertain
+[18] Pred: Uncertain  | Gold: True
+[19] Pred: Uncertain  | Gold: True
+[20] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['Popular(NetflixShow(StrangerThings))', 'Popular(x) → BingeWatch(Karen, x)', 'BingeWatch(Karen, x) ↔ Download(Karen, x)', '¬Download(Karen, BlackMirror)', 'NetflixShow(BlackMirror)'], 'conclusion-FOL': 'Share(Karen, StrangerThings, Lisa)'}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 20\nExpected RPAREN, got LPAREN (()", "error_line": "Popular(NetflixShow(StrangerThings))", "pointer": "                   ^"}
+[21] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['Popular(NetflixShow(StrangerThings))', 'Popular(x) ∧ NetflixShow(x) → BingeWatch(Karen, x)', 'BingeWatch(Karen, x) ↔ Download(Karen, x)', '¬Download(Karen, BlackMirror)', 'NetflixShow(BlackMirror)'], 'conclusion-FOL': 'Popular(BlackMirror)'}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 20\nExpected RPAREN, got LPAREN (()", "error_line": "Popular(NetflixShow(StrangerThings))", "pointer": "                   ^"}
+[22] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['Popular(NetflixShow(StrangerThings))', 'Popular(x) → BingeWatch(Karen, x)', 'BingeWatch(Karen, x) ↔ Download(Karen, x)', '¬Download(Karen, BlackMirror)', 'NetflixShow(BlackMirror)'], 'conclusion-FOL': 'Share(Karen, Lisa, BlackMirror)'}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 20\nExpected RPAREN, got LPAREN (()", "error_line": "Popular(NetflixShow(StrangerThings))", "pointer": "                   ^"}
+[23] Pred: Uncertain  | Gold: Uncertain
+[24] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['Capital(Beijing, PeopleRepublicOfChina)', 'MostPopulousNationalCapitalCity(Beijing)', 'LocatedInNorthernChina(Beijing)', 'Hosted2008SummerOlympicsAndParalympicsGames(Beijing)', 'BeijingHasHostedBothSummerWinterOlympicsAndParalympics', 'ManyUniversitiesOfBeijingRankAmongBestAsiaPacificWorld'], 'conclusion-FOL': 'LocatedInSouthernChina(Beijing)'}
+Error: {"index": 4, "error_msg": "Unexpected end of input, expected LPAREN", "error_line": "BeijingHasHostedBothSummerWinterOlympicsAndParalympics", "pointer": "^"}
+[25] Pred: Uncertain  | Gold: Uncertain
+[26] Pred: Uncertain  | Gold: Uncertain
+[27] Pred: Uncertain  | Gold: False
+[28] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['∀x (Alien(x) → Extraterrestrial(x))', '∀x (FromMars(x) → Alien(x))', '∀x (Extraterrestrial(x) → ¬Human(x))', '∀x (FromEarth(x) → Human(x))', '(¬(Marvin ∈ Earth) ⊕ ¬(Marvin ∈ Mars))', '((¬FromEarth(Marvin)) → Extraterrestrial(Marvin))'], 'conclusion-FOL': '(¬FromMars(Marvin) → Human(Marvin))'}
+Error: {"index": 4, "error_msg": "Syntax error at line 1, column 13\nExpected LPAREN, got ID (Earth)", "error_line": "(\u00ac(Marvin \u2208 Earth) \u2295 \u00ac(Marvin \u2208 Mars))", "pointer": "            ^"}
+[29] Pred: Uncertain  | Gold: Uncertain
+[30] Pred: Uncertain  | Gold: Uncertain
+[31] Pred: Uncertain  | Gold: True
+[32] Pred: Uncertain  | Gold: False
+[33] Pred: Uncertain  | Gold: True
+[34] Pred: Uncertain  | Gold: Uncertain
+[35] Pred: Uncertain  | Gold: False
+[36] Pred: Uncertain  | Gold: True
+[37] Pred: Uncertain  | Gold: True
+[38] Pred: Uncertain  | Gold: False
+[39] Pred: Uncertain  | Gold: Uncertain
+[40] Pred: Uncertain  | Gold: True
+[41] Pred: Uncertain  | Gold: False
+[42] Pred: True       | Gold: True
+[43] Pred: Uncertain  | Gold: Uncertain
+[44] Pred: False      | Gold: False
+[45] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∀x (Season(x) → (x = Spring ∨ x = Summer ∨ x = Fall ∨ x = Winter))', '∀x ∀y ((Student(x) ∧ WantLongVacation(x)) → LoveSummerMost(x))', 'LoveSummerMost(emma)', 'FavoriteSeason(mia) ≠ FavoriteSeason(emma)', 'WantLongVacation(james)'], 'conclusion-FOL': '(WantLongVacation(james) → (FavoriteSeason(james) = Summer)'}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 22\nExpected LPAREN, got ID (Spring)", "error_line": "\u2200x (Season(x) \u2192 (x = Spring \u2228 x = Summer \u2228 x = Fall \u2228 x = Winter))", "pointer": "                     ^"}
+[46] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['∀x (Season(x) → (x = Spring ∨ x = Summer ∨ x = Fall ∨ x = Winter))', '∀x ∀y ((Student(x) ∧ WantLongVacation(x)) → LoveSummerMost(x))', 'LoveSummerMost(emma)', 'FavoriteSeason(mia) ≠ FavoriteSeason(emma)', 'WantLongVacation(james)'], 'conclusion-FOL': '(WantLongVacation(james) → (FavoriteSeason(james) = Fall))'}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 22\nExpected LPAREN, got ID (Spring)", "error_line": "\u2200x (Season(x) \u2192 (x = Spring \u2228 x = Summer \u2228 x = Fall \u2228 x = Winter))", "pointer": "                     ^"}
+[47] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['∀x (Season(x) → (x = Spring ∨ x = Summer ∨ x = Fall ∨ x = Winter))', '∀x ∀y ((Student(x) ∧ WantLongVacation(x)) → LoveSummerMost(x))', 'LoveSummerMost(emma)', 'FavoriteSeason(mia) ⊕ FavoriteSeason(emma)', 'WantLongVacation(james)'], 'conclusion-FOL': 'FavoriteSeason(mia) ↔ Spring'}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 22\nExpected LPAREN, got ID (Spring)", "error_line": "\u2200x (Season(x) \u2192 (x = Spring \u2228 x = Summer \u2228 x = Fall \u2228 x = Winter))", "pointer": "                     ^"}
+[48] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∀x (Digital(x) → ¬Analog(x))', '∀x (PrintedText(x) → Analog(x))', '∀x (StreamingService(x) → Digital(x))', '∀x ((HardcoverBook(x) → PrintedText(x)))', '(StreamingService(1984) → HardcoverBook(1984))'], 'conclusion-FOL': 'PrintedText(1984)'}
+Error: {"index": 4, "error_msg": "Syntax error at line 1, column 23\nExpected ID, got RPAREN ())", "error_line": "(StreamingService(1984) \u2192 HardcoverBook(1984))", "pointer": "                      ^"}
+[49] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∀x (DigitalMedia(x) → ¬Analog(x))', '∀x (PrintedText(x) → Analog(x))', '∀x (StreamingService(x) → DigitalMedia(x))', '∀x (HardcoverBook(x) → PrintedText(x))', '(StreamingService(1984) → HardcoverBook(1984))'], 'conclusion-FOL': 'StreamingService(1984)'}
+Error: {"index": 4, "error_msg": "Syntax error at line 1, column 23\nExpected ID, got RPAREN ())", "error_line": "(StreamingService(1984) \u2192 HardcoverBook(1984))", "pointer": "                      ^"}
+[50] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['∀x (DigitalMedia(x) → ¬Analog(x))', '∀x (PrintedText(x) → Analog(x))', '∀x (StreamingService(x) → DigitalMedia(x))', '∀x ((HardcoverBook(x) → PrintedText(x)))', '(StreamingService(1984) → HardcoverBook(1984))'], 'conclusion-FOL': '¬StreamingService(1984)'}
+Error: {"index": 4, "error_msg": "Syntax error at line 1, column 23\nExpected ID, got RPAREN ())", "error_line": "(StreamingService(1984) \u2192 HardcoverBook(1984))", "pointer": "                      ^"}
+[51] Pred: Uncertain  | Gold: True
+[52] Pred: Uncertain  | Gold: False
+[53] Pred: Uncertain  | Gold: Uncertain
+[54] Pred: True       | Gold: True
+[55] Pred: True       | Gold: True
+[56] Pred: Uncertain  | Gold: False
+[57] Pred: Uncertain  | Gold: Uncertain
+[58] Pred: Uncertain  | Gold: False
+[59] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['City(Billings) ∧ InState(Billings, Montana)', 'InState(Butte, Montana) ∧ InState(Helena, Montana) ∧ InState(Missoula, Montana)', 'InSameState(WhiteSulphurSprings, Butte) → (InState(WhiteSulphurSprings, X) ∧ InState(Butte, X))', '¬City(Pierre) ∨ ¬InState(Pierre, Montana)', 'City(x) ∧ InState(x, Butte) → ¬InState(x, Pierre)'], 'conclusion-FOL': '(City(Missoula) ∧ InState(Missoula, X)) → (X = Montana)'}
+Error: {"index": -1, "error_msg": "Syntax error at line 1, column 48\nExpected LPAREN, got ID (Montana)", "error_line": "(City(Missoula) \u2227 InState(Missoula, X)) \u2192 (X = Montana)", "pointer": "                                               ^"}
+[60] Pred: Uncertain  | Gold: True
+[61] Pred: Uncertain  | Gold: Uncertain
+[62] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∀x (Cow(x) → Bovine(x))', '∃y (Pet(y) ∧ Cow(y))', '∀z (Bovine(z) → Domesticated(z))', '∀w (Domesticated(w) → ¬Alligator(w))', 'Alligator(ted)'], 'conclusion-FOL': '(Ted ⊕ Pet(ted))'}
+Error: {"index": -1, "error_msg": "Syntax error at line 1, column 6\nExpected LPAREN, got XOR (\u2295)", "error_line": "(Ted \u2295 Pet(ted))", "pointer": "     ^"}
+[63] Pred: Uncertain  | Gold: Uncertain
+[64] Pred: Uncertain  | Gold: False
+[65] Pred: True       | Gold: True
+{'premises-FOL': ['University(Yale) ∧ Private(Yale) ∧ IvyLeague(Yale) ∧ Research(Yale)', 'MovedToNewHaven(Yale, 1716)', 'Endowment(Yale, 42.3BillionDollars)', 'OrganizedInto(Yale, 27CollegesAndSchools)', 'ResidentialCollege(BenjaminFranklin) ∧ ResidentialCollege(Berkeley) ∧ ResidentialCollege(Branford) ∧ ResidentialCollege(Davenport) ∧ ResidentialCollege(EzraStiles) ∧ ResidentialCollege(GraceHopper) ∧ ResidentialCollege(JonathanEdwards) ∧ ResidentialCollege(Morse) ∧ ResidentialCollege(PauliMurray) ∧ ResidentialCollege(Pierson) ∧ ResidentialCollege(Saybrook) ∧ ResidentialCollege(Silliman) ∧ ResidentialCollege(TimothyDwight) ∧ ResidentialCollege(Trumbull)'], 'conclusion-FOL': '(University(Yale) ∧ Private(Yale) ∧ IvyLeague(Yale) ∧ Research(Yale)) → MovedToNewHaven(Yale, 1716)'}
+Error: {"index": 1, "error_msg": "Syntax error at line 1, column 27\nExpected ID, got RPAREN ())", "error_line": "MovedToNewHaven(Yale, 1716)", "pointer": "                          ^"}
+[66] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['University(Yale) ∧ Private(Yale) ∧ IvyLeague(Yale) ∧ Research(Yale)', 'MovedToNewHaven(Yale, 1716)', 'Endowment(Yale, 42.3BillionDollars)', 'OrganizedInto(Yale, 27ConstituentCollegesAndSchools)', 'ListResidentialCollegesAtYale(BenjaminFranklinCollege) ∧ ListResidentialCollegesAtYale(BerkeleyCollege) ∧ ListResidentialCollegesAtYale(BranfordCollege) ∧ ListResidentialCollegesAtYale(DavenportCollege) ∧ ListResidentialCollegesAtYale(EzraStilesCollege) ∧ ListResidentialCollegesAtYale(GraceHopperCollege) ∧ ListResidentialCollegesAtYale(JonathanEdwardsCollege) ∧ ListResidentialCollegesAtYale(MorseCollege) ∧ ListResidentialCollegesAtYale(PauliMurrayCollege) ∧ ListResidentialCollegesAtYale(PiersonCollege) ∧ ListResidentialCollegesAtYale(SaybrookCollege) ∧ ListResidentialCollegesAtYale(SillimanCollege) ∧ ListResidentialCollegesAtYale(TimothyDwightCollege) ∧ ListResidentialCollegesAtYale(TrumbullCollege)'], 'conclusion-FOL': '(Endowment(Yale, 42.3BillionDollars) → LargestUniversityEndowment(Yale))'}
+Error: {"index": 1, "error_msg": "Syntax error at line 1, column 27\nExpected ID, got RPAREN ())", "error_line": "MovedToNewHaven(Yale, 1716)", "pointer": "                          ^"}
+[67] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['University(Yale) ∧ Private(Yale) ∧ IvyLeague(Yale) ∧ Research(Yale)', 'MovedToNewHaven(Yale, 1716)', 'Endowment(Yale, 42.3BillionDollars)', 'OrganizedInto(Yale, 27ConstituentCollegesAndSchools)', 'ResidentialCollege(BenjaminFranklinCollege) ∧ ResidentialCollege(BerkeleyCollege) ∧ ResidentialCollege(BranfordCollege) ∧ ResidentialCollege(DavenportCollege) ∧ ResidentialCollege(EzraStilesCollege) ∧ ResidentialCollege(GraceHopperCollege) ∧ ResidentialCollege(JonathanEdwardsCollege) ∧ ResidentialCollege(MorseCollege) ∧ ResidentialCollege(PauliMurrayCollege) ∧ ResidentialCollege(PiersonCollege) ∧ ResidentialCollege(SaybrookCollege) ∧ ResidentialCollege(SillimanCollege) ∧ ResidentialCollege(TimothyDwightCollege) ∧ ResidentialCollege(TrumbullCollege)'], 'conclusion-FOL': 'ResidentialCollege(PiersonCollege)'}
+Error: {"index": 1, "error_msg": "Syntax error at line 1, column 27\nExpected ID, got RPAREN ())", "error_line": "MovedToNewHaven(Yale, 1716)", "pointer": "                          ^"}
+[68] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['Series(Badults) ∧ BritishSitcom(Badults)', 'StarringMembersOfPappys(Badults)', 'PilotedInJuly2013OnBBCThree(Badults)', 'WorkingTitleTheSecretDudeSociety(Badults)', 'ScriptEditorForBadults(AndrewCollins)'], 'conclusion-FOL': 'ScriptEditorForSeriesWithWorkingTitleAndrewCollins ↔ WorkingTitleTheSecretDudeSociety(Badults)'}
+Error: {"index": -1, "error_msg": "Syntax error at line 1, column 52\nExpected LPAREN, got BIMPLIES (\u2194)", "error_line": "ScriptEditorForSeriesWithWorkingTitleAndrewCollins \u2194 WorkingTitleTheSecretDudeSociety(Badults)", "pointer": "                                                   ^"}
+[69] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['∀x (Badults(x) → MemberOfPappys(StarringIn(x)))', '∃y (PilotedOn(Badults, y) ∧ Month(y) = July ∧ Year(y) = 2013 ∧ Channel(y) = BBCThree)', '∀z (WorkingTitle(z, Badults) ↔ z = TheSecretDudeSociety)', '∀w (ScriptEditor(w, Badults) → w = AndrewCollins)'], 'conclusion-FOL': '(MemberOfPappys(x) ∧ StarringIn(x)) → ¬(PilotedOn(x, BBCTwo) ∨ PilotedOn(x, BBCThree))'}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 43\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x (Badults(x) \u2192 MemberOfPappys(StarringIn(x)))", "pointer": "                                          ^"}
+[70] Pred: Uncertain  | Gold: False
+[71] Pred: Uncertain  | Gold: Uncertain
+[72] Pred: False      | Gold: False
+[73] Pred: True       | Gold: True
+[74] Pred: True       | Gold: True
+[75] Pred: Uncertain  | Gold: False
+[76] Pred: Uncertain  | Gold: Uncertain
+[77] Pred: Uncertain  | Gold: True
+[78] Pred: True       | Gold: False
+[79] Pred: False      | Gold: False
+[80] Pred: True       | Gold: True
+[81] Pred: Uncertain  | Gold: Uncertain
+[82] Pred: True       | Gold: True
+[83] Pred: False      | Gold: False
+{'premises-FOL': ['∀x (ListedInYelpRecommendations(x) → ¬ManyNegativeReviews(x))', '∀x (RatingGreaterThan9(x) → ListedInYelpRecommendations(x))', '∃x (¬ProvidesTakeOutService(x) ∧ ManyNegativeReviews(x))', '∀x (PopularAmongResidents(x) → RatingGreaterThan9(x))', 'Subway ⊕ (RatingGreaterThan9(Subway) ∨ PopularAmongResidents(Subway))'], 'conclusion-FOL': '(ProvidesTakeOutService(Subway) ∧ ManyNegativeReviews(Subway)) → (RatingGreaterThan9(Subway) ∧ ¬ProvidesTakeOutService(Subway))'}
+Error: {"index": 4, "error_msg": "Syntax error at line 1, column 8\nExpected LPAREN, got XOR (\u2295)", "error_line": "Subway \u2295 (RatingGreaterThan9(Subway) \u2228 PopularAmongResidents(Subway))", "pointer": "       ^"}
+[84] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∀x (ListedInYelpRecommendations(x) → ¬ManyNegativeReviews(x))', '∀x (RatingGreaterThanNine(x) → ListedInYelpRecommendations(x))', '∃y (¬ProvidesTakeOutService(y) ∧ ManyNegativeReviews(y))', '∀z (PopularAmongResidents(z) → RatingGreaterThanNine(z))', 'Subway ⊕ (RatingGreaterThanNine(Subway) ∨ PopularAmongResidents(Subway))'], 'conclusion-FOL': '(ProvidesTakeOutService(Subway) ∧ ¬ManyNegativeReviews(Subway))'}
+Error: {"index": 4, "error_msg": "Syntax error at line 1, column 8\nExpected LPAREN, got XOR (\u2295)", "error_line": "Subway \u2295 (RatingGreaterThanNine(Subway) \u2228 PopularAmongResidents(Subway))", "pointer": "       ^"}
+[85] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['∀x (ListedInYelpRecommendations(x) → ¬ManyNegativeReviews(x))', '∀x (RatingGreaterThan9(x) → ListedInYelpRecommendations(x))', '∃y (¬ProvidesTakeOutService(y) ∧ ManyNegativeReviews(y))', '∀z (PopularAmongResidents(z) → RatingGreaterThan9(z))', 'Subway ⊕ ¬(RatingGreaterThan9(Subway) ∨ PopularAmongResidents(Subway))'], 'conclusion-FOL': '¬ProvidesTakeOutService(Subway)'}
+Error: {"index": 4, "error_msg": "Syntax error at line 1, column 8\nExpected LPAREN, got XOR (\u2295)", "error_line": "Subway \u2295 \u00ac(RatingGreaterThan9(Subway) \u2228 PopularAmongResidents(Subway))", "pointer": "       ^"}
+[86] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['∀x (SuperheroMovie(x) → Win(GoodGuy(x)))', 'SuperheroMovie(TheSurprisingAdventuresOfSirDigbyChickenCaesar)', '∀x ∀y ((GoodGuy(x) ∧ BadGuy(y)) → Fight(x, y))', 'Fight(SirDigby, Nemesis(SirDigby))', '∀x (NamedAfterCharacter(x) → GoodGuy(Character(x)))', 'NamedAfterCharacter(TheSurprisingAdventuresOfSirDigbyChickenCaesar)', '∀x ∀y ((Win(x) ∧ Fight(x, y)) → Lose(y))', '∀x (NamedAfterCharacter(x) → AppearsInMovie(Character(x), x))'], 'conclusion-FOL': '(Fight(SirDigby, Nemesis(SirDigby)) → Lose(Nemesis(SirDigby)))'}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 36\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x (SuperheroMovie(x) \u2192 Win(GoodGuy(x)))", "pointer": "                                   ^"}
+[87] Pred: Uncertain  | Gold: True
+[88] Pred: Uncertain  | Gold: True
+[89] Pred: Uncertain  | Gold: True
+[90] Pred: Uncertain  | Gold: Uncertain
+[91] Pred: True       | Gold: True
+[92] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowedPets(x))', '∀x (RentApartmentInManagedBuilding(x) → DepositRequired(x))', '∀x (DepositRequired(x) → (DepositEqualMonthRent(x) ∨ DepositMoreThanMonthRent(x)))', "Fluffy(Tom'sCat)", 'Cats(Pets)', 'ManagedBuilding(OliveGarden)', 'MonthlyRentAt(OliveGarden, 2000)', '(TomWillRentApartmentInManagedBuilding ↔ (AllowedToMoveWithPet(Fluffy) ∧ DepositNoMoreThan1500))', '2000 > 1500'], 'conclusion-FOL': 'TomWillRentApartmentInManagedBuilding(OliveGarden)'}
+Error: {"index": 3, "error_msg": "Syntax error at line 1, column 12\nExpected RPAREN, got ID (sCat)", "error_line": "Fluffy(Tom'sCat)", "pointer": "           ^"}
+[93] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['∃x (ManagedBuilding(x) ∧ ∃y (Pet(y) ∧ AllowedIn(x, y)))', '∀x (RentApartment(x) → DepositRequired(x))', '∀x (DepositRequired(x) → (SecurityDeposit(x) = OneMonthRent(x) ∨ SecurityDeposit(x) > OneMonthRent(x)))', 'Fluffy(cat(Tom))', '∀x (Cat(x) → Pet(x))', 'ManagedBuilding(OliveGarden)', 'OneMonthRent(OliveGarden, 2000)', '(TomRentsApartmentInManagedBuilding(Tom) ↔ (AllowedToMoveWithPet(Tom, Fluffy) ∧ SecurityDeposit(Tom) ≤ 1500))', '2000 > 1500'], 'conclusion-FOL': 'AllowedToMoveWithPet(Tom, Fluffy)'}
+Error: {"index": 2, "error_msg": "Syntax error at line 1, column 48\nExpected RPAREN, got ID (OneMonthRent)", "error_line": "\u2200x (DepositRequired(x) \u2192 (SecurityDeposit(x) = OneMonthRent(x) \u2228 SecurityDeposit(x) > OneMonthRent(x)))", "pointer": "                                               ^"}
+[94] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∃x (ManagedBuilding(x) ∧ AllowedPets(x))', '∀x (RentApartment(x) → DepositRequired(x))', '∀x (DepositRequired(x) → (EqualOrMore(Deposit(x), Rent(x))))', 'Fluffy(Cat(Tom))', 'Cats(Pets)', 'ManagedBuilding(OliveGarden)', 'MonthlyRent(OliveGarden, 2000)', '(Tom(RentApartment(OliveGarden) ↔ AllowedPets(Fluffy))) ∧ (Deposit(OliveGarden) ≤ 1500)', 'MoreThan(2000, 1500)'], 'conclusion-FOL': 'Either(Deposit(OliveGarden), 2000) ∨ MoreOrEqual(Deposit(OliveGarden))'}
+Error: {"index": 2, "error_msg": "Syntax error at line 1, column 46\nExpected RPAREN, got LPAREN (()", "error_line": "\u2200x (DepositRequired(x) \u2192 (EqualOrMore(Deposit(x), Rent(x))))", "pointer": "                                             ^"}
+[95] Pred: Uncertain  | Gold: True
+[96] Pred: Uncertain  | Gold: Uncertain
+[97] Pred: Uncertain  | Gold: False
+[98] Pred: True       | Gold: True
+[99] Pred: Uncertain  | Gold: Uncertain
+[100] Pred: True       | Gold: True
+[101] Pred: False      | Gold: False
+[102] Pred: Uncertain  | Gold: Uncertain
+[103] Pred: Uncertain  | Gold: False
+[104] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['Cost(GRE_test, 205)', '∀x (FinancialAid(x) ↔ ProveEconomicHardship(x))', '∀x (ProveEconomicHardship(x) → EconomicHardship(x))', 'LivesInSingleParentFamily(Tom)', "UnemployedForMoreThanAYear(Tom's_dad)"], 'conclusion-FOL': '(FinancialAid(Tom) ∨ ¬Tom)'}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 19\nExpected ID, got RPAREN ())", "error_line": "Cost(GRE_test, 205)", "pointer": "                  ^"}
+[105] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['Cost(GRE_test, 205)', '∀x (FinancialAid(x) → EconomicHardship(x))', 'EconomicHardship(Tom)', 'Unemployed(Dad(Tom))'], 'conclusion-FOL': 'Cost(GRE_test, C) ∧ C < 300'}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 19\nExpected ID, got RPAREN ())", "error_line": "Cost(GRE_test, 205)", "pointer": "                  ^"}
+[106] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['Cost(GRE_test, 205)', '∀x (FinancialAid(x) → ProveEconomicHardship(x))', '∀x (ProveEconomicHardship(x) ↔ EconomicHardship(x))', 'LivesInSingleParentFamily(Tom)', "UnemployedForMoreThanAYear(Tom's_dad)"], 'conclusion-FOL': '¬FinancialAid(GRE_test)'}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 19\nExpected ID, got RPAREN ())", "error_line": "Cost(GRE_test, 205)", "pointer": "                  ^"}
+[107] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['∀x (SpillFood(x) → (¬TidySpaceConsistently(x) ∧ ¬EnjoyCleaningProcess(x)))', '∀x ((Foody(x) ∧ GoOutFrequently(x)) → SpillFood(x))', '∀x ((OnlyChild(x) ∧ NoSiblings(x)) → (TidySpaceConsistently(x) ∧ EnjoyCleaningProcess(x)))', '∀x ((BusyParents(x) ∧ RegularJobs(x)) → OnlyChild(x)', '∀x (HighNetIncomeHousehold(x) → BusyParents(x))', '(SpillFood(peter) ∧ OnlyChild(peter) ∧ NoSiblings(peter)) ⊕ (¬SpillFood(peter) ∧ ¬OnlyChild(peter) ∧ ¬NoSiblings(peter))'], 'conclusion-FOL': 'TidySpaceConsistently(peter) ∧ EnjoyCleaningProcess(peter)'}
+Error: {"index": 3, "error_msg": "Unexpected end of input, expected RPAREN", "error_line": "\u2200x ((BusyParents(x) \u2227 RegularJobs(x)) \u2192 OnlyChild(x)", "pointer": "                                                   ^"}
+[108] Pred: Uncertain  | Gold: Uncertain
+[109] Pred: Uncertain  | Gold: False
+[110] Pred: False      | Gold: True
+[111] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['(MountainRange(PicurisMountains) ∧ (Location(PicurisMountains, NewMexico) ∨ Location(PicurisMountains, Texas)))', 'Visited(JuanDeOnate, PicurisMountains)', 'Donated(MiningSite(HardingPegmatiteMine)) ∧ LocatedIn(HardingPegmatiteMine, PicurisMountains)', '¬∃x (MountainRange(x) ∧ Location(x, Texas) ∧ ∃y (LocatedIn(y, x) ∧ Donated(y)))'], 'conclusion-FOL': '(Visited(JuanDeOnate, PicurisMountains) → (Location(PicurisMountains, NewMexico) ∧ MountainRange(PicurisMountains)))'}
+Error: {"index": 2, "error_msg": "Syntax error at line 1, column 19\nExpected RPAREN, got LPAREN (()", "error_line": "Donated(MiningSite(HardingPegmatiteMine)) \u2227 LocatedIn(HardingPegmatiteMine, PicurisMountains)", "pointer": "                  ^"}
+[112] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['(MountainRange(PicurisMountains) ∨ MountainRangeInTexas(PicurisMountains))', 'Visited(JuanDeOnate, PicurisMountains)', 'Donated(MiningSite(HardingPegmatiteMine), HardingPegmatiteMine)', '¬(MountainRangeInTexas(x) ∧ HasMines(x) ∧ Donated(y, x))'], 'conclusion-FOL': '(Visited(JuanDeOnate, PicurisMountains) ∨ MountainRangeInTexas(PicurisMountains)) → Visited(JuanDeOnate, PicurisMountains)'}
+Error: {"index": 2, "error_msg": "Syntax error at line 1, column 19\nExpected RPAREN, got LPAREN (()", "error_line": "Donated(MiningSite(HardingPegmatiteMine), HardingPegmatiteMine)", "pointer": "                  ^"}
+[113] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['(MountainRange(PicurisMountains) ∧ (Location(PicurisMountains, NewMexico) ∨ Location(PicurisMountains, Texas)))', 'Visited(JuanDeOnate, PicurisMountains)', 'Donated(Mine(HardingPegmatiteMine)) ∧ LocatedIn(HardingPegmatiteMine, PicurisMountains)', '¬∃x (MountainRange(x) ∧ Location(x, Texas) ∧ ∃y (LocatedIn(y, x) ∧ Donated(y)))'], 'conclusion-FOL': '(Location(PicurisMountains, NewMexico) → ¬Donated(Mine(HardingPegmatiteMine)))'}
+Error: {"index": 2, "error_msg": "Syntax error at line 1, column 13\nExpected RPAREN, got LPAREN (()", "error_line": "Donated(Mine(HardingPegmatiteMine)) \u2227 LocatedIn(HardingPegmatiteMine, PicurisMountains)", "pointer": "            ^"}
+[114] Pred: Uncertain  | Gold: False
+[115] Pred: Uncertain  | Gold: False
+[116] Pred: Uncertain  | Gold: True
+[117] Pred: Uncertain  | Gold: Uncertain
+[118] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['NamedAfter(BarutinCove, Barutin)', 'LocatedOn(BarutinCove, SouthwestCoastOfSnowIsland)', 'Includes(SouthShetlandIslands, SnowIsland)', 'Includes(SouthShetlandIslands, GreenwichIsland)', 'Includes(SouthShetlandIslands, DeceptionIsland)', 'PartOf(SouthShetlandIslands, Antarctica)', '(LocatedIn(A, B) ∧ LocatedIn(B, C)) → LocatedIn(A, C)'], 'conclusion-FOL': '∃x (Cove(x) ∧ NamedAfter(x, Barutin) ∧ PartOf(LocatedOn(x), Antarctica))'}
+Error: {"index": -1, "error_msg": "Syntax error at line 1, column 56\nExpected RPAREN, got LPAREN (()", "error_line": "\u2203x (Cove(x) \u2227 NamedAfter(x, Barutin) \u2227 PartOf(LocatedOn(x), Antarctica))", "pointer": "                                                       ^"}
+[119] Pred: Uncertain  | Gold: True
+[120] Pred: Uncertain  | Gold: False
+[121] Pred: Uncertain  | Gold: Uncertain
+[122] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∀x (TransportMultiplePassengers(x) → ¬Empty(x))', '∀x (Airline(x) → TransportMultiplePassengers(x))', '∀x (Plane(x) → Empty(x))', '∀x (Boeing707(x) → Plane(x))', '(¬Airline(Greyhound) → ∀x (GreyhoundPlane(x) → ¬Airline(x)))'], 'conclusion-FOL': 'Greyhound ⊕ Boeing707(Greyhound)'}
+Error: {"index": -1, "error_msg": "Syntax error at line 1, column 11\nExpected LPAREN, got XOR (\u2295)", "error_line": "Greyhound \u2295 Boeing707(Greyhound)", "pointer": "          ^"}
+[123] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['∀x (TransportMultiplePassengers(x) → ¬Empty(x))', '∀x (Airline(x) → TransportMultiplePassengers(x))', '∀x (Plane(x) → Empty(x))', '∀x (Boeing707(x) → Plane(x))', '(¬Airline(Greyhound) → ∀x (GreyhoundPlane(x) → ¬Airline(x)))'], 'conclusion-FOL': 'Greyhound ⊕ Boeing707(Greyhound)'}
+Error: {"index": -1, "error_msg": "Syntax error at line 1, column 11\nExpected LPAREN, got XOR (\u2295)", "error_line": "Greyhound \u2295 Boeing707(Greyhound)", "pointer": "          ^"}
+[124] Pred: Uncertain  | Gold: True
+[125] Pred: Uncertain  | Gold: Uncertain
+[126] Pred: Uncertain  | Gold: True
+[127] Pred: Uncertain  | Gold: False
+[128] Pred: Uncertain  | Gold: False
+[129] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['∀x (Wedding(x) → HasChild(x))', '∀x (TravelToParisForHoneymoon(x) → Wedding(x))', '∀x ((JulyWedding(x) ∧ Wedding(x)) → TravelToParisForHoneymoon(x))', '∃x (WellAttended(Wedding(x)) ∧ JulyWedding(x))', '(HasChild(john) → ¬TravelToParisForHoneymoon(john) ∧ ¬Wedding(john))', '(WellAttended(Wedding(john)) → (JulyWedding(john) ∨ TravelToParisForHoneymoon(john)))'], 'conclusion-FOL': 'HasChild(john)'}
+Error: {"index": 3, "error_msg": "Syntax error at line 1, column 25\nExpected RPAREN, got LPAREN (()", "error_line": "\u2203x (WellAttended(Wedding(x)) \u2227 JulyWedding(x))", "pointer": "                        ^"}
+[130] Pred: Uncertain  | Gold: Uncertain
+[131] Pred: True       | Gold: True
+[132] Pred: Uncertain  | Gold: True
+[133] Pred: Uncertain  | Gold: Uncertain
+[134] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∀x (Plunger(x) → Suck(x))', '∀x (Vacuum(x) → Suck(x))', '∀x (Vampire(x) → Suck(x))', 'Space = Vacuum(some_space)', '∀x (Duster(x) ∧ HouseholdAppliance(x) → ¬Suck(x))'], 'conclusion-FOL': '(Vacuum(some_space) → Suck(some_space))'}
+Error: {"index": 3, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got ID (Vacuum)", "error_line": "Space = Vacuum(some_space)", "pointer": "        ^"}
+[135] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['∀x (Plunger(x) → Suck(x))', '∀x (Vacuum(x) → Suck(x))', '∀x (Vampire(x) → Suck(x))', 'Space ⊕ Vacuum(Space)', '∀x (Duster(x) ↔ HouseholdAppliance(x) ∧ ¬Suck(x))'], 'conclusion-FOL': '(Vacuum(Space) ∨ Vampire(Space)) → Vampire(Space)'}
+Error: {"index": 3, "error_msg": "Syntax error at line 1, column 7\nExpected LPAREN, got XOR (\u2295)", "error_line": "Space \u2295 Vacuum(Space)", "pointer": "      ^"}
+[136] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∀x (Plunger(x) → Suck(x))', '∀x (Vacuum(x) → Suck(x))', '∀x (Vampire(x) → Suck(x))', 'Space = Vacuum(some_space)', '∀x (Duster(x) ∧ HouseholdAppliance(x) → ¬Suck(x))'], 'conclusion-FOL': '∀x ((HouseholdAppliance(x) ∧ ¬(Duster(x))) → Suck(x))'}
+Error: {"index": 3, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got ID (Vacuum)", "error_line": "Space = Vacuum(some_space)", "pointer": "        ^"}
+[137] Pred: Uncertain  | Gold: False
+[138] Pred: Uncertain  | Gold: True
+[139] Pred: Uncertain  | Gold: False
+[140] Pred: Uncertain  | Gold: Uncertain
+[141] Pred: Uncertain  | Gold: False
+[142] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['∀x (BreedingBack(x) → ArtificialSelection(x))', '∃y (HeckCattle(y) ∧ BreedingBack(y))', '∀z (HeckCattle(z) → Animal(z))', '∀w (Aurochs(w) → Animal(w))', '∃v (Animal(v) ∧ Extinct(v) ∧ (∃u (Animal(u) ∧ Resemble(u, v)))'], 'conclusion-FOL': '∃x (HeckCattle(x) ∧ ArtificialSelection(x))'}
+Error: {"index": 4, "error_msg": "Unexpected end of input, expected RPAREN", "error_line": "\u2203v (Animal(v) \u2227 Extinct(v) \u2227 (\u2203u (Animal(u) \u2227 Resemble(u, v)))", "pointer": "                                                             ^"}
+[143] Pred: Uncertain  | Gold: True
+[144] Pred: Uncertain  | Gold: Uncertain
+[145] Pred: Uncertain  | Gold: Uncertain
+[146] Pred: Uncertain  | Gold: Uncertain
+[147] Pred: True       | Gold: True
+[148] Pred: True       | Gold: True
+[149] Pred: Uncertain  | Gold: False
+[150] Pred: True       | Gold: True
+[151] Pred: True       | Gold: Uncertain
+[152] Pred: Uncertain  | Gold: Uncertain
+[153] Pred: Uncertain  | Gold: Uncertain
+[154] Pred: Uncertain  | Gold: False
+[155] Pred: True       | Gold: True
+[156] Pred: Uncertain  | Gold: Uncertain
+[157] Pred: False      | Gold: False
+[158] Pred: True       | Gold: True
+[159] Pred: Uncertain  | Gold: True
+[160] Pred: Uncertain  | Gold: Uncertain
+[161] Pred: True       | Gold: True
+[162] Pred: Uncertain  | Gold: Uncertain
+[163] Pred: False      | Gold: False
+[164] Pred: Uncertain  | Gold: Uncertain
+[165] Pred: True       | Gold: False
+[166] Pred: True       | Gold: True
+[167] Pred: Uncertain  | Gold: True
+[168] Pred: True       | Gold: True
+[169] Pred: False      | Gold: False
+[170] Pred: Uncertain  | Gold: Uncertain
+[171] Pred: Uncertain  | Gold: True
+[172] Pred: True       | Gold: False
+[173] Pred: Uncertain  | Gold: Uncertain
+[174] Pred: False      | Gold: False
+[175] Pred: True       | Gold: True
+[176] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['SportingEvent(OlympicGames)', 'LocationLastOlympics(Tokyo)', 'UnitedStatesWonMostMedalsInTokyo'], 'conclusion-FOL': '¬LocationLastOlympics(Tokyo)'}
+Error: {"index": 2, "error_msg": "Unexpected end of input, expected LPAREN", "error_line": "UnitedStatesWonMostMedalsInTokyo", "pointer": "^"}
+[177] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['SportingEvent(OlympicGames)', 'LocationLastOlympics(Tokyo)', 'WinnerMostMedalsUnitedStates(Tokyo)'], 'conclusion-FOL': '(SportingEvent(OlympicGames) ∧ LocationLastOlympics(Tokyo)) → WinnerMostMedalsUnitedStates(LocationLastOlympics(Tokyo))'}
+Error: {"index": -1, "error_msg": "Syntax error at line 1, column 112\nExpected RPAREN, got LPAREN (()", "error_line": "(SportingEvent(OlympicGames) \u2227 LocationLastOlympics(Tokyo)) \u2192 WinnerMostMedalsUnitedStates(LocationLastOlympics(Tokyo))", "pointer": "                                                                                                               ^"}
+[178] Pred: Uncertain  | Gold: True
+[179] Pred: False      | Gold: False
+{'premises-FOL': ['FliesTo(susan, lga)', '¬(Departure(x) = Arrival(x))', 'FliesFrom(john, lga)'], 'conclusion-FOL': '(FliesFrom(susan, lga))'}
+Error: {"index": 1, "error_msg": "Syntax error at line 1, column 18\nExpected RPAREN, got ID (Arrival)", "error_line": "\u00ac(Departure(x) = Arrival(x))", "pointer": "                 ^"}
+[180] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['FliesTo(susan, lga)', '¬(Departure(x) = Arrival(x))', 'FliesFrom(john, lga)'], 'conclusion-FOL': '(FliesTo(john, lga) ⊕ ¬FliesTo(john, lga))'}
+Error: {"index": 1, "error_msg": "Syntax error at line 1, column 18\nExpected RPAREN, got ID (Arrival)", "error_line": "\u00ac(Departure(x) = Arrival(x))", "pointer": "                 ^"}
+[181] Pred: Uncertain  | Gold: False
+[182] Pred: Uncertain  | Gold: Uncertain
+[183] Pred: Uncertain  | Gold: True
+[184] Pred: True       | Gold: False
+{'premises-FOL': ['∀x (Podcast(x) → ¬Novel(x))', '∀x (BornInAmericanCity(x) → American(x))', '∀x ∀y ((Book(y) ∧ Novel(y) ∧ WrittenBy(y, x)) → WriterOfNovels(x))', 'Writer(DaniShapiro)', 'FamilyHistoryWrittenBy(FamilyHistory, DaniShapiro)', 'Novel(FamilyHistory)', 'YearPublished(FamilyHistory, 2003)', 'PodcastCreated(FamilySecrets, DaniShapiro)', 'AmericanCity(Boston)'], 'conclusion-FOL': '(WriterOfNovels(DaniShapiro))'}
+Error: {"index": 6, "error_msg": "Syntax error at line 1, column 34\nExpected ID, got RPAREN ())", "error_line": "YearPublished(FamilyHistory, 2003)", "pointer": "                                 ^"}
+[185] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['∀x (Podcast(x) → ¬Novel(x))', '∀x (BornInAmericanCity(x) → American(x))', '∀x ∀y ((Book(y) ∧ Novel(y) ∧ WrittenBy(y, x)) → WriterOfNovels(x))', 'WriterOfBooks(DaniShapiro)', 'FamilyHistoryWrittenBy(FamilyHistory, DaniShapiro)', 'Novel(FamilyHistory)', 'YearPublished(FamilyHistory, 2003)', 'PodcastCreated(FamilySecrets, DaniShapiro)', 'AmericanCity(Boston)'], 'conclusion-FOL': 'Novel(FamilySecrets)'}
+Error: {"index": 6, "error_msg": "Syntax error at line 1, column 34\nExpected ID, got RPAREN ())", "error_line": "YearPublished(FamilyHistory, 2003)", "pointer": "                                 ^"}
+[186] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['∀x (Podcast(x) → ¬Novel(x))', '∀x (BornInAmericanCity(x) → American(x))', '∀x ∀y ((Book(y) ∧ Novel(y) ∧ WrittenBy(y, x)) → WriterOfNovels(x))', 'WriterOfBooks(DaniShapiro)', 'WrittenBy(FamilyHistory, DaniShapiro)', 'Novel(FamilyHistory)', 'YearPublished(FamilyHistory, 2003)', 'Podcast(FamilySecrets)', 'Created(Podcast(FamilySecrets), DaniShapiro)', 'AmericanCity(Boston)', 'BornInAmericanCity(DaniShapiro) ↔ BornInBoston(DaniShapiro)'], 'conclusion-FOL': 'BornInBoston(DaniShapiro)'}
+Error: {"index": 6, "error_msg": "Syntax error at line 1, column 34\nExpected ID, got RPAREN ())", "error_line": "YearPublished(FamilyHistory, 2003)", "pointer": "                                 ^"}
+[187] Pred: Uncertain  | Gold: Uncertain
+[188] Pred: Uncertain  | Gold: Uncertain
+[189] Pred: True       | Gold: True
+{'premises-FOL': ['∃x (BasketballPlayer(x) ∧ ¬American(x))', '∀x (BasketballPlayer(x) → Tall(x))', '∀x (Tall(x) → LargeShoes(x))', '∀x (LargeShoes(x) → LargeClothes(x))', '¬LargeClothes(yuri)'], 'conclusion-FOL': '(BasketballPlayer(yuri) ∧ ¬American(yuri)) → False'}
+Error: {"index": -1, "error_msg": "Unexpected end of input, expected LPAREN", "error_line": "(BasketballPlayer(yuri) \u2227 \u00acAmerican(yuri)) \u2192 False", "pointer": "                                             ^"}
+[190] Pred: Uncertain  | Gold: False
+[191] Pred: False      | Gold: False
+[192] Pred: False      | Gold: False
+[193] Pred: False      | Gold: False
+[194] Pred: Uncertain  | Gold: False
+[195] Pred: Uncertain  | Gold: Uncertain
+[196] Pred: Uncertain  | Gold: Uncertain
+[197] Pred: False      | Gold: False
+[198] Pred: True       | Gold: True
+{'premises-FOL': ['Person(AiltonSilva) ∧ BornIn(1995, AiltonSilva) ↔ KnownAs(Ailton, AiltonSilva)', 'FootballPlayer(Ailton) ∧ LoanedTo(Ailton, Braga)', 'Brazillian(Footballer(AiltonSilva)) ∧ PlaysFor(Nautico, AiltonSilva)', 'FootballClub(Nautico) ∧ FootballClub(Braga)', 'FootballClub(Fluminense)'], 'conclusion-FOL': '(Footballer(x) ∧ Brazillian(x) ∧ PlaysFor(Nautico, x)) → ¬Person(x)'}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 34\nExpected ID, got COMMA (,)", "error_line": "Person(AiltonSilva) \u2227 BornIn(1995, AiltonSilva) \u2194 KnownAs(Ailton, AiltonSilva)", "pointer": "                                 ^"}
+[199] Pred: Uncertain  | Gold: False
+{'premises-FOL': ["∀x (BornIn(x, 1995) → CommonName(x, 'Ailton'))", "CommonName(y, 'Ailton') → FootballPlayer(y)", 'FootballPlayer(AiltonSilva) ∧ PlaysFor(AiltonSilva, Nautico)', 'FootballClub(Braga) ∧ FootballClub(Nautico)', 'FootballClub(Fluminense)'], 'conclusion-FOL': '¬PlaysFor(AiltonSilva, z)'}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 19\nExpected ID, got RPAREN ())", "error_line": "\u2200x (BornIn(x, 1995) \u2192 CommonName(x, 'Ailton'))", "pointer": "                  ^"}
+[200] Pred: Uncertain  | Gold: False
+{'premises-FOL': ["∀x (BornIn(x, 1995) → CommonName(x, 'Ailton'))", "CommonName(y, 'Ailton') → FootballPlayer(y)", 'FootballPlayer(AiltonSilva) ∧ PlaysFor(AiltonSilva, Nautico) ∧ Brazilian(AiltonSilva)', 'Club(Braga) ∧ Club(Nautico)', 'Club(Fluminense)'], 'conclusion-FOL': "CommonName(z, 'Ailton') → ¬(LoanOut(z, Braga))"}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 19\nExpected ID, got RPAREN ())", "error_line": "\u2200x (BornIn(x, 1995) \u2192 CommonName(x, 'Ailton'))", "pointer": "                  ^"}
+[201] Pred: Uncertain  | Gold: False
+{'premises-FOL': ["∀x (BornIn(x, 1995) → CommonName(x, 'Ailton'))", "CommonName(y, 'Ailton') → FootballPlayer(y)", "Footballer(z, 'Nautico') → CommonName(z, 'Ailton Silva')", "Club(w, 'Braga') ∧ Club(v, 'Nautico')", "Club(u, 'Fluminense')"], 'conclusion-FOL': "CommonName(x, 'Ailton Silva') → PlayedFor(x, 'Fluminense')"}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 19\nExpected ID, got RPAREN ())", "error_line": "\u2200x (BornIn(x, 1995) \u2192 CommonName(x, 'Ailton'))", "pointer": "                  ^"}
+[202] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ["∀x (BornIn(x, 1995) → CommonName(x, 'Ailton'))", "CommonName(y, 'Ailton') → FootballPlayer(y)", 'FootballPlayer(z) ∧ PlaysFor(z, Nautico) → BrazilianFootballer(z)', 'Club(Braga) ∧ Club(Nautico)', 'Club(Fluminense)'], 'conclusion-FOL': '(FootballPlayer(ailtonSilva) ∧ LoanedTo(ailtonSilva, Braga))'}
+Error: {"index": 0, "error_msg": "Syntax error at line 1, column 19\nExpected ID, got RPAREN ())", "error_line": "\u2200x (BornIn(x, 1995) \u2192 CommonName(x, 'Ailton'))", "pointer": "                  ^"}
+[203] Pred: Uncertain  | Gold: Uncertain
+
+(folio) Nam@MacBook-Air-4 FOLIO % python accuracy.py 
+Accuracy: 90/145 = 0.6207
+Ignored samples due to errors: 59
+
+Accuracy: 52.94%

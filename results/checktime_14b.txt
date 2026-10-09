@@ -1,0 +1,162 @@
+(folio) Nam@macbook-air FOLIO % python run_check_time.py
+================================================================================
+CONFIC 2.5:14B
+================================================================================
+[0] Pred: True       | Gold: Uncertain
+[1] Pred: Uncertain  | Gold: True
+[2] Pred: False      | Gold: False
+[3] Pred: True       | Gold: Uncertain
+[4] Pred: Uncertain  | Gold: Uncertain
+
+Accuracy: 40.00%
+Naive Predictor: 25.486454 seconds
+Loaded embedding model: BAAI/bge-small-en-v1.5
+Loading KB from data/translation-kb.json ...
+Loading cached story embeddings...
+28 stories ready.
+=========== FOL ===========
+{'premises-FOL': ['∀x (OftenPerformTalentShows(x) → (AttendEvents(x) ∧ EngagedWithSchoolEvents(x)))', '∀x (OftenPerformTalentShows(x) ⊕ (InactiveCommunityMember(x) ∧ DisinterestedCommunityMember(x)))', '∀x (ChaperoneHighSchoolDances(x) → ¬StudentAtSchool(x))', '∀x ((InactiveCommunityMember(x) ∧ DisinterestedCommunityMember(x)) → ChaperoneHighSchoolDances(x))', '∀x ((YoungChildOrTeenager(x) ∧ WishFurtherAcademicCareerAndOpportunities(x)) → StudentAtSchool(x))', '(AttendEvents(bonnie) ∧ EngagedWithSchoolEvents(bonnie) ∧ StudentAtSchool(bonnie)) ⊕ (¬(AttendEvents(bonnie) ∧ EngagedWithSchoolEvents(bonnie)) ∧ ¬StudentAtSchool(bonnie))'], 'conclusion-FOL': 'OftenPerformTalentShows(bonnie)'}
+=========== FOL ===========
+[0] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (PerformTalentShowOften(x) → (AttendEvents(x) ∧ EngagedWithSchoolEvents(x)))', '(PerformTalentShowOften(x) ⊕ (InactiveCommunityMember(x) ∧ DisinterestedCommunityMember(x)))', 'ChaperoneHighSchoolDances(x) → ¬StudentAttendsSchool(x)', '∀x ((InactiveCommunityMember(x) ∧ DisinterestedCommunityMember(x)) → ChaperoneHighSchoolDances(x))', '∀x (YoungChildTeenagerWishFurtherAcademicCareerEducationalOpportunities(x) → StudentAttendsSchool(x))'], 'conclusion-FOL': '(Bonnie ⊕ (¬(AttendEvents(bonnie) ∧ EngagedWithSchoolEvents(bonnie)) ∧ ¬StudentAttendsSchool(bonnie)))'}
+=========== FOL ===========
+Error: {"index": -1, "error_msg": "Syntax error at line 1, column 9\nExpected LPAREN, got XOR (\u2295)", "error_line": "(Bonnie \u2295 (\u00ac(AttendEvents(bonnie) \u2227 EngagedWithSchoolEvents(bonnie)) \u2227 \u00acStudentAttendsSchool(bonnie)))", "pointer": "        ^"}
+[1] Pred: Uncertain  | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (PerformTalentShowOften(x) → (AttendSchoolEvents(x) ∧ EngagedWithSchoolEvents(x)))', '(PerformTalentShowOften(x) ⊕ (InactiveCommunityMember(x) ∧ DisinterestedCommunityMember(x)))', 'ChaperoneHighSchoolDances(x) → ¬StudentAttendsSchool(x)', '∀x ((InactiveCommunityMember(x) ∧ DisinterestedCommunityMember(x)) → ChaperoneHighSchoolDances(x))', '∀x (YoungChildTeenagerWishFurtherAcademicCareerEducationalOpportunities(x) → StudentAttendsSchool(x))'], 'conclusion-FOL': '(ChaperoneHighSchoolDances(bonnie) ∨ (¬ChaperoneHighSchoolDances(bonnie) ∧ PerformTalentShowOften(bonnie))) → ((YoungChildTeenagerWishFurtherAcademicCareerEducationalOpportunities(bonnie) ∧ InactiveCommunityMember(bonnie)) ∧ DisinterestedCommunityMember(bonnie))'}
+=========== FOL ===========
+[2] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Employee(x) ∧ MeetingWithCustomer(x) → InCompanyToday(x))', '∀x ((LunchInCompany(x) ∨ LunchAtHome(x)) ↔ MeetingWithCustomer(x))', '∀x (Employee(x) ⊕ (LunchInCompany(x) ⊕ LunchAtHome(x)))', '∀x (LunchAtHome(x) → RemoteWorkFromHome(x))', '∀x ((InOtherCountry(x) ∨ ¬InOtherCountry(x)) ↔ RemoteWorkFromHome(x))', '¬∃x (Manager(x) ∧ RemoteWorkFromHome(x))', '(James ⊕ (Manager(James) ∧ InCompanyToday(James)))'], 'conclusion-FOL': 'LunchInCompany(James)'}
+=========== FOL ===========
+Error: {"index": 6, "error_msg": "Syntax error at line 1, column 8\nExpected LPAREN, got XOR (\u2295)", "error_line": "(James \u2295 (Manager(James) \u2227 InCompanyToday(James)))", "pointer": "       ^"}
+[3] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Employee(x) ∧ MeetingWithCustomer(x) → InCompanyToday(x))', '∀x ((LunchInCompany(x) ∨ LunchAtHome(x)) ↔ MeetingWithCustomer(x))', '∀x (Employee(x) ⊕ (LunchInCompany(x) ⊕ LunchAtHome(x)))', '∀x (LunchAtHome(x) → RemoteWorkFromHome(x))', '∀x ((CountryOtherThanHere(x) ∧ Employee(x)) → RemoteWorkFromHome(x))', '¬∃x (Manager(x) ∧ RemoteWorkFromHome(x))', '(JamesIsManager ⊕ JamesInCompanyToday) ↔ ¬(JamesIsManager ∧ JamesInCompanyToday)'], 'conclusion-FOL': '¬LunchInCompany(James)'}
+=========== FOL ===========
+Error: {"index": 6, "error_msg": "Syntax error at line 1, column 17\nExpected LPAREN, got XOR (\u2295)", "error_line": "(JamesIsManager \u2295 JamesInCompanyToday) \u2194 \u00ac(JamesIsManager \u2227 JamesInCompanyToday)", "pointer": "                ^"}
+[4] Pred: Uncertain  | Gold: Uncertain
+
+Accuracy: 60.00%
+RAG Predictor: 56.667438 seconds
+Loaded embedding model: BAAI/bge-small-en-v1.5
+Loading KB from: data/folio-train.jsonl
+KB loaded: 1004 examples
+=== parsing successfully ===
+[0] Pred: False      | Gold: Uncertain
+=== parsing successfully ===
+[1] Pred: True       | Gold: True
+=== parsing successfully ===
+[2] Pred: Uncertain  | Gold: False
+=== parsing successfully ===
+[3] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[4] Pred: Uncertain  | Gold: Uncertain
+
+Accuracy: 60.00%
+Fixer Predictor: 53.234425 seconds
+Loaded embedding model: BAAI/bge-small-en-v1.5
+Loading KB from data/translation-kb.json ...
+Loading cached story embeddings...
+28 stories ready.
+=== Parsing successfully ===
+[0] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[1] Pred: Uncertain  | Gold: True
+=== Parsing successfully ===
+[2] Pred: Uncertain  | Gold: False
+=== Parsing successfully ===
+[3] Pred: Uncertain  | Gold: Uncertain
+[4] Pred: Uncertain  | Gold: Uncertain
+
+Accuracy: 60.00%
+Fixer Predictor: 80.067069 seconds
+
+================================================================================
+CONFIC 2.5:3B
+================================================================================
+[0] Pred: Uncertain  | Gold: Uncertain
+[1] Pred: False      | Gold: True
+[2] Pred: False      | Gold: False
+[3] Pred: False      | Gold: Uncertain
+[4] Pred: False      | Gold: Uncertain
+
+Accuracy: 40.00%
+Naive Predictor: 3.137139 seconds
+Loaded embedding model: BAAI/bge-small-en-v1.5
+Loading KB from data/translation-kb.json ...
+Loading cached story embeddings...
+28 stories ready.
+=========== FOL ===========
+{'premises-FOL': ['∀x (AttendSchoolEvents(x) → (∀y (YellInTalentShows(y, x) → EngageWithSchoolEvents(x))) ∧ ¬Student(x))', '∃x (EngageWithSchoolEvents(x) ⊕ ¬Student(x))', '∀x (ChaperoneHighSchoolDances(x) → ¬Student(x))', '∀x (¬Student(x) → ChaperoneHighSchoolDances(x))', '∀x (youthful(x) ∧ aspireToAcademicCareer(x) → Student(x))', '(AttendSchoolEvents(bonnie) ⊕ ¬AttendSchoolEvents(bonnie)) ⊕ (∀y (YellInTalentShows(y, bonnie) → AttendSchoolEvents(bonnie)))'], 'conclusion-FOL': '∀x (YellInTalentShows(x, bonnie) → AttendSchoolEvents(bonnie))'}
+=========== FOL ===========
+[0] Pred: False      | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (AttendSchoolEvents(x) → (∀y (TalentShowOften(y, x) → AttendSchoolEvents(y))) ∧ VeryEngagedWithSchoolEvents(x))', '∃x (TalentShowOften(x, y) ⊕ InactiveCommunityMember(x, y))', '∀x (ChaperoneHighSchoolDances(x, y) → ¬Student(x, y))', '∀x (InactiveCommunityMember(x, y) → ChaperoneHighSchoolDances(x, y))', '∀y (YoungChild(y) ∧ Teenager(y) ∧ WishAcademicCareer(y) → Student(y, School))', '(AttendSchoolEvents(bonnie) ∧ VeryEngagedWithSchoolEvents(bonnie)) ⊕ ¬(AttendSchoolEvents(bonnie) ∧ VeryEngagedWithSchoolEvents(bonnie)) → (Student(bonnie, School) ∨ InactiveCommunityMember(bonnie, Community))'], 'conclusion-FOL': '(YoungChild(bonnie) ∧ Teenager(bonnie) ∧ WishAcademicCareer(bonnie) ∨ ¬(YoungChild(bonnie) ∧ Teenager(bonnie) ∧ WishAcademicCareer(bonnie))) → (Student(bonnie, School) ∨ InactiveCommunityMember(bonnie, Community))'}
+=========== FOL ===========
+[1] Pred: True       | Gold: True
+=========== FOL ===========
+{'premises-FOL': ['∀x (AttendSchoolEvents(x) → (∀y (PerformInTalentShows(y,x) → EngageWithSchoolEvents(x,y))))', '∃x (PerformInTalentShows(x) ⊕ InactiveCommunityMember(x))', '∀x (ChaperoneHighSchoolDances(x) → ¬Student(x))', '∀x (InactiveCommunityMember(x) → ChaperoneHighSchoolDances(x))', '∀y (YoungChild(y) ∧ Teenager(y) ∧ WishForAcademicCareer(y) → Student(y))', '(AttendSchoolEvents(bonnie) ⊕ ¬(AttendSchoolEvents(bonnie) ∧ EngageWithSchoolEvents(bonnie))) ⊕ (∀x (ChaperoneHighSchoolDances(x) → ¬Student(x)) ∧ ∀y (YoungChild(y) ∧ Teenager(y) ∧ WishForAcademicCareer(y) → Student(y)) ∧ ChaperoneHighSchoolDances(bonnie))'], 'conclusion-FOL': '(∀x (ChaperoneHighSchoolDances(x) → ¬Student(x)) ∧ ∀y (YoungChild(y) ∧ Teenager(y) ∧ WishForAcademicCareer(y) → Student(y)) ∧ ChaperoneHighSchoolDances(bonnie)) ∨ (∀x (PerformInTalentShows(x) → AttendSchoolEvents(x)) ∧ ∀y (AttendSchoolEvents(y) → EngageWithSchoolEvents(y,x)) ∧ ¬ChaperoneHighSchoolDances(bonnie)) → Bonnie = InactiveCommunityMember(bonnie)'}
+=========== FOL ===========
+Error: b'Wrong number of arguments (1) passed to function (declare-fun PerformInTalentShows (U U) Bool) \narg: x\n'
+[2] Pred: Uncertain  | Gold: False
+=========== FOL ===========
+{'premises-FOL': ['∀x (Employee(x) ∧ SchedulesMeetingWithCustomer(x) → AppearsToday(x))', '∀x (HasLunchInCompany(x) → SchedulesMeetingWithCustomer(x))', '∀x ((HasLunchInCompany(x) ∨ HasLunchAtHome(x)) → SchedulesMeetingWithCustomer(x))', '∀x (HasLunchAtHome(x) → WorksRemotelyFromHome(x))', '∀x (WorksRemotelyFromHome(x) → InOtherCountry(x))', '∀x (InOtherCountry(x) → WorksRemotelyFromHome(x))', '∀x (Manager(x) → ¬WorksRemotelyFromHome(x))', 'James(∃x ((Employee(x) ∧ Manager(x)) → AppearsToday(x)) ∨ (∀x (¬Employee(x) ∧ ¬Manager(x)) → ¬AppearsToday(x)))'], 'conclusion-FOL': '(HasLunchInCompany(James) → WorksRemotelyFromHome(James))'}
+=========== FOL ===========
+Error: {"index": 7, "error_msg": "Syntax error at line 1, column 7\nExpected ID, got EXISTS (\u2203)", "error_line": "James(\u2203x ((Employee(x) \u2227 Manager(x)) \u2192 AppearsToday(x)) \u2228 (\u2200x (\u00acEmployee(x) \u2227 \u00acManager(x)) \u2192 \u00acAppearsToday(x)))", "pointer": "      ^"}
+[3] Pred: Uncertain  | Gold: Uncertain
+=========== FOL ===========
+{'premises-FOL': ['∀x (Employee(x) ∧ SchedulesMeetingWithCustomer(x) → AppearsToday(x))', '∀x (HasLunchInCompany(x) → SchedulesMeetingWithCustomer(x))', '∀x ((HasLunchInCompany(x) ∨ HasLunchAtHome(x)) → SchedulesMeetingWithCustomer(x))', '∀x (HasLunchAtHome(x) → WorksRemotelyFromHome(x))', '∀x (WorksRemotelyFromHome(x) → InOtherCountry(x))', '∀x (InOtherCountry(x) → WorksRemotelyFromHome(x))', '∀x (Manager(x) → ¬WorksRemotelyFromHome(x))', 'James(∃x ((Employee(x) ∧ Manager(x)) → AppearsToday(x)) ∨ (∀x ¬Employee(x) → ¬AppearsToday(x)))'], 'conclusion-FOL': '¬HasLunchInCompany(James)'}
+=========== FOL ===========
+Error: {"index": 7, "error_msg": "Syntax error at line 1, column 7\nExpected ID, got EXISTS (\u2203)", "error_line": "James(\u2203x ((Employee(x) \u2227 Manager(x)) \u2192 AppearsToday(x)) \u2228 (\u2200x \u00acEmployee(x) \u2192 \u00acAppearsToday(x)))", "pointer": "      ^"}
+[4] Pred: Uncertain  | Gold: Uncertain
+
+Accuracy: 60.00%
+RAG Predictor: 10.534849 seconds
+Loaded embedding model: BAAI/bge-small-en-v1.5
+Loading KB from: data/folio-train.jsonl
+KB loaded: 1004 examples
+{'premises-FOL': ['∀u (SchoolEvents(u) → SchoolEngagement(u))', '∀u ((SchoolEvents(u) ⊕ CommunityInvolvement(u)) → u ∈ Students)', '∀u (ChaperoneDance(u) → ¬u ∈ Studentschool)', '∀u (CommunityInvolvement(u) → ChaperoneDance(u))', '∀u (AttendsSchool(u) ∧ WantsAcademicOpportunities(u) → u ∈ Studentschool)', '(CommunityInvolvement(bonnie) ⊕ ¬(SchoolEvents(bonnie) ∧ SchoolEngagement(bonnie))) → ¬(bonnie ∈ Studentschool)'], 'conclusion-FOL': 'SchoolEvents(bonnie)'}
+{'premises-FOL': ['∀u (SchoolEvents(u) → SchoolEngagement(u))', '∀u ((SchoolEvents(u) ⊕ CommunityInvolvement(u)) → u ∈ Students)', '∀u (ChaperoneDance(u) → ¬u ∈ Studentschool)', '∀u (CommunityInvolvement(u) → ChaperoneDance(u))', '∀u (AttendsSchool(u) ∧ WantsAcademicOpportunities(u) → u ∈ Studentschool)', '(CommunityInvolvement(bonnie) ⊕ ¬(SchoolEvents(bonnie) ∧ SchoolEngagement(bonnie))) → ¬(bonnie ∈ Studentschool)'], 'conclusion-FOL': 'SchoolEvents(bonnie)'}
+{'premises-FOL': ['∀u (SchoolEvents(u) → SchoolEngagement(u))', '∀u ((SchoolEvents(u) ⊕ CommunityInvolvement(u)) → u ∈ Students)', '∀u (ChaperoneDance(u) → ¬u ∈ Studentschool)', '∀u (CommunityInvolvement(u) → ChaperoneDance(u))', '∀u (AttendsSchool(u) ∧ WantsAcademicOpportunities(u) → u ∈ Studentschool)', '(CommunityInvolvement(bonnie) ⊕ ¬(SchoolEvents(bonnie) ∧ SchoolEngagement(bonnie))) → ¬(bonnie ∈ Studentschool)'], 'conclusion-FOL': 'SchoolEvents(bonnie)'}
+[0] Pred: Uncertain  | Gold: Uncertain
+{'premises-FOL': ['∀u (SchoolEvents(u) → SchoolEngagement(u))', '∀u ((SchoolEvents(u) ⊕ CommunityInvolvement(u)) → CommunityMembers(u))', '∀u (ChaperoneDance(u) → ¬Student(u))', '∀u (CommunityInvolvement(u) → ChaperoneDance(u))', '∀u (AcademicCareer(u) → Student(u))', '(CommunityInvolvement(bonnie) ⊕ ¬(SchoolEvents(bonnie) ∧ SchoolEngagement(bonnie))) → ¬Student(bonnie)'], 'conclusion-FOL': '(AcademicCareer(bonnie) ∨ ChaperoneDance(bonnie)) → (Student(bonnie) ∨ CommunityInvolvement(bonnie))'}
+=== parsing successfully ===
+[1] Pred: Uncertain  | Gold: True
+{'premises-FOL': ['∀u (∃v (SchoolTalentShows(v) → SchoolEventsEngaged(u, v))', '∀u ((SchoolTalentShowsOften(u) ∨ CommunityInactive(u)) → SchoolEventsEngaged(u) ∧ CommunityActive(u)', '∀u (HighSchoolDancesChaperoned(u) → ¬Student(u)', '∀u (CommunityInactive(u) → HighSchoolDancesChaperoned(u)', '∀u (AcademicCareerWish(u) → Student(u)', '∀u ((SchoolEventsEngaged(u) ∧ SchoolTalentShowsOften(u)) ∨ (¬SchoolEventsEngaged(u) ∧ ¬SchoolTalentShowsOften(u)) → u = Bonnie)'], 'conclusion-FOL': '(HighSchoolDancesChaperoned(Bonnie) ∨ SchoolTalentShowsOften(Bonnie)) → (∃u (AcademicCareerWish(u) ∧ CommunityInactive(u)) ∧ ¬Student(Bonnie))'}
+{'premises-FOL': ['∀u (∃v (SchoolTalentShows(v) → SchoolEventsEngaged(u, v))', '∀u ((SchoolTalentShowsOften(u) ∨ CommunityInactive(u)) → SchoolEventsEngaged(u) ∧ CommunityActive(u)', '∀u (HighSchoolDancesChaperoned(u) → ¬Student(u)', '∀u (CommunityInactive(u) → HighSchoolDancesChaperoned(u)', '∀u (AcademicCareerWish(u) → Student(u)', '∀u ((SchoolEventsEngaged(u) ∧ SchoolTalentShowsOften(u)) ∨ (¬SchoolEventsEngaged(u) ∧ ¬SchoolTalentShowsOften(u)) → u = Bonnie)'], 'conclusion-FOL': '(HighSchoolDancesChaperoned(Bonnie) ∨ SchoolTalentShowsOften(Bonnie)) → (∃u (AcademicCareerWish(u) ∧ CommunityInactive(u)) ∧ ¬Student(Bonnie))'}
+{'premises-FOL': ['∀u (∃v (SchoolTalentShows(v) → SchoolEventsEngaged(u, v))', '∀u ((SchoolTalentShowsOften(u) ∨ CommunityInactive(u)) → SchoolEventsEngaged(u) ∧ CommunityActive(u)', '∀u (HighSchoolDancesChaperoned(u) → ¬Student(u)', '∀u (CommunityInactive(u) → HighSchoolDancesChaperoned(u)', '∀u (AcademicCareerWish(u) → Student(u)', '∀u ((SchoolEventsEngaged(u) ∧ SchoolTalentShowsOften(u)) ∨ (¬SchoolEventsEngaged(u) ∧ ¬SchoolTalentShowsOften(u)) → u = Bonnie)'], 'conclusion-FOL': '(HighSchoolDancesChaperoned(Bonnie) ∨ SchoolTalentShowsOften(Bonnie)) → (∃u (AcademicCareerWish(u) ∧ CommunityInactive(u)) ∧ ¬Student(Bonnie))'}
+[2] Pred: Uncertain  | Gold: False
+{'premises-FOL': ['∀u (Employee(u) ∧ SchedulesMeetingWithCustomer(u) → AppearsInCompanyToday(u))', '∀u (HasLunchInCompany(u) → SchedulesMeetingWithCustomer(u))', '∀u ((HasLunchInCompany(u) ∨ HasLunchAtHome(u)) → SchedulesMeetingWithCustomer(u))', '∀u ((HasLunchAtHome(u) → WorksRemotelyFromHome(u)) ∧ ¬Manager(u))', '∀u (WorksRemotelyFromHome(u) → InOtherCountry(u))', '∀u (Manager(u) → ¬(InCompanyToday(u) ∧ HasLunchInCompany(u)))', 'Manager(James) ∨ ¬(Manager(James) ∧ AppearsInCompanyToday(James)) → ¬(HasLunchInCompany(James) ∧ WorksRemotelyFromHome(James))'], 'conclusion-FOL': 'HasLunchInCompany(James)'}
+=== parsing successfully ===
+[3] Pred: Uncertain  | Gold: Uncertain
+=== parsing successfully ===
+[4] Pred: Uncertain  | Gold: Uncertain
+
+Accuracy: 60.00%
+Fixer Predictor: 13.954167 seconds
+Loaded embedding model: BAAI/bge-small-en-v1.5
+Loading KB from data/translation-kb.json ...
+Loading cached story embeddings...
+28 stories ready.
+[0] Pred: Uncertain  | Gold: Uncertain
+=== Parsing successfully ===
+[1] Pred: Uncertain  | Gold: True
+[ERROR] Translation/Retrieval failed: [StoryTranslatorRagLLM] Invalid JSON:
+{
+  "premises-FOL": [
+    "∀x (AttendSchoolEvents(x) → (∀y (PerformInTalentShowsOften(y,x) → EngageWithSchoolEvents(x,y)))",
+    "∃x (PerformInTalentShowsOften(x) ⊕ InactiveCommunityMember(x))",
+    "∀x (ChaperoneHighSchoolDances(x) → ¬Student(x))",
+    "∀x (InactiveCommunityMember(x) → ChaperoneHighSchoolDances(x))",
+    "∀y (YoungChildOrTeenager(y) ∧ WishForAcademicCareerAndOpportunities(y) → Student(y))",
+    "(AttendSchoolEvents(bonnie) ⊕ ¬(AttendSchoolEvents(bonnie) ∧ EngageWithSchoolEvents(bonnie))) ⊕ (∀x (ChaperoneHighSchoolDances(x) → ¬Student(x)) ∧ ∀y (YoungChildOrTeenager(y) ∧ WishForAcademicCareerAndOpportunities(y) → Student(y))"
+  ],
+  "conclusion-FOL": "(∀x (ChaperoneHighSchoolDances(x) → ¬Student(x)) ∧ ∀y (YoungChildOrTeenager(y) ∧ WishForAcademicCareerAndOpportunities(y) → Student(y))) ∨ AttendSchoolEvents(bonnie) → (∀x (ChaperoneHighSchoolDances(x) → ¬Student(x)) ∧ ∀y (YoungChildOrTeenager(y) ∧ WishForAcademicCareerAndOpportunities(y) → Student(y)))"
+[2] Pred: Uncertain  | Gold: False
+[3] Pred: Uncertain  | Gold: Uncertain
+[4] Pred: Uncertain  | Gold: Uncertain
+
+Accuracy: 60.00%
+Fixer Predictor: 33.455159 seconds

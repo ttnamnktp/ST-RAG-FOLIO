@@ -24,57 +24,73 @@ These characters will lead to errors.Because the solver can not recognize them.
 And, don't output in latex.The solver can not recognize latex.
 """
         self.chat_msg = ""
-        self.json_msg = """
-The user will provide some thought process for translating natural language to first-order logic language. You need to get all the premise formulas and a final conclusion formula. Please parse the "premise", "conclusion" and output it in JSON format.
-EXAMPLE INPUT:
-Premises:
-1.Text:No criminal is kind.
-Predicates:
-Kind(x),Criminal(x)
-Fol:∀x (Criminal(x) → ¬Kind(x))
-2.Text:All person who breaks the law is a criminals.
-Predicates:
-BreakLaw(x),Criminal(x)
-Fol:∀x (BreakLaw(x) → Criminal(x))
-3.Text:People are either kind or evil.
-Predicates:
-Kind(x),Evil(x)
-Fol:∀x (Kind(x) ⊕ Evil(x))
-4.Text:If someone is evil, then they are ugly.
-Predicates:
-Evil(x),Ugly(x)
-Fol:∀x (Evil(x) → Ugly(x))
-5.Text:If someone is evil, then they are cold-blood.
-Predicates:
-ColdBlood(x),Evil(x)
-Fol:∀x (Evil(x) → ColdBlood(x))
-6.Text:If Garry is either evil and ugly or neither evil nor ugly, then Garry is not evil.
-Predicates:
-Evil(x),Ugly(x)
-Constants:
-garry
-Fol:((Evil(garry) ∧ Ugly(garry)) ⊕ (¬Evil(garry) ∧ ¬Ugly(garry))) → ¬Evil(garry)
-Conclusion:
-Text:If Garry is evil or breaks the law, then Garry is not both a criminal and breaking the law.
-Predicates:
-BreakLaw(x),Evil(x),Criminal(x)
-Constants:
-garry
-Fol:(Evil(garry) ∨ BreakLaw(garry)) → ¬(Criminal(garry) ∧ BreakLaw(garry))
+#         self.json_msg = """
+# The user will provide some thought process for translating natural language to first-order logic language. You need to get all the premise formulas and a final conclusion formula. Please parse the "premise", "conclusion" and output it in JSON format.
+# EXAMPLE INPUT:
+# Premises:
+# 1.Text:No criminal is kind.
+# Predicates:
+# Kind(x),Criminal(x)
+# Fol:∀x (Criminal(x) → ¬Kind(x))
+# 2.Text:All person who breaks the law is a criminals.
+# Predicates:
+# BreakLaw(x),Criminal(x)
+# Fol:∀x (BreakLaw(x) → Criminal(x))
+# 3.Text:People are either kind or evil.
+# Predicates:
+# Kind(x),Evil(x)
+# Fol:∀x (Kind(x) ⊕ Evil(x))
+# 4.Text:If someone is evil, then they are ugly.
+# Predicates:
+# Evil(x),Ugly(x)
+# Fol:∀x (Evil(x) → Ugly(x))
+# 5.Text:If someone is evil, then they are cold-blood.
+# Predicates:
+# ColdBlood(x),Evil(x)
+# Fol:∀x (Evil(x) → ColdBlood(x))
+# 6.Text:If Garry is either evil and ugly or neither evil nor ugly, then Garry is not evil.
+# Predicates:
+# Evil(x),Ugly(x)
+# Constants:
+# garry
+# Fol:((Evil(garry) ∧ Ugly(garry)) ⊕ (¬Evil(garry) ∧ ¬Ugly(garry))) → ¬Evil(garry)
+# Conclusion:
+# Text:If Garry is evil or breaks the law, then Garry is not both a criminal and breaking the law.
+# Predicates:
+# BreakLaw(x),Evil(x),Criminal(x)
+# Constants:
+# garry
+# Fol:(Evil(garry) ∨ BreakLaw(garry)) → ¬(Criminal(garry) ∧ BreakLaw(garry))
 
-EXAMPLE JSON OUTPUT:
-{
-  "premises": [
-    "∀x (Criminal(x) → ¬Kind(x))",
-    "∀x (BreakLaw(x) → Criminal(x))",
-    "∀x (Kind(x) ⊕ Evil(x))",
-    "∀x (Evil(x) → Ugly(x))",
-    "∀x (Evil(x) → ColdBlood(x))",
-    "((Evil(garry) ∧ Ugly(garry)) ⊕ (¬Evil(garry) ∧ ¬Ugly(garry))) → ¬Evil(garry)"
-  ],
-  "conclusion": "(Evil(garry) ∨ BreakLaw(garry)) → ¬(Criminal(garry) ∧ BreakLaw(garry))"
-}
-"""
+# EXAMPLE JSON OUTPUT:
+# {
+#   "premises": [
+#     "∀x (Criminal(x) → ¬Kind(x))",
+#     "∀x (BreakLaw(x) → Criminal(x))",
+#     "∀x (Kind(x) ⊕ Evil(x))",
+#     "∀x (Evil(x) → Ugly(x))",
+#     "∀x (Evil(x) → ColdBlood(x))",
+#     "((Evil(garry) ∧ Ugly(garry)) ⊕ (¬Evil(garry) ∧ ¬Ugly(garry))) → ¬Evil(garry)"
+#   ],
+#   "conclusion": "(Evil(garry) ∨ BreakLaw(garry)) → ¬(Criminal(garry) ∧ BreakLaw(garry))"
+# }
+# """
+        self.json_msg = """
+    The user will provide some thought process for translating natural language to first-order logic language. You need to get all the premise formulas and a final conclusion formula. Please parse the "premise", "conclusion" and output it in JSON format.
+    
+    EXAMPLE JSON OUTPUT:
+    {
+    "premises": [
+        "∀x (Criminal(x) → ¬Kind(x))",
+        "∀x (BreakLaw(x) → Criminal(x))",
+        "∀x (Kind(x) ⊕ Evil(x))",
+        "∀x (Evil(x) → Ugly(x))",
+        "∀x (Evil(x) → ColdBlood(x))",
+        "((Evil(garry) ∧ Ugly(garry)) ⊕ (¬Evil(garry) ∧ ¬Ugly(garry))) → ¬Evil(garry)"
+    ],
+    "conclusion": "(Evil(garry) ∨ BreakLaw(garry)) → ¬(Criminal(garry) ∧ BreakLaw(garry))"
+    }
+    """
 
 
     def formalize(self, problem: Dict, examples: List[Dict]) -> Dict:

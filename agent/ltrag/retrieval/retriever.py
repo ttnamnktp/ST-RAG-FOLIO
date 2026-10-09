@@ -47,14 +47,14 @@ class Retriever:
                 
             texts.append(ex["text"])
 
-        # ✅ Load / build embeddings
+        # Load / build embeddings
         if os.path.exists(emb_file):
             embeddings = np.load(emb_file)
         else:
             embeddings = self.embedder.embed(texts)
             np.save(emb_file, embeddings)
 
-        # ✅ Build FAISS index
+        # Build FAISS index
         dim = embeddings.shape[1]
         self.index = faiss.IndexFlatL2(dim)
         self.index.add(embeddings.astype("float32"))

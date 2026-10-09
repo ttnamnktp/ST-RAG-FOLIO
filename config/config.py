@@ -8,8 +8,8 @@ class LLMProvider(Enum):
 
 # ===== OLLAMA LOCAL - UNLIMITED FREE =====
 USE_PROVIDER = LLMProvider.OLLAMA
-# LLM_MODEL = "qwen2.5:3b"
-LLM_MODEL = "qwen2.5:14b"
+LLM_MODEL = "qwen2.5:3b"
+# LLM_MODEL = "qwen2.5:14b"
 LLM_API_KEY = "ollama"
 LLM_BASE_URL = "http://localhost:11434/v1"
 
